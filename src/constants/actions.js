@@ -1,0 +1,15 @@
+export const IS_LOADING         = "IS_LOADING";
+export const POLL_CHASQUI       = "POLL_CHASQUI";
+export const POLL_CHASQUI_OK    = "POLL_CHASQUI_OK";
+export const POLL_CHASQUI_ERR   = "POLL_CHASQUI_ERR";
+export const CRED_INIT          = "CRED_INIT";
+export const CRED_INIT_OK       = "CRED_INIT_OK";
+export const REQ_DISCLOSURE     = "REQ_DISCLOSURE";
+export const REQ_DISCLOSURE_OK  = "REQ_DISCLOSURE_OK";
+export const CRED_VERIFY        = "CRED_VERIFY";
+export const CRED_VERIFY_OK     = "CRED_VERIFY_OK";
+export const LOGOUT             = "LOGOUT";
+export const SAVE_PROFILE       = "SAVE_PROFILE";
+export const LOAD_PROFILE       = "LOAD_PROFILE";
+export const LOAD_PROFILE_OK    = "LOAD_PROFILE_OK";
+export const LOAD_PROFILE_ERR   = "LOAD_PROFILE_ERR";
