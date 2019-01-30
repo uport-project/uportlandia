@@ -10,8 +10,5 @@ const spin = keyframes`
 `;
 
 export default () => css`
-  ${spin};
-  animation-duration: 2000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
+  animation: ${spin} 2s linear infinite;
 `;

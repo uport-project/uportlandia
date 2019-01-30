@@ -46,6 +46,26 @@ export const verifyCredentialsSuccess = value => ({
   value
 });
 
+export const sendVerification = (callbackId, profile, claim) => ({
+  type: ACTIONS.SEND_VERIF,
+  callbackId,
+  profile,
+  claim
+});
+
+export const sendVerificationSuccess = (callbackId, url, isPush=false) => ({
+  type: ACTIONS.SEND_VERIF_OK,
+  callbackId,
+  url,
+  isPush
+});
+
+export const sendVerificationFailure = (callbackId, error) => ({
+  type: ACTIONS.SEND_VERIF_ERR,
+  callbackId,
+  error
+});
+
 export const logout = () => ({
   type: ACTIONS.LOGOUT
 });
@@ -67,4 +87,25 @@ export const loadProfileSuccess = value => ({
 export const loadProfileFailure = error => ({
   type: ACTIONS.LOAD_PROFILE_ERR,
   error
+});
+
+export const redirectToHome = () => ({
+  type: ACTIONS.REDIR_HOME
+});
+
+export const redirectToCityHome = () => ({
+  type: ACTIONS.REDIR_CITY_HOME
+});
+
+export const redirectToCityIdForm = () => ({
+  type: ACTIONS.REDIR_CITY_ID_FORM
+});
+
+export const redirectToCityIdFormSubmit = () => ({
+  type: ACTIONS.REDIR_CITY_ID_FORM_SUB
+});
+
+export const changeCityIdInfo = value => ({
+  type: ACTIONS.CHANGE_CITY_ID_INFO,
+  value
 });

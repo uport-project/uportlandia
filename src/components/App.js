@@ -5,7 +5,7 @@ import UPortLogin from "./uport/LoginContainer";
 
 const App = props => {
   return (<div>
-    {props.profile ? props.children : <UPortLogin />}
+    {props.children}
     <LoadingOverlay loading={props.isLoading} />
   </div>)
 };

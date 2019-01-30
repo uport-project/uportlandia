@@ -52,7 +52,7 @@ table {
 * {
   box-sizing: border-box;
 }
-body {
+body, input, button, textarea, select {
   color: #404041;
   font-family: 'Montserrat', sans-serif;
 }

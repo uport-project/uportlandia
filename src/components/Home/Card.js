@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Button } from "../shared/elements";
+import { LinkButton } from "../shared/elements";
 import { medium } from "../shared/grid";
 import shareClaimIcon from "../../images/circle-arrow-up.svg";
 import receiveClaimIcon from "../../images/circle-arrow-down.svg";
@@ -51,7 +51,7 @@ class HomeCard extends React.Component {
             </ul>
           </ReceiveClaims>
         </ClaimLists>
-        <Button onClick={onSubmit}>Get Started</Button>
+        <LinkButton to="/city">Get Started</LinkButton>
       </Content>
       <AltColorBG />
     </Card>)
@@ -80,13 +80,13 @@ const Content = styled.div`
     margin: 10px 0 0;
     padding: 0;
   }
-  ${Button} {
+  ${LinkButton} {
     display: block;
     margin: 0 auto;
   }
   ${medium(`
     border-radius: 8px 0 0 8px;
-    ${Button} {
+    ${LinkButton} {
       bottom: 30px;
       margin: 0;
       position: absolute;

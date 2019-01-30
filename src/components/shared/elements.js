@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { default as styled, css } from "styled-components";
 import shortId from "shortid";
 
 import * as theme from "./theme";
@@ -9,17 +10,17 @@ Form.displayName = "Form";
 
 export const Label = styled.label`
   display: block;
-  font-weight: 700;
+  font-size: 0.6875rem;
+  text-transform: uppercase;
 `;
 Label.displayName = "Label";
 
 export const Textbox = styled.input`
   border: solid 1px ${theme.formControl.border};
-  border-radius: 4px;
   color: ${theme.formControl.color}
   font-size: 0.9em;
   line-height: 2em;
-  padding: 10px 20px;
+  padding: 15px 12px;
   width: 100%;
   &::placeholder {
     color: ${theme.formControl.placeholder};
@@ -27,8 +28,8 @@ export const Textbox = styled.input`
 `;
 Textbox.displayName = "Textbox";
 
-export const Button = styled.button`
-  background: linear-gradient(241.48deg, #4654D1 1.81%, #5C51CB 97.48%);
+const PrimaryButtonStyle = css`
+  background: ${theme.gradient2};
   border: none;
   border-radius: 5px;
   color: ${theme.colors.primaryButtonText};
@@ -38,12 +39,44 @@ export const Button = styled.button`
   text-align: center;
   text-transform: uppercase;
   transform: matrix(1, 0, 0, 1.01, 0, 0);
-
   &:hover {
-    background: linear-gradient(255.4deg, #2E3ECC 0%, #5B4DE8 99.58%);
+    background: ${theme.gradient3};
   }
 `;
+
+const SecondaryButtonStyle = css`
+  background: ${theme.gradient4};
+  border: none;
+  border-radius: 5px;
+  color: ${theme.colors.secondaryButtonText};
+  cursor: pointer;
+  font-size: 0.75rem;;
+  padding: 12px 22px;
+  text-align: center;
+  text-transform: uppercase;
+  &:hover {
+    background: ${theme.gradient5};
+  }
+  &[disabled], &[disabled]:hover {
+    background: ${theme.gradient4_inactive};
+    cursor: default;
+  }
+`;
+
+export const Button = styled.button`
+  ${props => props.secondary
+    ? SecondaryButtonStyle
+    : PrimaryButtonStyle}
+`;
 Button.displayName = "Button";
+
+export const LinkButton = styled(Link)`
+  text-decoration: none;
+  ${props => props.secondary
+    ? SecondaryButtonStyle
+    : PrimaryButtonStyle}
+`;
+LinkButton.displayName = "LinkButton";
 
 const FormGroupWrapper = styled.div`
   ${Label} {

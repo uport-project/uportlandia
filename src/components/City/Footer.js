@@ -2,19 +2,23 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { Container } from "../shared/grid";
 import * as theme from "../shared/theme";
 
 class Footer extends React.Component {
   render() {
-    return (<Container>
-      Footer content ...
-    </Container>)
+    return (<Wrapper>
+      <Container>
+
+      </Container>
+    </Wrapper>)
   }
 }
 
-const Container = styled.footer`
+const Wrapper = styled.footer`
   background-color: ${theme.footer.bg};
-  padding: 20px;
+  color: ${theme.footer.textColor};
+  padding: 20px 0;
 `;
 
 export default Footer;
