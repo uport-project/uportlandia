@@ -15,7 +15,7 @@ export const Label = styled.label`
 `;
 Label.displayName = "Label";
 
-export const Textbox = styled.input`
+export const textBoxStyle = css`
   border: solid 1px ${theme.formControl.border};
   color: ${theme.formControl.color}
   font-size: 0.9em;
@@ -26,10 +26,15 @@ export const Textbox = styled.input`
     color: ${theme.formControl.placeholder};
   }
 `;
+export const Textbox = styled.input`
+  ${textBoxStyle}
+`;
 Textbox.displayName = "Textbox";
 
 export const Dropdown = styled.select`
+  background: none;
   border: solid 1px ${theme.formControl.border};
+  border-radius: 0;
   color: ${theme.formControl.color}
   font-size: 0.9em;
   height: 3.5rem;

@@ -1,13 +1,26 @@
 import React from "react";
 import styled from "styled-components";
+import dayjs from "dayjs";
+import DatePicker from "react-datepicker";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button, Form, FormGroup, Label, Dropdown, Textbox } from "../shared/elements";
+import {
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Dropdown,
+  textBoxStyle,
+  Textbox
+} from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import COUNTRIES from "../../constants/countries";
 import SuccessIcon from "../../images/smiley-face.svg";
+
+import "react-datepicker/dist/react-datepicker.css";
+import "../../css/datepicker.css";
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -27,8 +40,8 @@ class PersonalInfo extends React.Component {
     };
   }
   componentDidMount() {
-    // if(!this.props.isLoggedIn)
-    //   this.props.redirectToCityHome();
+    if(!this.props.isLoggedIn)
+      this.props.redirectToCityHome();
     const { data } = this.props;
     this.setState({ details: data });
   }
@@ -53,8 +66,16 @@ class PersonalInfo extends React.Component {
       });
     }
   }
+  handleChangeDOB = date => {
+    const { details } = this.state;
+    this.setState({
+      details: {
+        ...details,
+        dob: dayjs(date).format("MM/DD/YYYY")
+      }
+    });
+  }
   handleSubmit = ev => {
-    console.log(this.state);
     ev.preventDefault();
     const validation = isValid(this.state.details);
     if(validation.valid) {
@@ -145,10 +166,16 @@ class PersonalInfo extends React.Component {
             <Col span={4}>
               <FormGroup>
                 <Label>Date of Birth</Label>
-                <Textbox
-                  placeholder="mm/dd/yyyy"
-                  value={dob}
-                  onChange={this.handleChange("dob")} />
+                <DatePicker
+                  className="datepicker"
+                  placeholderText="mm/dd/yyyy"
+                  showYearDropdown
+                  scrollableYearDropdown
+                  yearDropdownItemNumber={90}
+                  selected={dob ? dayjs(dob, "MM/DD/YYYY").toDate() : null}
+                  onChange={this.handleChangeDOB}
+                  maxDate={dayjs().add(-13, "year").toDate()}
+                />
               </FormGroup>
             </Col>
             <Col span={12}>
@@ -188,6 +215,9 @@ const Wrapper = styled.div`
   }
   input[type="checkbox"] {
     margin-right: 10px;
+  }
+  .datepicker {
+    ${textBoxStyle}
   }
 `;
 const Error = styled.div`

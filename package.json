@@ -8,9 +8,11 @@
     "s3-deploy": "^1.2.1"
   },
   "dependencies": {
+    "dayjs": "^1.8.0",
     "localforage": "^1.7.3",
     "qr-image": "^3.2.0",
     "react": "16.4.2",
+    "react-datepicker": "^2.0.0",
     "react-dom": "16.4.2",
     "react-redux": "5.0.7",
     "react-router": "4.3.1",
