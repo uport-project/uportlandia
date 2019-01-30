@@ -20,4 +20,5 @@ export const REDIR_HOME             = "REDIR_HOME";
 export const REDIR_CITY_HOME        = "REDIR_CITY_HOME";
 export const REDIR_CITY_ID_FORM     = "REDIR_CITY_ID_FORM";
 export const REDIR_CITY_ID_FORM_SUB = "REDIR_CITY_ID_FORM_SUB";
+export const REDIR_CITY_ID_RCD      = "REDIR_CITY_ID_RCD";
 export const CHANGE_CITY_ID_INFO    = "CHANGE_CITY_ID_INFO";

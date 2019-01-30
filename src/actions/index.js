@@ -105,6 +105,10 @@ export const redirectToCityIdFormSubmit = () => ({
   type: ACTIONS.REDIR_CITY_ID_FORM_SUB
 });
 
+export const redirectToCityIdReceived = () => ({
+  type: ACTIONS.REDIR_CITY_ID_RCD
+});
+
 export const changeCityIdInfo = value => ({
   type: ACTIONS.CHANGE_CITY_ID_INFO,
   value

@@ -32,7 +32,7 @@ class SendAttestation extends React.Component {
     const { show, data={} } = this.props;
     const { url, isPush } = data;
     if(show && !prevProps.show) {
-      // this.sendVerification();
+      this.sendVerification();
     } else if(url && url !== prevProps.data.url) {
       const pngBuffer = qrImage.imageSync(data.url, { type: 'png' });
       const qrData = 'data:image/png;charset=utf-8;base64, ' + pngBuffer.toString('base64');

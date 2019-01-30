@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { getCityIdInfo, isLoggedIn, isLoading } from "../../selectors";
 
-import Submitted from "./Submitted";
+import ClaimReceived from "./ClaimReceived";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
@@ -12,19 +12,12 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit(details) {
-    dispatch(actions.changeCityIdInfo(details));
-    dispatch(actions.redirectToCityIdFormSubmit());
+  redirectToHome() {
+    dispatch(actions.redirectToHome());
   },
   redirectToCityHome() {
     dispatch(actions.redirectToCityHome());
-  },
-  redirectToCityIdForm() {
-    dispatch(actions.redirectToCityIdForm());
-  },
-  redirectToCityIdReceived() {
-    dispatch(actions.redirectToCityIdReceived());
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Submitted);
+export default connect(mapStateToProps, mapDispatchToProps)(ClaimReceived);

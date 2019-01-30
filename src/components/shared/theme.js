@@ -21,7 +21,9 @@ export const colors = {
   secondaryButtonText: "#fff",
   text: "#1E1E1E",
   textSecondary: "#1B998B",
-  border: "#EBE9F1"
+  border: "#EBE9F1",
+  error: "#d24e4e",
+  errorBg: "#ffebee"
 };
 
 export const main = {

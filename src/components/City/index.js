@@ -7,6 +7,7 @@ import Header from "./Header";
 import Landing from "./LandingContainer";
 import PersonalInfo from "./PersonalInfoContainer";
 import FormSubmitted from "./SubmittedContainer";
+import ClaimReceived from "./ClaimReceivedContainer";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 
@@ -22,6 +23,7 @@ class City extends React.Component {
           </Route>
           <Route path="/city/personalinfo" exact component={PersonalInfo} />
           <Route path="/city/submitted" exact component={FormSubmitted} />
+          <Route path="/city/complete" exact component={ClaimReceived} />
         </Switch>
       </Container>
       <Footer />

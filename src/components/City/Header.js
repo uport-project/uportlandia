@@ -10,8 +10,10 @@ class Header extends React.Component {
   render() {
     return (<Wrapper>
       <Container>
-        <Logo src={CityIDIcon} alt="City Logo" />
-        <h1>The City of Cleverland</h1>
+        <Link to="/" className="home-link">
+          <Logo src={CityIDIcon} alt="City Logo" />
+          <h1>The City of Cleverland</h1>
+        </Link>
       </Container>
     </Wrapper>)
   }
@@ -23,10 +25,11 @@ const Wrapper = styled.header`
   padding: 10px 0;
 
   a {
+    color: inherit;
     text-decoration: none;
   }
 
-  ${Container} {
+  .home-link {
     align-items: center;
     display: flex;
   }

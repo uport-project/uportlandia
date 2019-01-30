@@ -21,8 +21,11 @@ class Landing extends React.Component {
     this.setState({ loginModal: true });
   }
   handleLoginSuccess = profile => {
-    this.setState({ loginModal: false })
-    this.props.redirectToCityIdForm();
+    const { loginModal } = this.state;
+    if(loginModal) {
+      this.setState({ loginModal: false })
+      this.props.redirectToCityIdForm();
+    }
   }
   render() {
     const { profile, redirectToCityIdForm } = this.props;

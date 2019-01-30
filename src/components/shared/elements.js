@@ -28,6 +28,17 @@ export const Textbox = styled.input`
 `;
 Textbox.displayName = "Textbox";
 
+export const Dropdown = styled.select`
+  border: solid 1px ${theme.formControl.border};
+  color: ${theme.formControl.color}
+  font-size: 0.9em;
+  height: 3.5rem;
+  line-height: 2em;
+  padding: 15px 12px;
+  width: 100%;
+`;
+Dropdown.displayName = "Dropdown";
+
 const PrimaryButtonStyle = css`
   background: ${theme.gradient2};
   border: none;

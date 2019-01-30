@@ -61,9 +61,11 @@ export default (data={}) => {
   if(!toc) {
     return {
       valid: false,
-      error: "Required to agree to the terms and conditions"
+      error: "You must agree to the terms and conditions"
     };
   }
 
-
+  return {
+    valid: true
+  };
 };

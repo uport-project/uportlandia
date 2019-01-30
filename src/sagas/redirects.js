@@ -5,6 +5,7 @@ import {
   REDIR_CITY_HOME,
   REDIR_CITY_ID_FORM,
   REDIR_CITY_ID_FORM_SUB,
+  REDIR_CITY_ID_RCD,
   REDIR_HOME
 } from "../constants/actions";
 
@@ -24,9 +25,14 @@ function redirectToCityIdFormSubmit() {
   history.push("/city/submitted");
 }
 
+function redirectToCityIdReceived() {
+  history.push("/city/complete");
+}
+
 export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_CITY_HOME, redirectToCityHome);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM_SUB, redirectToCityIdFormSubmit);
+  yield spawn(takeEvery, REDIR_CITY_ID_RCD, redirectToCityIdReceived);
   yield spawn(takeEvery, REDIR_HOME, redirectToHome);
 }

@@ -19,7 +19,7 @@ class Landing extends React.Component {
   componentDidMount() {
     if(!this.props.isLoggedIn) {
       this.props.redirectToCityHome();
-    } else if(!isValid(this.props.data)) {
+    } else if(!isValid(this.props.data).valid) {
       this.props.redirectToCityIdForm();
     }
   }
@@ -27,6 +27,7 @@ class Landing extends React.Component {
     this.setState({
       attestationModal: false
     });
+    this.props.redirectToCityIdReceived();
   }
   showAttestationModal = () => {
     this.setState({
@@ -36,7 +37,7 @@ class Landing extends React.Component {
   render() {
     const { attestationModal } = this.state;
     const { data } = this.props;
-    if(!this.props.isLoggedIn || !isValid(this.props.data))
+    if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     return (<Wrapper>
       <Card>
