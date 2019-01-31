@@ -9,4 +9,4 @@ const CityPage = props => {
   </App>);
 };
 
-export default City;
+export default CityPage;

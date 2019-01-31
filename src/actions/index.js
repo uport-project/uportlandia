@@ -25,9 +25,10 @@ export const initCredentialsSuccess = () => ({
   type: ACTIONS.CRED_INIT_OK
 });
 
-export const reqDisclosure = callbackId => ({
+export const reqDisclosure = (callbackId, requestedClaims) => ({
   type: ACTIONS.REQ_DISCLOSURE,
-  callbackId
+  callbackId,
+  requestedClaims
 });
 
 export const reqDisclosureSuccess = (callbackId, url) => ({
@@ -107,6 +108,22 @@ export const redirectToCityIdFormSubmit = () => ({
 
 export const redirectToCityIdReceived = () => ({
   type: ACTIONS.REDIR_CITY_ID_RCD
+});
+
+export const redirectToDiplomaHome = () => ({
+  type: ACTIONS.REDIR_DIPLOMA_HOME
+});
+
+export const redirectToReceiveDiploma = () => ({
+  type: ACTIONS.REDIR_RCV_DIPLOMA
+});
+
+export const redirectToDiplomaRequirement = () => ({
+  type: ACTIONS.REDIR_DIPLOMA_PREREQ
+});
+
+export const redirectToDiplomaReceived = () => ({
+  type: ACTIONS.REDIR_DIPLOMA_RCD
 });
 
 export const changeCityIdInfo = value => ({

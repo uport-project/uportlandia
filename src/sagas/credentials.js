@@ -72,18 +72,20 @@ function* verifyCredentials (action) {
 }
 
 function* requestDisclosure(action) {
-  const { callbackId } = action;
+  const { callbackId, requestedClaims } = action;
   const callbackUrl = createChasquiUrl(callbackId);
   const expiresIn = 2 * 60; // seconds
-  console.log(callbackUrl);
   yield put(setLoading(REQ_DISCLOSURE, true));
+  yield call(signAndUploadProfile);
   const jwt = yield call(
     credentials.createDisclosureRequest.bind(credentials),
     {
       requested: [ "name" ],
+      verified: requestedClaims,
       notifications: true,
       callbackUrl,
       accountType: "keypair",
+      vc: verifiedClaims
     },
     expiresIn
   );

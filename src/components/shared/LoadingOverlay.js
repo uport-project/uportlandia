@@ -43,7 +43,7 @@ const Box = styled.div`
   padding: 16px;
 `;
 const LoadingIcon = styled.img`
-  animation: ${spin};
+  ${spin}
   height: 64px;
   width: 64px;
 `;

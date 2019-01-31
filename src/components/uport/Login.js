@@ -74,8 +74,14 @@ class UportLogin extends React.Component {
     this.props.onClose();
   }
   handleLogin = () => {
+    const { requestedClaims=[] } = this.props;
     const requestId = shortId.generate();
-    this.props.requestDisclosure(requestId);
+    this.props.requestDisclosure(
+      requestId,
+      requestedClaims
+        .filter(c => c.request)
+        .map(c => c.name)
+    );
     this.setState({ requestId });
   }
   render() {
@@ -174,9 +180,8 @@ class UportLogin extends React.Component {
               <Claims>
               {requestedClaims && requestedClaims.length
                 ? <React.Fragment>
-                  {requestedClaims.map(claim => (<Claim key={claim.name}>
+                  {requestedClaims.filter(c => !c.hidden).map(claim => (<Claim key={claim.name}>
                     <Claim.Name>{claim.name}</Claim.Name>
-                    <Claim.Value>{claim.value}</Claim.Value>
                   </Claim>))}
                 </React.Fragment>
                 : <p>No claims requested</p>}

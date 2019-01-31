@@ -16,6 +16,7 @@ class HomeCard extends React.Component {
       description,
       shareClaims,
       receiveClaims,
+      url,
       onSubmit
     } = this.props;
     return (<Card>
@@ -51,7 +52,7 @@ class HomeCard extends React.Component {
             </ul>
           </ReceiveClaims>
         </ClaimLists>
-        <LinkButton to="/city">Get Started</LinkButton>
+        <LinkButton to={url}>Get Started</LinkButton>
       </Content>
       <AltColorBG />
     </Card>)

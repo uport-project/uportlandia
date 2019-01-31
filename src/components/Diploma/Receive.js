@@ -8,7 +8,7 @@ import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import CityLogo from "../../images/city-id-icon.svg";
+import UniLogo from "../../images/diploma-icon.svg";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -19,16 +19,16 @@ class Landing extends React.Component {
   }
   componentDidMount() {
     if(!this.props.isLoggedIn) {
-      this.props.redirectToCityHome();
-    } else if(!isValid(this.props.data).valid) {
-      this.props.redirectToCityIdForm();
+      this.props.redirectToDiplomaHome();
+    } else if(!isValid(this.props.cityIdClaim).valid) {
+      this.props.redirectToDiplomaRequirement();
     }
   }
   hideAttestationModal = () => {
     this.setState({
       attestationModal: false
     });
-    this.props.redirectToCityIdReceived();
+    this.props.redirectToDiplomaReceived();
   }
   showAttestationModal = () => {
     this.setState({
@@ -37,53 +37,56 @@ class Landing extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { data } = this.props;
-    if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
+    const { cityIdClaim, isLoggedIn } = this.props;
+    if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     return (<Wrapper>
       <Card>
         <h2>Good News!</h2>
-        <p>Your information has been succesfully verified. Your City ID is
-          ready to be issued.</p>
+        <p>Your claims were succesfully shared with the Cleverland University.</p>
 
         <SuccessImage src={SuccessIcon} />
         <hr />
         <h4>What’s next?</h4>
         <p>
-          Let’s make sure you have an access to your Cleverland City ID
-          whenever and wherever you need them. The City of Cleverland is
-          going to send your new ID claims to your uPort app.
+          Let’s make sure you have an access to your Diploma claims whenever
+          and wherever you need them. The University of Cleverland is going
+          to send your new claims to your uPort app.
         </p>
-        <Button secondary onClick={this.showAttestationModal}>Receive City ID</Button>
+        <Button secondary onClick={this.showAttestationModal}>Receive your Diploma</Button>
       </Card>
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "City ID",
-          subHeading: "The City of Cleverland",
-          name: "The City of Cleverland",
-          logo: CityLogo
+          heading: "Diploma",
+          subHeading: "The University of Cleverland",
+          name: "The University of Cleverland",
+          logo: UniLogo
         }}
         infoDetails={[{
           heading: "Issued Date",
           name: (new Date()).toDateString()
         }]}
         claimDetails={[{
-          name: "First Name",
-          value: data.firstName,
+          name: "School Name",
+          value: "The University of Cleverland",
         }, {
-          name: "Last Name",
-          value: data.lastName,
+          name: "Program Name",
+          value: "French linguistics",
         }, {
-          name: "Date of Birth",
-          value: data.dob,
+          name: "Final Grades",
+          value: "B+",
         }]}
-        show={data && attestationModal}
+        show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Cleverland City ID": data
+          "Diploma": {
+            "School Name": "The University of Cleverland",
+            "Program Name": "French linguistics",
+            "Final Grades": "B+"
+          }
         }} />
     </Wrapper>)
   }

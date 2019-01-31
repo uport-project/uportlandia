@@ -6,7 +6,7 @@ import { Container } from "./grid";
 import { Button, Form } from "./elements";
 
 const ContentCard = ({ children }) => (<Wrapper>
-  <Content>
+  <Content className="card__content">
     {children}
   </Content>
 </Wrapper>);

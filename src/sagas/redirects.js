@@ -6,6 +6,10 @@ import {
   REDIR_CITY_ID_FORM,
   REDIR_CITY_ID_FORM_SUB,
   REDIR_CITY_ID_RCD,
+  REDIR_DIPLOMA_HOME,
+  REDIR_RCV_DIPLOMA,
+  REDIR_DIPLOMA_PREREQ,
+  REDIR_DIPLOMA_RCD,
   REDIR_HOME
 } from "../constants/actions";
 
@@ -29,10 +33,30 @@ function redirectToCityIdReceived() {
   history.push("/city/complete");
 }
 
+function redirectToDiplomaHome() {
+  history.push("/diploma");
+}
+
+function redirectToDiplomaRequirement() {
+  history.push("/diploma/prerequisites");
+}
+
+function redirectToReceiveDiploma() {
+  history.push("/diploma/receive");
+}
+
+function redirectToDiplomaReceived() {
+  history.push("/diploma/complete");
+}
+
 export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_CITY_HOME, redirectToCityHome);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM_SUB, redirectToCityIdFormSubmit);
   yield spawn(takeEvery, REDIR_CITY_ID_RCD, redirectToCityIdReceived);
+  yield spawn(takeEvery, REDIR_DIPLOMA_HOME, redirectToDiplomaHome);
+  yield spawn(takeEvery, REDIR_RCV_DIPLOMA, redirectToReceiveDiploma);
+  yield spawn(takeEvery, REDIR_DIPLOMA_PREREQ, redirectToDiplomaRequirement);
+  yield spawn(takeEvery, REDIR_DIPLOMA_RCD, redirectToDiplomaReceived);
   yield spawn(takeEvery, REDIR_HOME, redirectToHome);
 }

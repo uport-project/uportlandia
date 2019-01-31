@@ -35,12 +35,13 @@ class Home extends React.Component {
               name: "Address"
             }, {
               name: "Date of Birth"
-            }]} />
+            }]}
+            url="/city" />
 
           <Card
             name="Diploma"
             icon={DiplomaIcon}
-            superText="The university of ClEverland"
+            superText="The university of Cleverland"
             description="Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program."
             shareClaims={[{
               name: "First Name",
@@ -60,7 +61,8 @@ class Home extends React.Component {
               name: "Final Grades"
             }, {
               name: "Graduation Year"
-            }]} />
+            }]}
+            url="/diploma" />
 
           <Card
             name="Employment Verification"
@@ -89,7 +91,8 @@ class Home extends React.Component {
               name: "Salary"
             }, {
               name: "Date of Employment"
-            }]} />
+            }]}
+            url="" />
         </Container>
       </Cards>
     </div>)

@@ -17,8 +17,8 @@ const mapDispatchToProp = dispatch => ({
   loadProfile() {
     dispatch(actions.loadProfile());
   },
-  requestDisclosure(id) {
-    dispatch(actions.reqDisclosure(id));
+  requestDisclosure(id, requestedClaims) {
+    dispatch(actions.reqDisclosure(id, requestedClaims));
   },
   pollChasqui(id) {
     dispatch(actions.pollChasqui(id));
