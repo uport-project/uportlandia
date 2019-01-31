@@ -44,7 +44,7 @@ const Content = styled.div`
     margin-top: 30px;
   }
 
-  ${Button} {
+  ${Button}.long {
     border-radius: 0 0 5px 5px;
     bottom: 0;
     left: 0;

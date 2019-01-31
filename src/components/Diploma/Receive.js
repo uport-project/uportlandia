@@ -53,7 +53,9 @@ class Landing extends React.Component {
           and wherever you need them. The University of Cleverland is going
           to send your new claims to your uPort app.
         </p>
-        <Button secondary onClick={this.showAttestationModal}>Receive your Diploma</Button>
+        <Button className="long" secondary onClick={this.showAttestationModal}>
+          Receive your Diploma
+        </Button>
       </Card>
       <AttestationModal
         heading="Check your device"
@@ -85,7 +87,8 @@ class Landing extends React.Component {
           "Diploma": {
             "School Name": "The University of Cleverland",
             "Program Name": "French linguistics",
-            "Final Grades": "B+"
+            "Final Grades": "B+",
+            "Graduation Year": "2019"
           }
         }} />
     </Wrapper>)

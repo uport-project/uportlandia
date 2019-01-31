@@ -54,7 +54,9 @@ class Landing extends React.Component {
           whenever and wherever you need them. The City of Cleverland is
           going to send your new ID claims to your uPort app.
         </p>
-        <Button secondary onClick={this.showAttestationModal}>Receive City ID</Button>
+        <Button className="long" secondary onClick={this.showAttestationModal}>
+          Receive City ID
+        </Button>
       </Card>
       <AttestationModal
         heading="Check your device"

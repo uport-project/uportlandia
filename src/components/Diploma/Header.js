@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
-import CityIDIcon from "../../images/city-id-icon.svg";
+import UniIcon from "../../images/diploma-icon.svg";
 
 class Header extends React.Component {
   render() {
     return (<Wrapper>
       <Container>
         <Link to="/" className="home-link">
-          <Logo src={CityIDIcon} alt="City Logo" />
-          <h1>The City of Cleverland</h1>
+          <Logo src={UniIcon} alt="University Logo" />
+          <h1>The University of Cleverland</h1>
         </Link>
       </Container>
     </Wrapper>)

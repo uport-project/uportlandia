@@ -22,6 +22,7 @@ export const colors = {
   text: "#1E1E1E",
   textSecondary: "#1B998B",
   border: "#EBE9F1",
+  border2: "#e4e4e4",
   error: "#d24e4e",
   errorBg: "#ffebee"
 };

@@ -198,7 +198,7 @@ class PersonalInfo extends React.Component {
             verification partners. Think about is as a background check but
             faster and more secure.
           </p>
-          <Button secondary>Submit</Button>
+          <Button className="long" secondary>Submit</Button>
         </Form>
       </Card>
     </Wrapper>)

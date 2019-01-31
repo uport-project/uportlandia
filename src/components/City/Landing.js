@@ -53,8 +53,8 @@ class Landing extends React.Component {
           </ol>
         </Box>
         {profile && profile.did
-          ? <Button secondary onClick={redirectToCityIdForm}>Continue</Button>
-          : <Button secondary onClick={this.showLoginModal}>Log In</Button>}
+          ? <Button className="long" secondary onClick={redirectToCityIdForm}>Continue</Button>
+          : <Button className="long" secondary onClick={this.showLoginModal}>Log In</Button>}
       </Card>
       <LoginModal
         show={loginModal}

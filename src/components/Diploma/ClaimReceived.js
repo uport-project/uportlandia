@@ -5,8 +5,9 @@ import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
-import isValid from "../../utils/validateCityIdInfo";
+import Services from "../shared/Services";
 import SuccessIcon from "../../images/congratulations.svg";
+import EmploymentLogo from "../../images/employment-icon.svg";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -31,7 +32,17 @@ class ClaimReceived extends React.Component {
           With your Diploma claims you gained an easy and quick access to
           numerous services and programs in Cleverland.
         </p>
-        <Button secondary onClick={this.props.redirectToHome}>Back to Home</Button>
+        <Services
+          heading="Services that honor Diploma claims"
+          data={[{
+            heading: "Employment Verification",
+            subHeading: "Dream Job LLC.",
+            url: "/employment",
+            logo: EmploymentLogo
+          }]} />
+        <Button secondary onClick={this.props.redirectToHome}>
+          View All
+        </Button>
       </Card>
     </Wrapper>)
   }
@@ -44,6 +55,12 @@ const Wrapper = styled.div`
     li + li {
       margin-top: 15px;
     }
+  }
+  .card__content {
+    padding-bottom: 30px;
+  }
+  ${Button} {
+    margin: 30px auto 0;
   }
 `;
 const SuccessImage = styled.img`

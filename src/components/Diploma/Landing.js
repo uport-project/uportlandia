@@ -55,7 +55,9 @@ class Landing extends React.Component {
             <li>Receive your Diploma claims!</li>
           </ol>
         </Box>
-        <Button secondary onClick={this.showLoginModal}>Share Your Information</Button>
+        <Button className="long" secondary onClick={this.showLoginModal}>
+          Share Your Information
+        </Button>
       </Card>
       <LoginModal
         show={loginModal}

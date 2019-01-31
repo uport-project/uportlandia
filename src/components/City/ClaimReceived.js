@@ -7,6 +7,8 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/congratulations.svg";
+import UniLogo from "../../images/diploma-icon.svg";
+import Services from "../shared/Services";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -31,7 +33,17 @@ class ClaimReceived extends React.Component {
           With your City ID claims you gained an easy and quick access to
           numerous services and programs in Cleverland.
         </p>
-        <Button secondary onClick={this.props.redirectToHome}>Back to Home</Button>
+        <Services
+          heading="Services that honor City ID claims"
+          data={[{
+            heading: "Diploma",
+            subHeading: "The University of Cleverland",
+            url: "/diploma",
+            logo: UniLogo
+          }]} />
+        <Button secondary onClick={this.props.redirectToHome}>
+          View All
+        </Button>
       </Card>
     </Wrapper>)
   }
@@ -44,6 +56,12 @@ const Wrapper = styled.div`
     li + li {
       margin-top: 15px;
     }
+  }
+  .card__content {
+    padding-bottom: 30px;
+  }
+  ${Button} {
+    margin: 30px auto 0;
   }
 `;
 const SuccessImage = styled.img`

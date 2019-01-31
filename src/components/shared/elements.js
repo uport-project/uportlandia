@@ -50,6 +50,7 @@ const PrimaryButtonStyle = css`
   border-radius: 5px;
   color: ${theme.colors.primaryButtonText};
   cursor: pointer;
+  display: block;
   font-size: 0.75rem;;
   padding: 12px 22px;
   text-align: center;
@@ -66,6 +67,7 @@ const SecondaryButtonStyle = css`
   border-radius: 5px;
   color: ${theme.colors.secondaryButtonText};
   cursor: pointer;
+  display: block;
   font-size: 0.75rem;;
   padding: 12px 22px;
   text-align: center;
