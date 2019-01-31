@@ -7,7 +7,8 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
-import AttestationModal from "./SendAttestationContainer";
+import AttestationModal from "../uport/AttestationContainer";
+import CityLogo from "../../images/city-id-icon.svg";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -56,6 +57,29 @@ class Landing extends React.Component {
         <Button secondary onClick={this.showAttestationModal}>Receive City ID</Button>
       </Card>
       <AttestationModal
+        heading="Check your device"
+        description="Tap 'Accept' in your uPort app to receive your claims"
+        infoHeading="You're Interacting with..."
+        issuer={{
+          heading: "City ID",
+          subHeading: "The City of Cleverland",
+          name: "The City of Cleverland",
+          logo: CityLogo
+        }}
+        infoDetails={[{
+          heading: "Issued Date",
+          name: (new Date()).toDateString()
+        }]}
+        claimDetails={[{
+          name: "First Name",
+          value: data.firstName,
+        }, {
+          name: "Last Name",
+          value: data.lastName,
+        }, {
+          name: "Date of Birth",
+          value: data.dob,
+        }]}
         show={data && attestationModal}
         onClose={this.hideAttestationModal}
         claim={data} />

@@ -11,6 +11,7 @@ import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import itunesImg from "../../images/itunes.svg";
 import playStoreImg from "../../images/playstore.png";
+import AcceptAttestationImg from "../../images/accept-attestation.svg";
 
 import {
   Modal,
@@ -30,12 +31,13 @@ import {
   Claim
 } from "./elements";
 
-class UportLogin extends React.Component {
+class Attestation extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
       qrData: null,
-      waiting: false
+      waiting: false,
+      showQR: false
     };
   }
   componentDidMount() {
@@ -43,54 +45,48 @@ class UportLogin extends React.Component {
     this.props.loadProfile();
   }
   componentDidUpdate(prevProps, prevState) {
-    const { login, messages, pollChasqui, show, verifyCredentials } = this.props;
-    const { waiting } = this.state;
+    const { qrData } = this.state;
+    const { show, data={} } = this.props;
+    const { url, isPush } = data;
     if(show && !prevProps.show) {
-      this.handleLogin();
-    } else if(!login.profile && login.url && login.url !== prevProps.login.url) {
-      // show QR
-      const pngBuffer = qrImage.imageSync(login.url, { type: "png" });
-      const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
-      pollChasqui(login.callbackId);
+      this.sendVerification();
+    } else if(url && url !== prevProps.data.url) {
+      const pngBuffer = qrImage.imageSync(data.url, { type: 'png' });
+      const qrData = 'data:image/png;charset=utf-8;base64, ' + pngBuffer.toString('base64');
       this.setState({ qrData });
-    } else if(!login.profile && login.url) {
-      // check for Chasqui Response
-      let message = messages.find(msg => msg.id === login.callbackId);
-      if(message && message.loading && !waiting) {
-        this.setState({ waiting: true });
-      } else if(message && !message.loading && waiting) {
-        // verify token
-        this.setState({ waiting: false });
-        verifyCredentials(message.content);
-      }
-    } else if(!prevProps.login.profile && login.profile) {
-      // logged in!
-      this.setState({ qrData: null });
-      this.props.onLoginSuccess(login.profile);
     }
   }
   handleClose = () => {
-    this.setState({ qrData: null });
+    this.setState({ qrData: null, showQR: false, waiting: false });
     this.props.onClose();
   }
-  handleLogin = () => {
+  showQR = () => {
+    this.setState({ showQR: true });
+  }
+  sendVerification = () => {
+    const { claim } = this.props;
     const requestId = shortId.generate();
-    this.props.requestDisclosure(requestId);
-    this.setState({ requestId });
+    this.setState({ qrData: null, requestId });
+    this.props.sendVerification(requestId, this.props.profile, claim);
   }
   render() {
+    const { showQR, qrData, waiting } = this.state;
     const {
       heading,
       description,
       infoHeading,
       issuer,
-      requestedClaims,
       infoDetails,
+      claimDetails,
+      claim,
+      profile,
       login={},
       show
     } = this.props;
-    const { qrData, waiting } = this.state;
-    const { profile, url } = login;
+    const { url } = login;
+    const issuedAt = (new Date()).toDateString();
+    if(!profile)
+      return null;
     return (<Modal show={show}>
       <Backdrop />
       <Content>
@@ -102,39 +98,30 @@ class UportLogin extends React.Component {
               <p>{description}</p>
             </Content.Header>
             <Content.Body>
-            {qrData
-              ? <React.Fragment>
-                <div>
-                  <QRWrapper>
-                    <a href={url} target="_blank">
-                      <img className="qr" src={qrData} />
-                    </a>
-                  </QRWrapper>
-                  <p>Or tap to open in a mobile browser</p>
-                </div>
-              </React.Fragment>
-              : <LoadingIcon src={loadingImg} />}
+              {showQR
+                ? qrData
+                  ? <React.Fragment>
+                    <div>
+                        <p>Scan this QR Code using the uPort App</p>
+                      <QRWrapper>
+                        <a href={url} target='_blank'>
+                          <img className='qr' src={qrData} />
+                        </a>
+                      </QRWrapper>
+                      <p>Or tap to open in a mobile browser</p>
+                    </div>
+                    <CenteredRefresh onClick={this.sendVerification}>
+                      <img src={reloadImg} />
+                      Refresh
+                    </CenteredRefresh>
+                  </React.Fragment>
+                  : <LoadingIcon src={loadingImg} />
+                : <Image src={AcceptAttestationImg} />}
             </Content.Body>
             <Content.Footer>
-              <Status>
-                {!waiting || <Waiting>
-                  Waiting for login
-                  <LoadingIcon src={loadingImg} />
-                </Waiting>}
-                {!qrData || <Refresh onClick={this.handleLogin}>
-                  <img src={reloadImg} />
-                  Refresh
-                </Refresh>}
-              </Status>
-              <AppStoreLinks>
-                <p>Don’t have the app? Download it from your store</p>
-                <a href="#" target="_blank">
-                  <img src={itunesImg} />
-                </a>
-                <a href="#" target="_blank">
-                  <img src={playStoreImg} />
-                </a>
-              </AppStoreLinks>
+              <a className="text-link"
+                href="javascript:;"
+                onClick={this.showQR}>Not receiving the request?</a>
             </Content.Footer>
           </Wrapper>
           <Info>
@@ -152,6 +139,11 @@ class UportLogin extends React.Component {
                     <Entity.Details.Heading>Issuer</Entity.Details.Heading>
                     <Entity.Details.Name wide>{issuer.name}</Entity.Details.Name>
                   </Entity.Details.Row>
+                  <Entity.Details.Row>
+                    <Entity.Details.Heading>Subject</Entity.Details.Heading>
+                    <Entity.Details.Name>{profile.name}</Entity.Details.Name>
+                    <Entity.Details.Value>{profile.address}</Entity.Details.Value>
+                  </Entity.Details.Row>
                   {infoDetails && infoDetails.length
                     ? <React.Fragment>
                       {infoDetails.map(row => (<Entity.Details.Row key={row.heading}>
@@ -168,21 +160,21 @@ class UportLogin extends React.Component {
                 </Entity.Details>
               </Entity>
             </Card>
-            <p>You’ve never interacted with {issuer.name}</p>
-            <h3 className="marginTop">Requested Claims</h3>
+
+            <h3 className="marginTop">Claims you'll receive</h3>
             <Card>
               <Claims>
-              {requestedClaims && requestedClaims.length
+                {claimDetails && claimDetails.length
                 ? <React.Fragment>
-                  {requestedClaims.map(claim => (<Claim key={claim.name}>
+                  {claimDetails.map(claim => (<Claim key={claim.name}>
                     <Claim.Name>{claim.name}</Claim.Name>
                     <Claim.Value>{claim.value}</Claim.Value>
                   </Claim>))}
                 </React.Fragment>
-                : <p>No claims requested</p>}
+                : <p>No claims to receive</p>}
               </Claims>
             </Card>
-            <p>This information will be shared with {issuer.name}</p>
+            <p>This information will be stored in your app</p>
           </Info>
         </Content.Grid>
       </Content>
@@ -190,12 +182,18 @@ class UportLogin extends React.Component {
   }
 }
 
-const AppStoreLinks = styled.div`
-  text-align: center;
-  a {
-    display: inline-block;
-    margin: 0 5px;
-  }
+const Image = styled.img`
+  margin: 10px 0;
+  max-height: 40vh;
+  max-width: 90vw;
+  ${medium(`
+    max-width: 38vw;
+    max-height: 50vh;
+  `)}
+`;
+const CenteredRefresh = styled(Refresh)`
+  display: block;
+  margin: 0 auto;
 `;
 
-export default UportLogin;
+export default Attestation;

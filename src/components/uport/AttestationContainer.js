@@ -8,7 +8,7 @@ import {
   getUPortVerification
 } from "../../selectors";
 
-import SendAttestation from "./SendAttestation";
+import Attestation from "./Attestation";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
@@ -32,4 +32,4 @@ const mapDispatchToProp = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProp)(SendAttestation);
+export default connect(mapStateToProps, mapDispatchToProp)(Attestation);

@@ -5,7 +5,8 @@ import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
-import LoginModal from "./LoginContainer";
+import LoginModal from "../uport/LoginContainer";
+import CityLogo from "../../images/city-id-icon.svg";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -57,6 +58,15 @@ class Landing extends React.Component {
       </Card>
       <LoginModal
         show={loginModal}
+        heading="First things first"
+        description="To login scan the QR code with  the uPort app."
+        infoHeading="You're logging in to"
+        issuer={{
+          heading: "City ID",
+          subHeading: "The City of Cleverland",
+          name: "The City of Cleverland",
+          logo: CityLogo
+        }}
         onClose={this.hideLoginModal}
         onLoginSuccess={this.handleLoginSuccess} />
     </Wrapper>)

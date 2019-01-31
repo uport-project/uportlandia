@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 
 import * as actions from "../../actions";
 import { isLoading, getUPortLogin, getUPortMessages } from "../../selectors";
-import UPortLogin from "./Login";
+import Login from "./Login";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
@@ -28,4 +28,4 @@ const mapDispatchToProp = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProp)(UPortLogin);
+export default connect(mapStateToProps, mapDispatchToProp)(Login);
