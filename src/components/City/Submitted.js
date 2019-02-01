@@ -8,7 +8,7 @@ import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import CityLogo from "../../images/city-id-icon.svg";
+import CityLogo from "../../images/city-logo.png";
 
 class Landing extends React.Component {
   constructor(props) {

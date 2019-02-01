@@ -7,9 +7,9 @@ import Header from "../shared/Header";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "./Card";
-import CityIDIcon from "../../images/city-id-icon.svg";
-import DiplomaIcon from "../../images/diploma-icon.svg";
-import EmploymentIcon from "../../images/employment-icon.svg";
+import CityIDIcon from "../../images/city-logo.png";
+import DiplomaIcon from "../../images/university-logo.png";
+import EmploymentIcon from "../../images/employment-logo.png";
 
 class Home extends React.Component {
   render() {
@@ -19,7 +19,7 @@ class Home extends React.Component {
           <h1>Welcome to Cleverland</h1>
           <p>
             Cleverland is an interactive demo that let’s you discover how to
-            empower your identity using uPort. Collect claims. Unclock new
+            empower your identity using uPort. Collect claims. Unlock new
             services. Manage your own data.
           </p>
         </Hero.Content>

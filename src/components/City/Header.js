@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
-import CityIDIcon from "../../images/city-id-icon.svg";
+import CityIDIcon from "../../images/city-logo.png";
 
 class Header extends React.Component {
   render() {

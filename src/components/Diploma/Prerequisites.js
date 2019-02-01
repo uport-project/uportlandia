@@ -8,7 +8,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
-import CityLogo from "../../images/city-id-icon.svg";
+import CityLogo from "../../images/city-logo.png";
 
 class Prerequisites extends React.Component {
   render() {

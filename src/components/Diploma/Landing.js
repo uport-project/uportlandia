@@ -6,7 +6,7 @@ import { Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
-import UniLogo from "../../images/diploma-icon.svg";
+import UniLogo from "../../images/university-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 
 class Landing extends React.Component {

@@ -6,7 +6,7 @@ import { Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
-import CityLogo from "../../images/city-id-icon.svg";
+import CityLogo from "../../images/city-logo.png";
 
 class Landing extends React.Component {
   constructor(props) {

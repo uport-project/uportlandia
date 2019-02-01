@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
-import UniIcon from "../../images/diploma-icon.svg";
+import UniIcon from "../../images/university-logo.png";
 
 class Header extends React.Component {
   render() {

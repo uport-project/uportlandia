@@ -7,7 +7,7 @@ import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import itunesImg from "../../images/itunes.svg";
 import playStoreImg from "../../images/playstore.png";
-import CityLogo from "../../images/city-id-icon.svg";
+import CityLogo from "../../images/city-logo.png";
 
 export const Modal = styled.div`
   bottom: 0;

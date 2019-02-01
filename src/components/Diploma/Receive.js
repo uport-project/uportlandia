@@ -8,7 +8,7 @@ import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import UniLogo from "../../images/diploma-icon.svg";
+import UniLogo from "../../images/university-logo.png";
 
 class Landing extends React.Component {
   constructor(props) {
