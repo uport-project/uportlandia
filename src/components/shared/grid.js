@@ -46,9 +46,13 @@ export const small = styles => `
   */
 
 export const Container = styled.div`
-  margin: 0 30px;
+  margin: 0;
   max-width: 1200px;
-  ${xlarge("margin: 0 auto;")}
+  width: 100%;
+  ${small("padding: 0 20px;")}
+  ${xlarge(`
+    margin: 0 auto;
+  `)}
 `;
 
 /**

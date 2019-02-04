@@ -4,6 +4,7 @@ import { default as styled, css } from "styled-components";
 import shortId from "shortid";
 
 import * as theme from "./theme";
+import ArrowLeft from "../../images/arrow-left.svg";
 
 export const Form = styled.form``;
 Form.displayName = "Form";
@@ -96,6 +97,13 @@ export const LinkButton = styled(Link)`
 `;
 LinkButton.displayName = "LinkButton";
 
+export const TextButton = styled(Button)`
+  background: none;
+  border: none;
+  box-shadow: none;
+`;
+TextButton.displayName = "TextButton";
+
 const FormGroupWrapper = styled.div`
   ${Label} {
     margin-bottom: 10px;
@@ -145,3 +153,35 @@ export class FormGroup extends React.PureComponent {
     </FormGroupWrapper>);
   }
 }
+
+export const ContentLayout = styled.div`
+  background-color: ${theme.colors.lightBg2};
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 80px 1fr 40px;
+`;
+
+export const BackButton = props => {
+  const { url, onClick, label } = props;
+  return (<BackButtonRow>
+    {url
+      ? <Link to={url}>{label || "Back"}</Link>
+      : <TextButton onClick={onClick}>Back</TextButton>}
+  </BackButtonRow>);
+};
+
+const BackButtonRow = styled.div`
+  font-size: 0.875rem;
+  padding-top: 20px;
+  a {
+    text-decoration: none;
+    &::before {
+      content: "";
+      display: inline-block;
+      background: transparent url(${ArrowLeft}) 0 4px no-repeat;
+      height: 1em;
+      width: 2em;
+
+    }
+  }
+`;

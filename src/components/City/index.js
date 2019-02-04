@@ -9,34 +9,43 @@ import FormSubmitted from "./SubmittedContainer";
 import ClaimReceived from "./ClaimReceivedContainer";
 import Footer from "../shared/Footer";
 import * as theme from "../shared/theme";
+import { ContentLayout, BackButton } from "../shared/elements";
 import { Container, Grid, Col } from "../shared/grid";
 import CityLogo from "../../images/city-logo.png";
 
 class City extends React.Component {
   render() {
-    return (<Wrapper>
+    return (<ContentLayout>
       <Header title="The City of Cleverland" logo={CityLogo} />
       <Container>
         <Switch>
-          <Route path="/city" exact component={Landing} />
+          <Route path="/city" exact>
+            <React.Fragment>
+              <BackButton url="/" />
+              <Landing />
+            </React.Fragment>
+          </Route>
           <Route path="/city/login" exact>
             login
           </Route>
-          <Route path="/city/personalinfo" exact component={PersonalInfo} />
+          <Route path="/city/personalinfo" exact>
+            <React.Fragment>
+              <BackButton url="/city" />
+              <PersonalInfo />
+            </React.Fragment>
+          </Route>
           <Route path="/city/submitted" exact component={FormSubmitted} />
-          <Route path="/city/complete" exact component={ClaimReceived} />
+          <Route path="/city/complete" exact>
+            <React.Fragment>
+              <BackButton url="/" label="Back to Home" />
+              <ClaimReceived />
+            </React.Fragment>
+          </Route>
         </Switch>
       </Container>
       <Footer />
-    </Wrapper>)
+    </ContentLayout>)
   }
 }
-
-const Wrapper = styled.div`
-  background-color: ${theme.colors.lightBg2};
-  min-height: 100vh;
-  display: grid;
-  grid-template-rows: 80px 1fr 40px;
-`;
 
 export default City;

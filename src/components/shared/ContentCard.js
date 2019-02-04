@@ -2,14 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "./theme";
-import { Container } from "./grid";
+import { Container, medium } from "./grid";
 import { Button, Form } from "./elements";
 
-const ContentCard = ({ children }) => (<Wrapper>
-  <Content className="card__content">
-    {children}
-  </Content>
-</Wrapper>);
+const ContentCard = props => {
+  const { backLink=null, children, onGoBack } = props;
+  return (<Wrapper>
+    <Content className="card__content">
+      {children}
+    </Content>
+  </Wrapper>);
+};
 
 const Wrapper = styled.div`
   padding: 30px 0;
@@ -21,10 +24,15 @@ const Content = styled.div`
   border-radius: 5px;
   box-shadow: 0px 0px 8px rgba(63, 61, 75, 0.1);
   color: ${theme.colors.text};
-  margin: 0 auto;
-  padding: 30px 40px 80px;
+  margin: 0;
   position: relative;
-  max-width: 580px;
+  padding: 30px 20px 80px;
+  width: 100%;
+  ${medium(`
+    padding: 30px 40px 80px;
+    max-width: 580px;
+    margin: 0 auto;
+  `)}
 
   h2 {
     font-size: 1.5rem;

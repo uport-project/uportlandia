@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Body from "../shared/Body";
 import Header from "./Header";
 import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Container, Grid, Col, medium } from "../shared/grid";
 import Card from "./Card";
 import CityIDIcon from "../../images/city-logo.png";
 import DiplomaIcon from "../../images/university-logo.png";
@@ -13,7 +13,7 @@ import EmploymentIcon from "../../images/company-logo.png";
 
 class Home extends React.Component {
   render() {
-    return (<div>
+    return (<Wrapper>
       <Hero>
         <Hero.Content>
           <h1>Welcome to Cleverland</h1>
@@ -95,21 +95,24 @@ class Home extends React.Component {
             url="" />
         </Container>
       </Cards>
-    </div>)
+    </Wrapper>)
   }
 }
 
+const Wrapper = styled.div``;
 const Hero = styled.div`
   background: ${theme.main.bg};
 `;
 Hero.Content = styled(Container)`
   background: ${theme.main.bg};
-  padding: 40px 15vw 100px;
   position: relative;
   text-align: center;
   top: 60px;
   z-index: 2;
 
+  ${Wrapper} & {
+    padding: 40px 15vw 100px;
+  }
   h1 {
     font-size: 2.375rem;
     font-weight: bold;
@@ -126,7 +129,8 @@ const Cards = styled.div`
   z-index: 1;
 
   ${Container} {
-    padding: 90px 0 40px;
+    padding: 40px 20px;
+    ${medium("padding: 90px 0 40px;")}
   }
 `;
 
