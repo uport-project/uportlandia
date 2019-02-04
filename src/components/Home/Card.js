@@ -114,7 +114,11 @@ const Header = styled.div`;
   `)}
 `;
 Header.Icon = styled.img`
+  border-radius: 15px;
+  box-shadow: inset 0 0 2px rgba(114, 114, 114, 0.3);
   grid-area: 1 / 1 / 3 / 2;
+  max-height: 100%;
+  max-width: 100%;
 `;
 Header.Sup = styled.p`
   align-self: flex-end;

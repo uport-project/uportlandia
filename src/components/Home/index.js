@@ -3,13 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Body from "../shared/Body";
-import Header from "../shared/Header";
+import Header from "./Header";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "./Card";
 import CityIDIcon from "../../images/city-logo.png";
 import DiplomaIcon from "../../images/university-logo.png";
-import EmploymentIcon from "../../images/employment-logo.png";
+import EmploymentIcon from "../../images/company-logo.png";
 
 class Home extends React.Component {
   render() {
@@ -62,7 +62,7 @@ class Home extends React.Component {
             }, {
               name: "Graduation Year"
             }]}
-            url="/diploma" />
+            url="/university" />
 
           <Card
             name="Employment Verification"

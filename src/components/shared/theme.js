@@ -1,11 +1,13 @@
 export const header = {
-  bg: "#5F627D",
-  textColor: "#fff"
+  bg: "#F0F0F0",
+  textColor: "#1E1E1E",
+  separatorColor: "#dbdbdb"
 };
 
 export const footer = {
-  bg: "#5F627D",
-  textColor: "#fff"
+  bg: "#F0F0F0",
+  textColor: "#1E1E1E",
+  separatorColor: "#dbdbdb"
 };
 
 export const colors = {

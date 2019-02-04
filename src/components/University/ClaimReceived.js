@@ -7,7 +7,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import SuccessIcon from "../../images/congratulations.svg";
-import EmploymentLogo from "../../images/employment-logo.png";
+import EmploymentLogo from "../../images/company-logo.png";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
