@@ -67,6 +67,7 @@ const Wrapper = styled.div`
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;
+  max-width: 100%;
 `;
 
 export default ClaimReceived;

@@ -40,11 +40,16 @@ class Landing extends React.Component {
     const { cityIdClaim, isLoggedIn } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
+    const CTA = () => (<Card.CTA>
+      <Button className="long" secondary onClick={this.showAttestationModal}>
+        Receive your Diploma
+      </Button>
+    </Card.CTA>);
+
     return (<Wrapper>
-      <Card>
+      <Card CTA={CTA}>
         <h2>Good News!</h2>
         <p>Your claims were succesfully shared with the Cleverland University.</p>
-
         <SuccessImage src={SuccessIcon} />
         <hr />
         <h4>What’s next?</h4>
@@ -53,10 +58,6 @@ class Landing extends React.Component {
           and wherever you need them. The University of Cleverland is going
           to send your new claims to your uPort app.
         </p>
-        <Button className="long" secondary onClick={this.showAttestationModal}>
-          Receive your Diploma
-        </Button>
-      </Card>
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
@@ -91,6 +92,7 @@ class Landing extends React.Component {
             "Graduation Year": "2019"
           }
         }} />
+      </Card>
     </Wrapper>)
   }
 }

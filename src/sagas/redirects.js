@@ -34,19 +34,19 @@ function redirectToCityIdReceived() {
 }
 
 function redirectToDiplomaHome() {
-  history.push("/diploma");
+  history.push("/university");
 }
 
 function redirectToDiplomaRequirement() {
-  history.push("/diploma/prerequisites");
+  history.push("/university/prerequisites");
 }
 
 function redirectToReceiveDiploma() {
-  history.push("/diploma/receive");
+  history.push("/university/receive");
 }
 
 function redirectToDiplomaReceived() {
-  history.push("/diploma/complete");
+  history.push("/university/complete");
 }
 
 export default function* handleRedirects() {

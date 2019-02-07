@@ -24,7 +24,6 @@ class ClaimReceived extends React.Component {
         <h2>Congratulations!</h2>
         <p>You received your Diploma claims.
           Your claims are stored in your uPort app.</p>
-
         <SuccessImage src={SuccessIcon} />
         <hr />
         <h4>More than Diploma...</h4>
@@ -66,6 +65,7 @@ const Wrapper = styled.div`
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;
+  max-width: 100%;
 `;
 
 export default ClaimReceived;

@@ -40,12 +40,16 @@ class Landing extends React.Component {
     const { data } = this.props;
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
+    const CTA = () => (<Card.CTA>
+      <Button className="long" secondary onClick={this.showAttestationModal}>
+        Receive City ID
+      </Button>
+    </Card.CTA>);
     return (<Wrapper>
-      <Card>
+      <Card CTA={CTA}>
         <h2>Good News!</h2>
         <p>Your information has been succesfully verified. Your City ID is
           ready to be issued.</p>
-
         <SuccessImage src={SuccessIcon} />
         <hr />
         <h4>What’s next?</h4>
@@ -54,9 +58,6 @@ class Landing extends React.Component {
           whenever and wherever you need them. The City of Cleverland is
           going to send your new ID claims to your uPort app.
         </p>
-        <Button className="long" secondary onClick={this.showAttestationModal}>
-          Receive City ID
-        </Button>
       </Card>
       <AttestationModal
         heading="Check your device"

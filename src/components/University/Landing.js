@@ -37,8 +37,14 @@ class Landing extends React.Component {
   render() {
     const { profile, redirectToCityIdForm } = this.props;
     const { loginModal } = this.state;
+    const CTA = () => (<Card.CTA>
+      <Button className="long" secondary onClick={this.showLoginModal}>
+        Share Your Information
+      </Button>
+    </Card.CTA>);
+
     return (<Wrapper>
-      <Card>
+      <Card CTA={CTA}>
         <h2>Get a digital verification of your diploma</h2>
         <ul>
           <li>Share your educational information easily in your job interview
@@ -55,9 +61,6 @@ class Landing extends React.Component {
             <li>Receive your Diploma claims!</li>
           </ol>
         </Box>
-        <Button className="long" secondary onClick={this.showLoginModal}>
-          Share Your Information
-        </Button>
       </Card>
       <LoginModal
         show={loginModal}

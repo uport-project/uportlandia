@@ -156,7 +156,7 @@ export class FormGroup extends React.PureComponent {
 
 export const ContentLayout = styled.div`
   background-color: ${theme.colors.lightBg2};
-  min-height: 100vh;
+  height: 100vh;
   display: grid;
   grid-template-rows: 80px 1fr 40px;
 `;

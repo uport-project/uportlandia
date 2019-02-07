@@ -31,8 +31,13 @@ class Landing extends React.Component {
   render() {
     const { profile, redirectToCityIdForm } = this.props;
     const { loginModal } = this.state;
+    const CTA = () => (<Card.CTA>
+      {profile && profile.did
+        ? <Button className="long" secondary onClick={redirectToCityIdForm}>Continue</Button>
+        : <Button className="long" secondary onClick={this.showLoginModal}>Log In</Button>}
+      </Card.CTA>);
     return (<Wrapper>
-      <Card>
+      <Card CTA={CTA}>
         <h2>Join thousands of fellow Cleverland citizens!</h2>
         <ul>
           <li>Get things done without leaving your home. No more standing in
@@ -52,9 +57,6 @@ class Landing extends React.Component {
             <li>Receive your City ID!</li>
           </ol>
         </Box>
-        {profile && profile.did
-          ? <Button className="long" secondary onClick={redirectToCityIdForm}>Continue</Button>
-          : <Button className="long" secondary onClick={this.showLoginModal}>Log In</Button>}
       </Card>
       <LoginModal
         show={loginModal}

@@ -52,7 +52,7 @@ const Separator = styled.div`
   border-top: solid 1px ${theme.header.separatorColor};
   bottom: 0;
   height: 1px;
-  left: 80px;
+  left: 100px;
   position: absolute;
   right: 0;
 `;

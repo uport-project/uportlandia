@@ -48,8 +48,8 @@ export const small = styles => `
 export const Container = styled.div`
   margin: 0;
   max-width: 1200px;
+  padding: 0 20px;
   width: 100%;
-  ${small("padding: 0 20px;")}
   ${xlarge(`
     margin: 0 auto;
   `)}

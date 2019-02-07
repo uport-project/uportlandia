@@ -40,7 +40,7 @@ const Service = styled.div`
 Service.Header = styled.div`
   display: grid;
   grid-gap: 0 10px;
-  grid-template-columns: 60px 1fr 100px;
+  grid-template-columns: 60px 1fr 40px;
   grid-template-rows: 2fr 3fr;
 `;
 Service.Header.Main = styled.h4`
@@ -59,6 +59,8 @@ Service.Header.Sub = styled.div`
 `;
 Service.Logo = styled.img`
   grid-area: 1 / 1 / 3 / 2;
+  max-height: 60px;
+  max-width: 60px;
 `;
 Service.Link = styled(Link)`
   align-self: center;

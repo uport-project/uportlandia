@@ -103,11 +103,13 @@ class PersonalInfo extends React.Component {
       dob,
       toc
     } = details;
-    // if(!isLoggedIn)
-    //   return null;
-
+    if(!isLoggedIn)
+      return null;
+    const CTA = () => (<Card.CTA>
+      <Button className="long" secondary>Submit</Button>
+    </Card.CTA>);
     return (<Wrapper>
-      <Card>
+      <Card CTA={CTA}>
         <h2>Personal Information</h2>
         <p>Submit your information to the City of Cleverland to confirm your
           identity.</p>
@@ -175,6 +177,7 @@ class PersonalInfo extends React.Component {
                   selected={dob ? dayjs(dob, "MM/DD/YYYY").toDate() : null}
                   onChange={this.handleChangeDOB}
                   maxDate={dayjs().add(-13, "year").toDate()}
+                  withPortal
                 />
               </FormGroup>
             </Col>
@@ -198,7 +201,6 @@ class PersonalInfo extends React.Component {
             verification partners. Think about is as a background check but
             faster and more secure.
           </p>
-          <Button className="long" secondary>Submit</Button>
         </Form>
       </Card>
     </Wrapper>)
