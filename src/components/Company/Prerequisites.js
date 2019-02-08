@@ -9,6 +9,7 @@ import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
 import CityLogo from "../../images/city-logo.png";
+import UniLogo from "../../images/university-logo.png";
 
 class Prerequisites extends React.Component {
   render() {
@@ -29,6 +30,11 @@ class Prerequisites extends React.Component {
             subHeading: "The City of Cleverland",
             url: "/city",
             logo: CityLogo
+          }, {
+            heading: "Diploma",
+            subHeading: "The University of Cleverland",
+            url: "/university",
+            logo: UniLogo
           }]} />
       </Card>
 

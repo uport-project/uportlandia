@@ -126,6 +126,22 @@ export const redirectToDiplomaReceived = () => ({
   type: ACTIONS.REDIR_DIPLOMA_RCD
 });
 
+export const redirectToEmploymentHome = () => ({
+  type: ACTIONS.REDIR_EMPL_HOME
+});
+
+export const redirectToReceiveEmployment = () => ({
+  type: ACTIONS.REDIR_RCV_EMPL
+});
+
+export const redirectToEmploymentRequirement = () => ({
+  type: ACTIONS.REDIR_EMPL_PREREQ
+});
+
+export const redirectToEmploymentReceived = () => ({
+  type: ACTIONS.REDIR_EMPL_RCD
+});
+
 export const changeCityIdInfo = value => ({
   type: ACTIONS.CHANGE_CITY_ID_INFO,
   value

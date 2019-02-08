@@ -194,6 +194,8 @@ Entity.Header.Sub = styled.div`
 `;
 Entity.Logo = styled.img`
   grid-area: 1 / 1 / 3 / 2;
+  max-height: 60px;
+  max-width: 60px;
 `;
 Entity.Details = styled.div``;
 Entity.Details.Row = styled.div`

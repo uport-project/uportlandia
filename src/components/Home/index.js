@@ -10,6 +10,7 @@ import Card from "./Card";
 import CityIDIcon from "../../images/city-logo.png";
 import DiplomaIcon from "../../images/university-logo.png";
 import EmploymentIcon from "../../images/company-logo.png";
+import InsuranceIcon from "../../images/insurance-logo.png";
 
 class Home extends React.Component {
   render() {
@@ -92,7 +93,34 @@ class Home extends React.Component {
             }, {
               name: "Date of Employment"
             }]}
-            url="" />
+            url="/company" />
+
+          <Card
+            name="Insurance Coverage"
+            icon={InsuranceIcon}
+            superText="People Care Insurance LLC."
+            description="Share your insurance information easily at your doctor’s office, pharmacy or at any emergency."
+            shareClaims={[{
+              name: "First Name",
+              type: "required"
+            }, {
+              name: "Last Name",
+              type: "required"
+            }, {
+              name: "Company Name",
+              type: "required"
+            }, {
+              name: "Date of Employment",
+              type: "required"
+            }]}
+            receiveClaims={[{
+              name: "Policy Number"
+            }, {
+              name: "Group Number"
+            }, {
+              name: "Dependencies"
+            }]}
+            url="/insurance" />
         </Container>
       </Cards>
     </Wrapper>)

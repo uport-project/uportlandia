@@ -36,6 +36,10 @@ const Service = styled.div`
   border-radius: 5px;
   box-shadow: 0px 0px 8px rgba(63, 61, 75, 0.1);
   padding: 10px 20px;
+
+  & + & {
+    margin-top: 10px;
+  }
 `;
 Service.Header = styled.div`
   display: grid;

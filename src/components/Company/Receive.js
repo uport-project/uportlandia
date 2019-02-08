@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import dayjs from "dayjs";
 
 import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
@@ -8,7 +9,7 @@ import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import UniLogo from "../../images/university-logo.png";
+import Logo from "../../images/company-logo.png";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -19,16 +20,16 @@ class Landing extends React.Component {
   }
   componentDidMount() {
     if(!this.props.isLoggedIn) {
-      this.props.redirectToDiplomaHome();
+      this.props.redirectToEmploymentHome();
     } else if(!isValid(this.props.cityIdClaim).valid) {
-      this.props.redirectToDiplomaRequirement();
+      this.props.redirectToEmploymentRequirement();
     }
   }
   hideAttestationModal = () => {
     this.setState({
       attestationModal: false
     });
-    this.props.redirectToDiplomaReceived();
+    this.props.redirectToEmploymentReceived();
   }
   showAttestationModal = () => {
     this.setState({
@@ -42,20 +43,20 @@ class Landing extends React.Component {
       return null;
     const CTA = () => (<Card.CTA>
       <Button className="long" secondary onClick={this.showAttestationModal}>
-        Receive your Diploma
+        Receive your Employment Verification
       </Button>
     </Card.CTA>);
 
     return (<Wrapper>
       <Card CTA={CTA}>
         <h2>Good News!</h2>
-        <p>Your claims were succesfully shared with the Cleverland University.</p>
+        <p>Your claims were succesfully shared with Dream Job LLC.</p>
         <SuccessImage src={SuccessIcon} />
         <hr />
         <h4>What’s next?</h4>
         <p>
-          Let’s make sure you have an access to your Diploma claims whenever
-          and wherever you need them. The University of Cleverland is going
+          Let’s make sure you have an access to your employment claims whenever
+          and wherever you need them. Dream Job LLC. is going
           to send your new claims to your uPort app.
         </p>
       <AttestationModal
@@ -63,36 +64,32 @@ class Landing extends React.Component {
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "Diploma",
-          subHeading: "The University of Cleverland",
-          name: "The University of Cleverland",
-          logo: UniLogo
+          heading: "Employment Verification",
+          subHeading: "Dream Job LLC.",
+          name: "Dream Job LLC.",
+          logo: Logo
         }}
         infoDetails={[{
           heading: "Issued Date",
           name: (new Date()).toDateString()
         }]}
         claimDetails={[{
-          name: "School Name",
-          value: "The University of Cleverland",
+          name: "Company Name",
+          value: "Dream Job LLC.",
         }, {
-          name: "Program Name",
-          value: "French linguistics",
+          name: "Salary",
+          value: "$100,000",
         }, {
-          name: "Graduation Year",
-          value: "2019"
-        }, {
-          name: "Final Grades",
-          value: "B+",
+          name: "Date of Employment",
+          value: dayjs().format("MM/DD/YYYY"),
         }]}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Diploma": {
-            "School Name": "The University of Cleverland",
-            "Program Name": "French linguistics",
-            "Graduation Year": "2019",
-            "Final Grades": "B+"
+          "Employment": {
+            "Company Name": "Dream Job LLC.",
+            "Salary": "$100,000",
+            "Date of Employment": dayjs().format("MM/DD/YYYY")
           }
         }} />
       </Card>

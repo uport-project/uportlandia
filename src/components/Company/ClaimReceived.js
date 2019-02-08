@@ -7,7 +7,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import SuccessIcon from "../../images/congratulations.svg";
-import EmploymentLogo from "../../images/company-logo.png";
+import InsuranceLogo from "../../images/insurance-logo.png";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -22,22 +22,22 @@ class ClaimReceived extends React.Component {
     return (<Wrapper>
       <Card>
         <h2>Congratulations!</h2>
-        <p>You received your Diploma claims.
+        <p>You received your employment claims.
           Your claims are stored in your uPort app.</p>
         <SuccessImage src={SuccessIcon} />
         <hr />
-        <h4>More than Diploma...</h4>
+        <h4>More than employment...</h4>
         <p>
-          With your Diploma claims you gained an easy and quick access to
+          With your employment claims you gained an easy and quick access to
           numerous services and programs in Cleverland.
         </p>
         <Services
-          heading="Services that honor Diploma claims"
+          heading="Services that honor employment claims"
           data={[{
-            heading: "Employment Verification",
-            subHeading: "Dream Job LLC.",
-            url: "/company",
-            logo: EmploymentLogo
+            heading: "Insurance ",
+            subHeading: "People Care Insurance LLC.",
+            url: "/insurance",
+            logo: InsuranceLogo
           }]} />
         <Button secondary onClick={this.props.redirectToHome}>
           View All
