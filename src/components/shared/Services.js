@@ -62,6 +62,7 @@ Service.Header.Sub = styled.div`
   text-transform: uppercase;
 `;
 Service.Logo = styled.img`
+  border-radius: 15px;
   grid-area: 1 / 1 / 3 / 2;
   max-height: 60px;
   max-width: 60px;

@@ -42,7 +42,7 @@ class Attestation extends React.Component {
   }
   componentDidMount() {
     this.props.initCredentials();
-    this.props.loadProfile();
+    // this.props.loadProfile();
   }
   componentDidUpdate(prevProps, prevState) {
     const { qrData } = this.state;

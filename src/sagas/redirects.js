@@ -14,6 +14,22 @@ import {
   REDIR_RCV_EMPL,
   REDIR_EMPL_PREREQ,
   REDIR_EMPL_RCD,
+  REDIR_INSR_HOME,
+  REDIR_RCV_INSR,
+  REDIR_INSR_PREREQ,
+  REDIR_INSR_RCD,
+  REDIR_PRSC_HOME,
+  REDIR_RCV_PRSC,
+  REDIR_PRSC_PREREQ,
+  REDIR_PRSC_RCD,
+  REDIR_BUS_TKT_HOME,
+  REDIR_RCV_BUS_TKT,
+  REDIR_BUS_TKT_PREREQ,
+  REDIR_BUS_TKT_RCD,
+  REDIR_MUS_TKT_HOME,
+  REDIR_RCV_MUS_TKT,
+  REDIR_MUS_TKT_PREREQ,
+  REDIR_MUS_TKT_RCD,
   REDIR_HOME
 } from "../constants/actions";
 
@@ -69,6 +85,70 @@ function redirectToEmploymentReceived() {
   history.push("/company/complete");
 }
 
+function redirectToInsuranceHome() {
+  history.push("/insurance");
+}
+
+function redirectToInsuranceRequirement() {
+  history.push("/insurance/prerequisites");
+}
+
+function redirectToReceiveInsurance() {
+  history.push("/insurance/receive");
+}
+
+function redirectToInsuranceReceived() {
+  history.push("/insurance/complete");
+}
+
+function redirectToPrescriptionHome() {
+  history.push("/pharmacy");
+}
+
+function redirectToPrescriptionRequirement() {
+  history.push("/pharmacy/prerequisites");
+}
+
+function redirectToReceivePrescription() {
+  history.push("/pharmacy/receive");
+}
+
+function redirectToPrescriptionReceived() {
+  history.push("/pharmacy/complete");
+}
+
+function redirectToBusTicketHome() {
+  history.push("/transport");
+}
+
+function redirectToBusTicketRequirement() {
+  history.push("/transport/prerequisites");
+}
+
+function redirectToReceiveBusTicket() {
+  history.push("/transport/receive");
+}
+
+function redirectToBusTicketReceived() {
+  history.push("/transport/complete");
+}
+
+function redirectToMuseumMembershipHome() {
+  history.push("/museum");
+}
+
+function redirectToMuseumMembershipRequirement() {
+  history.push("/museum/prerequisites");
+}
+
+function redirectToReceiveMuseumMembership() {
+  history.push("/museum/receive");
+}
+
+function redirectToMuseumMembershipReceived() {
+  history.push("/museum/complete");
+}
+
 export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_CITY_HOME, redirectToCityHome);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
@@ -82,5 +162,21 @@ export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_RCV_EMPL, redirectToReceiveEmployment);
   yield spawn(takeEvery, REDIR_EMPL_PREREQ, redirectToEmploymentRequirement);
   yield spawn(takeEvery, REDIR_EMPL_RCD, redirectToEmploymentReceived);
+  yield spawn(takeEvery, REDIR_INSR_HOME, redirectToInsuranceHome);
+  yield spawn(takeEvery, REDIR_RCV_INSR, redirectToReceiveInsurance);
+  yield spawn(takeEvery, REDIR_INSR_PREREQ, redirectToInsuranceRequirement);
+  yield spawn(takeEvery, REDIR_INSR_RCD, redirectToInsuranceReceived);
+  yield spawn(takeEvery, REDIR_PRSC_HOME, redirectToPrescriptionHome);
+  yield spawn(takeEvery, REDIR_RCV_PRSC, redirectToReceivePrescription);
+  yield spawn(takeEvery, REDIR_PRSC_PREREQ, redirectToPrescriptionRequirement);
+  yield spawn(takeEvery, REDIR_PRSC_RCD, redirectToPrescriptionReceived);
+  yield spawn(takeEvery, REDIR_BUS_TKT_HOME, redirectToBusTicketHome);
+  yield spawn(takeEvery, REDIR_RCV_BUS_TKT, redirectToReceiveBusTicket);
+  yield spawn(takeEvery, REDIR_BUS_TKT_PREREQ, redirectToBusTicketRequirement);
+  yield spawn(takeEvery, REDIR_BUS_TKT_RCD, redirectToBusTicketReceived);
+  yield spawn(takeEvery, REDIR_MUS_TKT_HOME, redirectToMuseumMembershipHome);
+  yield spawn(takeEvery, REDIR_RCV_MUS_TKT, redirectToReceiveMuseumMembership);
+  yield spawn(takeEvery, REDIR_MUS_TKT_PREREQ, redirectToMuseumMembershipRequirement);
+  yield spawn(takeEvery, REDIR_MUS_TKT_RCD, redirectToMuseumMembershipReceived);
   yield spawn(takeEvery, REDIR_HOME, redirectToHome);
 }

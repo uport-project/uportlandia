@@ -142,6 +142,71 @@ export const redirectToEmploymentReceived = () => ({
   type: ACTIONS.REDIR_EMPL_RCD
 });
 
+export const redirectToInsuranceHome = () => ({
+  type: ACTIONS.REDIR_INSR_HOME
+});
+
+export const redirectToReceiveInsurance = () => ({
+  type: ACTIONS.REDIR_RCV_INSR
+});
+
+export const redirectToInsuranceRequirement = () => ({
+  type: ACTIONS.REDIR_INSR_PREREQ
+});
+
+export const redirectToInsuranceReceived = () => ({
+  type: ACTIONS.REDIR_INSR_RCD
+});
+
+
+export const redirectToPrescriptionHome = () => ({
+  type: ACTIONS.REDIR_PRSC_HOME
+});
+
+export const redirectToReceivePrescription = () => ({
+  type: ACTIONS.REDIR_RCV_PRSC
+});
+
+export const redirectToPrescriptionRequirement = () => ({
+  type: ACTIONS.REDIR_PRSC_PREREQ
+});
+
+export const redirectToPrescriptionReceived = () => ({
+  type: ACTIONS.REDIR_PRSC_RCD
+});
+
+export const redirectToBusTicketHome = () => ({
+  type: ACTIONS.REDIR_BUS_TKT_HOME
+});
+
+export const redirectToReceiveBusTicket = () => ({
+  type: ACTIONS.REDIR_RCV_BUS_TKT
+});
+
+export const redirectToBusTicketRequirement = () => ({
+  type: ACTIONS.REDIR_BUS_TKT_PREREQ
+});
+
+export const redirectToBusTicketReceived = () => ({
+  type: ACTIONS.REDIR_BUS_TKT_RCD
+});
+
+export const redirectToMuseumMembershipHome = () => ({
+  type: ACTIONS.REDIR_MUS_TKT_HOME
+});
+
+export const redirectToReceiveMuseumMembership = () => ({
+  type: ACTIONS.REDIR_RCV_MUS_TKT
+});
+
+export const redirectToMuseumMembershipRequirement = () => ({
+  type: ACTIONS.REDIR_MUS_TKT_PREREQ
+});
+
+export const redirectToMuseumMembershipReceived = () => ({
+  type: ACTIONS.REDIR_MUS_TKT_RCD
+});
+
 export const changeCityIdInfo = value => ({
   type: ACTIONS.CHANGE_CITY_ID_INFO,
   value

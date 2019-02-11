@@ -164,7 +164,7 @@ export const Card = styled.div`
   padding: 20px;
 `;
 export const Entity = styled.div`
-  hr {
+  & > hr {
     border: none;
     border-top: solid 1px ${theme.colors.border};
     left: -5%;
@@ -193,6 +193,7 @@ Entity.Header.Sub = styled.div`
   text-transform: uppercase;
 `;
 Entity.Logo = styled.img`
+  border-radius: 15px;
   grid-area: 1 / 1 / 3 / 2;
   max-height: 60px;
   max-width: 60px;

@@ -6,6 +6,10 @@ import HomePage from "../pages/Home";
 import CityPage from "../pages/City";
 import UniversityPage from "../pages/University";
 import CompanyPage from "../pages/Company";
+import InsurancePage from "../pages/Insurance";
+import PharmacyPage from "../pages/Pharmacy";
+import TransportPage from "../pages/Transport";
+import MuseumPage from "../pages/Museum";
 
 export default () => (<Router history={history}>
   <Switch>
@@ -13,5 +17,9 @@ export default () => (<Router history={history}>
     <Route path="/city" component={CityPage} />
     <Route path="/university" component={UniversityPage} />
     <Route path="/company" component={CompanyPage} />
+    <Route path="/insurance" component={InsurancePage} />
+    <Route path="/pharmacy" component={PharmacyPage} />
+    <Route path="/transport" component={TransportPage} />
+    <Route path="/museum" component={MuseumPage} />
   </Switch>
 </Router>);
