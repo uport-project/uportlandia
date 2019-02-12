@@ -1,3 +1,8 @@
+export const homeHeader = {
+  bg: "#5C50CA",
+  textColor: "#fff",
+};
+
 export const header = {
   bg: "#F0F0F0",
   textColor: "#1E1E1E",

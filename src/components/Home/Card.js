@@ -21,12 +21,17 @@ class HomeCard extends React.Component {
     } = this.props;
     return (<Card>
       <Content>
-        <Header>
-          <Header.Icon src={icon} alt={name} />
-          <Header.Sup>{superText}</Header.Sup>
-          <Header.Name>{name}</Header.Name>
-        </Header>
-        <Description>{description}</Description>
+        <Padded>
+          <Header>
+            <Header.Icon src={icon} alt={name} />
+            <Header.Sup>{superText}</Header.Sup>
+            <Header.Name>{name}</Header.Name>
+          </Header>
+          <DescriptionRow>
+            <Description>{description}</Description>
+            <LinkButton to={url}>Get Started</LinkButton>
+          </DescriptionRow>
+        </Padded>
         <ClaimLists>
           <ShareClaims>
             <ShareClaimsIcon />
@@ -35,10 +40,18 @@ class HomeCard extends React.Component {
               {shareClaims && shareClaims.length
                 ? shareClaims.map(claim => (<Claim key={claim.name}>
                     <Claim.Name>{claim.name}</Claim.Name>
-                    <Claim.Type>{claim.type}</Claim.Type>
+                    <Claim.Entity>
+                      Issued by <Claim.Entity.Name>{claim.issuedBy[0]}</Claim.Entity.Name>
+                      {claim.issuedBy.length > 1
+                      ? <React.Fragment>
+                          {" ... "}
+                          <a href="javascript:;">{claim.issuedBy.length-1}{" more"}</a>
+                        </React.Fragment>
+                      : null}
+                    </Claim.Entity>
                   </Claim>))
                 : <Claim>
-                    <Claim.Type>No claims requested</Claim.Type>
+                    <Claim.Entity>No claims requested</Claim.Entity>
                   </Claim>}
             </ul>
           </ShareClaims>
@@ -48,13 +61,24 @@ class HomeCard extends React.Component {
             <ul>
               {receiveClaims.map(claim => (<Claim key={claim.name}>
                 <Claim.Name>{claim.name}</Claim.Name>
+                {claim.honoredBy
+                  ? <Claim.Entity>
+                    Honored by <Claim.Entity.Name>{claim.honoredBy[0]}</Claim.Entity.Name>
+                    {claim.honoredBy.length > 1
+                      ? <React.Fragment>
+                          {" ... "}
+                          <a href="javascript:;">{claim.honoredBy.length-1}{" more"}</a>
+                        </React.Fragment>
+                      : null}
+                  </Claim.Entity>
+                  : <Claim.Entity>
+                    No other services honor this claim yet
+                  </Claim.Entity>}
               </Claim>))}
             </ul>
           </ReceiveClaims>
         </ClaimLists>
-        <LinkButton to={url}>Get Started</LinkButton>
       </Content>
-      <AltColorBG />
     </Card>)
   }
 }
@@ -66,15 +90,10 @@ const Card = styled.div`
   line-height: 1.25;
   margin: 50px auto 0;
   max-width: 800px;
-  ${medium(`
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-  `)}
 `;
 const Content = styled.div`
   background: ${theme.main.bg};
   border-radius: 8px;
-  padding: 30px;
   position: relative;
   ul {
     list-style-type: none;
@@ -83,17 +102,11 @@ const Content = styled.div`
   }
   ${LinkButton} {
     display: block;
-    margin: 0 auto;
+    height: 2.5rem;
   }
-  ${medium(`
-    border-radius: 8px 0 0 8px;
-    ${LinkButton} {
-      bottom: 30px;
-      margin: 0;
-      position: absolute;
-      right: -6rem;
-    }
-  `)}
+`;
+const Padded = styled.div`
+  padding: 30px;
 `;
 const AltColorBG = styled.div`
   background: ${theme.colors.cardAltBg};
@@ -134,10 +147,24 @@ Header.Name = styled.h2`
   font-weight: bold;
   grid-area: 2 / 2 / 3 / 3;
 `;
+const DescriptionRow = styled.div`
+  align-items: center;
+  margin-top: 15px;
+  text-align: center;
+  ${medium(`
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    text-align: left;
+  `)}
+`;
 const Description = styled.p`
-  margin: 15px 0 35px;
+  margin: 20px 0;
+  ${medium("margin: 0 20px 0 0;")}
 `;
 const ClaimLists = styled.div`
+  background: ${theme.colors.cardAltBg};
+  border-radius: 0 0 8px 8px;
+  padding: 30px;
   ${medium(`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -167,10 +194,10 @@ const ShareClaims = styled.div`
 `;
 const ReceiveClaims = styled(ShareClaims)``;
 const Claim = styled.li`
-  display: flex;
+  // display: flex;
   padding-left: 30px;
   & + & {
-    margin-top: 5px;
+    margin-top: 10px;
   }
 `;
 Claim.Name = styled.div`
@@ -178,6 +205,14 @@ Claim.Name = styled.div`
 `;
 Claim.Type = styled.div`
   color: ${theme.colors.mutedText};
+`;
+Claim.Entity = styled.div`
+  color: ${theme.colors.mutedText};
+  font-size: 0.75rem;
+`;
+Claim.Entity.Name = styled.span`
+  color: ${theme.colors.mutedText2};
+  font-weight: 500;
 `;
 
 export default HomeCard;

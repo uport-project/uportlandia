@@ -14,17 +14,23 @@ import InsuranceIcon from "../../images/insurance-logo.png";
 import PharmacyIcon from "../../images/pharmacy-logo.png";
 import TransportIcon from "../../images/transport-logo.png";
 import MuseumIcon from "../../images/museum-logo.png";
+import HeroImage from "../../images/home-hero.png";
 
 class Home extends React.Component {
   render() {
     return (<Wrapper>
       <Hero>
+        <Hero.BannerContainer>
+          <Hero.Banner src={HeroImage} />
+        </Hero.BannerContainer>
         <Hero.Content>
           <h1>Welcome to Cleverland</h1>
           <p>
-            Cleverland is an interactive demo that let’s you discover how to
-            empower your identity using uPort. Collect claims. Unlock new
-            services. Manage your own data.
+            In the smart city of the future, gone are the days of having to
+            take time out of your day to stand in long lines to get anything
+            accomplished. After creating your identity, everything from going
+            to a doctor to visiting a museum can be done safely and securely
+            from anywhere at any time from your uPort app.
           </p>
         </Hero.Content>
       </Hero>
@@ -36,9 +42,11 @@ class Home extends React.Component {
             superText="The City of Cleverland"
             description="Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services."
             receiveClaims={[{
-              name: "Address"
+              name: "Address",
+              honoredBy: ["The University of Cleverland", "People Care Insurance LLC", "Cleverland Museum of Modern Art", "Cleverland City Transit", "Your Health Medical Center"]
             }, {
-              name: "Date of Birth"
+              name: "Date of Birth",
+              honoredBy: ["The University of Cleverland", "People Care Insurance LLC", "Cleverland Museum of Modern Art", "Cleverland City Transit", "Your Health Medical Center"]
             }]}
             url="/city" />
 
@@ -49,22 +57,26 @@ class Home extends React.Component {
             description="Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program."
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Date of Birth",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }]}
             receiveClaims={[{
-              name: "School Name"
+              name: "School Name",
+              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
             }, {
-              name: "Program Name"
+              name: "Program Name",
+              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
             }, {
-              name: "Final Grades"
+              name: "Final Grades",
+              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
             }, {
-              name: "Graduation Year"
+              name: "Graduation Year",
+              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
             }]}
             url="/university" />
 
@@ -75,22 +87,23 @@ class Home extends React.Component {
             description="Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease."
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "School Name",
-              type: "required"
+              issuedBy: ["The University of Cleverland"]
             }, {
               name: "Program Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The University of Cleverland"]
             }, {
               name: "Final Grades",
-              type: "optional"
+              issuedBy: ["The University of Cleverland"]
             }]}
             receiveClaims={[{
-              name: "Company Name"
+              name: "Company Name",
             }, {
               name: "Salary"
             }, {
@@ -105,23 +118,26 @@ class Home extends React.Component {
             description="Share your insurance information easily at your doctor’s office, pharmacy or at any emergency."
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Company Name",
-              type: "required"
+              issuedBy: ["Dream Job LLC"]
             }, {
               name: "Date of Employment",
-              type: "required"
+              issuedBy: ["Dream Job LLC"]
             }]}
             receiveClaims={[{
-              name: "Policy Number"
+              name: "Policy Number",
+              honoredBy: ["Your Health Medical Center"]
             }, {
-              name: "Group Number"
+              name: "Group Number",
+              honoredBy: ["Your Health Medical Center"]
             }, {
-              name: "Dependencies"
+              name: "Dependencies",
+              honoredBy: ["Your Health Medical Center"]
             }]}
             url="/insurance" />
 
@@ -132,19 +148,24 @@ class Home extends React.Component {
             description="No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time."
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Policy Number",
-              type: "required"
+              type: "required",
+              issuedBy: ["People Care Insurance LLC"]
             }, {
               name: "Group Number",
-              type: "required"
+              type: "required",
+              issuedBy: ["People Care Insurance LLC"]
             }, {
               name: "Dependencies",
-              type: "required"
+              type: "required",
+              issuedBy: ["People Care Insurance LLC"]
             }]}
             receiveClaims={[{
               name: "Presciption Drug"
@@ -158,19 +179,24 @@ class Home extends React.Component {
             description="Are you a Cleverland citizen? Alumni of The Cleverland University? Get your montly bus ticket for free and enjoy the city trasportation!"
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Address",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Date of Birth",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Graduation Year",
-              type: "required"
+              type: "required",
+              issuedBy: ["The University of Cleverland"]
             }]}
             receiveClaims={[{
               name: "Monthly Bus Ticket"
@@ -184,16 +210,20 @@ class Home extends React.Component {
             description="Get a free membership with your City ID."
             shareClaims={[{
               name: "First Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Last Name",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Address",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }, {
               name: "Date of Birth",
-              type: "required"
+              type: "required",
+              issuedBy: ["The City of Cleverland"]
             }]}
             receiveClaims={[{
               name: "Annual Membership"
@@ -207,17 +237,30 @@ class Home extends React.Component {
 
 const Wrapper = styled.div``;
 const Hero = styled.div`
-  background: ${theme.main.bg};
-`;
-Hero.Content = styled(Container)`
-  background: ${theme.main.bg};
+  background: ${theme.gradient1};
   position: relative;
-  text-align: center;
-  top: 60px;
+`;
+Hero.BannerContainer = styled.div`
+  display: none;
+  min-height: 300px;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  ${medium("display: block;")}
+`;
+Hero.Banner = styled.img`
+  max-height: 100%;
+  max-width: 100%;
+`;
+Hero.Content = styled.div`
+  color: ${theme.homeHeader.textColor};
+  position: relative;
   z-index: 2;
+  text-align: center;
 
   ${Wrapper} & {
-    padding: 40px 15vw 100px;
+    padding: 10vh 20px;
+    ${medium("padding: 25vh 25vw 25vh;")}
   }
   h1 {
     font-size: 2.375rem;
@@ -231,12 +274,10 @@ Hero.Content = styled(Container)`
 `;
 const Cards = styled.div`
   background: ${theme.gradient1};
-  position: relative;
-  z-index: 1;
 
   ${Container} {
     padding: 40px 20px;
-    ${medium("padding: 90px 0 40px;")}
+    ${medium("padding: 50px 0 40px;")}
   }
 `;
 
