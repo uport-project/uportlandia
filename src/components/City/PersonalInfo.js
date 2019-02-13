@@ -106,7 +106,7 @@ class PersonalInfo extends React.Component {
     if(!isLoggedIn)
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary>Submit</Button>
+      <Button className="long" secondary onClick={this.handleSubmit}>Submit</Button>
     </Card.CTA>);
     return (<Wrapper>
       <Card CTA={CTA}>

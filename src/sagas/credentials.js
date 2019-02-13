@@ -26,8 +26,9 @@ let didDoc;
 let verifiedClaims = [];
 
 async function signAndUploadProfile() {
-  if(verifiedClaims.length)
+  if(verifiedClaims.length) {
     return;
+  }
   const profile = {
     name: "Cleverland",
     description: 'The City of Cleverland',
@@ -46,8 +47,8 @@ async function signAndUploadProfile() {
     sub: keypair.did,
     claim: profile
   });
-  const hash = await addFile(new Blob([ jwt ]));
-  verifiedClaims.unshift(`/ipfs/${hash}`);
+  const response = await addFile(new Blob([ jwt ]));
+  verifiedClaims.unshift(`/ipfs/${response.Hash}`);
 }
 
 function* initCredentials() {
@@ -99,6 +100,7 @@ function* sendVerification(action) {
   const claim = action.claim;
   const pushToken = profile.pushToken;
   const publicEncKey = profile.publicEncKey;
+  const callbackUrl = createChasquiUrl(callbackId);
   yield put(setLoading(SEND_VERIF, true));
   yield call(signAndUploadProfile);
   const jwt = yield call(
@@ -106,10 +108,10 @@ function* sendVerification(action) {
     {
       sub: profile.did,
       vc: verifiedClaims,
-      claim
+      claim,
+      callbackUrl
     }
   );
-  const callbackUrl = createChasquiUrl(callbackId);
   if(pushToken && publicEncKey) {
     transport.push.send(pushToken, publicEncKey)(jwt);
     yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`, true));
