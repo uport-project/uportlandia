@@ -1,13 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import shortId from "shortid";
 
 import * as theme from "../shared/theme";
 import { LinkButton } from "../shared/elements";
+import Services from "../shared/Services";
 import { medium } from "../shared/grid";
+import Tooltip from "./Tooltip";
 import shareClaimIcon from "../../images/circle-arrow-up.svg";
 import receiveClaimIcon from "../../images/circle-arrow-down.svg";
 
 class HomeCard extends React.Component {
+  constructor() {
+    super();
+    this.tid = shortId.generate();
+  }
   render() {
     const {
       name,
@@ -19,6 +26,7 @@ class HomeCard extends React.Component {
       url,
       onSubmit
     } = this.props;
+
     return (<Card>
       <Content>
         <Padded>
@@ -35,21 +43,25 @@ class HomeCard extends React.Component {
         <ClaimLists>
           <ShareClaims>
             <ShareClaimsIcon />
-            <Label>Claims to Share</Label>
+            <Label>
+              <span>Claims to</span>{" "}
+              <TooltipTrigger data-tip data-for={`share-${this.tid}`}>Share</TooltipTrigger>
+              <Tooltip id={`share-${this.tid}`} heading="Claims to Share"
+                description="Information requested by this issuer. It can be data that you issue yourself (self-verified claims) or has been issued by a 3rd party and stored in your uPort app.">
+              </Tooltip>
+            </Label>
             <ul>
               {shareClaims && shareClaims.length
-                ? shareClaims.map(claim => (<Claim key={claim.name}>
-                    <Claim.Name>{claim.name}</Claim.Name>
-                    <Claim.Entity>
-                      Issued by <Claim.Entity.Name>{claim.issuedBy[0]}</Claim.Entity.Name>
-                      {claim.issuedBy.length > 1
-                      ? <React.Fragment>
-                          {" ... "}
-                          <a href="javascript:;">{claim.issuedBy.length-1}{" more"}</a>
-                        </React.Fragment>
-                      : null}
-                    </Claim.Entity>
-                  </Claim>))
+                ? shareClaims.map(claim => {
+                    const tid = shortId.generate();
+                    return (<Claim key={claim.name}>
+                      <Claim.Name>{claim.name}</Claim.Name>
+                      <Claim.Entity>
+                        Issued by
+                        <Claim.Entity.Name>{claim.issuedBy[0].entity}</Claim.Entity.Name>
+                      </Claim.Entity>
+                    </Claim>);
+                  })
                 : <Claim>
                     <Claim.Entity>No claims requested</Claim.Entity>
                   </Claim>}
@@ -57,24 +69,38 @@ class HomeCard extends React.Component {
           </ShareClaims>
           <ReceiveClaims>
             <ReceiveClaimsIcon />
-            <Label>Claims You'll Receive</Label>
+            <Label>
+              <span>Claims you'll</span>{" "}
+              <TooltipTrigger data-tip data-for={`receive-${this.tid}`}>Receive</TooltipTrigger>
+              <Tooltip id={`receive-${this.tid}`} heading="Claims you'll Receive"
+                description="Verified information that you’ll receive from this issuer. It will be stored in your uPort app and available to share with other services that honor them.">
+              </Tooltip>
+            </Label>
             <ul>
-              {receiveClaims.map(claim => (<Claim key={claim.name}>
-                <Claim.Name>{claim.name}</Claim.Name>
-                {claim.honoredBy
-                  ? <Claim.Entity>
-                    Honored by <Claim.Entity.Name>{claim.honoredBy[0]}</Claim.Entity.Name>
-                    {claim.honoredBy.length > 1
-                      ? <React.Fragment>
-                          {" ... "}
-                          <a href="javascript:;">{claim.honoredBy.length-1}{" more"}</a>
-                        </React.Fragment>
-                      : null}
-                  </Claim.Entity>
-                  : <Claim.Entity>
-                    No other services honor this claim yet
-                  </Claim.Entity>}
-              </Claim>))}
+              {(receiveClaims || []).map(claim => {
+                return (<Claim key={claim.name}>
+                  <Claim.Name>{claim.name}</Claim.Name>
+                  {claim.honoredBy
+                    ? <Claim.Entity>
+                      Honored by <Claim.Entity.Name>{claim.honoredBy[0].entity}</Claim.Entity.Name>
+                      {claim.honoredBy.length > 1
+                        ? <React.Fragment>
+                            {" ... "}
+                            <TooltipTrigger data-tip data-for={`${claim.name}-${this.tid}`}>
+                              {claim.honoredBy.length-1}{" more"}
+                            </TooltipTrigger>
+                            <Tooltip id={`${claim.name}-${this.tid}`} heading={claim.name}
+                              description="Claim you'll receive from this issuer is honored by">
+                              <Services compact data={claim.honoredBy.slice(1)} />
+                            </Tooltip>
+                          </React.Fragment>
+                        : null}
+                    </Claim.Entity>
+                    : <Claim.Entity>
+                      No other services honor this claim yet
+                    </Claim.Entity>}
+                  </Claim>);
+                })}
             </ul>
           </ReceiveClaims>
         </ClaimLists>
@@ -183,10 +209,13 @@ const ReceiveClaimsIcon = styled(ShareClaimsIcon)`
 const Label = styled.div`
   color: ${theme.colors.heavyText};
   display: inline-block;
-  font-size: 0.75rem;
   position: relative;
   top: -5px;
-  text-transform: uppercase;
+  & > a,
+  & > span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
 `;
 const ShareClaims = styled.div`
   margin-bottom: 30px;
@@ -213,6 +242,12 @@ Claim.Entity = styled.div`
 Claim.Entity.Name = styled.span`
   color: ${theme.colors.mutedText2};
   font-weight: 500;
+`;
+const TooltipTrigger = styled.a`
+  border-bottom: dotted 1px ${theme.colors.primary};
+  color: inherit;
+  cursor: default;
+  text-decoration: none;
 `;
 
 export default HomeCard;

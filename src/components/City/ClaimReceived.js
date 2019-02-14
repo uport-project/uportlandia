@@ -6,6 +6,7 @@ import { Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
+import getDependentServices from "../../utils/getDependentServices";
 import SuccessIcon from "../../images/congratulations.svg";
 import UniLogo from "../../images/university-logo.png";
 import Services from "../shared/Services";
@@ -35,12 +36,7 @@ class ClaimReceived extends React.Component {
         </p>
         <Services
           heading="Services that honor City ID claims"
-          data={[{
-            heading: "Diploma",
-            subHeading: "The University of Cleverland",
-            url: "/diploma",
-            logo: UniLogo
-          }]} />
+          data={getDependentServices("CITY_ID")} />
         <Button secondary onClick={this.props.redirectToHome}>
           View All
         </Button>

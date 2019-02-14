@@ -27,11 +27,12 @@ let verifiedClaims = [];
 
 async function signAndUploadProfile() {
   if(verifiedClaims.length) {
+    console.log(verifiedClaims)
     return;
   }
   const profile = {
     name: "Cleverland",
-    description: 'The City of Cleverland',
+    description: "The City of Cleverland",
     url: (typeof window !== 'undefined')
       ? `${window.location.protocol}//${window.location.host}`
       : undefined,

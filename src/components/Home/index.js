@@ -7,14 +7,8 @@ import Header from "./Header";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col, medium } from "../shared/grid";
 import Card from "./Card";
-import CityIDIcon from "../../images/city-logo.png";
-import DiplomaIcon from "../../images/university-logo.png";
-import EmploymentIcon from "../../images/company-logo.png";
-import InsuranceIcon from "../../images/insurance-logo.png";
-import PharmacyIcon from "../../images/pharmacy-logo.png";
-import TransportIcon from "../../images/transport-logo.png";
-import MuseumIcon from "../../images/museum-logo.png";
 import HeroImage from "../../images/home-hero.png";
+import SERVICES from "../../constants/services";
 
 class Home extends React.Component {
   render() {
@@ -36,199 +30,14 @@ class Home extends React.Component {
       </Hero>
       <Cards>
         <Container>
-          <Card
-            name="City ID"
-            icon={CityIDIcon}
-            superText="The City of Cleverland"
-            description="Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services."
-            receiveClaims={[{
-              name: "Address",
-              honoredBy: ["The University of Cleverland", "People Care Insurance LLC", "Cleverland Museum of Modern Art", "Cleverland City Transit", "Your Health Medical Center"]
-            }, {
-              name: "Date of Birth",
-              honoredBy: ["The University of Cleverland", "People Care Insurance LLC", "Cleverland Museum of Modern Art", "Cleverland City Transit", "Your Health Medical Center"]
-            }]}
-            url="/city" />
-
-          <Card
-            name="Diploma"
-            icon={DiplomaIcon}
-            superText="The university of Cleverland"
-            description="Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program."
-            shareClaims={[{
-              name: "First Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Date of Birth",
-              issuedBy: ["The City of Cleverland"]
-            }]}
-            receiveClaims={[{
-              name: "School Name",
-              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
-            }, {
-              name: "Program Name",
-              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
-            }, {
-              name: "Final Grades",
-              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
-            }, {
-              name: "Graduation Year",
-              honoredBy: ["People Care Insurance LLC", "Dream Job LLC"]
-            }]}
-            url="/university" />
-
-          <Card
-            name="Employment Verification"
-            icon={EmploymentIcon}
-            superText="DREAM JOB LLC."
-            description="Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease."
-            shareClaims={[{
-              name: "First Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "School Name",
-              issuedBy: ["The University of Cleverland"]
-            }, {
-              name: "Program Name",
-              type: "required",
-              issuedBy: ["The University of Cleverland"]
-            }, {
-              name: "Final Grades",
-              issuedBy: ["The University of Cleverland"]
-            }]}
-            receiveClaims={[{
-              name: "Company Name",
-            }, {
-              name: "Salary"
-            }, {
-              name: "Date of Employment"
-            }]}
-            url="/company" />
-
-          <Card
-            name="Insurance Coverage"
-            icon={InsuranceIcon}
-            superText="People Care Insurance LLC."
-            description="Share your insurance information easily at your doctor’s office, pharmacy or at any emergency."
-            shareClaims={[{
-              name: "First Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Company Name",
-              issuedBy: ["Dream Job LLC"]
-            }, {
-              name: "Date of Employment",
-              issuedBy: ["Dream Job LLC"]
-            }]}
-            receiveClaims={[{
-              name: "Policy Number",
-              honoredBy: ["Your Health Medical Center"]
-            }, {
-              name: "Group Number",
-              honoredBy: ["Your Health Medical Center"]
-            }, {
-              name: "Dependencies",
-              honoredBy: ["Your Health Medical Center"]
-            }]}
-            url="/insurance" />
-
-          <Card
-            name="Presciption Drug"
-            icon={PharmacyIcon}
-            superText="Your Health Medical Center"
-            description="No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time."
-            shareClaims={[{
-              name: "First Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Policy Number",
-              type: "required",
-              issuedBy: ["People Care Insurance LLC"]
-            }, {
-              name: "Group Number",
-              type: "required",
-              issuedBy: ["People Care Insurance LLC"]
-            }, {
-              name: "Dependencies",
-              type: "required",
-              issuedBy: ["People Care Insurance LLC"]
-            }]}
-            receiveClaims={[{
-              name: "Presciption Drug"
-            }]}
-            url="/pharmacy" />
-
-          <Card
-            name="Monthly Bus Ticket"
-            icon={TransportIcon}
-            superText="Cleverland City Transit"
-            description="Are you a Cleverland citizen? Alumni of The Cleverland University? Get your montly bus ticket for free and enjoy the city trasportation!"
-            shareClaims={[{
-              name: "First Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Address",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Date of Birth",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Graduation Year",
-              type: "required",
-              issuedBy: ["The University of Cleverland"]
-            }]}
-            receiveClaims={[{
-              name: "Monthly Bus Ticket"
-            }]}
-            url="/transport" />
-
-          <Card
-            name="Annual Membership"
-            icon={MuseumIcon}
-            superText="Cleverland Museum of Modern Art"
-            description="Get a free membership with your City ID."
-            shareClaims={[{
-              name: "First Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Last Name",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Address",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }, {
-              name: "Date of Birth",
-              type: "required",
-              issuedBy: ["The City of Cleverland"]
-            }]}
-            receiveClaims={[{
-              name: "Annual Membership"
-            }]}
-            url="/museum" />
+          {Object.keys(SERVICES).map(sid => <Card key={sid}
+            name={SERVICES[sid].name}
+            icon={SERVICES[sid].icon}
+            superText={SERVICES[sid].entity}
+            description={SERVICES[sid].description}
+            shareClaims={SERVICES[sid].requiredClaims}
+            receiveClaims={SERVICES[sid].generatedClaims}
+            url={SERVICES[sid].url} />)}
         </Container>
       </Cards>
     </Wrapper>)
@@ -277,7 +86,7 @@ const Cards = styled.div`
 
   ${Container} {
     padding: 40px 20px;
-    ${medium("padding: 50px 0 40px;")}
+    ${medium("padding: 90px 0 40px;")}
   }
 `;
 

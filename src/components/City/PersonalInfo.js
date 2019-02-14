@@ -113,7 +113,7 @@ class PersonalInfo extends React.Component {
         <h2>Personal Information</h2>
         <p>Submit your information to the City of Cleverland to confirm your
           identity.</p>
-        <p>All fields are required</p>
+        <ReqdMessage>All fields are required</ReqdMessage>
         <Form onSubmit={this.handleSubmit}>
           <Grid>
             <Col span={6}>
@@ -221,6 +221,10 @@ const Wrapper = styled.div`
   .datepicker {
     ${textBoxStyle}
   }
+`;
+const ReqdMessage = styled.p`
+  color: ${theme.colors.textSecondary};
+  font-weight: 600;
 `;
 const Error = styled.div`
   background: ${theme.colors.errorBg};

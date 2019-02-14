@@ -8,6 +8,7 @@ import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import SuccessIcon from "../../images/congratulations.svg";
 import InsuranceLogo from "../../images/insurance-logo.png";
+import getDependentServices from "../../utils/getDependentServices";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -33,12 +34,7 @@ class ClaimReceived extends React.Component {
         </p>
         <Services
           heading="Services that honor employment claims"
-          data={[{
-            heading: "Insurance ",
-            subHeading: "People Care Insurance LLC.",
-            url: "/insurance",
-            logo: InsuranceLogo
-          }]} />
+          data={getDependentServices("COMPANY")} />
         <Button secondary onClick={this.props.redirectToHome}>
           View All
         </Button>
