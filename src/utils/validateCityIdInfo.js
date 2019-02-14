@@ -51,7 +51,7 @@ export default (data={}) => {
       error: "Date of birth is required"
     };
   }
-  if(!/^\d{2}\/\d{2}\/\d{4}$/.test(dob)) {
+  if(!/^\d{4}\-\d{2}\-\d{2}$/.test(dob)) {
     return {
       valid: false,
       error: "Invalid date of birth"

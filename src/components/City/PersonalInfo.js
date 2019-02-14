@@ -165,19 +165,14 @@ class PersonalInfo extends React.Component {
                 </option>))}
               </Dropdown>
             </Col>
-            <Col span={4}>
+            <Col span={5}>
               <FormGroup>
                 <Label>Date of Birth</Label>
-                <DatePicker
+                <input type="date"
                   className="datepicker"
-                  placeholderText="mm/dd/yyyy"
-                  showYearDropdown
-                  scrollableYearDropdown
-                  yearDropdownItemNumber={90}
-                  selected={dob ? dayjs(dob, "MM/DD/YYYY").toDate() : null}
-                  onChange={this.handleChangeDOB}
-                  maxDate={dayjs().add(-13, "year").toDate()}
-                  withPortal
+                  max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
+                  onChange={this.handleChange("dob")}
+                  value={dob}
                 />
               </FormGroup>
             </Col>
@@ -187,7 +182,10 @@ class PersonalInfo extends React.Component {
                   type="checkbox"
                   checked={toc}
                   onChange={this.handleChange("toc")} />
-                <span>I agree to the uPort terms and conditions</span>
+                <span>I agree to the uPort </span>
+                <a href="https://www.uport.me/terms-conditions" target="_blank">
+                  Terms and Conditions
+                </a>
               </label>
             </Col>
           </Grid>

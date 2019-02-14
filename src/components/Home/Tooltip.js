@@ -2,6 +2,8 @@ import React from "react";
 import Tooltip from "../shared/Tooltip";
 import styled from "styled-components";
 
+import { medium } from "../shared/grid";
+
 const CardTooltip = props => {
   const { id, heading, description, children } = props;
   return (<Tooltip id={id}>
@@ -14,7 +16,8 @@ const CardTooltip = props => {
 };
 
 const Container = styled.div`
-  width: 25em;
+  width: 70vw;
+  ${medium("width: 25em;")}
 `;
 const Description = styled.p`
   font-size: 0.875rem;
