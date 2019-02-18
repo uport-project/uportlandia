@@ -184,6 +184,7 @@ class Attestation extends React.Component {
 
 const Image = styled.img`
   margin: 10px 0;
+  height: calc(80vh - 300px);
   max-height: 40vh;
   max-width: 90vw;
   ${medium(`

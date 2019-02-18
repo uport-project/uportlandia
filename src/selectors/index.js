@@ -14,3 +14,4 @@ export const getDiplomaClaim = createSelector(getUPortProfile, p => p && p["Dipl
 export const getEmploymentClaim = createSelector(getUPortProfile, p => p && p["Employment"]);
 export const getInsuranceClaim = createSelector(getUPortProfile, p => p && p["Insurance"]);
 export const getBusTicketClaim = createSelector(getUPortProfile, p => p && p["BusTicket"]);
+export const showAppDownload = state => state.showAppDownload;

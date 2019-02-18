@@ -15,6 +15,11 @@ export const footer = {
   separatorColor: "#dbdbdb"
 };
 
+export const appDownloadSticky = {
+  bg: "#F86263",
+  color: "#fff"
+};
+
 export const colors = {
   primary: "#5C50CA",
   mutedText: "#9E9E9E",

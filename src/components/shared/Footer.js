@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { Container } from "../shared/grid";
 import * as theme from "../shared/theme";
-import UportLogo from "../../images/uport-logo.png";
+import UportLogo from "../../images/uport-logo.svg";
 
 class Footer extends React.Component {
   render() {
@@ -13,7 +13,7 @@ class Footer extends React.Component {
         <Bar />
         <Center>
           <Logo src={UportLogo} />
-          <p>Powered by uPort</p>
+          <p>Powered by <a href="https://uport.me" target="_blank">uPort</a></p>
         </Center>
       </Container>
     </Wrapper>)

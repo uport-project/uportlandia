@@ -211,3 +211,7 @@ export const changeCityIdInfo = value => ({
   type: ACTIONS.CHANGE_CITY_ID_INFO,
   value
 });
+
+export const hideAppDownload = () => ({
+  type: ACTIONS.HIDE_APP_DL
+});

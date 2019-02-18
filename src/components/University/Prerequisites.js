@@ -9,6 +9,7 @@ import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
 import CityLogo from "../../images/city-logo.png";
+import SERVICES from "../../constants/services";
 
 class Prerequisites extends React.Component {
   render() {
@@ -24,12 +25,7 @@ class Prerequisites extends React.Component {
         </p>
         <Services
           heading="Services that issue claims required to get the diploma"
-          data={[{
-            heading: "City ID",
-            subHeading: "The City of Cleverland",
-            url: "/city",
-            logo: CityLogo
-          }]} />
+          data={[SERVICES.CITY_ID]} />
       </Card>
 
     </Wrapper>)

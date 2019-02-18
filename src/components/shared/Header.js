@@ -10,10 +10,10 @@ class Header extends React.Component {
     const { logo, title } = this.props;
     return (<Wrapper>
       <Container>
-        <Link to="/" className="home-link">
+        <Center>
           <Logo src={logo} alt={title} />
           <h1>{title}</h1>
-        </Link>
+        </Center>
         <Separator />
       </Container>
     </Wrapper>)
@@ -30,10 +30,6 @@ const Wrapper = styled.header`
     text-decoration: none;
   }
 
-  .home-link {
-    align-items: center;
-    display: flex;
-  }
   h1 {
     font-size: 1.125rem;
     font-weight: 600;
@@ -43,6 +39,10 @@ const Wrapper = styled.header`
   ${Container} {
     position: relative;
   }
+`;
+const Center = styled.div`
+  align-items: center;
+  display: flex;
 `;
 const Logo = styled.img`
   border-radius: 15px;

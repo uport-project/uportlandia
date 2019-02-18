@@ -7,7 +7,7 @@ import * as theme from "./theme";
 class Tooltip extends React.Component {
   render() {
     const { id, children } = this.props;
-    return (<StyledTooltip id={id} delayHide={500} delayShow={100} delayUpdate={500}>
+    return (<StyledTooltip id={id}>
       {children}
     </StyledTooltip>);
   }

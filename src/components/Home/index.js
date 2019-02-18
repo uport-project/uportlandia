@@ -1,21 +1,26 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import * as actions from "../../actions";
+import { showAppDownload } from "../../selectors";
 import Body from "../shared/Body";
-import Header from "./Header";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col, medium } from "../shared/grid";
+import Header from "./Header";
 import Card from "./Card";
+import AppDownload from "./AppDownloadContainer";
 import HeroImage from "../../images/home-hero.png";
 import SERVICES from "../../constants/services";
 
 class Home extends React.Component {
   render() {
-    return (<Wrapper>
+    const { showAppDownload } = this.props;
+    return (<Wrapper extraPadding={showAppDownload}>
       <Hero>
         <Hero.BannerContainer>
-          <Hero.Banner src={HeroImage} />
+          {/*<Hero.Banner src={HeroImage} />*/}
         </Hero.BannerContainer>
         <Hero.Content>
           <h1>Welcome to Cleverland</h1>
@@ -40,11 +45,16 @@ class Home extends React.Component {
             url={SERVICES[sid].url} />)}
         </Container>
       </Cards>
+      <AppDownload />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  ${props => props.extraPadding
+    ? `padding-bottom: 6rem;`
+    : ""}
+`;
 const Hero = styled.div`
   background: ${theme.gradient1};
   position: relative;
@@ -69,7 +79,7 @@ Hero.Content = styled.div`
 
   ${Wrapper} & {
     padding: 10vh 20px;
-    ${medium("padding: 25vh 25vw 25vh;")}
+    ${medium("padding: 25vh 25vw 0;")}
   }
   h1 {
     font-size: 2.375rem;
@@ -90,4 +100,8 @@ const Cards = styled.div`
   }
 `;
 
-export default Home;
+const mapStateToProps = state => ({
+  showAppDownload: showAppDownload(state)
+});
+
+export default connect(mapStateToProps)(Home);

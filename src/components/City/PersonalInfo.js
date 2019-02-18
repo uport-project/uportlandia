@@ -170,6 +170,7 @@ class PersonalInfo extends React.Component {
                 <Label>Date of Birth</Label>
                 <input type="date"
                   className="datepicker"
+                  min="1900-01-01"
                   max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
                   onChange={this.handleChange("dob")}
                   value={dob}

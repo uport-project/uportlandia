@@ -49,6 +49,7 @@ export const ButtonClose = styled.button`
 `;
 export const Content = styled.div`
   font-size: 0.875rem;
+  height: 80vh;
   left: 50%;
   position: relative;
   top: 50%;
@@ -67,6 +68,7 @@ export const Content = styled.div`
 `;
 Content.Header = styled.div`
   align-self: center;
+  padding: 10px;
   text-align: center;
   h3 {
     font-size: 1.5rem;
@@ -82,6 +84,7 @@ Content.Grid = styled.div`
 Content.Body = styled.div``;
 Content.Footer = styled.div`
   align-items: start;
+  padding: 10px;
 `;
 export const Wrapper = styled.div`
   align-items: center;
@@ -89,7 +92,7 @@ export const Wrapper = styled.div`
   color: #fff;
   display: grid;
   grid-template-rows: 150px 1fr 150px;
-  min-height: 80vh;
+  height: 80vh;
   justify-items: center;
 `;
 export const Refresh = styled.button`
@@ -111,8 +114,9 @@ export const QRWrapper = styled.div`
   flex-direction: column;
   position: relative;
   .qr {
+    height: calc(80vh - 300px - 100px);
     margin: 10px 0;
-    max-height: 40vh;
+    // max-height: 40vh;
     max-width: 90vw;
     ${medium(`
       max-width: 38vw;
@@ -139,6 +143,8 @@ export const Waiting = styled.div`
 export const Info = styled.aside`
   background: ${theme.colors.cardAltBg};
   display: none;
+  height: 80vh;
+  overflow-y: auto;
   padding: 80px 30px 30px;
   h3 {
     font-size: 0.75rem;
@@ -168,7 +174,7 @@ export const Entity = styled.div`
     border: none;
     border-top: solid 1px ${theme.colors.border};
     left: -5%;
-    margin: 10px 0;
+    margin: 10px 0 !important;
     position: relative;
     width: 110%;
   }

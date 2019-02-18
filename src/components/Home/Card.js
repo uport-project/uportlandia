@@ -57,8 +57,7 @@ class HomeCard extends React.Component {
                     return (<Claim key={claim.name}>
                       <Claim.Name>{claim.name}</Claim.Name>
                       <Claim.Entity>
-                        Issued by
-                        <Claim.Entity.Name>{claim.issuedBy[0].entity}</Claim.Entity.Name>
+                        Issued by <Claim.Entity.Name>{claim.issuedBy[0].entity}</Claim.Entity.Name>
                       </Claim.Entity>
                     </Claim>);
                   })
@@ -87,11 +86,11 @@ class HomeCard extends React.Component {
                         ? <React.Fragment>
                             {" ... "}
                             <TooltipTrigger data-tip data-for={`${claim.name}-${this.tid}`}>
-                              {claim.honoredBy.length-1}{" more"}
+                              {` view all(${claim.honoredBy.length})`}
                             </TooltipTrigger>
                             <Tooltip id={`${claim.name}-${this.tid}`} heading={claim.name}
                               description="Claim you'll receive from this issuer is honored by">
-                              <Services compact data={claim.honoredBy.slice(1)} />
+                              <Services compact data={claim.honoredBy} />
                             </Tooltip>
                           </React.Fragment>
                         : null}

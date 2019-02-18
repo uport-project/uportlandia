@@ -53,7 +53,7 @@ class Landing extends React.Component {
           <li>Provide a verified employment history during your job interview.</li>
         </ul>
         <Box>
-          <h3>Get your Diploma claims in 3 easy steps:</h3>
+          <h3>Get your employment claims in 3 easy steps:</h3>
           <ol>
             <li>Login with uPort</li>
             <li>Share your information: last name, first name, school name,

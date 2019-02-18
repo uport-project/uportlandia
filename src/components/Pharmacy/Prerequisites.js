@@ -10,6 +10,7 @@ import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
 import CityLogo from "../../images/city-logo.png";
 import InsuranceLogo from "../../images/insurance-logo.png";
+import SERVICES from "../../constants/services";
 
 class Prerequisites extends React.Component {
   render() {
@@ -25,17 +26,7 @@ class Prerequisites extends React.Component {
         </p>
         <Services
           heading="Services that issue claims required to get insurance"
-          data={[{
-            heading: "City ID",
-            subHeading: "The City of Cleverland",
-            url: "/city",
-            logo: CityLogo
-          }, {
-            heading: "Insurance Coverage",
-            subHeading: "People Care Insurance LLC.",
-            url: "/insurance",
-            logo: InsuranceLogo
-          }]} />
+          data={[SERVICES.CITY_ID, SERVICES.INSURANCE]} />
       </Card>
 
     </Wrapper>)

@@ -17,7 +17,7 @@ const CITY_ID = {
 const DIPLOMA = {
   name: "Diploma",
   icon: DiplomaIcon,
-  entity: "The university of Cleverland",
+  entity: "The University of Cleverland",
   description: "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
   url: "/university"
 };
@@ -39,7 +39,7 @@ const INSURANCE = {
 };
 
 const PHARMACY = {
-  name: "Presciption Drug",
+  name: "Prescription Drug",
   icon: PharmacyIcon,
   entity: "Your Health Medical Center",
   description: "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
@@ -60,6 +60,14 @@ const MUSEUM = {
   entity: "Cleverland Museum of Modern Art",
   description: "Get a free membership with your City ID.",
   url: "/museum"
+};
+
+const YOURSELF = {
+  name: "Yourself, Any Issuer",
+  icon: CityIDIcon,
+  entity: "Yourself, Any Issuer",
+  description: "Yourself, Any Issuer",
+  url: "/"
 };
 
 // Claims
@@ -154,21 +162,28 @@ const DEPENDENCIES = {
 
 const PRESCRIPTION_DRUG = {
   name: "Presciption Drug",
-  issuedBy: [PHARMACY]
+  issuedBy: [PHARMACY],
+  honoredBy: [PHARMACY]
 };
 
 const BUS_TICKET = {
   name: "Monthly Bus Ticket",
-  issuedBy: [TRANSPORT]
+  issuedBy: [TRANSPORT],
+  honoredBy: [TRANSPORT]
 };
 
 const MUSEUM_MEMBERSHIP = {
   name: "Annual Membership",
-  issuedBy: [MUSEUM]
+  issuedBy: [MUSEUM],
+  honoredBy: [TRANSPORT]
 };
 
 // Attach claims to services
 CITY_ID.generatedClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH];
+CITY_ID.requiredClaims = CITY_ID.generatedClaims.map(c => ({
+  ...c,
+  issuedBy: [YOURSELF]
+}));
 DIPLOMA.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
 DIPLOMA.generatedClaims = [SCHOOL_NAME, PROGRAM_NAME, GRADUATION_YEAR, FINAL_GRADES];
 COMPANY.requiredClaims = [FIRST_NAME, LAST_NAME, SCHOOL_NAME, PROGRAM_NAME, FINAL_GRADES];
