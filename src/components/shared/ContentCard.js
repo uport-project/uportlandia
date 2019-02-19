@@ -43,11 +43,11 @@ const Content = styled.div`
   ${props => props.withCTA
     ? `
       border-radius: 5px 5px 0 0;
-      height: calc(100vh - 280px);
+      // height: calc(100vh - 280px);
     `
     : `
       border-radius: 5px;
-      height: calc(100vh - 220px);
+      // height: calc(100vh - 220px);
     `}
 
   h2 {

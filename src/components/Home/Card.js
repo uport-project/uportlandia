@@ -86,7 +86,7 @@ class HomeCard extends React.Component {
                         ? <React.Fragment>
                             {" ... "}
                             <TooltipTrigger data-tip data-for={`${claim.name}-${this.tid}`}>
-                              {` view all(${claim.honoredBy.length})`}
+                              {` view all (${claim.honoredBy.length})`}
                             </TooltipTrigger>
                             <Tooltip id={`${claim.name}-${this.tid}`} heading={claim.name}
                               description="Claim you'll receive from this issuer is honored by">
