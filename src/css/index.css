@@ -56,3 +56,6 @@ body, input, button, textarea, select {
   color: #404041;
   font-family: 'Montserrat', sans-serif;
 }
+a {
+  color: #5C50CA;
+}

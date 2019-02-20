@@ -13,7 +13,7 @@ import getDependentServices from "../../utils/getDependentServices";
 class ClaimReceived extends React.Component {
   componentDidMount() {
     if(!this.props.isLoggedIn) {
-      this.props.redirectToDiplomaHome();
+      this.props.redirectToEmploymentHome();
     }
   }
   render() {

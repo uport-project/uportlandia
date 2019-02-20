@@ -22,7 +22,7 @@ const StyledTooltip = styled(ReactTooltip)`
   font-size: 0.875rem;
   color: #1e1e1e !important;
   background-color: #fff !important;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(63, 61, 75, 0.25);
   padding: 20px;
 
   &.place-top:after {

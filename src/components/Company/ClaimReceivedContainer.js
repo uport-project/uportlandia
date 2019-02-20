@@ -14,8 +14,8 @@ const mapDispatchToProps = dispatch => ({
   redirectToHome() {
     dispatch(actions.redirectToHome());
   },
-  redirectToDiplomaHome() {
-    dispatch(actions.redirectToDiplomaHome());
+  redirectToEmploymentHome() {
+    dispatch(actions.redirectToEmploymentHome());
   }
 });
 

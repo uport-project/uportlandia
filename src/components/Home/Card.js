@@ -110,7 +110,7 @@ class HomeCard extends React.Component {
 
 const Card = styled.div`
   border-radius: 8px;
-  box-shadow: 2px 0px 1px rgba(188, 188, 188, 0.15);
+  box-shadow: 0 0 50px rgba(50, 48, 57, 0.6);
   font-size: 0.875rem;
   line-height: 1.25;
   margin: 50px auto 0;

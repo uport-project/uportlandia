@@ -81,12 +81,17 @@ class PersonalInfo extends React.Component {
     if(validation.valid) {
       this.props.onSubmit(this.state.details);
     } else {
-      this.setState({ validationError: validation.error });
-      if(this.errorHandle)
-        clearTimeout(this.errorHandle);
-      this.errorHandle = setTimeout(() => {
-        this.setState({ validationError: null });
-      }, 4000);
+      this.setState({
+        validationError: {
+          fieldId: validation.fieldId,
+          message: validation.error
+        }
+      });
+      // if(this.errorHandle)
+      //   clearTimeout(this.errorHandle);
+      // this.errorHandle = setTimeout(() => {
+      //   this.setState({ validationError: null });
+      // }, 4000);
     }
     return false;
   }
@@ -113,32 +118,41 @@ class PersonalInfo extends React.Component {
         <h2>Personal Information</h2>
         <p>Submit your information to the City of Cleverland to confirm your
           identity.</p>
-        <ReqdMessage>All fields are required</ReqdMessage>
+        <ReqdMessage>* indicates required field</ReqdMessage>
         <Form onSubmit={this.handleSubmit}>
           <Grid>
             <Col span={6}>
               <FormGroup>
-                <Label>First Name</Label>
+                <Label>First Name *</Label>
                 <Textbox
                   value={firstName}
                   onChange={this.handleChange("firstName")} />
+                <Error show={validationError && validationError.fieldId==="firstName"}>
+                  This field is required
+                </Error>
               </FormGroup>
             </Col>
             <Col span={6}>
               <FormGroup>
-                <Label>Last Name</Label>
+                <Label>Last Name *</Label>
                 <Textbox
                   value={lastName}
                   onChange={this.handleChange("lastName")} />
+                <Error show={validationError && validationError.fieldId==="lastName"}>
+                  This field is required
+                </Error>
               </FormGroup>
             </Col>
             <Col span={12}>
               <FormGroup>
-                <Label>Address</Label>
+                <Label>Address *</Label>
                 <Textbox
                   placeholder="Number, Street Name, Apt #"
                   value={address}
                   onChange={this.handleChange("address")} />
+                <Error show={validationError && validationError.fieldId==="address"}>
+                  This field is required
+                </Error>
               </FormGroup>
             </Col>
             <Col span={4}>
@@ -146,6 +160,9 @@ class PersonalInfo extends React.Component {
                 placeholder="City"
                 value={city}
                 onChange={this.handleChange("city")} />
+              <Error show={validationError && validationError.fieldId==="city"}>
+                This field is required
+              </Error>
             </Col>
             <Col span={4}>
               <Textbox
@@ -153,6 +170,9 @@ class PersonalInfo extends React.Component {
                 placeholder="Zip Code"
                 value={zipCode}
                 onChange={this.handleChange("zipCode")} />
+              <Error show={validationError && validationError.fieldId==="zipCode"}>
+                This field is required
+              </Error>
             </Col>
             <Col span={4}>
               <Dropdown
@@ -164,10 +184,13 @@ class PersonalInfo extends React.Component {
                   {c.name}
                 </option>))}
               </Dropdown>
+              <Error show={validationError && validationError.fieldId==="country"}>
+                This field is required
+              </Error>
             </Col>
             <Col span={5}>
               <FormGroup>
-                <Label>Date of Birth</Label>
+                <Label>Date of Birth *</Label>
                 <input type="date"
                   className="datepicker"
                   min="1900-01-01"
@@ -175,6 +198,9 @@ class PersonalInfo extends React.Component {
                   onChange={this.handleChange("dob")}
                   value={dob}
                 />
+                <Error show={validationError && validationError.fieldId==="dob"}>
+                  {validationError && validationError.message}
+                </Error>
               </FormGroup>
             </Col>
             <Col span={12}>
@@ -188,11 +214,11 @@ class PersonalInfo extends React.Component {
                   Terms and Conditions
                 </a>
               </label>
+              <Error show={validationError && validationError.fieldId==="toc"}>
+                You must accept the terms and Conditions
+              </Error>
             </Col>
           </Grid>
-          <Error show={Boolean(validationError)}>
-            {validationError || "&nbsp;"}
-          </Error>
           <hr />
           <h4>What’s next?</h4>
           <p>
@@ -222,15 +248,12 @@ const Wrapper = styled.div`
   }
 `;
 const ReqdMessage = styled.p`
-  color: ${theme.colors.textSecondary};
-  font-weight: 600;
+
 `;
 const Error = styled.div`
-  background: ${theme.colors.errorBg};
   font-size: 0.75rem;
   color: ${theme.colors.error};
-  margin: 20px 0 0;
-  padding: 15px;
+  margin: 5px 0 0;
   ${props => props.show ? "opacity: 1;" : "opacity: 0;"}
   transition: opacity 0.2s;
 `;

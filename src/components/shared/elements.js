@@ -174,6 +174,7 @@ const BackButtonRow = styled.div`
   font-size: 0.875rem;
   padding-top: 20px;
   a {
+    color: ${theme.colors.primary};
     text-decoration: none;
     &::before {
       content: "";
