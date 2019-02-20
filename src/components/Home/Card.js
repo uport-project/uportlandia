@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import shortId from "shortid";
 
 import * as theme from "../shared/theme";
 import { LinkButton } from "../shared/elements";
@@ -11,10 +10,6 @@ import shareClaimIcon from "../../images/circle-arrow-up.svg";
 import receiveClaimIcon from "../../images/circle-arrow-down.svg";
 
 class HomeCard extends React.Component {
-  constructor() {
-    super();
-    this.tid = shortId.generate();
-  }
   render() {
     const {
       name,
@@ -45,15 +40,14 @@ class HomeCard extends React.Component {
             <ShareClaimsIcon />
             <Label>
               <span>Claims to</span>{" "}
-              <TooltipTrigger data-tip data-for={`share-${this.tid}`}>Share</TooltipTrigger>
-              <Tooltip id={`share-${this.tid}`} heading="Claims to Share"
-                description="Information requested by this issuer. It can be data that you issue yourself (self-verified claims) or has been issued by a 3rd party and stored in your uPort app.">
-              </Tooltip>
+              <Tooltip
+                display="Share"
+                heading="Claims to Share"
+                description="Information requested by this issuer. It can be data that you issue yourself (self-verified claims) or has been issued by a 3rd party and stored in your uPort app." />
             </Label>
             <ul>
               {shareClaims && shareClaims.length
                 ? shareClaims.map(claim => {
-                    const tid = shortId.generate();
                     return (<Claim key={claim.name}>
                       <Claim.Name>{claim.name}</Claim.Name>
                       <Claim.Entity>
@@ -70,10 +64,10 @@ class HomeCard extends React.Component {
             <ReceiveClaimsIcon />
             <Label>
               <span>Claims you'll</span>{" "}
-              <TooltipTrigger data-tip data-for={`receive-${this.tid}`}>Receive</TooltipTrigger>
-              <Tooltip id={`receive-${this.tid}`} heading="Claims you'll Receive"
-                description="Verified information that you’ll receive from this issuer. It will be stored in your uPort app and available to share with other services that honor them.">
-              </Tooltip>
+              <Tooltip
+                display="Receive"
+                heading="Claims you'll Receive"
+                description="Verified information that you’ll receive from this issuer. It will be stored in your uPort app and available to share with other services that honor them." />
             </Label>
             <ul>
               {(receiveClaims || []).map(claim => {
@@ -85,11 +79,11 @@ class HomeCard extends React.Component {
                       {claim.honoredBy.length > 1
                         ? <React.Fragment>
                             {" ... "}
-                            <TooltipTrigger data-tip data-for={`${claim.name}-${this.tid}`}>
-                              {` view all (${claim.honoredBy.length})`}
-                            </TooltipTrigger>
-                            <Tooltip id={`${claim.name}-${this.tid}`} heading={claim.name}
-                              description="Claim you'll receive from this issuer is honored by">
+                            <Tooltip
+                              display={` view all (${claim.honoredBy.length})`}
+                              heading={claim.name}
+                              description="Claim you'll receive from this issuer is honored by"
+                            >
                               <Services compact data={claim.honoredBy} />
                             </Tooltip>
                           </React.Fragment>
@@ -241,12 +235,6 @@ Claim.Entity = styled.div`
 Claim.Entity.Name = styled.span`
   color: ${theme.colors.mutedText2};
   font-weight: 500;
-`;
-const TooltipTrigger = styled.a`
-  border-bottom: dotted 1px ${theme.colors.primary};
-  color: inherit;
-  cursor: default;
-  text-decoration: none;
 `;
 
 export default HomeCard;
