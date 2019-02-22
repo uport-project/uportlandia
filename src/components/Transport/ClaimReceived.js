@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
@@ -25,12 +25,20 @@ class ClaimReceived extends React.Component {
       </Button>
     </Card.CTA>);
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Congratulations!</h2>
-        <p>You received your bus ticket claims.
-          Your claims are stored in your uPort app.</p>
-        <SuccessImage src={SuccessIcon} />
-      </Card>
+      <Grid>
+        <Col span={3}>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Congratulations!</h2>
+            <p>You received your bus ticket claims.
+              Your claims are stored in your uPort app.</p>
+            <SuccessImage src={SuccessIcon} />
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
     </Wrapper>);
   }
 }

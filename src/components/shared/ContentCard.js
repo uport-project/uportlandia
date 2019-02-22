@@ -20,8 +20,8 @@ const ContentCard = props => {
 const Wrapper = styled.div`
   font-size: 0.875rem;
   line-height: 1.25;
-  margin: 0 auto;
-  max-width: 580px;
+  // margin: 0 auto;
+  // max-width: 580px;
   padding: 30px 0;
   position: relative;
 `;
@@ -36,8 +36,8 @@ const Content = styled.div`
   width: 100%;
   ${medium(`
     padding: 30px 40px;
-    max-width: 580px;
-    margin: 0 auto;
+    // max-width: 580px;
+    // margin: 0 auto;
   `)}
 
   ${props => props.withCTA

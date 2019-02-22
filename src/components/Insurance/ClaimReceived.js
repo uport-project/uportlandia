@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
@@ -21,24 +21,32 @@ class ClaimReceived extends React.Component {
     if(!this.props.isLoggedIn)
       return null;
     return (<Wrapper>
-      <Card>
-        <h2>Congratulations!</h2>
-        <p>You received your insurance claims.
-          Your claims are stored in your uPort app.</p>
-        <SuccessImage src={SuccessIcon} />
-        <hr />
-        <h4>More than insurance...</h4>
-        <p>
-          With your insurance claims you gained an easy and quick access to
-          numerous services and programs in Cleverland.
-        </p>
-        <Services
-          heading="Services that honor insurance claims"
-          data={getDependentServices("INSURANCE")} />
-        <Button secondary onClick={this.props.redirectToHome}>
-          View All
-        </Button>
-      </Card>
+      <Grid>
+        <Col span={3}>
+        </Col>
+        <Col span={6}>
+          <Card>
+            <h2>Congratulations!</h2>
+            <p>You received your insurance claims.
+              Your claims are stored in your uPort app.</p>
+            <SuccessImage src={SuccessIcon} />
+            <hr />
+            <h4>More than insurance...</h4>
+            <p>
+              With your insurance claims you gained an easy and quick access to
+              numerous services and programs in Cleverland.
+            </p>
+            <Services
+              heading="Services that honor insurance claims"
+              data={getDependentServices("INSURANCE")} />
+            <Button secondary onClick={this.props.redirectToHome}>
+              View All
+            </Button>
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
     </Wrapper>)
   }
 }

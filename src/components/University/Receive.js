@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
@@ -47,17 +47,26 @@ class Landing extends React.Component {
     </Card.CTA>);
 
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Good News!</h2>
-        <p>Your claims were succesfully shared with the Cleverland University.</p>
-        <SuccessImage src={SuccessIcon} />
-        <hr />
-        <h4>What’s next?</h4>
-        <p>
-          Let’s make sure you have an access to your Diploma claims whenever
-          and wherever you need them. The University of Cleverland is going
-          to send your new claims to your uPort app.
-        </p>
+      <Grid>
+        <Col span={3}>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Good News!</h2>
+            <p>Your claims were succesfully shared with the Cleverland University.</p>
+            <SuccessImage src={SuccessIcon} />
+            <hr />
+            <h4>What’s next?</h4>
+            <p>
+              Let’s make sure you have an access to your Diploma claims whenever
+              and wherever you need them. The University of Cleverland is going
+              to send your new claims to your uPort app.
+            </p>
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
@@ -95,7 +104,6 @@ class Landing extends React.Component {
             "Final Grades": "B+"
           }
         }} />
-      </Card>
     </Wrapper>)
   }
 }

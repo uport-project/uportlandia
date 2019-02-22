@@ -2,13 +2,17 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Grid, Col, Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { Button, Sidebar, DummyImage } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
 import Logo from "../../images/company-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 import isDiplomaValid from "../../utils/validateDiploma";
+import Dummy1 from "../../images/dummy-content-1.svg";
+import Dummy2 from "../../images/dummy-content-2.svg";
+import Dummy3 from "../../images/dummy-content-3.svg";
+import Dummy4 from "../../images/dummy-content-4.svg";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -46,22 +50,39 @@ class Landing extends React.Component {
     </Card.CTA>);
 
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Get a digital verification of your employment</h2>
-        <ul>
-          <li>Share your employment information easily while you’re applying for a mortgage or signing a new lease.</li>
-          <li>Provide a verified employment history during your job interview.</li>
-        </ul>
-        <Box>
-          <h3>Get your employment claims in 3 easy steps:</h3>
-          <ol>
-            <li>Login with uPort</li>
-            <li>Share your information: last name, first name, school name,
-              program name and final grades</li>
-            <li>Receive your employment claims!</li>
-          </ol>
-        </Box>
-      </Card>
+      <Grid>
+        <Col span={3}>
+          <Sidebar.Left>
+            <DummyImage variant={1} />
+            <DummyImage variant={2} />
+            <DummyImage variant={3} />
+          </Sidebar.Left>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Get a digital verification of your employment</h2>
+            <ul>
+              <li>Share your employment information easily while you’re applying for a mortgage or signing a new lease.</li>
+              <li>Provide a verified employment history during your job interview.</li>
+            </ul>
+            <Box>
+              <h3>Get your employment claims in 3 easy steps:</h3>
+              <ol>
+                <li>Login with uPort</li>
+                <li>Share your information: last name, first name, school name,
+                  program name and final grades</li>
+                <li>Receive your employment claims!</li>
+              </ol>
+            </Box>
+          </Card>
+        </Col>
+        <Col span={3}>
+          <Sidebar.Right>
+            <DummyImage variant={4} />
+            <DummyImage variant={3} />
+          </Sidebar.Right>
+        </Col>
+      </Grid>
       <LoginModal
         show={loginModal}
         heading="First things first"

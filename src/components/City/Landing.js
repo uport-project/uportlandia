@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Grid, Col, Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { Button, Sidebar, DummyImage } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
 import CityLogo from "../../images/city-logo.png";
 
@@ -37,27 +37,44 @@ class Landing extends React.Component {
         : <Button className="long" secondary onClick={this.showLoginModal}>Log In</Button>}
       </Card.CTA>);
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Join thousands of fellow Cleverland citizens!</h2>
-        <ul>
-          <li>Get things done without leaving your home. No more standing in
-            lines!</li>
-          <li>Access services and programs offered by the City as well as by
-            businesses</li>
-          <li>Get  a free one-year membership at many of the City's leading
-            museums, zoos, concert halls, and botanical gardens</li>
-        </ul>
-        <Box>
-          <h3>Get your City ID claims in 4 easy steps:</h3>
-          <ol>
-            <li>Login with uPort</li>
-            <li>Enter your information: last name, first name, address and date
-              of birth</li>
-            <li>Submit for immediate verification</li>
-            <li>Receive your City ID!</li>
-          </ol>
-        </Box>
-      </Card>
+      <Grid>
+        <Col span={3}>
+          <Sidebar.Left>
+            <DummyImage variant={1} />
+            <DummyImage variant={2} />
+            <DummyImage variant={3} />
+          </Sidebar.Left>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Join thousands of fellow Cleverland citizens!</h2>
+            <ul>
+              <li>Get things done without leaving your home. No more standing in
+                lines!</li>
+              <li>Access services and programs offered by the City as well as by
+                businesses</li>
+              <li>Get  a free one-year membership at many of the City's leading
+                museums, zoos, concert halls, and botanical gardens</li>
+            </ul>
+            <Box>
+              <h3>Get your City ID claims in 4 easy steps:</h3>
+              <ol>
+                <li>Login with uPort</li>
+                <li>Enter your information: last name, first name, address and date
+                  of birth</li>
+                <li>Submit for immediate verification</li>
+                <li>Receive your City ID!</li>
+              </ol>
+            </Box>
+          </Card>
+        </Col>
+        <Col span={3}>
+          <Sidebar.Right>
+            <DummyImage variant={4} />
+            <DummyImage variant={3} />
+          </Sidebar.Right>
+        </Col>
+      </Grid>
       <LoginModal
         show={loginModal}
         heading="First things first"

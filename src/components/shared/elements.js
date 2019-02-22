@@ -5,6 +5,10 @@ import shortId from "shortid";
 
 import * as theme from "./theme";
 import ArrowLeft from "../../images/arrow-left.svg";
+import Dummy1 from "../../images/dummy-content-1.svg";
+import Dummy2 from "../../images/dummy-content-2.svg";
+import Dummy3 from "../../images/dummy-content-3.svg";
+import Dummy4 from "../../images/dummy-content-4.svg";
 
 export const Form = styled.form``;
 Form.displayName = "Form";
@@ -186,3 +190,34 @@ const BackButtonRow = styled.div`
     }
   }
 `;
+
+export const Sidebar = {
+  Left: styled.div`
+    padding-top: 30px;
+  `,
+  Right: styled.div`
+    padding-top: 30px;
+  `
+};
+
+const _DummyImage = styled.img`
+  border-radius: 5px;
+  display: block;
+  max-width: 100%;
+
+  & + & {
+    margin-top: 30px;
+  }
+`;
+export class DummyImage extends React.PureComponent {
+  constructor() {
+    super();
+    this.dummyImages = {
+      Dummy1, Dummy2, Dummy3, Dummy4
+    };
+  }
+  render() {
+    const { variant=1 } = this.props;
+    return <_DummyImage src={this.dummyImages[`Dummy${variant}`]} />;
+  }
+}

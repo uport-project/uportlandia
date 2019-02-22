@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { Button, Sidebar, DummyImage } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
 import Logo from "../../images/pharmacy-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
@@ -46,19 +46,36 @@ class Landing extends React.Component {
     </Card.CTA>);
 
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Get digital verification of your prescription</h2>
-        <p>Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy.</p>
-        <Box>
-          <h3>Get your prescription claims in 3 easy steps:</h3>
-          <ol>
-            <li>Login with uPort</li>
-            <li>Share your information: last name, first name, policy number,
-              group number and dependencies</li>
-            <li>Receive your prescription claims!</li>
-          </ol>
-        </Box>
-      </Card>
+      <Grid>
+        <Col span={3}>
+          <Sidebar.Left>
+            <DummyImage variant={1} />
+            <DummyImage variant={2} />
+            <DummyImage variant={3} />
+          </Sidebar.Left>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+          <h2>Get digital verification of your prescription</h2>
+          <p>Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy.</p>
+          <Box>
+            <h3>Get your prescription claims in 3 easy steps:</h3>
+            <ol>
+              <li>Login with uPort</li>
+              <li>Share your information: last name, first name, policy number,
+                group number and dependencies</li>
+              <li>Receive your prescription claims!</li>
+            </ol>
+          </Box>
+        </Card>
+      </Col>
+        <Col span={3}>
+          <Sidebar.Right>
+            <DummyImage variant={4} />
+            <DummyImage variant={3} />
+          </Sidebar.Right>
+        </Col>
+      </Grid>
       <LoginModal
         show={loginModal}
         heading="First things first"

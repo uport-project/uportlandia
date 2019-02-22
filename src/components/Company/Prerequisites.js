@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
@@ -15,20 +15,28 @@ import SERVICES from "../../constants/services";
 class Prerequisites extends React.Component {
   render() {
     return (<Wrapper>
-      <Card>
-        <h2>Uh, something went wrong</h2>
-        <p>It looks like you don’t have required claims in your uPort app.</p>
-        <ErrorImage src={ErrorIcon} />
-        <hr />
-        <h4>Fear not!</h4>
-        <p>
-          You can get the required claims from the services below:
-        </p>
-        <Services
-          heading="Services that issue claims required to get the diploma"
-          data={[SERVICES.CITY_ID, SERVICES.DIPLOMA]} />
-      </Card>
+      <Grid>
+        <Col span={3}>
 
+        </Col>
+        <Col span={6}>
+          <Card>
+            <h2>Uh, something went wrong</h2>
+            <p>It looks like you don’t have required claims in your uPort app.</p>
+            <ErrorImage src={ErrorIcon} />
+            <hr />
+            <h4>Fear not!</h4>
+            <p>
+              You can get the required claims from the services below:
+            </p>
+            <Services
+              heading="Services that issue claims required to get the diploma"
+              data={[SERVICES.CITY_ID, SERVICES.DIPLOMA]} />
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
     </Wrapper>)
   }
 }

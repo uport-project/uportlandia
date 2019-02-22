@@ -114,120 +114,129 @@ class PersonalInfo extends React.Component {
       <Button className="long" secondary onClick={this.handleSubmit}>Submit</Button>
     </Card.CTA>);
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Personal Information</h2>
-        <p>Submit your information to the City of Cleverland to confirm your
-          identity.</p>
-        <ReqdMessage>* indicates required field</ReqdMessage>
-        <Form onSubmit={this.handleSubmit}>
-          <Grid>
-            <Col span={6}>
-              <FormGroup>
-                <Label>First Name *</Label>
-                <Textbox
-                  value={firstName}
-                  onChange={this.handleChange("firstName")} />
-                <Error show={validationError && validationError.fieldId==="firstName"}>
-                  This field is required
-                </Error>
-              </FormGroup>
-            </Col>
-            <Col span={6}>
-              <FormGroup>
-                <Label>Last Name *</Label>
-                <Textbox
-                  value={lastName}
-                  onChange={this.handleChange("lastName")} />
-                <Error show={validationError && validationError.fieldId==="lastName"}>
-                  This field is required
-                </Error>
-              </FormGroup>
-            </Col>
-            <Col span={12}>
-              <FormGroup>
-                <Label>Address *</Label>
-                <Textbox
-                  placeholder="Number, Street Name, Apt #"
-                  value={address}
-                  onChange={this.handleChange("address")} />
-                <Error show={validationError && validationError.fieldId==="address"}>
-                  This field is required
-                </Error>
-              </FormGroup>
-            </Col>
-            <Col span={4}>
-              <Textbox
-                placeholder="City"
-                value={city}
-                onChange={this.handleChange("city")} />
-              <Error show={validationError && validationError.fieldId==="city"}>
-                This field is required
-              </Error>
-            </Col>
-            <Col span={4}>
-              <Textbox
-                type="number"
-                placeholder="Zip Code"
-                value={zipCode}
-                onChange={this.handleChange("zipCode")} />
-              <Error show={validationError && validationError.fieldId==="zipCode"}>
-                This field is required
-              </Error>
-            </Col>
-            <Col span={4}>
-              <Dropdown
-                placeholder="Country"
-                value={country}
-                onChange={this.handleChange("country")}>
-                <option> Country </option>
-                {COUNTRIES.map(c => (<option key={c.code} value={c.code}>
-                  {c.name}
-                </option>))}
-              </Dropdown>
-              <Error show={validationError && validationError.fieldId==="country"}>
-                This field is required
-              </Error>
-            </Col>
-            <Col span={5}>
-              <FormGroup>
-                <Label>Date of Birth *</Label>
-                <input type="date"
-                  className="datepicker"
-                  min="1900-01-01"
-                  max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
-                  onChange={this.handleChange("dob")}
-                  value={dob}
-                />
-                <Error show={validationError && validationError.fieldId==="dob"}>
-                  {validationError && validationError.message}
-                </Error>
-              </FormGroup>
-            </Col>
-            <Col span={12}>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={toc}
-                  onChange={this.handleChange("toc")} />
-                <span>I agree to the uPort </span>
-                <a href="https://www.uport.me/terms-conditions" target="_blank">
-                  Terms and Conditions
-                </a>
-              </label>
-              <Error show={validationError && validationError.fieldId==="toc"}>
-                You must accept the terms and Conditions
-              </Error>
-            </Col>
-          </Grid>
-          <hr />
-          <h4>What’s next?</h4>
-          <p>
-            Your information will be verified by one of our identity
-            verification partners. Think about is as a background check but
-            faster and more secure.
-          </p>
-        </Form>
-      </Card>
+      <Grid>
+        <Col span={3}>
+
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Personal Information</h2>
+            <p>Submit your information to the City of Cleverland to confirm your
+              identity.</p>
+            <ReqdMessage>* indicates required field</ReqdMessage>
+            <Form onSubmit={this.handleSubmit}>
+              <Grid>
+                <Col span={6}>
+                  <FormGroup>
+                    <Label>First Name *</Label>
+                    <Textbox
+                      value={firstName}
+                      onChange={this.handleChange("firstName")} />
+                    <Error show={validationError && validationError.fieldId==="firstName"}>
+                      This field is required
+                    </Error>
+                  </FormGroup>
+                </Col>
+                <Col span={6}>
+                  <FormGroup>
+                    <Label>Last Name *</Label>
+                    <Textbox
+                      value={lastName}
+                      onChange={this.handleChange("lastName")} />
+                    <Error show={validationError && validationError.fieldId==="lastName"}>
+                      This field is required
+                    </Error>
+                  </FormGroup>
+                </Col>
+                <Col span={12}>
+                  <FormGroup>
+                    <Label>Address *</Label>
+                    <Textbox
+                      placeholder="Number, Street Name, Apt #"
+                      value={address}
+                      onChange={this.handleChange("address")} />
+                    <Error show={validationError && validationError.fieldId==="address"}>
+                      This field is required
+                    </Error>
+                  </FormGroup>
+                </Col>
+                <Col span={4}>
+                  <Textbox
+                    placeholder="City"
+                    value={city}
+                    onChange={this.handleChange("city")} />
+                  <Error show={validationError && validationError.fieldId==="city"}>
+                    This field is required
+                  </Error>
+                </Col>
+                <Col span={4}>
+                  <Textbox
+                    type="number"
+                    placeholder="Zip Code"
+                    value={zipCode}
+                    onChange={this.handleChange("zipCode")} />
+                  <Error show={validationError && validationError.fieldId==="zipCode"}>
+                    This field is required
+                  </Error>
+                </Col>
+                <Col span={4}>
+                  <Dropdown
+                    placeholder="Country"
+                    value={country}
+                    onChange={this.handleChange("country")}>
+                    <option> Country </option>
+                    {COUNTRIES.map(c => (<option key={c.code} value={c.code}>
+                      {c.name}
+                    </option>))}
+                  </Dropdown>
+                  <Error show={validationError && validationError.fieldId==="country"}>
+                    This field is required
+                  </Error>
+                </Col>
+                <Col span={5}>
+                  <FormGroup>
+                    <Label>Date of Birth *</Label>
+                    <input type="date"
+                      className="datepicker"
+                      min="1900-01-01"
+                      max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
+                      onChange={this.handleChange("dob")}
+                      value={dob}
+                    />
+                    <Error show={validationError && validationError.fieldId==="dob"}>
+                      {validationError && validationError.message}
+                    </Error>
+                  </FormGroup>
+                </Col>
+                <Col span={12}>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={toc}
+                      onChange={this.handleChange("toc")} />
+                    <span>I agree to the uPort </span>
+                    <a href="https://www.uport.me/terms-conditions" target="_blank">
+                      Terms and Conditions
+                    </a>
+                  </label>
+                  <Error show={validationError && validationError.fieldId==="toc"}>
+                    You must accept the terms and Conditions
+                  </Error>
+                </Col>
+              </Grid>
+              <hr />
+              <h4>What’s next?</h4>
+              <p>
+                Your information will be verified by one of our identity
+                verification partners. Think about is as a background check but
+                faster and more secure.
+              </p>
+            </Form>
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
     </Wrapper>)
   }
 }

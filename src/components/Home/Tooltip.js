@@ -37,7 +37,7 @@ class CardTooltip extends React.Component {
         <Backdrop />
         <Content>
           <ButtonClose onClick={this.hidePopover}>&times;</ButtonClose>
-          {children}
+          {children || <Text>{description}</Text>}
         </Content>
       </Popover>
     </React.Fragment>);
@@ -102,19 +102,22 @@ const ButtonClose = styled.button`
   font-size: 2em;
   position: absolute;
   right: 10px;
-  top: 10px;
+  top: 5px;
 `;
 const Content = styled.div`
   background: ${theme.main.bg};
   border-radius: 8px;
   font-size: 0.875rem;
   left: 50%;
-  padding: 20px 10px;
+  padding: 30px 10px;
   position: relative;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
   z-index: 920;
   width: 85vw;
+`;
+const Text = styled.p`
+  padding: 10px 0;
 `;
 
 export default CardTooltip;

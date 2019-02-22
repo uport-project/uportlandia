@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { Button, Sidebar, DummyImage } from "../shared/elements";
 import LoginModal from "../uport/LoginContainer";
 import UniLogo from "../../images/university-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
@@ -44,24 +44,41 @@ class Landing extends React.Component {
     </Card.CTA>);
 
     return (<Wrapper>
-      <Card CTA={CTA}>
-        <h2>Get a digital verification of your diploma</h2>
-        <ul>
-          <li>Share your educational information easily in your job interview
-            or when you apply to a post-graduate program.</li>
-          <li>Get discounts or free access to services and programs all
-            around the world.</li>
-        </ul>
-        <Box>
-          <h3>Get your Diploma claims in 3 easy steps:</h3>
-          <ol>
-            <li>Login with uPort</li>
-            <li>Share your information: last name, first name and date of
-              birth</li>
-            <li>Receive your Diploma claims!</li>
-          </ol>
-        </Box>
-      </Card>
+      <Grid>
+        <Col span={3}>
+          <Sidebar.Left>
+            <DummyImage variant={1} />
+            <DummyImage variant={2} />
+            <DummyImage variant={3} />
+          </Sidebar.Left>
+        </Col>
+        <Col span={6}>
+          <Card CTA={CTA}>
+            <h2>Get a digital verification of your diploma</h2>
+            <ul>
+              <li>Share your educational information easily in your job interview
+                or when you apply to a post-graduate program.</li>
+              <li>Get discounts or free access to services and programs all
+                around the world.</li>
+            </ul>
+            <Box>
+              <h3>Get your Diploma claims in 3 easy steps:</h3>
+              <ol>
+                <li>Login with uPort</li>
+                <li>Share your information: last name, first name and date of
+                  birth</li>
+                <li>Receive your Diploma claims!</li>
+              </ol>
+            </Box>
+          </Card>
+        </Col>
+        <Col span={3}>
+          <Sidebar.Right>
+            <DummyImage variant={4} />
+            <DummyImage variant={3} />
+          </Sidebar.Right>
+        </Col>
+      </Grid>
       <LoginModal
         show={loginModal}
         heading="First things first"

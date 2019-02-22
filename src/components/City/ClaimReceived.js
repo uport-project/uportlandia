@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
@@ -22,25 +22,34 @@ class ClaimReceived extends React.Component {
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     return (<Wrapper>
-      <Card>
-        <h2>Congratulations!</h2>
-        <p>You received your Cleverland City ID.
-          Your claims are stored in your uPort app.</p>
+      <Grid>
+        <Col span={3}>
 
-        <SuccessImage src={SuccessIcon} />
-        <hr />
-        <h4>More than ID...</h4>
-        <p>
-          With your City ID claims you gained an easy and quick access to
-          numerous services and programs in Cleverland.
-        </p>
-        <Services
-          heading="Services that honor City ID claims"
-          data={getDependentServices("CITY_ID")} />
-        <Button secondary onClick={this.props.redirectToHome}>
-          View All
-        </Button>
-      </Card>
+        </Col>
+        <Col span={6}>
+          <Card>
+            <h2>Congratulations!</h2>
+            <p>You received your Cleverland City ID.
+              Your claims are stored in your uPort app.</p>
+
+            <SuccessImage src={SuccessIcon} />
+            <hr />
+            <h4>More than ID...</h4>
+            <p>
+              With your City ID claims you gained an easy and quick access to
+              numerous services and programs in Cleverland.
+            </p>
+            <Services
+              heading="Services that honor City ID claims"
+              data={getDependentServices("CITY_ID")} />
+            <Button secondary onClick={this.props.redirectToHome}>
+              View All
+            </Button>
+          </Card>
+        </Col>
+        <Col span={3}>
+        </Col>
+      </Grid>
     </Wrapper>)
   }
 }
