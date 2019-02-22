@@ -47,13 +47,11 @@ class Landing extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-          <Sidebar.Left>
-            <DummyImage variant={1} />
-            <DummyImage variant={2} />
-            <DummyImage variant={3} />
-          </Sidebar.Left>
-        </Col>
+        <Sidebar.Left span={3}>
+          <DummyImage variant={1} />
+          <DummyImage variant={2} />
+          <DummyImage variant={3} />
+        </Sidebar.Left>
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Insurance Coverage</h2>
@@ -69,12 +67,10 @@ class Landing extends React.Component {
             </Box>
           </Card>
         </Col>
-        <Col span={3}>
-          <Sidebar.Right>
-            <DummyImage variant={4} />
-            <DummyImage variant={3} />
-          </Sidebar.Right>
-        </Col>
+        <Sidebar.Right span={3}>
+          <DummyImage variant={4} />
+          <DummyImage variant={3} />
+        </Sidebar.Right>
       </Grid>
       <LoginModal
         show={loginModal}

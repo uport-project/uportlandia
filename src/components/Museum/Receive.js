@@ -7,9 +7,14 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
+import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/museum-logo.png";
+
+const claimData = {
+  "Annual Membership": dayjs().format("YYYY")
+};
 
 class Receive extends React.Component {
   constructor(props) {
@@ -84,16 +89,14 @@ class Receive extends React.Component {
           name: "Cleverland Museum of Modern Art",
           logo: Logo
         }}
-        claimDetails={[{
-          name: "Annual Membership",
-          value: dayjs().format("YYYY"),
-        }]}
+        claimDetails={SERVICES.MUSEUM.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "MuseumMembership": {
-            "Year": dayjs().format("YYYY"),
-          }
+          "MuseumMembership": claimData
         }} />
     </Wrapper>)
   }

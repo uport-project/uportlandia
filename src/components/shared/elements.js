@@ -4,6 +4,7 @@ import { default as styled, css } from "styled-components";
 import shortId from "shortid";
 
 import * as theme from "./theme";
+import { medium, Col } from "./grid";
 import ArrowLeft from "../../images/arrow-left.svg";
 import Dummy1 from "../../images/dummy-content-1.svg";
 import Dummy2 from "../../images/dummy-content-2.svg";
@@ -90,6 +91,9 @@ export const Button = styled.button`
   ${props => props.secondary
     ? SecondaryButtonStyle
     : PrimaryButtonStyle}
+  ${props => props.outline
+    ? "border: solid 1px #fff;"
+    : ""}
 `;
 Button.displayName = "Button";
 
@@ -192,17 +196,20 @@ const BackButtonRow = styled.div`
 `;
 
 export const Sidebar = {
-  Left: styled.div`
+  Left: styled(Col)`
+    display: none;
+    ${medium("display: block;")}
     padding-top: 30px;
   `,
-  Right: styled.div`
+  Right: styled(Col)`
+    display: none;
+    ${medium("display: block;")}
     padding-top: 30px;
   `
 };
 
 const _DummyImage = styled.img`
   border-radius: 5px;
-  display: block;
   max-width: 100%;
 
   & + & {

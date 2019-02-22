@@ -27,7 +27,6 @@ let verifiedClaims = [];
 
 async function signAndUploadProfile() {
   if(verifiedClaims.length) {
-    console.log(verifiedClaims)
     return;
   }
   const profile = {

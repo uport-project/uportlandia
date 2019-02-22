@@ -8,9 +8,14 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidInsurance from "../../utils/validateInsurance";
+import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/insurance-logo.png";
+
+const claimData = {
+  "Prescription Drug": "Yes"
+};
 
 class Receive extends React.Component {
   constructor(props) {
@@ -86,16 +91,14 @@ class Receive extends React.Component {
           name: "Your Health Medical Center",
           logo: Logo
         }}
-        claimDetails={[{
-          name: "Prescription Drug",
-          value: true,
-        }]}
+        claimDetails={SERVICES.PHARMACY.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Prescription": {
-            "Prescription Drug": true
-          }
+          "Prescription": claimData
         }} />
     </Wrapper>)
   }

@@ -7,10 +7,17 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
+import SERVICES from "../../constants/services";
 import isValidEmployment from "../../utils/validateEmployment";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/insurance-logo.png";
+
+const claimData = {
+  "Policy Number": "0000",
+  "Group Number": "G-01",
+  "Dependencies": "... deps ..."
+};
 
 class Receive extends React.Component {
   constructor(props) {
@@ -86,24 +93,14 @@ class Receive extends React.Component {
           name: "People Care Insurance LLC.",
           logo: Logo
         }}
-        claimDetails={[{
-          name: "Policy Number",
-          value: "0000",
-        }, {
-          name: "Group Number",
-          value: "G-01",
-        }, {
-          name: "Dependencies",
-          value: "... deps ...",
-        }]}
+        claimDetails={SERVICES.INSURANCE.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Insurance": {
-            "Policy Number": "0000",
-            "Group Number": "G-01",
-            "Dependencies": "... deps ..."
-          }
+          "Insurance": claimData
         }} />
     </Wrapper>)
   }

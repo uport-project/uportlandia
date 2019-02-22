@@ -1,6 +1,8 @@
+import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
+import { Button } from "../shared/elements";
 import { medium } from "../shared/grid";
 import spin from "../../utils/spinanim";
 import loadingImg from "../../images/loading.svg";
@@ -42,10 +44,9 @@ export const ButtonClose = styled.button`
   color: #999;
   cursor: pointer;
   font-size: 2em;
-  font-weight: 700;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 5px;
+  top: 5px;
 `;
 export const Content = styled.div`
   font-size: 0.875rem;
@@ -144,8 +145,8 @@ export const Info = styled.aside`
   background: ${theme.colors.cardAltBg};
   display: none;
   height: 80vh;
-  overflow-y: auto;
-  padding: 80px 30px 30px;
+  padding: 40px 0 15px;
+
   h3 {
     font-size: 0.75rem;
     font-weight: 600;
@@ -162,6 +163,20 @@ export const Info = styled.aside`
     text-align: left;
   }
   ${medium("display: block;")}
+`;
+Info.Scrollable = styled.div`
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px 30px;
+`;
+Info.BottomBar = styled.div`
+  background: ${theme.colors.cardAltBg};
+  bottom: 0;
+  height: 10px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  z-index: 2;
 `;
 export const Card = styled.div`
   background: ${theme.main.bg};
@@ -247,4 +262,13 @@ Claim.Value = styled.div`
   text-align: right;
   text-overflow: ellipsis;
   white-space: nowrap;
+`;
+export const DoneButton = styled(Button)`
+  &, &:hover {
+    background: none;
+  }
+  border: solid 1px #fff;
+  margin: 0 auto 20px;
+  padding-left: 30px;
+  padding-right: 30px;
 `;

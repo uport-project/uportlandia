@@ -7,9 +7,16 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
+import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/company-logo.png";
+
+const claimData = {
+  "Company Name": "Dream Job LLC.",
+  "Salary": "$100,000",
+  "Date of Employment": dayjs().format("MM/DD/YYYY")
+};
 
 class Landing extends React.Component {
   constructor(props) {
@@ -82,24 +89,14 @@ class Landing extends React.Component {
           heading: "Issued Date",
           name: (new Date()).toDateString()
         }]}
-        claimDetails={[{
-          name: "Company Name",
-          value: "Dream Job LLC.",
-        }, {
-          name: "Salary",
-          value: "$100,000",
-        }, {
-          name: "Date of Employment",
-          value: dayjs().format("MM/DD/YYYY"),
-        }]}
+        claimDetails={SERVICES.COMPANY.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Employment": {
-            "Company Name": "Dream Job LLC.",
-            "Salary": "$100,000",
-            "Date of Employment": dayjs().format("MM/DD/YYYY")
-          }
+          "Employment": claimData
         }} />
     </Wrapper>)
   }

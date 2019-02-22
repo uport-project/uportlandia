@@ -144,50 +144,52 @@ class UportLogin extends React.Component {
             </Content.Footer>
           </Wrapper>
           <Info>
-            <h3>{infoHeading}</h3>
-            <Card>
-              <Entity>
-                <Entity.Header>
-                  <Entity.Logo src={issuer.logo} />
-                  <Entity.Header.Sub>{issuer.subHeading}</Entity.Header.Sub>
-                  <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
-                </Entity.Header>
-                <hr />
-                <Entity.Details>
-                  <Entity.Details.Row>
-                    <Entity.Details.Heading>Issuer</Entity.Details.Heading>
-                    <Entity.Details.Name wide>{issuer.name}</Entity.Details.Name>
-                  </Entity.Details.Row>
-                  {infoDetails && infoDetails.length
-                    ? <React.Fragment>
-                      {infoDetails.map(row => (<Entity.Details.Row key={row.heading}>
-                        <Entity.Details.Heading>{row.heading}</Entity.Details.Heading>
-                        <Entity.Details.Name wide={row.value === undefined}>
-                          {row.name}
-                        </Entity.Details.Name>
-                        {row.value
-                          ? <Entity.Details.Value>{row.value}</Entity.Details.Value>
-                          : null}
-                      </Entity.Details.Row>))}
-                    </React.Fragment>
-                    : null}
-                </Entity.Details>
-              </Entity>
-            </Card>
-            <p>You’ve never interacted with {issuer.name}</p>
-            <h3 className="marginTop">Requested Claims</h3>
-            <Card>
-              <Claims>
-              {requestedClaims && requestedClaims.length
-                ? <React.Fragment>
-                  {requestedClaims.filter(c => !c.hidden).map(claim => (<Claim key={claim.name}>
-                    <Claim.Name>{claim.name}</Claim.Name>
-                  </Claim>))}
-                </React.Fragment>
-                : <p>No claims requested</p>}
-              </Claims>
-            </Card>
-            <p>This information will be shared with {issuer.name}</p>
+            <Info.Scrollable>
+              <h3>{infoHeading}</h3>
+              <Card>
+                <Entity>
+                  <Entity.Header>
+                    <Entity.Logo src={issuer.logo} />
+                    <Entity.Header.Sub>{issuer.subHeading}</Entity.Header.Sub>
+                    <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
+                  </Entity.Header>
+                  <hr />
+                  <Entity.Details>
+                    <Entity.Details.Row>
+                      <Entity.Details.Heading>Issuer</Entity.Details.Heading>
+                      <Entity.Details.Name wide>{issuer.name}</Entity.Details.Name>
+                    </Entity.Details.Row>
+                    {infoDetails && infoDetails.length
+                      ? <React.Fragment>
+                        {infoDetails.map(row => (<Entity.Details.Row key={row.heading}>
+                          <Entity.Details.Heading>{row.heading}</Entity.Details.Heading>
+                          <Entity.Details.Name wide={row.value === undefined}>
+                            {row.name}
+                          </Entity.Details.Name>
+                          {row.value
+                            ? <Entity.Details.Value>{row.value}</Entity.Details.Value>
+                            : null}
+                        </Entity.Details.Row>))}
+                      </React.Fragment>
+                      : null}
+                  </Entity.Details>
+                </Entity>
+              </Card>
+              {/*<p>You’ve never interacted with {issuer.name}</p>*/}
+              <h3 className="marginTop">Requested Claims</h3>
+              <Card>
+                <Claims>
+                {requestedClaims && requestedClaims.length
+                  ? <React.Fragment>
+                    {requestedClaims.filter(c => !c.hidden).map(claim => (<Claim key={claim.name}>
+                      <Claim.Name>{claim.name}</Claim.Name>
+                    </Claim>))}
+                  </React.Fragment>
+                  : <p>No claims requested</p>}
+                </Claims>
+              </Card>
+              <p>This information will be shared with {issuer.name}</p>
+            </Info.Scrollable>
           </Info>
         </Content.Grid>
       </Content>

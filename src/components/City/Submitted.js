@@ -9,6 +9,7 @@ import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import CityLogo from "../../images/city-logo.png";
+import SERVICES from "../../constants/services";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -81,16 +82,10 @@ class Landing extends React.Component {
           heading: "Issued Date",
           name: (new Date()).toDateString()
         }]}
-        claimDetails={[{
-          name: "First Name",
-          value: data.firstName,
-        }, {
-          name: "Last Name",
-          value: data.lastName,
-        }, {
-          name: "Date of Birth",
-          value: data.dob,
-        }]}
+        claimDetails={SERVICES.CITY_ID.generatedClaims.map(c => ({
+          name: c.name,
+          value: data[c.id]
+        }))}
         show={data && attestationModal}
         onClose={this.hideAttestationModal}
         claim={{

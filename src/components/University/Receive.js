@@ -6,9 +6,17 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
+import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import UniLogo from "../../images/university-logo.png";
+
+const claimData = {
+  "School Name": "The University of Cleverland",
+  "Program Name": "French linguistics",
+  "Graduation Year": "2019",
+  "Final Grades": "B+"
+};
 
 class Landing extends React.Component {
   constructor(props) {
@@ -81,28 +89,14 @@ class Landing extends React.Component {
           heading: "Issued Date",
           name: (new Date()).toDateString()
         }]}
-        claimDetails={[{
-          name: "School Name",
-          value: "The University of Cleverland",
-        }, {
-          name: "Program Name",
-          value: "French linguistics",
-        }, {
-          name: "Graduation Year",
-          value: "2019"
-        }, {
-          name: "Final Grades",
-          value: "B+",
-        }]}
+        claimDetails={SERVICES.DIPLOMA.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Diploma": {
-            "School Name": "The University of Cleverland",
-            "Program Name": "French linguistics",
-            "Graduation Year": "2019",
-            "Final Grades": "B+"
-          }
+          "Diploma": claimData
         }} />
     </Wrapper>)
   }

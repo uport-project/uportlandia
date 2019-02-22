@@ -72,24 +72,28 @@ const YOURSELF = {
 
 // Claims
 const FIRST_NAME = {
+  id: "firstName",
   name: "First Name",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const LAST_NAME = {
+  id: "lastName",
   name: "Last Name",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const DATE_OF_BIRTH = {
+  id: "dob",
   name: "Date of Birth",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const ADDRESS = {
+  id: "address",
   name: "Address",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
@@ -161,7 +165,7 @@ const DEPENDENCIES = {
 };
 
 const PRESCRIPTION_DRUG = {
-  name: "Presciption Drug",
+  name: "Prescription Drug",
   issuedBy: [PHARMACY],
   honoredBy: [PHARMACY]
 };

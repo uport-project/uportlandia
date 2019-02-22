@@ -47,13 +47,11 @@ class Landing extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-          <Sidebar.Left>
-            <DummyImage variant={1} />
-            <DummyImage variant={2} />
-            <DummyImage variant={3} />
-          </Sidebar.Left>
-        </Col>
+        <Sidebar.Left span={3}>
+          <DummyImage variant={1} />
+          <DummyImage variant={2} />
+          <DummyImage variant={3} />
+        </Sidebar.Left>
         <Col span={6}>
           <Card CTA={CTA}>
           <h2>Get digital verification of your prescription</h2>

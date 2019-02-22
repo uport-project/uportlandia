@@ -8,9 +8,14 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidDiploma from "../../utils/validateDiploma";
+import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/transport-logo.png";
+
+const claimData = {
+  "Monthly Bus Ticket": dayjs().format("MMM, YYYY"),
+};
 
 class Receive extends React.Component {
   constructor(props) {
@@ -86,16 +91,14 @@ class Receive extends React.Component {
           name: "Cleverland City Transit",
           logo: Logo
         }}
-        claimDetails={[{
-          name: "Monthly Bus Ticket",
-          value: dayjs().format("MMM, YYYY"),
-        }]}
+        claimDetails={SERVICES.TRANSPORT.generatedClaims.map(c => ({
+          name: c.name,
+          value: claimData[c.name]
+        }))}
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "BusTicket": {
-            "Month": dayjs().format("MMM, YYYY"),
-          }
+          "BusTicket": claimData
         }} />
     </Wrapper>)
   }
