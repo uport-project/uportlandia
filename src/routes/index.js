@@ -10,6 +10,7 @@ import InsurancePage from "../pages/Insurance";
 import PharmacyPage from "../pages/Pharmacy";
 import TransportPage from "../pages/Transport";
 import MuseumPage from "../pages/Museum";
+import RedirectPage from "../pages/Redirect";
 
 export default () => (<Router history={history}>
   <Switch>
@@ -21,5 +22,6 @@ export default () => (<Router history={history}>
     <Route path="/pharmacy" component={PharmacyPage} />
     <Route path="/transport" component={TransportPage} />
     <Route path="/museum" component={MuseumPage} />
+    <Route path="/redirect" component={RedirectPage} />
   </Switch>
 </Router>);

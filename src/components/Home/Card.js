@@ -1,8 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
+import * as actions from "../../actions";
 import * as theme from "../shared/theme";
-import { LinkButton } from "../shared/elements";
+import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import { medium } from "../shared/grid";
 import Tooltip from "./Tooltip";
@@ -10,6 +12,9 @@ import shareClaimIcon from "../../images/circle-arrow-up.svg";
 import receiveClaimIcon from "../../images/circle-arrow-down.svg";
 
 class HomeCard extends React.Component {
+  promptAndRedirect = () => {
+    this.props.navigateToServiceWebsite(this.props.url, this.props.superText);
+  }
   render() {
     const {
       name,
@@ -32,7 +37,7 @@ class HomeCard extends React.Component {
           </Header>
           <DescriptionRow>
             <Description>{description}</Description>
-            <LinkButton to={url}>Get Started</LinkButton>
+            <Button onClick={this.promptAndRedirect}>Get Started</Button>
           </DescriptionRow>
         </Padded>
         <ClaimLists>
@@ -119,7 +124,7 @@ const Content = styled.div`
     margin: 10px 0 0;
     padding: 0;
   }
-  ${LinkButton} {
+  ${Button} {
     display: block;
     height: 2.5rem;
   }
@@ -238,4 +243,10 @@ Claim.Entity.Name = styled.span`
   font-weight: 500;
 `;
 
-export default HomeCard;
+const mapDispatchToProps = dispatch => ({
+  navigateToServiceWebsite(url, name) {
+    dispatch(actions.navigateExternal(url, name));
+  }
+});
+
+export default connect(undefined, mapDispatchToProps)(HomeCard);

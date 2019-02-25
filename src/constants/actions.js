@@ -47,3 +47,5 @@ export const REDIR_MUS_TKT_PREREQ   = "REDIR_MUS_TKT_PREREQ";
 export const REDIR_MUS_TKT_RCD      = "REDIR_MUS_TKT_RCD";
 export const CHANGE_CITY_ID_INFO    = "CHANGE_CITY_ID_INFO";
 export const HIDE_APP_DL            = "HIDE_APP_DL";
+export const NAV_EXTERNAL           = "NAV_EXTERNAL";
+export const NAV_EXTERNAL_RESET     = "NAV_EXTERNAL_RESET";

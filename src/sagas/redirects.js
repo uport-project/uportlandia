@@ -1,4 +1,4 @@
-import { spawn, takeEvery } from "redux-saga/effects"
+import { call, put, spawn, takeEvery } from "redux-saga/effects"
 import history from "../utils/history";
 
 import {
@@ -30,8 +30,10 @@ import {
   REDIR_RCV_MUS_TKT,
   REDIR_MUS_TKT_PREREQ,
   REDIR_MUS_TKT_RCD,
+  NAV_EXTERNAL,
   REDIR_HOME
 } from "../constants/actions";
+import { navigateExternalReset } from "../actions";
 
 function redirectToHome() {
   history.push("/");
@@ -149,6 +151,17 @@ function redirectToMuseumMembershipReceived() {
   history.push("/museum/complete");
 }
 
+function* navigateExternal(action) {
+  const { url, name } = action;
+  const openUrl = () => new Promise((resolve, reject) => setTimeout(() => {
+    history.push(url);
+    resolve();
+  }, 4000));
+  history.push(`/redirect`);
+  yield call(openUrl);
+  yield put(navigateExternalReset());
+}
+
 export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_CITY_HOME, redirectToCityHome);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
@@ -178,5 +191,6 @@ export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_RCV_MUS_TKT, redirectToReceiveMuseumMembership);
   yield spawn(takeEvery, REDIR_MUS_TKT_PREREQ, redirectToMuseumMembershipRequirement);
   yield spawn(takeEvery, REDIR_MUS_TKT_RCD, redirectToMuseumMembershipReceived);
+  yield spawn(takeEvery, NAV_EXTERNAL, navigateExternal);
   yield spawn(takeEvery, REDIR_HOME, redirectToHome);
 }

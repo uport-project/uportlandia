@@ -215,3 +215,13 @@ export const changeCityIdInfo = value => ({
 export const hideAppDownload = () => ({
   type: ACTIONS.HIDE_APP_DL
 });
+
+export const navigateExternal = (url, name) => ({
+  type: ACTIONS.NAV_EXTERNAL,
+  url,
+  name
+});
+
+export const navigateExternalReset = () => ({
+  type: ACTIONS.NAV_EXTERNAL_RESET
+});
