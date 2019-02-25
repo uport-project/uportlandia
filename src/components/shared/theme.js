@@ -23,7 +23,7 @@ export const appDownloadSticky = {
 export const colors = {
   primary: "#5C50CA",
   mutedText: "#9E9E9E",
-  mutedText2: "#8C8C8C",
+  mutedText2: "#9299B3",
   heavyText: "#1E1E1E",
   cardAltBg: "#EEEDF4",
   lightBg: "#F6F6F6",
@@ -63,3 +63,6 @@ export const gradient4_inactive = "linear-gradient(274.31deg, #B4DAD6 0.08%, #AF
 export const gradient5 = "linear-gradient(94.94deg, #167E73 0%, #085993 99.15%)"; // hover
 
 export const gradient6 = "linear-gradient(85.88deg, #5C50CA 2.07%, #7958D8 99.89%)";
+export const gradient7 = "linear-gradient(272.05deg, #4654D1 0.08%, #5C51CB 100%)"
+
+export const gradient8 = "linear-gradient(90deg, #7D73D5 0%, #9279DF 100%)";

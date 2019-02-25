@@ -6,6 +6,7 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
+import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations.svg";
 import EmploymentLogo from "../../images/company-logo.png";
 import getDependentServices from "../../utils/getDependentServices";
@@ -45,6 +46,7 @@ class ClaimReceived extends React.Component {
           </Card>
         </Col>
         <Col span={3}>
+          <LikeDemo />
         </Col>
       </Grid>
     </Wrapper>)

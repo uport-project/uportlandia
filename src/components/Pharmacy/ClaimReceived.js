@@ -7,6 +7,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import SuccessIcon from "../../images/congratulations.svg";
+import LikeDemo from "../shared/LikeDemo";
 import PharmacyLogo from "../../images/pharmacy-logo.png";
 
 class ClaimReceived extends React.Component {
@@ -37,6 +38,7 @@ class ClaimReceived extends React.Component {
           </Card>
         </Col>
         <Col span={3}>
+          <LikeDemo />
         </Col>
       </Grid>
     </Wrapper>)

@@ -25,7 +25,7 @@ const DIPLOMA = {
 const COMPANY = {
   name: "Employment Verification",
   icon: EmploymentIcon,
-  entity: "DREAM JOB LLC.",
+  entity: "Dream Job LLC.",
   description: "Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease.",
   url: "/company"
 };

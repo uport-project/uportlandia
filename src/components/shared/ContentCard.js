@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   line-height: 1.25;
   // margin: 0 auto;
   // max-width: 580px;
-  padding: 30px 0;
+  padding: 0 0 30px;
   position: relative;
 `;
 const Content = styled.div`
@@ -94,7 +94,7 @@ const Spacer = styled.div`
   left: 20px;
   position: absolute;
   right: 20px;
-  top: 30px;
+  top: 0;
   z-index: 9;
 `;
 

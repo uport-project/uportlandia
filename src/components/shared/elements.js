@@ -180,6 +180,7 @@ export const BackButton = props => {
 
 const BackButtonRow = styled.div`
   font-size: 0.875rem;
+  margin-bottom: 30px;
   padding-top: 20px;
   a {
     color: ${theme.colors.primary};
@@ -199,12 +200,10 @@ export const Sidebar = {
   Left: styled(Col)`
     display: none;
     ${medium("display: block;")}
-    padding-top: 30px;
   `,
   Right: styled(Col)`
     display: none;
     ${medium("display: block;")}
-    padding-top: 30px;
   `
 };
 

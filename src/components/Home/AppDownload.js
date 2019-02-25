@@ -5,7 +5,7 @@ import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
 import HandyPhone from "../../images/handy-phone.svg";
 import iTunes from "../../images/itunes.svg";
-import PlayStore from "../../images/playstore.png";
+import PlayStore from "../../images/playstore.svg";
 
 const AppDownload = ({ show, onClose }) => {
   if(!show)
@@ -17,10 +17,10 @@ const AppDownload = ({ show, onClose }) => {
       <Message>Psst... Make sure you have your phone handy with the uPort app downloaded.</Message>
       <Message mobile>Psst... Make sure you have the uPort app downloaded.</Message>
       <Row>
-        <AppStoreLink href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8">
+        <AppStoreLink href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
           <img src={iTunes} />
         </AppStoreLink>
-        <AppStoreLink href="https://play.google.com/store/apps/details?id=com.uportMobile&hl=en">
+        <AppStoreLink href="https://play.google.com/store/apps/details?id=com.uportMobile&hl=en" target="_blank">
           <img src={PlayStore} />
         </AppStoreLink>
       </Row>

@@ -11,28 +11,13 @@ import { Container, Grid, Col, medium } from "../shared/grid";
 import Header from "./Header";
 import Card from "./Card";
 import AppDownload from "./AppDownloadContainer";
-import HeroImage from "../../images/home-hero.png";
 import SERVICES from "../../constants/services";
 
 class Home extends React.Component {
   render() {
     const { showAppDownload } = this.props;
     return (<Wrapper extraPadding={showAppDownload}>
-      <Hero>
-        <Hero.BannerContainer>
-          {/*<Hero.Banner src={HeroImage} />*/}
-        </Hero.BannerContainer>
-        <Hero.Content>
-          <h1>Welcome to Cleverland</h1>
-          <p>
-            In the smart city of the future, gone are the days of having to
-            take time out of your day to stand in long lines to get anything
-            accomplished. After creating your identity, everything from going
-            to a doctor to visiting a museum can be done safely and securely
-            from anywhere at any time from your uPort app.
-          </p>
-        </Hero.Content>
-      </Hero>
+      <Header />
       <Cards>
         <Container>
           {Object.keys(SERVICES).map(sid => <Card key={sid}
@@ -54,42 +39,6 @@ const Wrapper = styled.div`
   ${props => props.extraPadding
     ? `padding-bottom: 6rem;`
     : ""}
-`;
-const Hero = styled.div`
-  background: ${theme.gradient1};
-  position: relative;
-`;
-Hero.BannerContainer = styled.div`
-  display: none;
-  min-height: 300px;
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  ${medium("display: block;")}
-`;
-Hero.Banner = styled.img`
-  max-height: 100%;
-  max-width: 100%;
-`;
-Hero.Content = styled.div`
-  color: ${theme.homeHeader.textColor};
-  position: relative;
-  z-index: 2;
-  text-align: center;
-
-  ${Wrapper} & {
-    padding: 10vh 20px;
-    ${medium("padding: 25vh 25vw 0;")}
-  }
-  h1 {
-    font-size: 2.375rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  p {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
 `;
 const Cards = styled.div`
   background: ${theme.gradient1};

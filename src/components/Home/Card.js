@@ -172,13 +172,14 @@ const DescriptionRow = styled.div`
   text-align: center;
   ${medium(`
     display: grid;
+    grid-gap: 0 70px;
     grid-template-columns: 4fr 1fr;
     text-align: left;
   `)}
 `;
 const Description = styled.p`
   margin: 20px 0;
-  ${medium("margin: 0 20px 0 0;")}
+  ${medium("margin: 0;")}
 `;
 const ClaimLists = styled.div`
   background: ${theme.colors.cardAltBg};

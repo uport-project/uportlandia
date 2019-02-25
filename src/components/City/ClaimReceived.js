@@ -10,6 +10,7 @@ import getDependentServices from "../../utils/getDependentServices";
 import SuccessIcon from "../../images/congratulations.svg";
 import UniLogo from "../../images/university-logo.png";
 import Services from "../shared/Services";
+import LikeDemo from "../shared/LikeDemo";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -48,6 +49,7 @@ class ClaimReceived extends React.Component {
           </Card>
         </Col>
         <Col span={3}>
+          <LikeDemo />
         </Col>
       </Grid>
     </Wrapper>)

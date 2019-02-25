@@ -10,7 +10,7 @@ import spin from "../../utils/spinanim";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import itunesImg from "../../images/itunes.svg";
-import playStoreImg from "../../images/playstore.png";
+import playStoreImg from "../../images/playstore.svg";
 
 import {
   Modal,
