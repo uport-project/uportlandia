@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
+import Security from "./Security";
 import {
   Button,
   Form,
@@ -235,6 +236,7 @@ class PersonalInfo extends React.Component {
           </Card>
         </Col>
         <Col span={3}>
+          <Security />
         </Col>
       </Grid>
     </Wrapper>)

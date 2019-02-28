@@ -35,11 +35,10 @@ const Wrapper = styled.div`
   background: #F0F0F0;
   height: 100vh;
   section {
-    padding: 20px;
+    padding: 20vh 0 0 0;
     text-align: center;
     ${medium(`
       margin: 0 auto;
-      padding: 20vh 0 0 0;
       text-align: left;
       width: 40vw;
     `)}

@@ -45,7 +45,7 @@ class CardTooltip extends React.Component {
 }
 
 const Trigger = styled.a`
-  border-bottom: dotted 1px ${theme.colors.primary};
+  border-bottom: dotted 1px ${theme.colors.mutedText2};
   color: inherit;
   cursor: default;
   text-decoration: none;

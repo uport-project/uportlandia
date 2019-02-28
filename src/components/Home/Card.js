@@ -127,6 +127,8 @@ const Content = styled.div`
   ${Button} {
     display: block;
     height: 2.5rem;
+    margin: 0 auto;
+    ${medium("margin: 0;")}
   }
 `;
 const Padded = styled.div`
@@ -232,10 +234,10 @@ Claim.Name = styled.div`
   margin-right: 5px;
 `;
 Claim.Type = styled.div`
-  color: ${theme.colors.mutedText};
+  color: ${theme.colors.mutedText2};
 `;
 Claim.Entity = styled.div`
-  color: ${theme.colors.mutedText};
+  color: ${theme.colors.mutedText2};
   font-size: 0.75rem;
 `;
 Claim.Entity.Name = styled.span`

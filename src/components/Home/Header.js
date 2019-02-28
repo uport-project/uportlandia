@@ -66,7 +66,8 @@ Hero.Content = styled.div`
   position: relative;
   z-index: 2;
   text-align: center;
-  ${medium("padding: 25vh 25vw 0;")}
+  ${large("padding: 25vh 25vw 0;")}
+  ${mediumOnly("padding: 10vh 25vw 0;")}
 
   h1 {
     font-size: 2.375rem;
@@ -79,7 +80,7 @@ Hero.Content = styled.div`
   }
 `;
 const LeftImageUpper = styled.img`
-  bottom: 12vh;
+  bottom: 10vh;
   display: none;
   left: 20px;
   position: absolute;
