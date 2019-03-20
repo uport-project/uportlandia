@@ -11,7 +11,7 @@ const Redirect = ({ name }) => (<Wrapper>
   <section>
     <h1>See you later!</h1>
     <p>
-      You are leaving the Cleverland dashboard and will be automatically
+      You are leaving the uPortlandia dashboard and will be automatically
       redirected to {" "}
       <strong>{name}</strong>{" "}
       website to continue.
@@ -44,7 +44,7 @@ const Wrapper = styled.div`
     `)}
   }
   h1 {
-    color: ${theme.colors.textSecondary};
+    color: ${theme.colors.primary};
     font-weight: 600;
     margin-bottom: 15px;
   }

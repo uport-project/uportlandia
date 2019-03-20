@@ -6,9 +6,10 @@ import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
+import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import SERVICES from "../../constants/services";
-import SuccessIcon from "../../images/smiley-face.svg";
+import SuccessIcon from "../../images/smiley-face-company.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/company-logo.png";
 
@@ -56,8 +57,7 @@ class Landing extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-        </Col>
+        <SidebarLeft service={SERVICES.COMPANY} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Good News!</h2>
@@ -80,10 +80,11 @@ class Landing extends React.Component {
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "Employment Verification",
-          subHeading: "Dream Job LLC.",
-          name: "Dream Job LLC.",
-          logo: Logo
+          heading: SERVICES.COMPANY.name,
+          subHeading: SERVICES.COMPANY.entity,
+          name: SERVICES.COMPANY.entity,
+          logo: SERVICES.COMPANY.icon,
+          colors: theme.colors[SERVICES.COMPANY.id]
         }}
         infoDetails={[{
           heading: "Issued Date",
@@ -96,21 +97,13 @@ class Landing extends React.Component {
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Employment": claimData
+          [SERVICES.COMPANY.claim]: claimData
         }} />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;

@@ -45,6 +45,7 @@ const Wrapper = styled.aside`
     ${large(`
       bottom: 50px;
       display: block;
+      max-width: 250px;
       position: fixed;
     `)}
   }

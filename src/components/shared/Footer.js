@@ -26,6 +26,12 @@ const Wrapper = styled.footer`
   font-size: 0.875rem;
   padding-top: 10px;
   position: relative;
+
+  a {
+    color: ${theme.footer.primary};
+    font-weight: 600;
+    text-decoration: none;
+  }
 `;
 const Bar = styled.div`
   border-top: solid 1px ${theme.footer.separatorColor};

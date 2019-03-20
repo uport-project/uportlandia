@@ -7,62 +7,112 @@ import TransportIcon from "../images/transport-logo.png";
 import MuseumIcon from "../images/museum-logo.png";
 
 const CITY_ID = {
+  id: "CITY_ID",
   name: "City ID",
   icon: CityIDIcon,
-  entity: "The City of Cleverland",
+  entity: "The City of uPortlandia",
   description: "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
-  url: "/city"
+  url: "/city",
+  claim: "uPortlandia City ID",
+  steps: [
+    "Login with uPort",
+    "Enter your information",
+    "Get verified",
+    "Receive City ID"
+  ]
 };
 
 const DIPLOMA = {
+  id: "DIPLOMA",
   name: "Diploma",
   icon: DiplomaIcon,
-  entity: "The University of Cleverland",
+  entity: "The University of uPortlandia",
   description: "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
-  url: "/university"
+  url: "/university",
+  claim: "Diploma",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Diploma"
+  ]
 };
 
 const COMPANY = {
+  id: "COMPANY",
   name: "Employment Verification",
   icon: EmploymentIcon,
   entity: "Dream Job LLC.",
   description: "Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease.",
-  url: "/company"
+  url: "/company",
+  claim: "Employment",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Employment Verification"
+  ]
 };
 
 const INSURANCE = {
+  id: "INSURANCE",
   name: "Insurance Coverage",
   icon: InsuranceIcon,
   entity: "People Care Insurance LLC.",
   description: "Share your insurance information easily at your doctor’s office, pharmacy or at any emergency.",
-  url: "/insurance"
+  url: "/insurance",
+  claim: "Insurance",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Insurance Coverage"
+  ]
 };
 
 const PHARMACY = {
+  id: "PHARMACY",
   name: "Prescription Drug",
   icon: PharmacyIcon,
   entity: "Your Health Medical Center",
   description: "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
-  url: "/pharmacy"
+  url: "/pharmacy",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Prescription Drug"
+  ]
 };
 
 const TRANSPORT = {
+  id: "TRANSPORT",
   name: "Monthly Bus Ticket",
   icon: TransportIcon,
-  entity: "Cleverland City Transit",
-  description: "Are you a Cleverland citizen? Alumni of The Cleverland University? Get your montly bus ticket for free and enjoy the city trasportation!",
-  url: "/transport"
+  entity: "uPortlandia City Transit",
+  description: "Are you a uPortlandia citizen? Alumni of The uPortlandia University? Get your montly bus ticket for free and enjoy the city trasportation!",
+  url: "/transport",
+  claim: "BusTicket",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Bus Ticket"
+  ]
 };
 
 const MUSEUM = {
+  id: "MUSEUM",
   name: "Annual Membership",
   icon: MuseumIcon,
-  entity: "Cleverland Museum of Modern Art",
+  entity: "uPortlandia Museum of Modern Art",
   description: "Get a free membership with your City ID.",
-  url: "/museum"
+  url: "/museum",
+  claim: "MuseumMembership",
+  steps: [
+    "Login with uPort",
+    "Get verified",
+    "Receive Membership"
+  ]
 };
 
 const YOURSELF = {
+  id: "YOURSELF",
   name: "Yourself, Any Issuer",
   icon: CityIDIcon,
   entity: "Yourself, Any Issuer",
@@ -189,16 +239,22 @@ CITY_ID.requiredClaims = CITY_ID.generatedClaims.map(c => ({
   issuedBy: [YOURSELF]
 }));
 DIPLOMA.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
+DIPLOMA.requiredServices = [CITY_ID];
 DIPLOMA.generatedClaims = [SCHOOL_NAME, PROGRAM_NAME, GRADUATION_YEAR, FINAL_GRADES];
 COMPANY.requiredClaims = [FIRST_NAME, LAST_NAME, SCHOOL_NAME, PROGRAM_NAME, FINAL_GRADES];
+COMPANY.requiredServices = [CITY_ID, DIPLOMA];
 COMPANY.generatedClaims = [COMPANY_NAME, SALARY, DATE_OF_EMPLOYMENT];
 INSURANCE.requiredClaims = [FIRST_NAME, LAST_NAME, COMPANY_NAME, DATE_OF_EMPLOYMENT];
+INSURANCE.requiredServices = [CITY_ID, COMPANY];
 INSURANCE.generatedClaims = [POLICY_NUMBER, GROUP_NUMBER, DEPENDENCIES];
 PHARMACY.requiredClaims = [FIRST_NAME, LAST_NAME, POLICY_NUMBER, GRADUATION_YEAR, DEPENDENCIES];
+PHARMACY.requiredServices = [CITY_ID, INSURANCE, DIPLOMA];
 PHARMACY.generatedClaims = [PRESCRIPTION_DRUG];
 TRANSPORT.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH, GRADUATION_YEAR];
+TRANSPORT.requiredServices = [CITY_ID, DIPLOMA];
 TRANSPORT.generatedClaims = [BUS_TICKET];
 MUSEUM.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH]
+MUSEUM.requiredServices = [CITY_ID];
 MUSEUM.generatedClaims = [MUSEUM_MEMBERSHIP];
 
 export default {

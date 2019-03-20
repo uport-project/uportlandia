@@ -7,7 +7,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
-import SuccessIcon from "../../images/congratulations.svg";
+import SuccessIcon from "../../images/congratulations-company.svg";
 import InsuranceLogo from "../../images/insurance-logo.png";
 import getDependentServices from "../../utils/getDependentServices";
 
@@ -36,7 +36,7 @@ class ClaimReceived extends React.Component {
             <h4>More than employment...</h4>
             <p>
               With your employment claims you gained an easy and quick access to
-              numerous services and programs in Cleverland.
+              numerous services and programs in uPortlandia.
             </p>
             <Services
               heading="Services that honor employment claims"

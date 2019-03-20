@@ -1,6 +1,6 @@
 export const homeHeader = {
   bg: "#5C50CA",
-  textColor: "#fff",
+  textColor: "#1E1E1E",
 };
 
 export const header = {
@@ -24,6 +24,7 @@ export const colors = {
   primary: "#5C50CA",
   mutedText: "#9E9E9E",
   mutedText2: "#9299B3",
+  mutedText3: "#d0d0d0",
   heavyText: "#1E1E1E",
   cardAltBg: "#EEEDF4",
   lightBg: "#F6F6F6",
@@ -33,10 +34,55 @@ export const colors = {
   secondaryButtonText: "#fff",
   text: "#1E1E1E",
   textSecondary: "#1B998B",
+  text3: "#5F627D",
   border: "#EBE9F1",
   border2: "#e4e4e4",
+  border3: "#dcdcdc",
   error: "#d24e4e",
-  errorBg: "#ffebee"
+  errorBg: "#ffebee",
+
+  CITY_ID: {
+    primary: "#1B998B",
+    mutedText: "#8DCCC5",
+    buttonBg: "linear-gradient(94.94deg, #1B998B 0%, #59C1BE 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #167C71 0%, #4BA5A3 99.15%)"
+  },
+  DIPLOMA: {
+    primary: "#E0367C",
+    mutedText: "#EEC8DD",
+    buttonBg: "linear-gradient(94.94deg, #403290 0%, #E0367C 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #2D2366 0.17%, #C02D6A 99.15%)"
+  },
+  COMPANY: {
+    primary: "#1B4E8B",
+    mutedText: "#85AAD7",
+    buttonBg: "linear-gradient(94.94deg, #1B998B 0%, #1B4E8B 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #098476 0%, #153E70 99.15%)"
+  },
+  INSURANCE: {
+    primary: "#96006A",
+    mutedText: "#C99CBC",
+    buttonBg: "linear-gradient(94.94deg, #96006A 0%, #B4812E 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #750955 0%, #805C1F 99.15%)"
+  },
+  PHARMACY: {
+    primary: "#377AC2",
+    mutedText: "#82ACD9",
+    buttonBg: "linear-gradient(94.94deg, #377AC2 0%, #2893B5 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #295E98 0%, #1A6982 99.15%)"
+  },
+  TRANSPORT: {
+    primary: "#B1992F",
+    mutedText: "#D9CC8F",
+    buttonBg: "linear-gradient(94.94deg, #B29A2E 0%, #553477 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #887623 0%, #36214C 99.15%)"
+  },
+  MUSEUM: {
+    primary: "#1538A0",
+    mutedText: "#7F95D4",
+    buttonBg: "linear-gradient(94.94deg, #1538A0 0%, #553477 99.15%)",
+    buttonHoverBg: "linear-gradient(94.94deg, #0F2B7C 0%, #3B2352 99.15%)"
+  }
 };
 
 export const main = {

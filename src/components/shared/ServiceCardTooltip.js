@@ -29,7 +29,7 @@ class CardTooltip extends React.Component {
       <Tooltip id={this.tid}>
         <Container>
           <Tooltip.Heading>{heading}</Tooltip.Heading>
-          <Description>{description}</Description>
+          {description ? <Description>{description}</Description> : null}
           {children}
         </Container>
       </Tooltip>
@@ -37,6 +37,7 @@ class CardTooltip extends React.Component {
         <Backdrop />
         <Content>
           <ButtonClose onClick={this.hidePopover}>&times;</ButtonClose>
+          <Tooltip.Heading>{heading}</Tooltip.Heading>
           {children || <Text>{description}</Text>}
         </Content>
       </Popover>

@@ -4,11 +4,14 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button, Sidebar, DummyImage } from "../shared/elements";
+import { LoginButton } from "../shared/elements";
+import ServiceRequirements from "../shared/ServiceRequirements";
+import SidebarLeft from "../shared/SidebarLeft";
 import LoginModal from "../uport/LoginContainer";
 import Logo from "../../images/insurance-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidEmploment from "../../utils/validateEmployment";
+import SERVICES from "../../constants/services";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -27,8 +30,8 @@ class Landing extends React.Component {
     const { loginModal } = this.state;
     if(loginModal) {
       this.setState({ loginModal: false })
-      const cityID = profile["Cleverland City ID"];
-      const employment = profile["Employment"];
+      const cityID = profile[SERVICES.CITY_ID.claim];
+      const employment = profile[SERVICES.COMPANY.claim];
       if(isValid(cityID).valid && isValidEmploment(employment)) {
         this.props.redirectToReceiveInsurance();
       } else {
@@ -40,37 +43,20 @@ class Landing extends React.Component {
     const { profile, redirectToCityIdForm } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={this.showLoginModal}>
-        Share Your Information
-      </Button>
+      <LoginButton onClick={this.showLoginModal} />
     </Card.CTA>);
 
     return (<Wrapper>
       <Grid>
-        <Sidebar.Left span={3}>
-          <DummyImage variant={1} />
-          <DummyImage variant={2} />
-          <DummyImage variant={3} />
-        </Sidebar.Left>
+        <SidebarLeft service={SERVICES.INSURANCE} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Insurance Coverage</h2>
             <p>Share your insurance information easily at your doctor’s office, pharmacy or at any emergency.</p>
-            <Box>
-              <h3>Get your Insurance claims in 3 easy steps:</h3>
-              <ol>
-                <li>Login with uPort</li>
-                <li>Share your information: last name, first name, date of birth,
-                  company name and date of employment</li>
-                <li>Receive your insurance claims!</li>
-              </ol>
-            </Box>
+            <ServiceRequirements service={SERVICES.INSURANCE} />
           </Card>
         </Col>
-        <Sidebar.Right span={3}>
-          <DummyImage variant={4} />
-          <DummyImage variant={3} />
-        </Sidebar.Right>
+        <Col span={3} />
       </Grid>
       <LoginModal
         show={loginModal}
@@ -78,64 +64,19 @@ class Landing extends React.Component {
         description="To login scan the QR code with  the uPort app."
         infoHeading="You're logging in to"
         issuer={{
-          heading: "Insurance Coverage",
-          subHeading: "People Care LLC.",
-          name: "People Care LLC.",
-          logo: Logo
+          heading: SERVICES.INSURANCE.name,
+          subHeading: SERVICES.INSURANCE.entity,
+          name: SERVICES.INSURANCE.entity,
+          logo: SERVICES.INSURANCE.icon,
+          colors: theme.colors[SERVICES.INSURANCE.id]
         }}
-        requestedClaims={[{
-          name: "Cleverland City ID",
-          request: true,
-          hidden: true
-        }, {
-          name: "Employment",
-          request: true,
-          hidden: true
-        }, {
-          name: "First Name",
-          request: true
-        }, {
-          name: "Last Name",
-          request: true
-        }, {
-          name: "Company Name",
-          request: true
-        }, {
-          name: "Date of Employment",
-          request: true
-        }]}
+        requestedServices={SERVICES.INSURANCE.requiredServices}
         onClose={this.hideLoginModal}
         onLoginSuccess={this.handleLoginSuccess} />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
-const Box = styled.div`
-  background-color: ${theme.colors.lightBg};
-  margin-top: 36px;
-  padding: 20px;
-
-  h3 {
-    font-weight: 600;
-    margin-bottom: 22px;
-  }
-  ol {
-    list-style-type: decimal;
-    margin-left: 20px;
-
-    li + li {
-      margin-top: 22px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 
 export default Landing;

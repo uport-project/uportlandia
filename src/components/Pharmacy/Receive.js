@@ -6,12 +6,12 @@ import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
+import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidInsurance from "../../utils/validateInsurance";
 import SERVICES from "../../constants/services";
-import SuccessIcon from "../../images/smiley-face.svg";
+import SuccessIcon from "../../images/smiley-face-pharmacy.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import Logo from "../../images/insurance-logo.png";
 
 const claimData = {
   "Prescription Drug": "Yes"
@@ -62,8 +62,7 @@ class Receive extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-        </Col>
+        <SidebarLeft service={SERVICES.PHARMACY} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Good News!</h2>
@@ -86,10 +85,11 @@ class Receive extends React.Component {
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "Prescription Drug",
-          subHeading: "Your Health Medical Center",
-          name: "Your Health Medical Center",
-          logo: Logo
+          heading: SERVICES.PHARMACY.name,
+          subHeading: SERVICES.PHARMACY.entity,
+          name: SERVICES.PHARMACY.entity,
+          logo: SERVICES.PHARMACY.icon,
+          colors: theme.colors[SERVICES.PHARMACY.id]
         }}
         claimDetails={SERVICES.PHARMACY.generatedClaims.map(c => ({
           name: c.name,
@@ -98,21 +98,13 @@ class Receive extends React.Component {
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Prescription": claimData
+          [SERVICES.PHARMACY.claim]: claimData
         }} />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;

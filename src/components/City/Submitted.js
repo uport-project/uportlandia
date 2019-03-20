@@ -5,8 +5,9 @@ import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
+import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
-import SuccessIcon from "../../images/smiley-face.svg";
+import SuccessIcon from "../../images/smiley-face-city.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import CityLogo from "../../images/city-logo.png";
 import SERVICES from "../../constants/services";
@@ -42,14 +43,13 @@ class Landing extends React.Component {
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={this.showAttestationModal}>
+      <SubmitButton className="long" secondary onClick={this.showAttestationModal}>
         Receive City ID
-      </Button>
+      </SubmitButton>
     </Card.CTA>);
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-        </Col>
+        <SidebarLeft service={SERVICES.CITY_ID} active={3} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Good News!</h2>
@@ -59,8 +59,8 @@ class Landing extends React.Component {
             <hr />
             <h4>What’s next?</h4>
             <p>
-              Let’s make sure you have an access to your Cleverland City ID
-              whenever and wherever you need them. The City of Cleverland is
+              Let’s make sure you have an access to your uPortlandia City ID
+              whenever and wherever you need them. {SERVICES.CITY_ID.entity} is
               going to send your new ID claims to your uPort app.
             </p>
           </Card>
@@ -73,10 +73,11 @@ class Landing extends React.Component {
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "City ID",
-          subHeading: "The City of Cleverland",
-          name: "The City of Cleverland",
-          logo: CityLogo
+          heading: SERVICES.CITY_ID.name,
+          subHeading: SERVICES.CITY_ID.entity,
+          name: SERVICES.CITY_ID.entity,
+          logo: SERVICES.CITY_ID.icon,
+          colors: theme.colors[SERVICES.CITY_ID.id]
         }}
         infoDetails={[{
           heading: "Issued Date",
@@ -89,24 +90,22 @@ class Landing extends React.Component {
         show={data && attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Cleverland City ID": data
+          [SERVICES.CITY_ID.claim]: data
         }} />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;
+`;
+const SubmitButton = styled(Button)`
+  background: ${theme.colors.CITY_ID.buttonBg};
+  &:hover {
+    background: ${theme.colors.CITY_ID.buttonHoverBg};
+  }
 `;
 
 export default Landing;

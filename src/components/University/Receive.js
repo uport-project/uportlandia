@@ -5,14 +5,14 @@ import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
+import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import SERVICES from "../../constants/services";
-import SuccessIcon from "../../images/smiley-face.svg";
+import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import UniLogo from "../../images/university-logo.png";
 
 const claimData = {
-  "School Name": "The University of Cleverland",
+  "School Name": SERVICES.DIPLOMA.entity,
   "Program Name": "French linguistics",
   "Graduation Year": "2019",
   "Final Grades": "B+"
@@ -56,34 +56,33 @@ class Landing extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-        </Col>
+        <SidebarLeft service={SERVICES.DIPLOMA} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Good News!</h2>
-            <p>Your claims were succesfully shared with the Cleverland University.</p>
+            <p>Your claims were succesfully shared with the {SERVICES.DIPLOMA.entity}.</p>
             <SuccessImage src={SuccessIcon} />
             <hr />
             <h4>What’s next?</h4>
             <p>
               Let’s make sure you have an access to your Diploma claims whenever
-              and wherever you need them. The University of Cleverland is going
+              and wherever you need them. {SERVICES.DIPLOMA.entity} is going
               to send your new claims to your uPort app.
             </p>
           </Card>
         </Col>
-        <Col span={3}>
-        </Col>
+        <Col span={3} />
       </Grid>
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "Diploma",
-          subHeading: "The University of Cleverland",
-          name: "The University of Cleverland",
-          logo: UniLogo
+          heading: SERVICES.DIPLOMA.name,
+          subHeading: SERVICES.DIPLOMA.entity,
+          name: SERVICES.DIPLOMA.entity,
+          logo: SERVICES.DIPLOMA.icon,
+          colors: theme.colors[SERVICES.DIPLOMA.id]
         }}
         infoDetails={[{
           heading: "Issued Date",
@@ -96,21 +95,13 @@ class Landing extends React.Component {
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Diploma": claimData
+          [SERVICES.DIPLOMA.claim]: claimData
         }} />
     </Wrapper>)
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;

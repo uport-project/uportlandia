@@ -10,6 +10,7 @@ import Dummy1 from "../../images/dummy-content-1.svg";
 import Dummy2 from "../../images/dummy-content-2.svg";
 import Dummy3 from "../../images/dummy-content-3.svg";
 import Dummy4 from "../../images/dummy-content-4.svg";
+import uPortWhite from "../../images/uport-icon-white.svg";
 
 export const Form = styled.form``;
 Form.displayName = "Form";
@@ -96,6 +97,55 @@ export const Button = styled.button`
     : ""}
 `;
 Button.displayName = "Button";
+
+const _LoginButton = styled(Button)`
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  &, &:hover {
+    background: linear-gradient(77.21deg, #5C50CA 2.18%, #7958D8 99.78%);
+  }
+`;
+const LoginButtonLogo = styled.img`
+  margin-right: 10px;
+`;
+export const LoginButton = props => {
+  return (<_LoginButton className="long" secondary {...props}>
+    <LoginButtonLogo src={uPortWhite} />
+    {` ${props.text || "Login with uPort"}`}
+  </_LoginButton>);
+}
+
+const CapsuleButtonStyle = css`
+  ${PrimaryButtonStyle};
+  border-radius: 50px;
+  display: inline-block;
+  font-weight: 600;
+  padding: 16px 38px;
+  transform: none;
+`;
+export const CapsuleButton = styled.button`
+  ${CapsuleButtonStyle};
+`;
+CapsuleButton.displayName = "CapsuleButton";
+
+export const CapsuleLinkButton = styled(Link)`
+  ${CapsuleButtonStyle};
+  text-decoration: none;
+`;
+CapsuleLinkButton.displayName = "CapsuleLinkButton";
+
+const InvButtonStyle = css`
+  ${CapsuleButtonStyle}
+  &, &:hover {
+    background: #fff;
+    color: ${theme.colors.primary};
+  }
+`;
+export const InvLinkButton = styled(Link)`
+  ${InvButtonStyle}
+  text-decoration: none;
+`;
 
 export const LinkButton = styled(Link)`
   text-decoration: none;

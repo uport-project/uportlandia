@@ -4,19 +4,19 @@ import styled from "styled-components";
 
 import Header from "../shared/Header";
 import Landing from "./LandingContainer";
-import Prerequisites from "./Prerequisites";
+import Failure from "../shared/Failure";
 import Receive from "./ReceiveContainer";
 import ClaimReceived from "./ClaimReceivedContainer";
 import Footer from "../shared/Footer";
 import * as theme from "../shared/theme";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container, Grid, Col } from "../shared/grid";
-import Logo from "../../images/transport-logo.png";
+import SERVICES from "../../constants/services";
 
 class Insurance extends React.Component {
   render() {
     return (<ContentLayout>
-      <Header title="Cleverland City Transit" logo={Logo} />
+      <Header title={SERVICES.TRANSPORT.entity} logo={SERVICES.TRANSPORT.icon} />
       <Container>
         <Switch>
           <Route path="/transport" exact>
@@ -27,8 +27,10 @@ class Insurance extends React.Component {
           </Route>
           <Route path="/transport/prerequisites" exact>
             <React.Fragment>
-              <BackButton url="/transport" />
-              <Prerequisites />
+              <BackButton url="/museum" />
+              <Failure
+                heading="Services that issue claims required to get the bus ticket"
+                services={SERVICES.TRANSPORT.requiredServices} />
             </React.Fragment>
           </Route>
           <Route path="/transport/receive" exact component={Receive} />

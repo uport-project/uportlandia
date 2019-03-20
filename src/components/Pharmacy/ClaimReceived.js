@@ -6,7 +6,7 @@ import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
-import SuccessIcon from "../../images/congratulations.svg";
+import SuccessIcon from "../../images/congratulations-pharmacy.svg";
 import LikeDemo from "../shared/LikeDemo";
 import PharmacyLogo from "../../images/pharmacy-logo.png";
 

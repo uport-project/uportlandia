@@ -6,6 +6,7 @@ import DatePicker from "react-datepicker";
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
+import SidebarLeft from "../shared/SidebarLeft";
 import Security from "./Security";
 import {
   Button,
@@ -18,10 +19,7 @@ import {
 } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import COUNTRIES from "../../constants/countries";
-import SuccessIcon from "../../images/smiley-face.svg";
-
-import "react-datepicker/dist/react-datepicker.css";
-import "../../css/datepicker.css";
+import SERVICES from "../../constants/services";
 
 class PersonalInfo extends React.Component {
   constructor(props) {
@@ -112,17 +110,19 @@ class PersonalInfo extends React.Component {
     if(!isLoggedIn)
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={this.handleSubmit}>Submit</Button>
+      <SubmitButton
+        className="long"
+        secondary
+        onClick={this.handleSubmit}
+      >Submit</SubmitButton>
     </Card.CTA>);
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-
-        </Col>
+        <SidebarLeft service={SERVICES.CITY_ID} active={1} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Personal Information</h2>
-            <p>Submit your information to the City of Cleverland to confirm your
+            <p>Submit your information to {SERVICES.CITY_ID.entity} to confirm your
               identity.</p>
             <ReqdMessage>* indicates required field</ReqdMessage>
             <Form onSubmit={this.handleSubmit}>
@@ -133,9 +133,9 @@ class PersonalInfo extends React.Component {
                     <Textbox
                       value={firstName}
                       onChange={this.handleChange("firstName")} />
-                    <Error show={validationError && validationError.fieldId==="firstName"}>
+                    <ErrorMsg show={validationError && validationError.fieldId==="firstName"}>
                       This field is required
-                    </Error>
+                    </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={6}>
@@ -144,9 +144,9 @@ class PersonalInfo extends React.Component {
                     <Textbox
                       value={lastName}
                       onChange={this.handleChange("lastName")} />
-                    <Error show={validationError && validationError.fieldId==="lastName"}>
+                    <ErrorMsg show={validationError && validationError.fieldId==="lastName"}>
                       This field is required
-                    </Error>
+                    </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={12}>
@@ -156,9 +156,9 @@ class PersonalInfo extends React.Component {
                       placeholder="Number, Street Name, Apt #"
                       value={address}
                       onChange={this.handleChange("address")} />
-                    <Error show={validationError && validationError.fieldId==="address"}>
+                    <ErrorMsg show={validationError && validationError.fieldId==="address"}>
                       This field is required
-                    </Error>
+                    </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={4}>
@@ -166,9 +166,9 @@ class PersonalInfo extends React.Component {
                     placeholder="City"
                     value={city}
                     onChange={this.handleChange("city")} />
-                  <Error show={validationError && validationError.fieldId==="city"}>
+                  <ErrorMsg show={validationError && validationError.fieldId==="city"}>
                     This field is required
-                  </Error>
+                  </ErrorMsg>
                 </Col>
                 <Col span={4}>
                   <Textbox
@@ -176,9 +176,9 @@ class PersonalInfo extends React.Component {
                     placeholder="Zip Code"
                     value={zipCode}
                     onChange={this.handleChange("zipCode")} />
-                  <Error show={validationError && validationError.fieldId==="zipCode"}>
+                  <ErrorMsg show={validationError && validationError.fieldId==="zipCode"}>
                     This field is required
-                  </Error>
+                  </ErrorMsg>
                 </Col>
                 <Col span={4}>
                   <Dropdown
@@ -190,9 +190,9 @@ class PersonalInfo extends React.Component {
                       {c.name}
                     </option>))}
                   </Dropdown>
-                  <Error show={validationError && validationError.fieldId==="country"}>
+                  <ErrorMsg show={validationError && validationError.fieldId==="country"}>
                     This field is required
-                  </Error>
+                  </ErrorMsg>
                 </Col>
                 <Col span={5}>
                   <FormGroup>
@@ -202,11 +202,12 @@ class PersonalInfo extends React.Component {
                       min="1900-01-01"
                       max={dayjs().add(-13, "year").format("YYYY-MM-DD")}
                       onChange={this.handleChange("dob")}
+                      placeholder="YYYY-MM-DD"
                       value={dob}
                     />
-                    <Error show={validationError && validationError.fieldId==="dob"}>
+                    <ErrorMsg show={validationError && validationError.fieldId==="dob"}>
                       {validationError && validationError.message}
-                    </Error>
+                    </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={12}>
@@ -220,9 +221,9 @@ class PersonalInfo extends React.Component {
                       Terms and Conditions
                     </a>
                   </label>
-                  <Error show={validationError && validationError.fieldId==="toc"}>
+                  <ErrorMsg show={validationError && validationError.fieldId==="toc"}>
                     You must accept the terms and Conditions
-                  </Error>
+                  </ErrorMsg>
                 </Col>
               </Grid>
               <hr />
@@ -244,13 +245,6 @@ class PersonalInfo extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   input[type="checkbox"] {
     margin-right: 10px;
   }
@@ -258,10 +252,14 @@ const Wrapper = styled.div`
     ${textBoxStyle}
   }
 `;
-const ReqdMessage = styled.p`
-
+const ReqdMessage = styled.p``;
+const SubmitButton = styled(Button)`
+  background: ${theme.colors.CITY_ID.buttonBg};
+  &:hover {
+    background: ${theme.colors.CITY_ID.buttonHoverBg};
+  }
 `;
-const Error = styled.div`
+const ErrorMsg = styled.div`
   font-size: 0.75rem;
   color: ${theme.colors.error};
   margin: 5px 0 0;

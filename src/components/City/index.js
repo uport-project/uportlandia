@@ -11,12 +11,12 @@ import Footer from "../shared/Footer";
 import * as theme from "../shared/theme";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container, Grid, Col } from "../shared/grid";
-import CityLogo from "../../images/city-logo.png";
+import SERVICES from "../../constants/services";
 
 class City extends React.Component {
   render() {
     return (<ContentLayout>
-      <Header title="The City of Cleverland" logo={CityLogo} />
+      <Header title={SERVICES.CITY_ID.entity} logo={SERVICES.CITY_ID.icon} />
       <Container>
         <Switch>
           <Route path="/city" exact>

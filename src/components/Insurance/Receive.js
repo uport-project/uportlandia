@@ -6,10 +6,11 @@ import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
+import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import SERVICES from "../../constants/services";
 import isValidEmployment from "../../utils/validateEmployment";
-import SuccessIcon from "../../images/smiley-face.svg";
+import SuccessIcon from "../../images/smiley-face-insurance.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import Logo from "../../images/insurance-logo.png";
 
@@ -64,8 +65,7 @@ class Receive extends React.Component {
 
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-        </Col>
+        <SidebarLeft service={SERVICES.INSURANCE} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>Good News!</h2>
@@ -88,10 +88,11 @@ class Receive extends React.Component {
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
         issuer={{
-          heading: "Insurance Coverage",
-          subHeading: "People Care Insurance LLC.",
-          name: "People Care Insurance LLC.",
-          logo: Logo
+          heading: SERVICES.INSURANCE.name,
+          subHeading: SERVICES.INSURANCE.entity,
+          name: SERVICES.INSURANCE.entity,
+          logo: SERVICES.INSURANCE.icon,
+          colors: theme.colors[SERVICES.INSURANCE.id]
         }}
         claimDetails={SERVICES.INSURANCE.generatedClaims.map(c => ({
           name: c.name,
@@ -100,7 +101,7 @@ class Receive extends React.Component {
         show={attestationModal}
         onClose={this.hideAttestationModal}
         claim={{
-          "Insurance": claimData
+          [SERVICES.INSURANCE.claim]: claimData
         }} />
     </Wrapper>)
   }

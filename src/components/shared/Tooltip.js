@@ -13,9 +13,11 @@ class Tooltip extends React.Component {
   }
 }
 Tooltip.Heading = styled.h4`
-  color: ${theme.colors.textSecondary};
+  color: ${theme.colors.text3};
+  font-size: 0.75rem;
   font-weight: 600;
   margin-bottom: 10px;
+  text-transform: uppercase;
 `;
 
 const StyledTooltip = styled(ReactTooltip)`

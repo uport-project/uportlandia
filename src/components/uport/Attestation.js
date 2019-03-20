@@ -88,6 +88,11 @@ class Attestation extends React.Component {
     const issuedAt = (new Date()).toDateString();
     if(!profile)
       return null;
+    const styles = {
+      entityName: {
+        color: issuer.colors.primary
+      }
+    };
     return (<Modal show={show}>
       <Backdrop />
       <Content>
@@ -133,7 +138,7 @@ class Attestation extends React.Component {
                 <Entity>
                   <Entity.Header>
                     <Entity.Logo src={issuer.logo} />
-                    <Entity.Header.Sub>{issuer.subHeading}</Entity.Header.Sub>
+                    <Entity.Header.Sub style={styles.entityName}>{issuer.subHeading}</Entity.Header.Sub>
                     <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
                   </Entity.Header>
                   <hr />
@@ -164,7 +169,7 @@ class Attestation extends React.Component {
                 </Entity>
               </Card>
 
-              <h3 className="marginTop">Claims you'll receive</h3>
+              <h3 className="marginTop">Verified information you'll receive</h3>
               <Card>
                 <Claims>
                   {claimDetails && claimDetails.length
@@ -174,7 +179,7 @@ class Attestation extends React.Component {
                       <Claim.Value>{claim.value}</Claim.Value>
                     </Claim>))}
                   </React.Fragment>
-                  : <p>No claims to receive</p>}
+                  : <p>No verified information to receive</p>}
                 </Claims>
               </Card>
               <p>This information will be stored in your app</p>

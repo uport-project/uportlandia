@@ -6,6 +6,7 @@ import qrImage from "qr-image";
 
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
+import Services from "../shared/Services";
 import spin from "../../utils/spinanim";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
@@ -74,13 +75,11 @@ class UportLogin extends React.Component {
     this.props.onClose();
   }
   handleLogin = () => {
-    const { requestedClaims=[] } = this.props;
+    const { requestedServices=[] } = this.props;
     const requestId = shortId.generate();
     this.props.requestDisclosure(
       requestId,
-      requestedClaims
-        .filter(c => c.request)
-        .map(c => c.name)
+      requestedServices.map(rs => rs.claim)
     );
     this.setState({ requestId });
   }
@@ -90,13 +89,18 @@ class UportLogin extends React.Component {
       description,
       infoHeading,
       issuer,
-      requestedClaims,
+      requestedServices,
       infoDetails,
       login={},
       show
     } = this.props;
     const { qrData, waiting } = this.state;
     const { profile, url } = login;
+    const styles = {
+      entityName: {
+        color: issuer.colors.primary
+      }
+    };
     return (<Modal show={show}>
       <Backdrop />
       <Content>
@@ -150,7 +154,7 @@ class UportLogin extends React.Component {
                 <Entity>
                   <Entity.Header>
                     <Entity.Logo src={issuer.logo} />
-                    <Entity.Header.Sub>{issuer.subHeading}</Entity.Header.Sub>
+                    <Entity.Header.Sub style={styles.entityName}>{issuer.subHeading}</Entity.Header.Sub>
                     <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
                   </Entity.Header>
                   <hr />
@@ -176,18 +180,14 @@ class UportLogin extends React.Component {
                 </Entity>
               </Card>
               {/*<p>You’ve never interacted with {issuer.name}</p>*/}
-              <h3 className="marginTop">Requested Claims</h3>
-              <Card>
-                <Claims>
-                {requestedClaims && requestedClaims.length
+              <h3 className="marginTop">Requested information</h3>
+              <ReqServices>
+                {requestedServices && requestedServices.length
                   ? <React.Fragment>
-                    {requestedClaims.filter(c => !c.hidden).map(claim => (<Claim key={claim.name}>
-                      <Claim.Name>{claim.name}</Claim.Name>
-                    </Claim>))}
+                    <Services data={requestedServices} type={Services.MINIMAL} expanded />
                   </React.Fragment>
-                  : <p>No claims requested</p>}
-                </Claims>
-              </Card>
+                  : <NoInfoReq>No information requested</NoInfoReq>}
+              </ReqServices>
               <p>This information will be shared with {issuer.name}</p>
             </Info.Scrollable>
           </Info>
@@ -203,6 +203,19 @@ const AppStoreLinks = styled.div`
     display: inline-block;
     margin: 0 5px;
   }
+`;
+const ReqServices = styled.div`
+  .services__service {
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(63, 61, 75, 0.1);
+    padding: 10px 15px;
+  }
+  .services__service + .services__service {
+    margin-top: 20px;
+  }
+`;
+const NoInfoReq = styled(Card)`
+  color: ${theme.colors.mutedText2};
 `;
 
 export default UportLogin;

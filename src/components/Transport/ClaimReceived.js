@@ -7,7 +7,7 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
-import SuccessIcon from "../../images/congratulations.svg";
+import SuccessIcon from "../../images/congratulations-transport.svg";
 import PharmacyLogo from "../../images/pharmacy-logo.png";
 
 class ClaimReceived extends React.Component {

@@ -7,10 +7,11 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import getDependentServices from "../../utils/getDependentServices";
-import SuccessIcon from "../../images/congratulations.svg";
+import SuccessIcon from "../../images/congratulations-city.svg";
 import UniLogo from "../../images/university-logo.png";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
+import SERVICES from "../../constants/services";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -24,13 +25,11 @@ class ClaimReceived extends React.Component {
       return null;
     return (<Wrapper>
       <Grid>
-        <Col span={3}>
-
-        </Col>
+        <Col span={3} />
         <Col span={6}>
           <Card>
             <h2>Congratulations!</h2>
-            <p>You received your Cleverland City ID.
+            <p>You received your uPortlandia City ID.
               Your claims are stored in your uPort app.</p>
 
             <SuccessImage src={SuccessIcon} />
@@ -38,11 +37,11 @@ class ClaimReceived extends React.Component {
             <h4>More than ID...</h4>
             <p>
               With your City ID claims you gained an easy and quick access to
-              numerous services and programs in Cleverland.
+              numerous services and programs in uPortlandia.
             </p>
             <Services
               heading="Services that honor City ID claims"
-              data={getDependentServices("CITY_ID")} />
+              data={getDependentServices(SERVICES.CITY_ID.id)} />
             <Button secondary onClick={this.props.redirectToHome}>
               View All
             </Button>
