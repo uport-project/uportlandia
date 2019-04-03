@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
+import MobileDetect from "mobile-detect";
 
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
@@ -43,7 +44,8 @@ class Attestation extends React.Component {
   }
   componentDidMount() {
     this.props.initCredentials();
-    // this.props.loadProfile();
+    const md = new MobileDetect(navigator.userAgent);
+    this.isMobile = Boolean(md.mobile());
   }
   componentDidUpdate(prevProps, prevState) {
     const { qrData } = this.state;
@@ -52,9 +54,13 @@ class Attestation extends React.Component {
     if(show && !prevProps.show) {
       this.sendVerification();
     } else if(url && url !== prevProps.data.url) {
+      // show QR
       const pngBuffer = qrImage.imageSync(data.url, { type: 'png' });
       const qrData = 'data:image/png;charset=utf-8;base64, ' + pngBuffer.toString('base64');
       this.setState({ qrData });
+      if(!isPush && this.isMobile) {
+        window.location.href = data.url;
+      }
     }
   }
   handleClose = () => {
@@ -101,20 +107,21 @@ class Attestation extends React.Component {
             <Content.Header>
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
               <h3>{heading}</h3>
-              <p>{description}</p>
+              <p>{this.isMobile ? description : ""}</p>
             </Content.Header>
             <Content.Body>
               {showQR
                 ? qrData
                   ? <React.Fragment>
                     <div>
-                        <p>Scan this QR Code using the uPort App</p>
+                        {this.isMobile || <p>Scan this QR Code using the uPort App</p>}
                       <QRWrapper>
                         <a href={url} target='_blank'>
-                          <img className='qr' src={qrData} />
+                          {this.isMobile
+                            ? <p>Tap to open in a mobile browser</p>
+                            : <img className='qr' src={qrData} />}
                         </a>
                       </QRWrapper>
-                      <p>Or tap to open in a mobile browser</p>
                     </div>
                     <CenteredRefresh onClick={this.sendVerification}>
                       <img src={reloadImg} />

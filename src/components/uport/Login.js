@@ -3,11 +3,13 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
+import MobileDetect from "mobile-detect";
 
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
 import Services from "../shared/Services";
 import spin from "../../utils/spinanim";
+import createChasquiUrl from "../../utils/createChasquiUrl";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import itunesImg from "../../images/itunes.svg";
@@ -42,6 +44,8 @@ class UportLogin extends React.Component {
   componentDidMount() {
     this.props.initCredentials();
     this.props.loadProfile();
+    const md = new MobileDetect(navigator.userAgent);
+    this.isMobile = Boolean(md.mobile());
   }
   componentDidUpdate(prevProps, prevState) {
     const { login, messages, pollChasqui, show, verifyCredentials } = this.props;
@@ -54,6 +58,9 @@ class UportLogin extends React.Component {
       const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
       pollChasqui(login.callbackId);
       this.setState({ qrData });
+      if(this.isMobile) {
+        window.location.href = login.url;
+      }
     } else if(!login.profile && login.url) {
       // check for Chasqui Response
       let message = messages.find(msg => msg.id === login.callbackId);
@@ -108,8 +115,16 @@ class UportLogin extends React.Component {
           <Wrapper>
             <Content.Header>
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
-              <h3>{heading}</h3>
-              <p>{description}</p>
+              {this.isMobile
+                ? <React.Fragment>
+                  <h3>{heading}</h3>
+                  <p>Open the uPort app to login</p>
+                </React.Fragment>
+                : <React.Fragment>
+                  <h3>{heading}</h3>
+                  <p>{description}</p>
+                </React.Fragment>}
+
             </Content.Header>
             <Content.Body>
             {qrData
@@ -117,10 +132,11 @@ class UportLogin extends React.Component {
                 <div>
                   <QRWrapper>
                     <a href={url} target="_blank">
-                      <img className="qr" src={qrData} />
+                      {this.isMobile
+                        ? <p>Tap to login with the uPort app</p>
+                        : <img className="qr" src={qrData} />}
                     </a>
                   </QRWrapper>
-                  <p>Or tap to open in a mobile browser</p>
                 </div>
               </React.Fragment>
               : <LoadingIcon src={loadingImg} />}
