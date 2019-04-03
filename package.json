@@ -1,7 +1,9 @@
 {
   "name": "uportlandia",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://uportlandia.uport.me",
+  "repository": "https://github.com/uport-project/cleverland",
   "devDependencies": {
     "react-scripts": "1.1.4",
     "s3-deploy": "^1.2.1"
