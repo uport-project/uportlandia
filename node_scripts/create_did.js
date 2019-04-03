@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const PATH = "public/.well-known/did.json";
+const PATH = "build/.well-known";
 
 const URLS = {
   "stage": "uportlandia.uport.space",
@@ -30,7 +30,10 @@ if(!args || !args[0]) {
 } else {
   const url = URLS[args[0]] || URLS.stage;
   const doc = template(url);
-  fs.writeFile(PATH, doc, err => {
+  if(!fs.existsSync(PATH)){
+    fs.mkdirSync(PATH);
+  }
+  fs.writeFile(`${PATH}/did.json`, doc, err => {
     if(err) {
       throw new Error(err);
     }

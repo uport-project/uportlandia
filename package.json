@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "gh-pages": "1.2.0",
     "react-scripts": "1.1.4",
     "s3-deploy": "^1.2.1"
   },
@@ -31,12 +30,11 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "create-did": "node node_scripts/create_did.js",
-    "s3-upload": "node_modules/.bin/s3-deploy './build/**' --cwd './build/' --region us-west-2 --bucket",
-    "deploy:stage": "npm run build; ; npm run s3-upload cleverland-stage",
+    "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
+    "deploy:stage": "npm run build; npm run create-did stage; npm run s3-upload cleverland-stage",
     "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod"
   }
 }
