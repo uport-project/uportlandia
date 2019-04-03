@@ -34,6 +34,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "s3-upload": "node_modules/.bin/s3-deploy './build/**' --cwd './build/' --region us-west-2 --bucket",
-    "deploy:stage": "npm run build; npm run s3-upload cleverland-stage"
+    "deploy:stage": "npm run build; npm run s3-upload cleverland-stage",
+    "deploy:prod": "npm run build; npm run s3-upload cleverland-prod"
   }
 }
