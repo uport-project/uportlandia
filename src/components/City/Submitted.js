@@ -4,7 +4,7 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import SuccessIcon from "../../images/smiley-face-city.svg";
@@ -43,9 +43,11 @@ class Landing extends React.Component {
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <SubmitButton className="long" secondary onClick={this.showAttestationModal}>
+      <ThemedButton themeId={SERVICES.CITY_ID.id}
+        className="long" secondary onClick={this.showAttestationModal}
+      >
         Receive City ID
-      </SubmitButton>
+      </ThemedButton>
     </Card.CTA>);
     return (<Wrapper>
       <Grid>
@@ -100,12 +102,6 @@ const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;
-`;
-const SubmitButton = styled(Button)`
-  background: ${theme.colors.CITY_ID.buttonBg};
-  &:hover {
-    background: ${theme.colors.CITY_ID.buttonHoverBg};
-  }
 `;
 
 export default Landing;

@@ -8,8 +8,6 @@ import Card from "../shared/ContentCard";
 import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
-import CityLogo from "../../images/city-logo.png";
-import InsuranceLogo from "../../images/insurance-logo.png";
 import SERVICES from "../../constants/services";
 
 class Prerequisites extends React.Component {
@@ -41,13 +39,6 @@ class Prerequisites extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   .card__content {
     padding-bottom: 30px;
   }

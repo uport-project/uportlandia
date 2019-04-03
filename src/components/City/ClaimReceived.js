@@ -4,7 +4,7 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import getDependentServices from "../../utils/getDependentServices";
 import SuccessIcon from "../../images/congratulations-city.svg";
@@ -42,9 +42,9 @@ class ClaimReceived extends React.Component {
             <Services
               heading="Services that honor City ID claims"
               data={getDependentServices(SERVICES.CITY_ID.id)} />
-            <Button secondary onClick={this.props.redirectToHome}>
+            <ThemedButton themeId={SERVICES.CITY_ID.id} secondary onClick={this.props.redirectToHome}>
               View All
-            </Button>
+            </ThemedButton>
           </Card>
         </Col>
         <Col span={3}>
@@ -56,17 +56,10 @@ class ClaimReceived extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   .card__content {
     padding-bottom: 30px;
   }
-  ${Button} {
+  ${ThemedButton} {
     margin: 30px auto 0;
   }
 `;

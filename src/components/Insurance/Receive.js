@@ -5,14 +5,13 @@ import dayjs from "dayjs";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
-import SERVICES from "../../constants/services";
 import isValidEmployment from "../../utils/validateEmployment";
 import SuccessIcon from "../../images/smiley-face-insurance.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import Logo from "../../images/insurance-logo.png";
+import SERVICES from "../../constants/services";
 
 const claimData = {
   "Policy Number": "0000",
@@ -58,9 +57,11 @@ class Receive extends React.Component {
     if(!isLoggedIn || !isValid(cityIdClaim).valid || !isValidEmployment(employmentClaim))
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={this.showAttestationModal}>
+      <ThemedButton themeId={SERVICES.INSURANCE.id}
+        className="long" secondary onClick={this.showAttestationModal}
+      >
         Receive your Insurance Coverage
-      </Button>
+      </ThemedButton>
     </Card.CTA>);
 
     return (<Wrapper>
@@ -107,15 +108,7 @@ class Receive extends React.Component {
   }
 }
 
-const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
-`;
+const Wrapper = styled.div``;
 const SuccessImage = styled.img`
   display: block;
   margin: 40px auto 0;

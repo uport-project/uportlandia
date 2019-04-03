@@ -30,8 +30,8 @@ async function signAndUploadProfile() {
     return;
   }
   const profile = {
-    name: "Cleverland",
-    description: "The City of Cleverland",
+    name: "uPortLandia",
+    description: "The City of uPortLandia",
     url: (typeof window !== 'undefined')
       ? `${window.location.protocol}//${window.location.host}`
       : undefined,
@@ -85,7 +85,8 @@ function* requestDisclosure(action) {
       verified: requestedClaims,
       notifications: true,
       callbackUrl,
-      accountType: "keypair",
+      redirectUrl: window.location.href,
+      accountType: "none",
       vc: verifiedClaims
     },
     expiresIn

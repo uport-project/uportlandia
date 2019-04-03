@@ -4,11 +4,11 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-museum.svg";
-import PharmacyLogo from "../../images/pharmacy-logo.png";
+import SERVICES from "../../constants/services";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -21,9 +21,11 @@ class ClaimReceived extends React.Component {
     if(!this.props.isLoggedIn)
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={redirectToHome}>
+      <ThemedButton themeId={SERVICES.MUSEUM.id}
+        className="long" secondary onClick={redirectToHome}
+      >
         Back to Home
-      </Button>
+      </ThemedButton>
     </Card.CTA>);
     return (<Wrapper>
       <Grid>
@@ -46,13 +48,6 @@ class ClaimReceived extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   .card__content {
     padding-bottom: 30px;
   }

@@ -5,7 +5,7 @@ import dayjs from "dayjs";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import SERVICES from "../../constants/services";
@@ -50,9 +50,11 @@ class Landing extends React.Component {
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <Button className="long" secondary onClick={this.showAttestationModal}>
+      <ThemedButton themeId={SERVICES.COMPANY.id}
+        className="long" secondary onClick={this.showAttestationModal}
+      >
         Receive your Employment Verification
-      </Button>
+      </ThemedButton>
     </Card.CTA>);
 
     return (<Wrapper>

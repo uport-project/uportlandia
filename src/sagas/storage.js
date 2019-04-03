@@ -12,7 +12,7 @@ import {
   setLoading
 } from "../actions";
 
-const STORAGE_KEY = "uport-cleverland";
+const STORAGE_KEY = "uportlandia";
 
 function* loadProfile() {
   const data = yield call(localforage.getItem.bind(localforage), STORAGE_KEY);

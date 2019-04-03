@@ -14,7 +14,7 @@ class Services extends React.Component {
       data,
       expanded=false,
       heading,
-      type=COMPACT
+      type=DETAILED
     } = this.props;
     return (<React.Fragment>
       {heading ? <Heading>{heading}</Heading> : null}

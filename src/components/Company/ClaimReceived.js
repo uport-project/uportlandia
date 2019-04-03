@@ -4,12 +4,13 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-company.svg";
 import InsuranceLogo from "../../images/insurance-logo.png";
 import getDependentServices from "../../utils/getDependentServices";
+import SERVICES from "../../constants/services";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -41,9 +42,9 @@ class ClaimReceived extends React.Component {
             <Services
               heading="Services that honor employment claims"
               data={getDependentServices("COMPANY")} />
-            <Button secondary onClick={this.props.redirectToHome}>
+            <ThemedButton themeId={SERVICES.COMPANY.id} secondary onClick={this.props.redirectToHome}>
               View All
-            </Button>
+            </ThemedButton>
           </Card>
         </Col>
         <Col span={3}>
@@ -65,7 +66,7 @@ const Wrapper = styled.div`
   .card__content {
     padding-bottom: 30px;
   }
-  ${Button} {
+  ${ThemedButton} {
     margin: 30px auto 0;
   }
 `;

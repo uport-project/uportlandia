@@ -4,12 +4,13 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-insurance.svg";
 import PharmacyLogo from "../../images/pharmacy-logo.png";
 import getDependentServices from "../../utils/getDependentServices";
+import SERVICES from "../../constants/services";
 
 class ClaimReceived extends React.Component {
   componentDidMount() {
@@ -39,10 +40,12 @@ class ClaimReceived extends React.Component {
             </p>
             <Services
               heading="Services that honor insurance claims"
-              data={getDependentServices("INSURANCE")} />
-            <Button secondary onClick={this.props.redirectToHome}>
+              data={getDependentServices(SERVICES.INSURANCE.id)} />
+            <ThemedButton themeId={SERVICES.INSURANCE.id}
+              secondary onClick={this.props.redirectToHome}
+            >
               View All
-            </Button>
+            </ThemedButton>
           </Card>
         </Col>
         <Col span={3}>
@@ -54,17 +57,10 @@ class ClaimReceived extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   .card__content {
     padding-bottom: 30px;
   }
-  ${Button} {
+  ${ThemedButton} {
     margin: 30px auto 0;
   }
 `;

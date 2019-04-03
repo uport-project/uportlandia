@@ -13,7 +13,7 @@ const CITY_ID = {
   entity: "The City of uPortlandia",
   description: "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
   url: "/city",
-  claim: "uPortlandia City ID",
+  claim: "Uportlandia City ID",
   steps: [
     "Login with uPort",
     "Enter your information",
@@ -74,6 +74,7 @@ const PHARMACY = {
   entity: "Your Health Medical Center",
   description: "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
   url: "/pharmacy",
+  claim: "PrescriptionDrug",
   steps: [
     "Login with uPort",
     "Get verified",

@@ -4,7 +4,7 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
+import { ThemedButton } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-diploma.svg";
@@ -41,9 +41,11 @@ class ClaimReceived extends React.Component {
             <Services
               heading="Services that honor Diploma claims"
               data={getDependentServices(SERVICES.DIPLOMA.id)} />
-            <Button secondary onClick={this.props.redirectToHome}>
+            <ThemedButton themeId={SERVICES.DIPLOMA.id}
+              secondary onClick={this.props.redirectToHome}
+            >
               View All
-            </Button>
+            </ThemedButton>
           </Card>
         </Col>
         <Col span={3}>
@@ -55,17 +57,10 @@ class ClaimReceived extends React.Component {
 }
 
 const Wrapper = styled.div`
-  ul {
-    list-style: disc;
-    margin-left: 20px;
-    li + li {
-      margin-top: 15px;
-    }
-  }
   .card__content {
     padding-bottom: 30px;
   }
-  ${Button} {
+  ${ThemedButton} {
     margin: 30px auto 0;
   }
 `;

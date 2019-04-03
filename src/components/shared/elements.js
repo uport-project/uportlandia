@@ -98,6 +98,15 @@ export const Button = styled.button`
 `;
 Button.displayName = "Button";
 
+export const ThemedButton = styled(Button)`
+  ${props => `
+    background: ${theme.colors[props.themeId].buttonBg};
+    &:hover {
+      background: ${theme.colors[props.themeId].buttonHoverBg};
+    }
+  `}
+`;
+
 const _LoginButton = styled(Button)`
   align-items: center;
   display: flex;

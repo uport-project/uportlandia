@@ -11,10 +11,6 @@ import LoginModal from "../uport/LoginContainer";
 import Logo from "../../images/company-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 import isDiplomaValid from "../../utils/validateDiploma";
-import Dummy1 from "../../images/dummy-content-1.svg";
-import Dummy2 from "../../images/dummy-content-2.svg";
-import Dummy3 from "../../images/dummy-content-3.svg";
-import Dummy4 from "../../images/dummy-content-4.svg";
 import SERVICES from "../../constants/services";
 
 class Landing extends React.Component {
@@ -73,7 +69,8 @@ class Landing extends React.Component {
           heading: SERVICES.COMPANY.name,
           subHeading: SERVICES.COMPANY.entity,
           name: SERVICES.COMPANY.entity,
-          logo: SERVICES.COMPANY.icon
+          logo: SERVICES.COMPANY.icon,
+          colors: theme.colors[SERVICES.COMPANY.id]
         }}
         requestedServices={SERVICES.COMPANY.requiredServices}
         onClose={this.hideLoginModal}

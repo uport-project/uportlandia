@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { Button } from "../shared/elements";
 import Services from "../shared/Services";
 import ErrorIcon from "../../images/grumpy-face.svg";
 import CityLogo from "../../images/city-logo.png";

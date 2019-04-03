@@ -29,7 +29,7 @@ class Prerequisites extends React.Component {
               You can get the required claims from the services below:
             </p>
             <Services
-              heading="Services that issue claims required to get insurance"
+              heading="Services that issue claims required to get the bus ticket"
               data={[SERVICES.CITY_ID, SERVICES.DIPLOMA]} />
           </Card>
         </Col>
