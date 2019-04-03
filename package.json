@@ -10,6 +10,7 @@
   "dependencies": {
     "dayjs": "^1.8.0",
     "localforage": "^1.7.3",
+    "mobile-detect": "^1.4.3",
     "qr-image": "^3.2.0",
     "react": "16.4.2",
     "react-datepicker": "^2.0.0",
@@ -33,8 +34,9 @@
     "deploy": "gh-pages -d build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "create-did": "node node_scripts/create_did.js",
     "s3-upload": "node_modules/.bin/s3-deploy './build/**' --cwd './build/' --region us-west-2 --bucket",
-    "deploy:stage": "npm run build; npm run s3-upload cleverland-stage",
-    "deploy:prod": "npm run build; npm run s3-upload cleverland-prod"
+    "deploy:stage": "npm run build; ; npm run s3-upload cleverland-stage",
+    "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod"
   }
 }
