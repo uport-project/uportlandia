@@ -38,9 +38,9 @@ async function signAndUploadProfile() {
     profileImage: {
       "/": "/ipfs/Qmez4bdFmxPknbAoGzHmpjpLjQFChq39h5UMPGiwUHgt8f"
     },
-    bannerImage: {
-      "/": "/ipfs/QmTFNFu1v4dev6YCDoMuSG9Zi3EubagUJ4LQxoZkMiBPSF"
-    }
+    // bannerImage: {
+    //   "/": "/ipfs/QmTFNFu1v4dev6YCDoMuSG9Zi3EubagUJ4LQxoZkMiBPSF"
+    // }
   };
   // Upload to ipfs
   const jwt = await credentials.createVerification({
