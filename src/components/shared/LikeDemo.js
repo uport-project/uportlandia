@@ -13,11 +13,11 @@ class LikeTheDemo extends React.Component {
       <section>
         <Header>
           <Icon src={DevIcon} />
-          <h4>Build user-centric apps with uPort</h4>
+          <h4>Build user-centric trusted data apps with uPort</h4>
         </Header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Issue, request and verify information about your users. Give your
+          users the freedom to manage details about their digital-selves.
         </p>
         <ExtLink target="_blank" href="https://developer.uport.me">View Documentation</ExtLink>
       </section>
@@ -25,11 +25,11 @@ class LikeTheDemo extends React.Component {
       <section>
         <Header>
           <Icon src={CitizenIcon} />
-          <h4>Issue claims to citizens in your city</h4>
+          <h4>Issue verified information to citizens in your city</h4>
         </Header>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          Build trusted data ecosystem in your city. Let businesses and
+          organizations thrive while maintaining privacy of the citizens.
         </p>
         <ExtLink target="_blank" href="https://uport.zendesk.com/hc/en-us">Contact Us</ExtLink>
       </section>
