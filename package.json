@@ -5,6 +5,7 @@
   "homepage": "https://uportlandia.uport.me",
   "repository": "https://github.com/uport-project/cleverland",
   "devDependencies": {
+    "cloudfront-invalidate-cache": "^1.0.1",
     "react-scripts": "1.1.4",
     "s3-deploy": "^1.2.1"
   },
@@ -36,7 +37,8 @@
     "eject": "react-scripts eject",
     "create-did": "node node_scripts/create_did.js",
     "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
-    "deploy:stage": "npm run build; npm run create-did stage; npm run s3-upload cleverland-stage",
-    "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod"
+    "deploy:stage": "npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
+    "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
+    "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname"
   }
 }
