@@ -5,13 +5,13 @@ import dayjs from "dayjs";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { ThemedButton } from "../shared/elements";
+import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
+import isMobile from "../../utils/isMobile";
 import SERVICES from "../../constants/services";
 import SuccessIcon from "../../images/smiley-face-company.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import Logo from "../../images/company-logo.png";
 
 const claimData = {
   "Company Name": "Dream Job LLC.",
@@ -46,15 +46,23 @@ class Landing extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { cityIdClaim, isLoggedIn } = this.props;
+    const { verification, cityIdClaim, isLoggedIn, redirectToEmploymentReceived } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <ThemedButton themeId={SERVICES.COMPANY.id}
-        className="long" secondary onClick={this.showAttestationModal}
-      >
-        Receive your Employment Verification
-      </ThemedButton>
+      {isMobile()
+        ? <ThemedExtLink themeId={SERVICES.COMPANY.id}
+            className="long"
+            secondary
+            href={verification.url}
+            onClick={redirectToEmploymentReceived}
+          >Receive your Employment Verification</ThemedExtLink>
+        : <ThemedButton
+            themeId={SERVICES.COMPANY.id}
+            className="long" secondary onClick={this.showAttestationModal}
+          >
+            Receive your Employment Verification
+          </ThemedButton>}
     </Card.CTA>);
 
     return (<Wrapper>

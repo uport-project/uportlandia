@@ -4,13 +4,14 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Grid, Col, Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { LoginButton, Sidebar, DummyImage } from "../shared/elements";
+import { LoginButton, Sidebar, LoginLink } from "../shared/elements";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import SidebarLeft from "../shared/SidebarLeft";
 import LoginModal from "../uport/LoginContainer";
 import Logo from "../../images/company-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 import isDiplomaValid from "../../utils/validateDiploma";
+import isMobile from "../../utils/isMobile";
 import SERVICES from "../../constants/services";
 
 class Landing extends React.Component {
@@ -28,7 +29,7 @@ class Landing extends React.Component {
   }
   handleLoginSuccess = profile => {
     const { loginModal } = this.state;
-    if(loginModal) {
+    if(loginModal || isMobile()) {
       this.setState({ loginModal: false })
       const cityID = profile[SERVICES.CITY_ID.claim];
       const diploma = profile[SERVICES.DIPLOMA.claim];
@@ -40,10 +41,12 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { profile, redirectToCityIdForm } = this.props;
+    const { login, profile, redirectToCityIdForm } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
-      <LoginButton onClick={this.showLoginModal} />
+      {isMobile()
+        ? <LoginLink href={login.url} />
+        : <LoginButton onClick={this.showLoginModal} />}
     </Card.CTA>);
 
     return (<Wrapper>

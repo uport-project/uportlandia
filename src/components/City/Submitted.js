@@ -4,12 +4,12 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { ThemedButton } from "../shared/elements";
+import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
+import isMobile from "../../utils/isMobile";
 import SuccessIcon from "../../images/smiley-face-city.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import CityLogo from "../../images/city-logo.png";
 import SERVICES from "../../constants/services";
 
 class Landing extends React.Component {
@@ -39,15 +39,23 @@ class Landing extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { data } = this.props;
+    const { verification, data, redirectToCityIdReceived } = this.props;
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <ThemedButton themeId={SERVICES.CITY_ID.id}
-        className="long" secondary onClick={this.showAttestationModal}
-      >
-        Receive City ID
-      </ThemedButton>
+      {isMobile()
+        ? <ThemedExtLink themeId={SERVICES.CITY_ID.id}
+            className="long"
+            secondary
+            href={verification.url}
+            onClick={redirectToCityIdReceived}
+          >Receive City ID</ThemedExtLink>
+        : <ThemedButton
+            themeId={SERVICES.CITY_ID.id}
+            className="long" secondary onClick={this.showAttestationModal}
+          >
+            Receive City ID
+          </ThemedButton>}
     </Card.CTA>);
     return (<Wrapper>
       <Grid>

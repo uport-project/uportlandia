@@ -1,13 +1,14 @@
 import { connect } from "react-redux";
 
 import * as actions from "../../actions";
-import { getCityIdClaim, getEmploymentClaim, isLoggedIn, isLoading } from "../../selectors";
+import { getUPortVerification, getCityIdClaim, getEmploymentClaim, isLoggedIn, isLoading } from "../../selectors";
 
 import Receive from "./Receive";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
   isLoggedIn: isLoggedIn(state),
+  verification: getUPortVerification(state),
   cityIdClaim: getCityIdClaim(state),
   employmentClaim: getEmploymentClaim(state)
 });

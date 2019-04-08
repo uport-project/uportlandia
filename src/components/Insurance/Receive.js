@@ -5,10 +5,11 @@ import dayjs from "dayjs";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { ThemedButton } from "../shared/elements";
+import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidEmployment from "../../utils/validateEmployment";
+import isMobile from "../../utils/isMobile";
 import SuccessIcon from "../../images/smiley-face-insurance.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import SERVICES from "../../constants/services";
@@ -53,17 +54,24 @@ class Receive extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { cityIdClaim, employmentClaim, isLoggedIn } = this.props;
+    const { verification, cityIdClaim, employmentClaim, isLoggedIn, redirectToInsuranceReceived } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid || !isValidEmployment(employmentClaim))
       return null;
     const CTA = () => (<Card.CTA>
-      <ThemedButton themeId={SERVICES.INSURANCE.id}
-        className="long" secondary onClick={this.showAttestationModal}
-      >
-        Receive your Insurance Coverage
-      </ThemedButton>
+      {isMobile()
+        ? <ThemedExtLink themeId={SERVICES.INSURANCE.id}
+            className="long"
+            secondary
+            href={verification.url}
+            onClick={redirectToInsuranceReceived}
+          >Receive your Insurance Coverage</ThemedExtLink>
+        : <ThemedButton
+            themeId={SERVICES.INSURANCE.id}
+            className="long" secondary onClick={this.showAttestationModal}
+          >
+            Receive your Insurance Coverage
+          </ThemedButton>}
     </Card.CTA>);
-
     return (<Wrapper>
       <Grid>
         <SidebarLeft service={SERVICES.INSURANCE} active={2} />

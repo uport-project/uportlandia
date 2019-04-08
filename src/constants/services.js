@@ -74,7 +74,7 @@ const PHARMACY = {
   entity: "Your Health Medical Center",
   description: "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
   url: "/pharmacy",
-  claim: "PrescriptionDrug",
+  claim: "Prescription Drug",
   steps: [
     "Login with uPort",
     "Get verified",
@@ -89,7 +89,7 @@ const TRANSPORT = {
   entity: "uPortlandia City Transit",
   description: "Are you a uPortlandia citizen? Alumni of The uPortlandia University? Get your montly bus ticket for free and enjoy the city trasportation!",
   url: "/transport",
-  claim: "BusTicket",
+  claim: "Bus Ticket",
   steps: [
     "Login with uPort",
     "Get verified",
@@ -104,7 +104,7 @@ const MUSEUM = {
   entity: "uPortlandia Museum of Modern Art",
   description: "Get a free membership with your City ID.",
   url: "/museum",
-  claim: "MuseumMembership",
+  claim: "Museum Membership",
   steps: [
     "Login with uPort",
     "Get verified",

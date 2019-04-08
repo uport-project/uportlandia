@@ -18,14 +18,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProp = dispatch => ({
-  initCredentials() {
-    dispatch(actions.initCredentials());
-  },
   loadProfile() {
     dispatch(actions.loadProfile());
   },
-  sendVerification(id, profile, claim) {
-    dispatch(actions.sendVerification(id, profile, claim));
+  sendVerification(id, profile, claim, isMobile) {
+    dispatch(actions.sendVerification(id, profile, claim, isMobile));
   },
   verifyCredentials(token) {
     dispatch(actions.verifyCredentials(token));

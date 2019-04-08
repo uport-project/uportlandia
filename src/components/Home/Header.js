@@ -10,12 +10,24 @@ import uPortLogo from "../../images/uport-logo.svg";
 import cityIdIcon from "../../images/city-id-icon.svg";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
+import history from "../../utils/history";
 
 class Header extends React.Component {
+  state = {
+    devClickCount: 0
+  }
+  incDevClickCount = () => {
+    if(this.state.devClickCount > 6) {
+      this.setState({ devClickCount: 0 });
+      history.push("/detect");
+    } else {
+      this.setState({ devClickCount: this.state.devClickCount + 1 });
+    }
+  }
   render() {
     return (<Hero>
       <Hero.Welcome>
-        <Logo src={uPortLogo} />
+        <Logo onClick={this.incDevClickCount} src={uPortLogo} />
         <h2>Welcome to</h2>
         <h1>uPortlandia</h1>
         <p>Try the new uPort demo.</p>

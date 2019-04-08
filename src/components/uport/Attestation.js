@@ -3,8 +3,9 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
-import MobileDetect from "mobile-detect";
 
+
+import isMobile from "../../utils/isMobile";
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
 import spin from "../../utils/spinanim";
@@ -43,9 +44,11 @@ class Attestation extends React.Component {
     };
   }
   componentDidMount() {
-    this.props.initCredentials();
-    const md = new MobileDetect(navigator.userAgent);
-    this.isMobile = Boolean(md.mobile());
+    // this.props.initCredentials();
+    this.isMobile = isMobile();
+    if(this.isMobile) {
+      this.sendVerification();
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     const { qrData } = this.state;
@@ -58,7 +61,7 @@ class Attestation extends React.Component {
       const pngBuffer = qrImage.imageSync(data.url, { type: 'png' });
       const qrData = 'data:image/png;charset=utf-8;base64, ' + pngBuffer.toString('base64');
       this.setState({ qrData });
-      if(!isPush && this.isMobile) {
+      if(!isPush && this.isMobile && show) {
         window.location.href = data.url;
       }
     }

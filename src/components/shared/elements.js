@@ -106,6 +106,22 @@ export const ThemedButton = styled(Button)`
     }
   `}
 `;
+export const ThemedExtLink = styled.a`
+  ${props => props.secondary
+    ? SecondaryButtonStyle
+    : PrimaryButtonStyle}
+  ${props => `
+    background: ${theme.colors[props.themeId].buttonBg};
+    &:hover {
+      background: ${theme.colors[props.themeId].buttonHoverBg};
+    }
+  `}
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 1rem;
+  text-decoration: none;
+  text-transform: none;
+`;
 
 const _LoginButton = styled(Button)`
   align-items: center;
@@ -123,6 +139,27 @@ export const LoginButton = props => {
     <LoginButtonLogo src={uPortWhite} />
     {` ${props.text || "Login with uPort"}`}
   </_LoginButton>);
+}
+
+const _LoginLink = styled.a`
+  ${PrimaryButtonStyle};
+  align-items: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  text-decoration: none;
+  text-transform: none;
+  &, &:hover {
+    background: linear-gradient(77.21deg, #5C50CA 2.18%, #7958D8 99.78%);
+  }
+`;
+export const LoginLink = props => {
+  return (<_LoginLink className="long" secondary {...props}>
+    <LoginButtonLogo src={uPortWhite} />
+    {` ${props.text || "Login with uPort"}`}
+  </_LoginLink>);
 }
 
 const CapsuleButtonStyle = css`

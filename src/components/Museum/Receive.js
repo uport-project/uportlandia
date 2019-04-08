@@ -5,9 +5,10 @@ import dayjs from "dayjs";
 import * as theme from "../shared/theme";
 import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { ThemedButton } from "../shared/elements";
+import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateCityIdInfo";
+import isMobile from "../../utils/isMobile";
 import SuccessIcon from "../../images/smiley-face-museum.svg";
 import AttestationModal from "../uport/AttestationContainer";
 import SERVICES from "../../constants/services";
@@ -49,17 +50,24 @@ class Receive extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { cityIdClaim, isLoggedIn } = this.props;
+    const { verification, cityIdClaim, isLoggedIn, redirectToMuseumMembershipReceived } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     const CTA = () => (<Card.CTA>
-      <ThemedButton themeId={SERVICES.MUSEUM.id}
-        className="long" secondary onClick={this.showAttestationModal}
-      >
-        Receive your Annual Membership
-      </ThemedButton>
+      {isMobile()
+        ? <ThemedExtLink themeId={SERVICES.MUSEUM.id}
+            className="long"
+            secondary
+            href={verification.url}
+            onClick={redirectToMuseumMembershipReceived}
+          >Receive your Annual Membership</ThemedExtLink>
+        : <ThemedButton
+            themeId={SERVICES.MUSEUM.id}
+            className="long" secondary onClick={this.showAttestationModal}
+          >
+            Receive your Annual Membership
+          </ThemedButton>}
     </Card.CTA>);
-
     return (<Wrapper>
       <Grid>
         <SidebarLeft service={SERVICES.MUSEUM} active={2} />

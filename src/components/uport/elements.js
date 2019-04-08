@@ -122,6 +122,10 @@ export const QRWrapper = styled.div`
       max-height: 50vh;
     `)}
   }
+  a {
+    color: #fff;
+    display: block;
+  }
 `;
 export const LoadingIcon = styled.img`
   ${spin}

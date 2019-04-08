@@ -1,12 +1,13 @@
 import { connect } from "react-redux";
 
 import * as actions from "../../actions";
-import { getUPortProfile, isLoading } from "../../selectors";
+import { getUPortLogin, getUPortProfile, isLoading } from "../../selectors";
 
 import Landing from "./Landing";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
+  login: getUPortLogin(state),
   profile: getUPortProfile(state)
 });
 
@@ -16,7 +17,10 @@ const mapDispatchToProps = dispatch => ({
   },
   redirectToReceiveDiploma() {
     dispatch(actions.redirectToReceiveDiploma());
-  }
+  },
+  requestDisclosure(id, requestedClaims, isMobile) {
+    dispatch(actions.reqDisclosure(id, requestedClaims, isMobile));
+  },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Landing);

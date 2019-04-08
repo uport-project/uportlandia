@@ -3,13 +3,13 @@ import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
-import MobileDetect from "mobile-detect";
 
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
 import Services from "../shared/Services";
 import spin from "../../utils/spinanim";
 import createChasquiUrl from "../../utils/createChasquiUrl";
+import isMobile from "../../utils/isMobile";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import itunesImg from "../../images/itunes.svg";
@@ -42,10 +42,12 @@ class UportLogin extends React.Component {
     };
   }
   componentDidMount() {
-    this.props.initCredentials();
+    // this.props.initCredentials();
     this.props.loadProfile();
-    const md = new MobileDetect(navigator.userAgent);
-    this.isMobile = Boolean(md.mobile());
+    this.isMobile = isMobile();
+    if(this.isMobile) {
+      this.handleLogin();
+    }
   }
   componentDidUpdate(prevProps, prevState) {
     const { login, messages, pollChasqui, show, verifyCredentials } = this.props;
@@ -53,13 +55,15 @@ class UportLogin extends React.Component {
     if(show && !prevProps.show) {
       this.handleLogin();
     } else if(!login.profile && login.url && login.url !== prevProps.login.url) {
-      // show QR
-      const pngBuffer = qrImage.imageSync(login.url, { type: "png" });
-      const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
-      pollChasqui(login.callbackId);
-      this.setState({ qrData });
       if(this.isMobile) {
-        window.location.href = login.url;
+        if(show)
+          window.location.assign(login.url);
+      } else {
+        // show QR
+        const pngBuffer = qrImage.imageSync(login.url, { type: "png" });
+        const qrData = "data:image/png;charset=utf-8;base64, " + pngBuffer.toString("base64");
+        this.setState({ qrData });
+        pollChasqui(login.callbackId);
       }
     } else if(!login.profile && login.url) {
       // check for Chasqui Response
@@ -86,7 +90,8 @@ class UportLogin extends React.Component {
     const requestId = shortId.generate();
     this.props.requestDisclosure(
       requestId,
-      requestedServices.map(rs => rs.claim)
+      requestedServices.map(rs => rs.claim),
+      this.isMobile
     );
     this.setState({ requestId });
   }
@@ -133,7 +138,7 @@ class UportLogin extends React.Component {
                   <QRWrapper>
                     <a href={url} target="_blank">
                       {this.isMobile
-                        ? <p>Tap to login with the uPort app</p>
+                        ? "Tap to login with the uPort app"
                         : <img className="qr" src={qrData} />}
                     </a>
                   </QRWrapper>

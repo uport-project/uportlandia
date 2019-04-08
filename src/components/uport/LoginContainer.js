@@ -11,14 +11,11 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProp = dispatch => ({
-  initCredentials() {
-    dispatch(actions.initCredentials());
-  },
   loadProfile() {
     dispatch(actions.loadProfile());
   },
-  requestDisclosure(id, requestedClaims) {
-    dispatch(actions.reqDisclosure(id, requestedClaims));
+  requestDisclosure(id, requestedClaims, isMobile) {
+    dispatch(actions.reqDisclosure(id, requestedClaims, isMobile));
   },
   pollChasqui(id) {
     dispatch(actions.pollChasqui(id));

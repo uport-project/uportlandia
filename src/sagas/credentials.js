@@ -18,7 +18,8 @@ import {
   sendVerificationSuccess,
 } from "../actions";
 import createChasquiUrl from "../utils/createChasquiUrl";
-import { addFile } from '../utils/ipfs'
+import createCallbackUrl from "../utils/createCallbackUrl";
+import { addFile, pin } from '../utils/ipfs'
 
 let keypair;
 let credentials;
@@ -30,8 +31,8 @@ async function signAndUploadProfile() {
     return;
   }
   const profile = {
-    name: "uPortLandia",
-    description: "The City of uPortLandia",
+    name: "uPortlandia",
+    description: "The City of uPortlandia",
     url: (typeof window !== 'undefined')
       ? `${window.location.protocol}//${window.location.host}`
       : undefined,
@@ -48,50 +49,69 @@ async function signAndUploadProfile() {
     claim: profile
   });
   const response = await addFile(new Blob([ jwt ]));
+  await pin(response.Hash);
   verifiedClaims.unshift(`/ipfs/${response.Hash}`);
 }
 
 function* initCredentials() {
   keypair = Credentials.createIdentity();
   credentials = new Credentials(keypair);
+  yield call(signAndUploadProfile);
   yield put(initCredentialsSuccess());
 }
 
 function* verifyCredentials (action) {
   const { token } = action;
   yield put(setLoading(CRED_VERIFY, true));
-  const res = yield call(verifyJWT, token, { audience: credentials.did });
-  didDoc = res.doc;
-  const profile = yield call(
-    credentials.processDisclosurePayload.bind(credentials),
-    res
-  );
-  profile.publicEncKey = profile.boxPub;
-  yield put(verifyCredentialsSuccess(profile));
-  yield put(saveProfile(profile));
+  if(!credentials)
+    yield call(initCredentials);
+  try {
+    const res = yield call(verifyJWT, token, { audience: credentials.did });
+    didDoc = res.doc;
+    const profile = yield call(
+      credentials.processDisclosurePayload.bind(credentials),
+      res
+    );
+    profile.publicEncKey = profile.boxPub;
+    yield put(verifyCredentialsSuccess(profile));
+    yield put(saveProfile(profile));
+  } catch(ex) {
+    console.error(ex);
+  }
   yield put(setLoading(CRED_VERIFY, false));
 }
 
 function* requestDisclosure(action) {
-  const { callbackId, requestedClaims } = action;
-  const callbackUrl = createChasquiUrl(callbackId);
+  const { callbackId, requestedClaims, isMobile } = action;
+  const callbackUrl = isMobile
+    ? createCallbackUrl(callbackId)
+    : createChasquiUrl(callbackId);
+
   const expiresIn = 2 * 60; // seconds
   yield put(setLoading(REQ_DISCLOSURE, true));
-  yield call(signAndUploadProfile);
+  if(!credentials) {
+    yield call(initCredentials);
+  }
   const jwt = yield call(
     credentials.createDisclosureRequest.bind(credentials),
     {
       requested: [ "name" ],
       verified: requestedClaims,
-      notifications: true,
+      notifications: !isMobile,
       callbackUrl,
-      redirectUrl: window.location.href,
       accountType: "none",
       vc: verifiedClaims
     },
     expiresIn
   );
-  yield put(reqDisclosureSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+  if(isMobile) {
+    yield put(reqDisclosureSuccess(
+      callbackId,
+      `me.uport:req/${jwt}?callback_type=redirect&redirect_url=${callbackUrl}`
+    ));
+  } else {
+    yield put(reqDisclosureSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+  }
   yield put(setLoading(REQ_DISCLOSURE, false));
 }
 
@@ -99,11 +119,16 @@ function* sendVerification(action) {
   const callbackId = action.callbackId;
   const profile = action.profile;
   const claim = action.claim;
+  const isMobile = action.isMobile;
   const pushToken = profile.pushToken;
   const publicEncKey = profile.publicEncKey;
-  const callbackUrl = createChasquiUrl(callbackId);
+  const callbackUrl = isMobile
+    ? createCallbackUrl(callbackId)
+    : createChasquiUrl(callbackId);
   yield put(setLoading(SEND_VERIF, true));
-  yield call(signAndUploadProfile);
+  if(!credentials) {
+    yield call(initCredentials);
+  }
   const jwt = yield call(
     credentials.createVerification.bind(credentials),
     {
@@ -113,11 +138,18 @@ function* sendVerification(action) {
       callbackUrl
     }
   );
-  if(pushToken && publicEncKey) {
-    transport.push.send(pushToken, publicEncKey)(jwt);
-    yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`, true));
+  if(isMobile) {
+    yield put(sendVerificationSuccess(
+      callbackId,
+      `me.uport:req/${jwt}?callback_type=redirect&redirect_url=${callbackUrl}`
+    ));
   } else {
-    yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+    if(pushToken && publicEncKey) {
+      transport.push.send(pushToken, publicEncKey)(jwt);
+      yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`, true));
+    } else {
+      yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+    }
   }
   yield put(setLoading(SEND_VERIF, false));
 }

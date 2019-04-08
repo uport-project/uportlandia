@@ -4,11 +4,12 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { Grid, Col, Container } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { LoginButton } from "../shared/elements";
+import { LoginButton, LoginLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import LoginModal from "../uport/LoginContainer";
 import SERVICES from "../../constants/services";
+import isMobile from "../../utils/isMobile";
 
 class Landing extends React.Component {
   constructor(props) {
@@ -25,18 +26,20 @@ class Landing extends React.Component {
   }
   handleLoginSuccess = profile => {
     const { loginModal } = this.state;
-    if(loginModal) {
+    if(loginModal || isMobile()) {
       this.setState({ loginModal: false })
       this.props.redirectToCityIdForm();
     }
   }
   render() {
-    const { profile, redirectToCityIdForm } = this.props;
+    const { login, profile, redirectToCityIdForm } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {profile && profile.did
         ? <LoginButton text="Continue" onClick={redirectToCityIdForm} />
-        : <LoginButton onClick={this.showLoginModal} />}
+        : isMobile()
+          ? <LoginLink href={login.url} />
+          : <LoginButton onClick={this.showLoginModal} />}
       </Card.CTA>);
     return (<Wrapper>
       <Grid>
