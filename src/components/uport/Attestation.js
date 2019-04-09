@@ -1,4 +1,6 @@
 /* eslint no-script-url: 0 */
+/* eslint jsx-a11y/anchor-is-valid: 0 */
+/* eslint react/jsx-no-target-blank: 0 */
 import React from "react";
 import styled from "styled-components";
 import shortId from "shortid";

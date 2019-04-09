@@ -19,7 +19,7 @@ import {
 } from "../actions";
 import createChasquiUrl from "../utils/createChasquiUrl";
 import createCallbackUrl from "../utils/createCallbackUrl";
-import { addFile, pin } from '../utils/ipfs'
+import { addFile } from '../utils/ipfs'
 
 let keypair;
 let credentials;
@@ -48,7 +48,6 @@ async function signAndUploadProfile() {
     claim: profile
   });
   const response = await addFile(new Blob([ jwt ]));
-  await pin(response.Hash);
   verifiedClaims.unshift(`/ipfs/${response.Hash}`);
 }
 

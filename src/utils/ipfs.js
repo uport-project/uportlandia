@@ -3,7 +3,7 @@ const IPFS_NODE = "https://ipfs.infura.io:5001";
 export function addFile (file) {
   const formData = new FormData();
   formData.append("file", file);
-  return fetch(`${IPFS_NODE}/api/v0/add`, {
+  return fetch(`${IPFS_NODE}/api/v0/add?pin=true`, {
     method: "post",
     body: formData
   }).then(resp => {
