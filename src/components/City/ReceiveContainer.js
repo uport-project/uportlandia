@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../../actions";
 import { getUPortVerification, getCityIdInfo, isLoggedIn, isLoading } from "../../selectors";
 
-import Submitted from "./Submitted";
+import Receive from "./Receive";
 
 const mapStateToProps = state => ({
   isLoading: isLoading(state),
@@ -28,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Submitted);
+export default connect(mapStateToProps, mapDispatchToProps)(Receive);

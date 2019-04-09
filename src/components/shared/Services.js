@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
 
@@ -43,10 +42,6 @@ Services.MINIMAL = MINIMAL;
 Services.COMPACT = COMPACT;
 Services.DETAILED = DETAILED;
 
-const ErrorImage = styled.img`
-  display: block;
-  margin: 40px auto 0;
-`;
 const Heading = styled.h3`
   font-size: 0.6875rem;
   margin: 40px 0 10px;
@@ -132,13 +127,6 @@ const Logo = styled.img`
       max-width: 24px;
     `
     : ``}
-`;
-const ServiceLink = styled(Link)`
-  align-self: center;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-align: right;
-  text-decoration: none;
 `;
 const Service = styled.div`
   background: ${theme.main.bg};

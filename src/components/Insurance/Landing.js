@@ -2,13 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { LoginButton, LoginLink } from "../shared/elements";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import SidebarLeft from "../shared/SidebarLeft";
 import LoginModal from "../uport/LoginContainer";
-import Logo from "../../images/insurance-logo.png";
 import isValid from "../../utils/validateCityIdInfo";
 import isValidEmploment from "../../utils/validateEmployment";
 import isMobile from "../../utils/isMobile";
@@ -41,7 +40,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login, profile, redirectToCityIdForm } = this.props;
+    const { login } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()

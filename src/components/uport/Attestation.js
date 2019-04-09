@@ -1,18 +1,13 @@
+/* eslint no-script-url: 0 */
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
 
-
 import isMobile from "../../utils/isMobile";
-import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
-import spin from "../../utils/spinanim";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
-import itunesImg from "../../images/itunes.svg";
-import playStoreImg from "../../images/playstore.svg";
 import AcceptAttestationImg from "../../images/accept-attestation.svg";
 
 import {
@@ -25,8 +20,6 @@ import {
   Refresh,
   QRWrapper,
   LoadingIcon,
-  Status,
-  Waiting,
   Info,
   Card,
   Entity,
@@ -51,7 +44,6 @@ class Attestation extends React.Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    const { qrData } = this.state;
     const { show, data={} } = this.props;
     const { url, isPush } = data;
     if(show && !prevProps.show) {
@@ -80,7 +72,7 @@ class Attestation extends React.Component {
     this.props.sendVerification(requestId, this.props.profile, claim);
   }
   render() {
-    const { showQR, qrData, waiting } = this.state;
+    const { showQR, qrData } = this.state;
     const {
       heading,
       description,
@@ -88,13 +80,11 @@ class Attestation extends React.Component {
       issuer,
       infoDetails,
       claimDetails,
-      claim,
       profile,
       login={},
       show
     } = this.props;
     const { url } = login;
-    const issuedAt = (new Date()).toDateString();
     if(!profile)
       return null;
     const styles = {
@@ -122,12 +112,12 @@ class Attestation extends React.Component {
                         <a href={url} target='_blank'>
                           {this.isMobile
                             ? <p>Tap to open in a mobile browser</p>
-                            : <img className='qr' src={qrData} />}
+                            : <img className='qr' src={qrData} alt="QR" />}
                         </a>
                       </QRWrapper>
                     </div>
                     <CenteredRefresh onClick={this.sendVerification}>
-                      <img src={reloadImg} />
+                      <img src={reloadImg} alt="Reload" />
                       Refresh
                     </CenteredRefresh>
                   </React.Fragment>

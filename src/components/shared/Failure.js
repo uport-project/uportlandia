@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import * as theme from "../shared/theme";
-import { Container, Grid, Col, medium } from "../shared/grid";
+import { Container, Grid, Col } from "../shared/grid";
 import Card from "../shared/ServiceCard";
-import { Button, InvLinkButton } from "../shared/elements";
-import Services from "../shared/Services";
+import { InvLinkButton } from "../shared/elements";
 import ErrorIcon from "../../images/grumpy-face.svg";
-import SERVICES from "../../constants/services";
 
 class Failure extends React.Component {
   render() {

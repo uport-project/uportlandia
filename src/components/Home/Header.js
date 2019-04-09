@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";

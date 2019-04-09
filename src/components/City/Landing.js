@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Grid, Col, Container } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { LoginButton, LoginLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";

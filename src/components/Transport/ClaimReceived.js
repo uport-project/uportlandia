@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { ThemedButton } from "../shared/elements";
-import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-transport.svg";
 import SERVICES from "../../constants/services";
@@ -17,8 +15,8 @@ class ClaimReceived extends React.Component {
     }
   }
   render() {
-    const { data, redirectToHome } = this.props;
-    if(!this.props.isLoggedIn)
+    const { isLoggedIn, redirectToHome } = this.props;
+    if(!isLoggedIn)
       return null;
     const CTA = () => (<Card.CTA>
       <ThemedButton themeId={SERVICES.TRANSPORT.id}

@@ -9,8 +9,10 @@ const navigateExternalReducer = (state=initialState, action) => {
 
     case ACTIONS.NAV_EXTERNAL_RESET:
       return initialState;
+
+    default:
+      return state;
   }
-  return state;
 };
 
 export default navigateExternalReducer;

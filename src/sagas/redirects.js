@@ -152,7 +152,7 @@ function redirectToMuseumMembershipReceived() {
 }
 
 function* navigateExternal(action) {
-  const { url, name } = action;
+  const { url } = action;
   const openUrl = () => new Promise((resolve, reject) => setTimeout(() => {
     history.replace(url);
     resolve();

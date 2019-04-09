@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "./theme";
-import { Container, medium } from "./grid";
+import { medium } from "./grid";
 import { Button, Form } from "./elements";
 
 const ContentCard = props => {
-  const { backLink=null, children, CTA, onGoBack } = props;
+  const { children, CTA } = props;
   const withCTA = Boolean(CTA);
   return (<Wrapper withCTA={withCTA}>
     <Spacer />

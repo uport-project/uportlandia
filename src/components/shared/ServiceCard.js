@@ -23,9 +23,7 @@ class HomeCard extends React.Component {
       description,
       shareClaims=[],
       shareServices=[],
-      receiveClaims=[],
-      url,
-      onSubmit
+      receiveClaims=[]
     } = this.props;
 
     const theme = {
@@ -78,7 +76,7 @@ class HomeCard extends React.Component {
               </ShareClaims>}
               <Button onClick={this.promptAndRedirect}>
                 Get {name}
-                <img src={popupIcon} />
+                <img src={popupIcon} alt="" />
               </Button>
             </Issued>
           </Col>
@@ -140,12 +138,6 @@ const Issued = styled.div`
   padding: 0 30px 30px;
   ${medium("padding: 30px 30px 30px 0;")}
 `;
-const AltColorBG = styled.div`
-  background: ${theme.colors.cardAltBg};
-  border-radius: 0 8px 8px 0;
-  display: none;
-  ${medium("display: block;")}
-`;
 const Header = styled.div`;
   line-height: 1.5;
   text-align: center;
@@ -182,17 +174,6 @@ Header.Name = styled.h2`
   font-weight: 600;
   grid-area: 1 / 2 / 2 / 3;
 `;
-const DescriptionRow = styled.div`
-  align-items: center;
-  margin-top: 15px;
-  text-align: center;
-  ${medium(`
-    display: grid;
-    grid-gap: 0 70px;
-    grid-template-columns: 4fr 1fr;
-    text-align: left;
-  `)}
-`;
 const Description = styled.p`
   margin: 20px 0;
 `;
@@ -223,7 +204,6 @@ const ShareClaims = styled.div`
     padding-left: 10px;
   `)}
 `;
-const ReceiveClaims = styled(ShareClaims)``;
 const Claim = styled.li`
   & + & {
     margin-top: 5px;

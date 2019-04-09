@@ -1,5 +1,4 @@
-import { takeEvery, put, call, all } from "redux-saga/effects";
-import { decodeJWT } from "did-jwt";
+import { takeEvery, put, call } from "redux-saga/effects";
 
 import { POLL_CHASQUI } from "../constants/actions";
 import createChasquiUrl from "../utils/createChasquiUrl";

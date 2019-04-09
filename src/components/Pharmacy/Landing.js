@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { LoginButton, LoginLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
@@ -40,7 +40,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login, profile, redirectToCityIdForm } = this.props;
+    const { login } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()

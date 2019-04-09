@@ -1,3 +1,4 @@
+/* eslint react/jsx-pascal-case: 0 */
 import React from "react";
 import { Link } from "react-router-dom";
 import { default as styled, css } from "styled-components";

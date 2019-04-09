@@ -27,8 +27,10 @@ const uportLoginReducer = (state=initialState, action) => {
         ...state,
         profile: action.value
       };
+
+    default:
+      return state;
   }
-  return state;
 };
 
 export default uportLoginReducer;

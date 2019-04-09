@@ -1,14 +1,11 @@
+/* eslint react/jsx-no-target-blank: 0 */
 import React from "react";
-import { connect } from "react-redux";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
 
 import * as theme from "../shared/theme";
-import { medium } from "../shared/grid";
 import Services from "../shared/Services";
-import spin from "../../utils/spinanim";
-import createChasquiUrl from "../../utils/createChasquiUrl";
 import isMobile from "../../utils/isMobile";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
@@ -28,9 +25,7 @@ import {
   Waiting,
   Info,
   Card,
-  Entity,
-  Claims,
-  Claim
+  Entity
 } from "./elements";
 
 class UportLogin extends React.Component {
@@ -107,7 +102,7 @@ class UportLogin extends React.Component {
       show
     } = this.props;
     const { qrData, waiting } = this.state;
-    const { profile, url } = login;
+    const { url } = login;
     const styles = {
       entityName: {
         color: issuer.colors.primary
@@ -139,7 +134,7 @@ class UportLogin extends React.Component {
                     <a href={url} target="_blank">
                       {this.isMobile
                         ? "Tap to login with the uPort app"
-                        : <img className="qr" src={qrData} />}
+                        : <img className="qr" src={qrData} alt="QR" />}
                     </a>
                   </QRWrapper>
                 </div>
@@ -153,17 +148,17 @@ class UportLogin extends React.Component {
                   <LoadingIcon src={loadingImg} />
                 </Waiting>}
                 {!qrData || <Refresh onClick={this.handleLogin}>
-                  <img src={reloadImg} />
+                  <img src={reloadImg} alt="Reload" />
                   Refresh
                 </Refresh>}
               </Status>
               <AppStoreLinks>
                 <p>Don’t have the app? Download it from your store</p>
                 <a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
-                  <img src={itunesImg} />
+                  <img src={itunesImg} alt="itunes" />
                 </a>
                 <a href="https://play.google.com/store/apps/details?id=com.uportMobile&hl=en" target="_blank">
-                  <img src={playStoreImg} />
+                  <img src={playStoreImg} alt="Play Store" />
                 </a>
               </AppStoreLinks>
             </Content.Footer>

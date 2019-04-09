@@ -1,4 +1,4 @@
-import { spawn, takeEvery, put, call, all } from "redux-saga/effects";
+import { spawn, takeEvery, put, call } from "redux-saga/effects";
 import { Credentials } from "uport-credentials";
 import { transport } from "uport-transports";
 import { verifyJWT } from "did-jwt";
@@ -23,7 +23,6 @@ import { addFile, pin } from '../utils/ipfs'
 
 let keypair;
 let credentials;
-let didDoc;
 let verifiedClaims = [];
 
 async function signAndUploadProfile() {
@@ -67,7 +66,6 @@ function* verifyCredentials (action) {
     yield call(initCredentials);
   try {
     const res = yield call(verifyJWT, token, { audience: credentials.did });
-    didDoc = res.doc;
     const profile = yield call(
       credentials.processDisclosurePayload.bind(credentials),
       res

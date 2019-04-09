@@ -33,8 +33,9 @@ const uportMessagesReducer = (state=initialState, action) => {
       }
       break;
     }
+    default:
+      return state;
   }
-  return state;
 };
 
 export default uportMessagesReducer;

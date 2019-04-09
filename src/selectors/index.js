@@ -1,6 +1,5 @@
 import { createSelector } from "reselect";
 
-import * as  ACTIONS from "../constants/actions";
 import SERVICES from "../constants/services";
 
 export const isLoading = state => Boolean(state.loading.length);

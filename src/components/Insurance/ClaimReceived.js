@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { ThemedButton } from "../shared/elements";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SuccessIcon from "../../images/congratulations-insurance.svg";
-import PharmacyLogo from "../../images/pharmacy-logo.png";
 import getDependentServices from "../../utils/getDependentServices";
 import SERVICES from "../../constants/services";
 
@@ -19,8 +17,8 @@ class ClaimReceived extends React.Component {
     }
   }
   render() {
-    const { data, redirectToHome } = this.props;
-    if(!this.props.isLoggedIn)
+    const { redirectToHome, isLoggedIn } = this.props;
+    if(!isLoggedIn)
       return null;
     return (<Wrapper>
       <Grid>
@@ -42,7 +40,7 @@ class ClaimReceived extends React.Component {
               heading="Services that honor insurance claims"
               data={getDependentServices(SERVICES.INSURANCE.id)} />
             <ThemedButton themeId={SERVICES.INSURANCE.id}
-              secondary onClick={this.props.redirectToHome}
+              secondary onClick={redirectToHome}
             >
               View All
             </ThemedButton>

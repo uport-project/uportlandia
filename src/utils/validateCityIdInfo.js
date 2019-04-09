@@ -61,7 +61,7 @@ export default (data={}) => {
     };
   }
   const today = dayjs();
-  if(!/^\d{4}\-\d{2}\-\d{2}$/.test(dob) ||
+  if(!/^\d{4}-\d{2}-\d{2}$/.test(dob) ||
     !dayjs(dob).isValid() ||
     dayjs(dob).year() > today.year() - 13 ||
     dayjs(dob).year() < 1900

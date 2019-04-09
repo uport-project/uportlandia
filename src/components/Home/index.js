@@ -1,13 +1,10 @@
 import React from "react";
 import { connect } from "react-redux";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
-import * as actions from "../../actions";
 import { showAppDownload } from "../../selectors";
-import Body from "../shared/Body";
 import * as theme from "../shared/theme";
-import { Container, Grid, Col, medium } from "../shared/grid";
+import { Container, medium } from "../shared/grid";
 import Header from "./Header";
 import Card from "../shared/ServiceCard";
 import AppDownload from "./AppDownloadContainer";

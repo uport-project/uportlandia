@@ -4,8 +4,6 @@ import styled from "styled-components";
 import * as theme from "../shared/theme";
 import { large } from "../shared/grid";
 import SecureIcon from "../../images/secure-icon.svg";
-import CitizenIcon from "../../images/citizen-icon.svg";
-import ArrowLeft from "../../images/arrow-left.svg";
 
 class Security extends React.Component {
   render() {

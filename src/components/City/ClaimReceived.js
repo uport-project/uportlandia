@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
 import { ThemedButton } from "../shared/elements";
 import isValid from "../../utils/validateCityIdInfo";
 import getDependentServices from "../../utils/getDependentServices";
 import SuccessIcon from "../../images/congratulations-city.svg";
-import UniLogo from "../../images/university-logo.png";
 import Services from "../shared/Services";
 import LikeDemo from "../shared/LikeDemo";
 import SERVICES from "../../constants/services";
@@ -20,8 +18,8 @@ class ClaimReceived extends React.Component {
     }
   }
   render() {
-    const { data, redirectToHome } = this.props;
-    if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
+    const { data, redirectToHome, isLoggedIn } = this.props;
+    if(!isLoggedIn || !isValid(data).valid)
       return null;
     return (<Wrapper>
       <Grid>
@@ -42,7 +40,7 @@ class ClaimReceived extends React.Component {
             <Services
               heading="Services that honor City ID claims"
               data={getDependentServices(SERVICES.CITY_ID.id)} />
-            <ThemedButton themeId={SERVICES.CITY_ID.id} secondary onClick={this.props.redirectToHome}>
+            <ThemedButton themeId={SERVICES.CITY_ID.id} secondary onClick={redirectToHome}>
               View All
             </ThemedButton>
           </Card>

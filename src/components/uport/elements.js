@@ -1,13 +1,9 @@
-import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
 import { Button } from "../shared/elements";
 import { medium } from "../shared/grid";
 import spin from "../../utils/spinanim";
-import loadingImg from "../../images/loading.svg";
-import reloadImg from "../../images/reload.svg";
-import CityLogo from "../../images/city-logo.png";
 
 export const Modal = styled.div`
   bottom: 0;

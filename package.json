@@ -15,7 +15,6 @@
     "mobile-detect": "^1.4.3",
     "qr-image": "^3.2.0",
     "react": "16.4.2",
-    "react-datepicker": "^2.0.0",
     "react-dom": "16.4.2",
     "react-redux": "5.0.7",
     "react-router": "4.3.1",

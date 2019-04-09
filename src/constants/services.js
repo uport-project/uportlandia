@@ -181,11 +181,6 @@ const COMPANY_NAME = {
   honoredBy: [INSURANCE]
 };
 
-const ROLE = {
-  name: "Role",
-  issuedBy: [COMPANY]
-};
-
 const SALARY = {
   name: "Salary",
   issuedBy: [COMPANY]

@@ -1,6 +1,5 @@
 import React from "react";
-import { Link, Route, Switch } from "react-router-dom";
-import styled from "styled-components";
+import { Route, Switch } from "react-router-dom";
 
 import Header from "../shared/Header";
 import Landing from "./LandingContainer";
@@ -8,16 +7,14 @@ import Failure from "../shared/Failure";
 import Receive from "./ReceiveContainer";
 import ClaimReceived from "./ClaimReceivedContainer";
 import Footer from "../shared/Footer";
-import * as theme from "../shared/theme";
 import { ContentLayout, BackButton } from "../shared/elements";
-import { Container, Grid, Col } from "../shared/grid";
-import Logo from "../../images/company-logo.png";
+import { Container } from "../shared/grid";
 import SERVICES from "../../constants/services";
 
 class City extends React.Component {
   render() {
     return (<ContentLayout>
-      <Header title="Dream Job LLC." logo={Logo} />
+      <Header title="Dream Job LLC." logo={SERVICES.COMPANY.icon} />
       <Container>
         <Switch>
           <Route path="/company" exact>

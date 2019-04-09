@@ -1,7 +1,6 @@
 import React from "react";
 
 import LoadingOverlay from "./shared/LoadingOverlay";
-import UPortLogin from "./uport/LoginContainer";
 
 class App extends React.Component {
   componentDidMount() {

@@ -18,8 +18,9 @@ const cityIdInfoReducer = (state=initialState, action) => {
         ...initialState,
         ...action.value
       };
+    default:
+      return state;
   }
-  return state;
 };
 
 export default cityIdInfoReducer;

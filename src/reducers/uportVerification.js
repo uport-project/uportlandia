@@ -27,8 +27,10 @@ const uportVerificationReducer = (state=initialState, action) => {
         ...initialState,
         error: action.error
       };
+
+    default:
+      return state;
   }
-  return state;
 }
 
 export default uportVerificationReducer;

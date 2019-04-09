@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
-import { Container, Grid, Col } from "../shared/grid";
+import { Grid, Col } from "../shared/grid";
 import Card from "../shared/ContentCard";
-import { LoginButton, Sidebar, LoginLink } from "../shared/elements";
+import { LoginButton, LoginLink } from "../shared/elements";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import SidebarLeft from "../shared/SidebarLeft";
 import LoginModal from "../uport/LoginContainer";
@@ -30,7 +30,6 @@ class Landing extends React.Component {
     if(loginModal || isMobile()) {
       this.setState({ loginModal: false })
       const cityID = profile[SERVICES.CITY_ID.claim];
-      const diploma = profile[SERVICES.DIPLOMA.claim];
       if(isValid(cityID).valid) {
         this.props.redirectToReceiveMuseumMembership();
       } else {
@@ -39,7 +38,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login, profile } = this.props;
+    const { login } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()

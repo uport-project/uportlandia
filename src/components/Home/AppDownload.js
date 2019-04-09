@@ -18,10 +18,10 @@ const AppDownload = ({ show, onClose }) => {
       <Message mobile>Psst... Make sure you have the uPort app downloaded.</Message>
       <Row>
         <AppStoreLink href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
-          <img src={iTunes} />
+          <img src={iTunes} alt="iTunes" />
         </AppStoreLink>
         <AppStoreLink href="https://play.google.com/store/apps/details?id=com.uportMobile&hl=en" target="_blank">
-          <img src={PlayStore} />
+          <img src={PlayStore} alt="Play Store" />
         </AppStoreLink>
       </Row>
       <Close onClick={onClose}>&times;</Close>

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
-import DatePicker from "react-datepicker";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -96,7 +95,7 @@ class PersonalInfo extends React.Component {
   }
   render() {
     const { isLoggedIn } = this.props;
-    const { isSubmitted, details, validationError } = this.state;
+    const { details, validationError } = this.state;
     const {
       firstName,
       lastName,
@@ -218,7 +217,11 @@ class PersonalInfo extends React.Component {
                       checked={toc}
                       onChange={this.handleChange("toc")} />
                     <span>I agree to the uPort </span>
-                    <a href="https://www.uport.me/terms-conditions" target="_blank">
+                    <a
+                      href="https://www.uport.me/terms-conditions"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       Terms and Conditions
                     </a>
                   </label>
