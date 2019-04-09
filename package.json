@@ -6,7 +6,7 @@
   "repository": "https://github.com/uport-project/cleverland",
   "devDependencies": {
     "cloudfront-invalidate-cache": "^1.0.1",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.8",
     "s3-deploy": "^1.2.1"
   },
   "dependencies": {
@@ -25,8 +25,8 @@
     "reselect": "3.0.1",
     "shortid": "2.2.12",
     "styled-components": "4.1.2",
-    "uport-credentials": "^1.1.0",
-    "uport-transports": "^0.2.2"
+    "uport-credentials": "^1.1.5",
+    "uport-transports": "^0.2.5"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -39,5 +39,11 @@
     "deploy:stage": "npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
     "deploy:production": "npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
