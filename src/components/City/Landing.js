@@ -72,6 +72,7 @@ class Landing extends React.Component {
           logo: SERVICES.CITY_ID.icon,
           colors: theme.colors[SERVICES.CITY_ID.id]
         }}
+        hiddenRequests={[SERVICES.CITY_ID]}
         onClose={this.hideLoginModal}
         onLoginSuccess={this.handleLoginSuccess} />
     </Wrapper>)

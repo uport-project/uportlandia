@@ -6,6 +6,7 @@ import Landing from "./LandingContainer";
 import PersonalInfo from "./PersonalInfoContainer";
 import Receive from "./ReceiveContainer";
 import ClaimReceived from "./ClaimReceivedContainer";
+import ClaimExists from "./ClaimExistsContainer";
 import Footer from "../shared/Footer";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container } from "../shared/grid";
@@ -37,6 +38,12 @@ class City extends React.Component {
             <React.Fragment>
               <BackButton url="/" label="Back to Home" />
               <ClaimReceived />
+            </React.Fragment>
+          </Route>
+          <Route path="/city/exists" exact>
+            <React.Fragment>
+              <BackButton url="/" label="Back to Home" />
+              <ClaimExists />
             </React.Fragment>
           </Route>
         </Switch>

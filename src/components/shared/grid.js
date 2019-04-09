@@ -37,6 +37,16 @@ export const small = styles => `
     ${styles}
   }
 `;
+export const xsmall = styles => `
+  @media all and (max-width: 500px) {
+    ${styles}
+  }
+`;
+export const xxsmall = styles => `
+  @media all and (max-width: 400px) {
+    ${styles}
+  }
+`;
 
 /**
   Use the Container to set a uniform content width and margin

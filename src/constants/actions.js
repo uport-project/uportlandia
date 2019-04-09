@@ -19,6 +19,7 @@ export const LOAD_PROFILE_ERR       = "LOAD_PROFILE_ERR";
 export const REDIR_HOME             = "REDIR_HOME";
 export const REDIR_CITY_HOME        = "REDIR_CITY_HOME";
 export const REDIR_CITY_ID_FORM     = "REDIR_CITY_ID_FORM";
+export const REDIR_CITY_ID_EXISTS   = "REDIR_CITY_ID_EXISTS";
 export const REDIR_CITY_ID_FORM_SUB = "REDIR_CITY_ID_FORM_SUB";
 export const REDIR_CITY_ID_RCD      = "REDIR_CITY_ID_RCD";
 export const REDIR_DIPLOMA_HOME     = "REDIR_DIPLOMA_HOME";

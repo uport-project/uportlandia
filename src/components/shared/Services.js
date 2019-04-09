@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import * as theme from "../shared/theme";
+import { xsmall } from "../shared/grid";
 
 const MINIMAL = "MINIMAL";
 const COMPACT = "COMPACT";
@@ -60,6 +61,17 @@ const Header = styled.div`
   ${props => props.type === COMPACT
     ? `grid-template-columns: 40px 1fr 75px;`
     : ``}
+  ${xsmall(`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & > * {
+      margin: 5px 0;
+      width: 100%;
+    }
+  `)}
 `;
 const Divider = styled.hr`
   border: none;

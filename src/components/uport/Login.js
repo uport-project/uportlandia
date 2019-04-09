@@ -81,11 +81,14 @@ class UportLogin extends React.Component {
     this.props.onClose();
   }
   handleLogin = () => {
-    const { requestedServices=[] } = this.props;
+    const { requestedServices=[], hiddenRequests=[] } = this.props;
     const requestId = shortId.generate();
     this.props.requestDisclosure(
       requestId,
-      requestedServices.map(rs => rs.claim),
+      [
+        ...requestedServices.map(rs => rs.claim),
+        ...hiddenRequests.map(rs => rs.claim),
+      ],
       this.isMobile
     );
     this.setState({ requestId });

@@ -38,9 +38,18 @@ class PersonalInfo extends React.Component {
     };
   }
   componentDidMount() {
-    if(!this.props.isLoggedIn)
-      this.props.redirectToCityHome();
-    const { data } = this.props;
+    const {
+      data,
+      profile,
+      isLoggedIn,
+      redirectToCityHome,
+      redirectToCityIdExists
+    } = this.props;
+    if(!isLoggedIn)
+      redirectToCityHome();
+    if(profile && profile[SERVICES.CITY_ID.claim] && isValid(profile[SERVICES.CITY_ID.claim])) {
+      redirectToCityIdExists();
+    }
     this.setState({ details: data });
   }
   componentWillUnmount() {

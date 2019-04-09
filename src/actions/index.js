@@ -112,6 +112,10 @@ export const redirectToCityIdReceived = () => ({
   type: ACTIONS.REDIR_CITY_ID_RCD
 });
 
+export const redirectToCityIdExists = () => ({
+  type: ACTIONS.REDIR_CITY_ID_EXISTS
+});
+
 export const redirectToDiplomaHome = () => ({
   type: ACTIONS.REDIR_DIPLOMA_HOME
 });

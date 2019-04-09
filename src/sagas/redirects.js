@@ -6,6 +6,7 @@ import {
   REDIR_CITY_ID_FORM,
   REDIR_CITY_ID_FORM_SUB,
   REDIR_CITY_ID_RCD,
+  REDIR_CITY_ID_EXISTS,
   REDIR_DIPLOMA_HOME,
   REDIR_RCV_DIPLOMA,
   REDIR_DIPLOMA_PREREQ,
@@ -53,6 +54,10 @@ function redirectToCityIdFormSubmit() {
 
 function redirectToCityIdReceived() {
   history.push("/city/complete");
+}
+
+function redirectToCityIdExists() {
+  history.push("/city/exists");
 }
 
 function redirectToDiplomaHome() {
@@ -167,6 +172,7 @@ export default function* handleRedirects() {
   yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
   yield spawn(takeEvery, REDIR_CITY_ID_FORM_SUB, redirectToCityIdFormSubmit);
   yield spawn(takeEvery, REDIR_CITY_ID_RCD, redirectToCityIdReceived);
+  yield spawn(takeEvery, REDIR_CITY_ID_EXISTS, redirectToCityIdExists);
   yield spawn(takeEvery, REDIR_DIPLOMA_HOME, redirectToDiplomaHome);
   yield spawn(takeEvery, REDIR_RCV_DIPLOMA, redirectToReceiveDiploma);
   yield spawn(takeEvery, REDIR_DIPLOMA_PREREQ, redirectToDiplomaRequirement);
