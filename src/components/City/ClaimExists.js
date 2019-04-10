@@ -17,7 +17,7 @@ class ClaimExists extends React.Component {
         <Col span={3} />
         <Col span={6}>
           <Card>
-            <h2>You already have a uPortlandia City ID</h2>
+            <h2>It looks like you already have uPortlandia ID</h2>
             <p>
               With your City ID claims you have easy and quick access to
               numerous services and programs in uPortlandia.
@@ -29,7 +29,7 @@ class ClaimExists extends React.Component {
               View All
             </ThemedButton>
             <hr />
-            <p>To make changes to your ID, please delete it from your uPort app and login again.</p>
+            <p>To make changes to your uPortlandia ID, please delete it from your uPort app and login again.</p>
           </Card>
         </Col>
         <Col span={3}>

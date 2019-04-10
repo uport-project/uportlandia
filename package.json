@@ -14,6 +14,7 @@
     "localforage": "^1.7.3",
     "mobile-detect": "^1.4.3",
     "qr-image": "^3.2.0",
+    "qs": "^6.7.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
     "react-redux": "5.0.7",

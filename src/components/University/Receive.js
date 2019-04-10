@@ -57,7 +57,7 @@ class Landing extends React.Component {
             href={verification.url}
             onClick={redirectToDiplomaReceived}
           >Receive your Diploma</ThemedExtLink>
-        : <ThemedButton className="long" secondary onClick={this.showAttestationModal}>
+        : <ThemedButton themeId={SERVICES.DIPLOMA.id} className="long" secondary onClick={this.showAttestationModal}>
             Receive your Diploma
           </ThemedButton>}
     </Card.CTA>);

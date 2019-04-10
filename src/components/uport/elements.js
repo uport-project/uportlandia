@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import * as theme from "../shared/theme";
 import { Button } from "../shared/elements";
-import { medium } from "../shared/grid";
+import { largeHeight, medium } from "../shared/grid";
 import spin from "../../utils/spinanim";
 
 export const Modal = styled.div`
@@ -86,9 +86,12 @@ export const Wrapper = styled.div`
   background: ${theme.gradient6};
   color: #fff;
   display: grid;
-  grid-template-rows: 150px 1fr 150px;
+  grid-template-rows: 100px 1fr 120px;
   height: 80vh;
   justify-items: center;
+  ${largeHeight(`
+    grid-template-rows: 150px 1fr 150px;
+  `)}
 `;
 export const Refresh = styled.button`
   background: none;
@@ -116,6 +119,7 @@ export const QRWrapper = styled.div`
     ${medium(`
       max-width: 38vw;
       max-height: 50vh;
+      min-height: 150px;
     `)}
   }
   a {

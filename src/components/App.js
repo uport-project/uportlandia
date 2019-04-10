@@ -1,4 +1,5 @@
 import React from "react";
+import qs from "qs";
 
 import LoadingOverlay from "./shared/LoadingOverlay";
 
@@ -12,10 +13,16 @@ class App extends React.Component {
   }
   watchHash = () => {
     const hash = window.location.hash.slice(1);
-    if(/^access_token=/.test(hash)) {
-      const jwt = hash.split("access_token=")[1];
-      this.props.verifyCredentials(jwt);
-      window.history.pushState("", document.title, window.location.pathname + window.location.search);
+    if(hash) {
+      const params = qs.parse(hash);
+      if(params["access_token"]) {
+        const jwt = params["access_token"];
+        this.props.verifyCredentials(jwt);
+        window.history.pushState(
+          "",
+          document.title, window.location.pathname + window.location.search
+        );
+      }
     }
   }
   render() {

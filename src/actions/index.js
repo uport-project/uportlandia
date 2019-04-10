@@ -231,3 +231,22 @@ export const navigateExternal = (url, name) => ({
 export const navigateExternalReset = () => ({
   type: ACTIONS.NAV_EXTERNAL_RESET
 });
+
+export const saveDid = did => ({
+  type: ACTIONS.SAVE_DID,
+  did
+});
+
+export const loadDid = () => ({
+  type: ACTIONS.LOAD_DID
+});
+
+export const loadDidSuccess = did => ({
+  type: ACTIONS.LOAD_DID_OK,
+  did
+});
+
+export const loadDidFailure = error => ({
+  type: ACTIONS.LOAD_DID_ERR,
+  error
+});

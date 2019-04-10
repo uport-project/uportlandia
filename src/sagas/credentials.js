@@ -1,4 +1,4 @@
-import { spawn, takeEvery, put, call } from "redux-saga/effects";
+import { spawn, take, takeEvery, put, call } from "redux-saga/effects";
 import { Credentials } from "uport-credentials";
 import { transport } from "uport-transports";
 import { verifyJWT } from "did-jwt";
@@ -7,12 +7,15 @@ import {
   CRED_INIT,
   CRED_VERIFY,
   REQ_DISCLOSURE,
-  SEND_VERIF
+  SEND_VERIF,
+  LOAD_DID_OK
 } from "../constants/actions";
 import {
   initCredentialsSuccess,
   reqDisclosureSuccess,
+  loadDid,
   saveProfile,
+  saveDid,
   setLoading,
   verifyCredentialsSuccess,
   sendVerificationSuccess,
@@ -47,7 +50,8 @@ async function signAndUploadProfile() {
     sub: keypair.did,
     claim: profile
   });
-  const response = await addFile(new Blob([ jwt ]));
+  // const response = await addFile(new Blob([ jwt ]));
+  const response = await addFile(jwt);
   verifiedClaims.unshift(`/ipfs/${response.Hash}`);
 }
 
@@ -64,7 +68,10 @@ function* verifyCredentials (action) {
   if(!credentials)
     yield call(initCredentials);
   try {
-    const res = yield call(verifyJWT, token, { audience: credentials.did });
+    let res;
+    yield put(loadDid());
+    const { did } = yield take(LOAD_DID_OK);
+    res = yield call(verifyJWT, token, { audience: did });
     const profile = yield call(
       credentials.processDisclosurePayload.bind(credentials),
       res
@@ -88,6 +95,7 @@ function* requestDisclosure(action) {
   yield put(setLoading(REQ_DISCLOSURE, true));
   if(!credentials) {
     yield call(initCredentials);
+    yield put(saveDid(credentials.did));
   }
   const jwt = yield call(
     credentials.createDisclosureRequest.bind(credentials),
