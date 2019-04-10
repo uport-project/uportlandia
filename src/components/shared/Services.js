@@ -62,15 +62,19 @@ const Header = styled.div`
     ? `grid-template-columns: 40px 1fr 75px;`
     : ``}
   ${xsmall(`
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+    ${props => props.type !== MINIMAL
+      ? `
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
 
-    & > * {
-      margin: 5px 0;
-      width: 100%;
-    }
+        & > * {
+          margin: 5px 0;
+          width: 100%;
+        }
+      `
+      : null}
   `)}
 `;
 const Divider = styled.hr`
