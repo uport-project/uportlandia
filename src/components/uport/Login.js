@@ -5,7 +5,6 @@ import shortId from "shortid";
 import qrImage from "qr-image";
 
 import * as theme from "../shared/theme";
-import { largeHeight } from "../shared/grid";
 import Services from "../shared/Services";
 import isMobile from "../../utils/isMobile";
 import loadingImg from "../../images/loading.svg";
@@ -83,8 +82,11 @@ class UportLogin extends React.Component {
     this.props.onClose();
   }
   handleLogin = () => {
-    const { requestedServices=[], hiddenRequests=[] } = this.props;
+    const { requestedServices=[], hiddenRequests=[], login } = this.props;
     const requestId = shortId.generate();
+    if(login.url && login.callbackId) {
+      this.props.stopPollChasqui(login.callbackId);
+    }
     this.props.requestDisclosure(
       requestId,
       [

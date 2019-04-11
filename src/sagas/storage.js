@@ -9,11 +9,11 @@ import {
   LOAD_DID
 } from "../constants/actions";
 import {
-  loadProfileFailure,
-  loadProfileSuccess,
+  // loadProfileFailure,
+  // loadProfileSuccess,
   loadDidSuccess,
   loadDidFailure,
-  setLoading
+  // setLoading
 } from "../actions";
 
 const STORAGE_KEY = "uportlandia";
@@ -60,13 +60,13 @@ function* saveDid(action) {
   localforage.setItem(STORAGE_KEY, data);
 }
 
-function* clearDid() {
-  let data = yield call(localforage.getItem.bind(localforage), STORAGE_KEY);
-  if(!data)
-    data = {};
-  data.audience = null;
-  localforage.setItem(STORAGE_KEY, data);
-}
+// function* clearDid() {
+//   let data = yield call(localforage.getItem.bind(localforage), STORAGE_KEY);
+//   if(!data)
+//     data = {};
+//   data.audience = null;
+//   localforage.setItem(STORAGE_KEY, data);
+// }
 
 export default function* () {
   // yield spawn(takeEvery, SAVE_PROFILE, saveProfile);

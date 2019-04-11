@@ -6,6 +6,11 @@ export const setLoading = (id, status) => ({
   status
 });
 
+export const stopPollChasqui = callbackId => ({
+  type: ACTIONS.STOP_POLL_CHASQUI,
+  callbackId
+});
+
 export const pollChasqui = callbackId => ({
   type: ACTIONS.POLL_CHASQUI,
   callbackId

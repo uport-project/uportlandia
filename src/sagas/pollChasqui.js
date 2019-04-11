@@ -1,13 +1,14 @@
 import { takeEvery, put, call } from "redux-saga/effects";
 
-import { POLL_CHASQUI } from "../constants/actions";
+import { POLL_CHASQUI, STOP_POLL_CHASQUI } from "../constants/actions";
 import createChasquiUrl from "../utils/createChasquiUrl";
 import isJWT from "../utils/isJWT";
 import {
   pollChasquiSuccess
-  // setLoading
 } from "../actions";
 import request from "../utils/request";
+
+let openRequests = [];
 
 const delay = async () => new Promise(resolve => {
   setTimeout(() => {
@@ -15,7 +16,7 @@ const delay = async () => new Promise(resolve => {
   }, 2000)
 });
 
-const poll = async url => {
+const poll = async (url, callbackId) => {
   const getContent = async () => {
     const response = await request(url, {
       type: "get",
@@ -41,23 +42,33 @@ const poll = async url => {
   let content = await getContent();
   while(!content) {
     await delay();
+    const index = openRequests.findIndex(id => id === callbackId);
+    if(index === -1)
+      break;
     content = await getContent();
   }
   return content;
 };
 
 function* pollChasqui(action) {
-  // yield put(setLoading(POLL_CHASQUI, true));
   try {
     const { callbackId } = action;
-    const response = yield call(poll, createChasquiUrl(callbackId));
+    openRequests.push(callbackId);
+    const response = yield call(poll, createChasquiUrl(callbackId), callbackId);
     yield put(pollChasquiSuccess(callbackId, response));
   } catch(ex) {
     console.log(ex);
   }
-  // yield put(setLoading(POLL_CHASQUI, false));
+};
+
+function stopPollChasqui(action) {
+  const { callbackId } = action;
+  const index = openRequests.findIndex(id => id === callbackId);
+  if(index !== -1)
+    openRequests.splice(index, 1);
 };
 
 export default function* () {
   yield takeEvery(POLL_CHASQUI, pollChasqui);
+  yield takeEvery(STOP_POLL_CHASQUI, stopPollChasqui);
 }

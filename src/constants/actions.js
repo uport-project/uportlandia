@@ -2,6 +2,7 @@ export const IS_LOADING             = "IS_LOADING";
 export const POLL_CHASQUI           = "POLL_CHASQUI";
 export const POLL_CHASQUI_OK        = "POLL_CHASQUI_OK";
 export const POLL_CHASQUI_ERR       = "POLL_CHASQUI_ERR";
+export const STOP_POLL_CHASQUI      = "STOP_POLL_CHASQUI";
 export const CRED_INIT              = "CRED_INIT";
 export const CRED_INIT_OK           = "CRED_INIT_OK";
 export const REQ_DISCLOSURE         = "REQ_DISCLOSURE";

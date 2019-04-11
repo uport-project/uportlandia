@@ -20,6 +20,9 @@ const mapDispatchToProp = dispatch => ({
   pollChasqui(id) {
     dispatch(actions.pollChasqui(id));
   },
+  stopPollChasqui(id) {
+    dispatch(actions.stopPollChasqui(id));
+  },
   verifyCredentials(token) {
     dispatch(actions.verifyCredentials(token));
   }
