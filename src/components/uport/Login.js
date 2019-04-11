@@ -26,7 +26,8 @@ import {
   Waiting,
   Info,
   Card,
-  Entity
+  Entity,
+  AppStoreLinks
 } from "./elements";
 
 class UportLogin extends React.Component {
@@ -122,11 +123,11 @@ class UportLogin extends React.Component {
               {this.isMobile
                 ? <React.Fragment>
                   <h3>{heading}</h3>
-                  <p>Open the uPort app to login</p>
+                  <h4>Open the uPort app to login</h4>
                 </React.Fragment>
                 : <React.Fragment>
                   <h3>{heading}</h3>
-                  <p>{description}</p>
+                  <h4>{description}</h4>
                 </React.Fragment>}
 
             </Content.Header>
@@ -217,15 +218,6 @@ class UportLogin extends React.Component {
   }
 }
 
-const AppStoreLinks = styled.div`
-  display: none;
-  text-align: center;
-  a {
-    display: inline-block;
-    margin: 0 5px;
-  }
-  ${largeHeight("display: block;")}
-`;
 const ReqServices = styled.div`
   .services__service {
     border-radius: 5px;

@@ -7,7 +7,7 @@ import shortId from "shortid";
 import qrImage from "qr-image";
 
 import isMobile from "../../utils/isMobile";
-import { medium } from "../shared/grid";
+import { largeHeight, medium } from "../shared/grid";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
 import AcceptAttestationImg from "../../images/accept-attestation.svg";
@@ -77,7 +77,6 @@ class Attestation extends React.Component {
     const { showQR, qrData } = this.state;
     const {
       heading,
-      description,
       infoHeading,
       issuer,
       infoDetails,
@@ -101,15 +100,15 @@ class Attestation extends React.Component {
           <Wrapper>
             <Content.Header>
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
-              <h3>{heading}</h3>
-              <p>{this.isMobile ? description : ""}</p>
+              {this.state.showQR
+                ? <CustomHeading>Scan this QR Code using the uPort App</CustomHeading>
+                : <CustomHeading>{heading}</CustomHeading>}
             </Content.Header>
             <Content.Body>
               {showQR
                 ? qrData
                   ? <React.Fragment>
                     <div>
-                        {this.isMobile || <p>Scan this QR Code using the uPort App</p>}
                       <QRWrapper>
                         <a href={url} target='_blank'>
                           {this.isMobile
@@ -127,10 +126,10 @@ class Attestation extends React.Component {
                 : <Image src={AcceptAttestationImg} />}
             </Content.Body>
             <Content.Footer>
-              <DoneButton onClick={this.handleClose}>Done</DoneButton>
-              <a className="text-link"
+              <DoneButton withQR={this.state.showQR} onClick={this.handleClose}>Done</DoneButton>
+              {this.state.showQR || <a className="text-link"
                 href="javascript:;"
-                onClick={this.showQR}>Not receiving the request?</a>
+                onClick={this.showQR}>Not receiving the request?</a>}
             </Content.Footer>
           </Wrapper>
           <Info>
@@ -195,17 +194,33 @@ class Attestation extends React.Component {
 
 const Image = styled.img`
   margin: 10px 0;
-  height: calc(80vh - 300px);
+  // height: calc(80vh - 300px);
   max-height: 40vh;
   max-width: 90vw;
+  min-height: 200px;
   ${medium(`
-    max-width: 38vw;
-    max-height: 50vh;
+    max-width: 48vw;
+    max-height: calc(100vh - 300px);
   `)}
 `;
 const CenteredRefresh = styled(Refresh)`
-  display: block;
+  display: none;
   margin: 0 auto;
+  ${largeHeight(`
+    display: block
+  `)}
+`;
+const CustomHeading = styled.label`
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 10px;
+  @media all and (max-height: 550px) {
+    font-size: 1rem;
+    padding: 20px 10px;
+  }
+  ${largeHeight(`
+    display: block;
+  `)}
 `;
 
 export default Attestation;

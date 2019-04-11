@@ -44,13 +44,10 @@ export const ButtonClose = styled.button`
 `;
 export const Content = styled.div`
   font-size: 0.875rem;
-  height: 80vh;
-  left: 50%;
+  height: 100vh;
   position: relative;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
   z-index: 920;
-  width: 85vw;
+  width: 100vw;
 
   p {
     line-height: 1.25;
@@ -63,11 +60,20 @@ export const Content = styled.div`
 `;
 Content.Header = styled.div`
   align-self: center;
-  padding: 10px;
+  padding: 20px 10px 10px;
   text-align: center;
   h3 {
     font-size: 1.5rem;
     font-weight: 600;
+    @media all and (max-height: 550px) {
+      display: none;
+    }
+  }
+  h4 {
+    @media all and (max-height: 550px) {
+      font-weight: 600;
+    }
+    padding: 10px;
   }
 `;
 Content.Grid = styled.div`
@@ -86,12 +92,15 @@ export const Wrapper = styled.div`
   background: ${theme.gradient6};
   color: #fff;
   display: grid;
-  grid-template-rows: 100px 1fr 120px;
-  height: 80vh;
+  grid-template-rows: 100px 1fr 60px;
+  height: 100vh;
   justify-items: center;
   ${largeHeight(`
-    grid-template-rows: 150px 1fr 150px;
+    grid-template-rows: 100px 1fr 150px;
   `)}
+  @media all and (max-height: 550px) {
+    grid-template-rows: 20px 1fr 60px;
+  }
 `;
 export const Refresh = styled.button`
   background: none;
@@ -112,14 +121,16 @@ export const QRWrapper = styled.div`
   flex-direction: column;
   position: relative;
   .qr {
-    height: calc(80vh - 300px - 100px);
+    // height: calc(100vh - 300px - 100px);
     margin: 10px 0;
-    // max-height: 40vh;
     max-width: 90vw;
     ${medium(`
-      max-width: 38vw;
-      max-height: 50vh;
-      min-height: 150px;
+      max-width: 48vw;
+      max-height: calc(100vh - 200px);
+      min-height: 350px;
+    `)}
+    ${largeHeight(`
+      max-height: calc(100vh - 300px);
     `)}
   }
   a {
@@ -136,17 +147,28 @@ export const LoadingIcon = styled.img`
 export const Status = styled.div`
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
 `;
 export const Waiting = styled.div`
   color: ${theme.colors.mutedText};
   margin-right: 30px;
   padding: 10px 0;
 `;
+export const AppStoreLinks = styled.div`
+  display: none;
+  text-align: center;
+  a {
+    display: inline-block;
+    margin: 0 5px;
+  }
+  ${largeHeight(`
+    display: block;
+    margin-top: 20px;
+  `)}
+`;
 export const Info = styled.aside`
   background: ${theme.colors.cardAltBg};
   display: none;
-  height: 80vh;
+  height: 100vh;
   padding: 40px 0 15px;
 
   h3 {
@@ -266,11 +288,26 @@ Claim.Value = styled.div`
   white-space: nowrap;
 `;
 export const DoneButton = styled(Button)`
+  @media all and (max-height: 500px) {
+    ${props => props.withQR
+      ? ""
+      : `
+        float: right;
+        margin-left: 20px;
+        margin-top: 0;
+        position: relative;
+        top: -10px;
+      `}
+  }
   &, &:hover {
     background: none;
   }
   border: solid 1px #fff;
-  margin: 0 auto 20px;
+  margin: -20px auto 10px;
   padding-left: 30px;
   padding-right: 30px;
+
+  ${largeHeight(`
+    margin-bottom: 20px;
+  `)}
 `;
