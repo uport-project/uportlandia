@@ -38,7 +38,7 @@
     "create-did": "node node_scripts/create_did.js",
     "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
     "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
-    "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
+    "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname"
   },
   "browserslist": [
