@@ -225,7 +225,7 @@ const BUS_TICKET = {
 const MUSEUM_MEMBERSHIP = {
   name: "Annual Membership",
   issuedBy: [MUSEUM],
-  honoredBy: [TRANSPORT]
+  honoredBy: [MUSEUM]
 };
 
 // Attach claims to services

@@ -44,20 +44,27 @@ const Wrapper = styled.aside`
   color: ${theme.footer.textColor};
   font-size: 0.875rem;
   margin-bottom: 30px;
+  margin-top: 50px;
   position: relative;
 
   h3 {
-    background: ${theme.gradient7};
-    border-radius: 4px 4px 0 0;
+    // background: ${theme.gradient7};
+    // border-radius: 4px 4px 0 0;
     color: #fff;
     font-weight: 600;
     margin: 0;
-    padding: 15px 20px;
+    padding: 15px 0;
+    position: relative;
     text-transform: uppercase;
+    top: -40px;
   }
 
   section {
     padding: 20px;
+  }
+
+  h3 + section {
+    margin-top: -40px;
   }
 
   hr {

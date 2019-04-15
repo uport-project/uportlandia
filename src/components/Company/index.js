@@ -5,7 +5,7 @@ import Header from "../shared/Header";
 import Landing from "./LandingContainer";
 import Failure from "../shared/Failure";
 import Receive from "./ReceiveContainer";
-import ClaimReceived from "./ClaimReceivedContainer";
+import Success from "../shared/Success";
 import Footer from "../shared/Footer";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container } from "../shared/grid";
@@ -35,7 +35,7 @@ class City extends React.Component {
           <Route path="/company/complete" exact>
             <React.Fragment>
               <BackButton url="/" label="Back to Home" />
-              <ClaimReceived />
+              <Success id={SERVICES.COMPANY.id} />
             </React.Fragment>
           </Route>
         </Switch>

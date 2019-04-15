@@ -9,8 +9,12 @@ export default serviceId => {
     if(!claim.honoredBy)
       return;
     claim.honoredBy.forEach(s => {
-      if(!deps.find(d => d.name === s.name))
+      if(s.id === serviceId)
+        return;
+      if(!deps.find(d => d.name === s.name)) {
         deps.push(s);
+        console.log(s.id, serviceId)
+      }
     });
   });
   return deps;

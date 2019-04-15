@@ -33,7 +33,7 @@ class HomeCard extends React.Component {
       theme.mainHeading.color = colors.primary;
     }
 
-    return (<Card>
+    return (<Card className="service-card">
       <Content>
         <MainHeading style={theme.mainHeading}>{superText}</MainHeading>
         <Grid>
