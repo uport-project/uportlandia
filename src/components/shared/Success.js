@@ -9,7 +9,6 @@ import { Grid, Col, Spacer, medium } from "./grid";
 import { InvLinkButton } from "./elements";
 import getDependentServices from "../../utils/getDependentServices";
 import SuccessIcon from "../../images/congratulations-city.svg";
-import Services from "./Services";
 import LikeDemo from "./LikeDemo";
 import Card from "./ServiceCard";
 import Footer from "./Footer";
