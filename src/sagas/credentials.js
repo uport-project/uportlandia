@@ -115,7 +115,7 @@ function* requestDisclosure(action) {
       `me.uport:req/${jwt}?callback_type=redirect&redirect_url=${callbackUrl}`
     ));
   } else {
-    yield put(reqDisclosureSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+    yield put(reqDisclosureSuccess(callbackId, `me.uport:req/${jwt}`));
   }
   yield put(setLoading(REQ_DISCLOSURE, false));
 }
@@ -151,9 +151,9 @@ function* sendVerification(action) {
   } else {
     if(pushToken && publicEncKey) {
       transport.push.send(pushToken, publicEncKey)(jwt);
-      yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`, true));
+      yield put(sendVerificationSuccess(callbackId, `me.uport:req/${jwt}`, true));
     } else {
-      yield put(sendVerificationSuccess(callbackId, `https://id.uport.me/req/${jwt}`));
+      yield put(sendVerificationSuccess(callbackId, `me.uport:req/${jwt}`));
     }
   }
   yield put(setLoading(SEND_VERIF, false));
