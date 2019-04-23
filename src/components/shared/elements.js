@@ -18,21 +18,27 @@ Form.displayName = "Form";
 
 export const Label = styled.label`
   display: block;
-  font-size: 0.6875rem;
+  font-size: 1rem;
   text-transform: uppercase;
+  ${medium(`
+    font-size: 0.6875rem;
+  `)}
 `;
 Label.displayName = "Label";
 
 export const textBoxStyle = css`
   border: solid 1px ${theme.formControl.border};
   color: ${theme.formControl.color}
-  font-size: 0.9em;
+  font-size: 1rem;
   line-height: 2em;
   padding: 15px 12px;
   width: 100%;
   &::placeholder {
     color: ${theme.formControl.placeholder};
   }
+  ${medium(`
+    font-size: 0.9em;
+  `)}
 `;
 export const Textbox = styled.input`
   ${textBoxStyle}
@@ -44,11 +50,14 @@ export const Dropdown = styled.select`
   border: solid 1px ${theme.formControl.border};
   border-radius: 0;
   color: ${theme.formControl.color}
-  font-size: 0.9em;
+  font-size: 1rem;
   height: 3.5rem;
   line-height: 2em;
   padding: 15px 12px;
   width: 100%;
+  ${medium(`
+    font-size: 0.9em;
+  `)}
 `;
 Dropdown.displayName = "Dropdown";
 
