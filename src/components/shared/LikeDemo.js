@@ -1,41 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import DevIcon from "../../images/dev-icon.svg";
 import CitizenIcon from "../../images/citizen-icon.svg";
 import ArrowLeft from "../../images/arrow-left.svg";
 
-class LikeTheDemo extends React.Component {
-  render() {
-    return (<Wrapper>
-      <h3>Like the demo?</h3>
-      <section>
-        <Header>
-          <Icon src={DevIcon} />
-          <h4>Build user-centric trusted data apps with uPort</h4>
-        </Header>
-        <p>
-          Issue, request and verify information about your users. Give your
-          users the freedom to manage details about their digital-selves.
-        </p>
-        <ExtLink target="_blank" href="https://developer.uport.me">View Documentation</ExtLink>
-      </section>
-      <hr />
-      <section>
-        <Header>
-          <Icon src={CitizenIcon} />
-          <h4>Issue verified information to citizens in your city</h4>
-        </Header>
-        <p>
-          Build trusted data ecosystem in your city. Let businesses and
-          organizations thrive while maintaining privacy of the citizens.
-        </p>
-        <ExtLink target="_blank" href="https://uport.zendesk.com/hc/en-us">Contact Us</ExtLink>
-      </section>
-    </Wrapper>)
-  }
-}
+const LikeTheDemo = () => {
+  const { t } = useTranslation();
+  return (<Wrapper>
+    <h3>{t("Like the demo?")}</h3>
+    <section>
+      <Header>
+        <Icon src={DevIcon} />
+        <h4>{t("Build user-centric trusted data apps with uPort")}</h4>
+      </Header>
+      <p>
+        {t("Issue, request and verify information about your users")}
+      </p>
+      <ExtLink target="_blank" href="https://developer.uport.me">{t("View Documentation")}</ExtLink>
+    </section>
+    <hr />
+    <section>
+      <Header>
+        <Icon src={CitizenIcon} />
+        <h4>{t("Issue verified information to citizens in your city")}</h4>
+      </Header>
+      <p>
+        {t("Build trusted data ecosystem in your city")}
+      </p>
+      <ExtLink target="_blank" href="https://uport.zendesk.com/hc/en-us">{t("Contact Us")}</ExtLink>
+    </section>
+  </Wrapper>)
+};
 
 const Wrapper = styled.aside`
   background-color: ${theme.main.bg};

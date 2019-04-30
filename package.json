@@ -5,18 +5,25 @@
   "homepage": "https://uportlandia.uport.me",
   "repository": "https://github.com/uport-project/cleverland",
   "devDependencies": {
+    "chai": "^4.2.0",
     "cloudfront-invalidate-cache": "^1.0.1",
     "react-scripts": "^2.1.8",
-    "s3-deploy": "^1.2.1"
+    "s3-deploy": "^1.2.1",
+    "serverless-offline": "^4.9.4",
+    "serverless-plugin-include-dependencies": "^3.2.1"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
     "dayjs": "^1.8.0",
+    "i18next": "^15.0.9",
+    "i18next-browser-languagedetector": "^3.0.1",
     "localforage": "^1.7.3",
     "mobile-detect": "^1.4.3",
     "qr-image": "^3.2.0",
     "qs": "^6.7.0",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-i18next": "^10.7.0",
     "react-redux": "5.0.7",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
@@ -24,6 +31,9 @@
     "redux": "4.0.0",
     "redux-saga": "0.16.0",
     "reselect": "3.0.1",
+    "serverless": "^1.41.0",
+    "serverless-express": "^2.0.11",
+    "serverless-scriptable-plugin": "^1.0.0",
     "shortid": "2.2.12",
     "styled-components": "4.1.2",
     "uport-credentials": "^1.1.5",
@@ -37,9 +47,13 @@
     "eject": "react-scripts eject",
     "create-did": "node node_scripts/create_did.js",
     "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
+    "deploy-secrets": "./deploy-hooks/deploy-secrets.sh",
     "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
     "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
-    "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname"
+    "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
+    "dev:sls": "TARGET_ENV=development node server.dev.js",
+    "deploy:sls:prod": "sls deploy -v -s prod",
+    "offline": "sls offline -s prod"
   },
   "browserslist": [
     ">0.2%",

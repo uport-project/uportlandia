@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
@@ -10,12 +11,13 @@ import PlayStore from "../../images/playstore.svg";
 const AppDownload = ({ show, onClose }) => {
   if(!show)
     return null;
+  const { t } = useTranslation();
   return (<Wrapper>
     <Container>
       <Close mobile onClick={onClose}>&times;</Close>
       <Phone src={HandyPhone} />
-      <Message>Psst... Make sure you have your phone handy with the uPort app downloaded.</Message>
-      <Message mobile>Psst... Make sure you have the uPort app downloaded.</Message>
+      <Message>{t("make sure you have your phone handy")}</Message>
+      <Message mobile>{t("make sure you have the uport app downloaded")}.</Message>
       <Row>
         <AppStoreLink href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
           <img src={iTunes} alt="iTunes" />

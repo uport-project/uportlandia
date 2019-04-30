@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -53,7 +54,7 @@ class Receive extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { verification, cityIdClaim, employmentClaim, isLoggedIn, redirectToInsuranceReceived } = this.props;
+    const { verification, cityIdClaim, employmentClaim, isLoggedIn, redirectToInsuranceReceived, t } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid || !isValidEmployment(employmentClaim))
       return null;
     const CTA = () => (<Card.CTA>
@@ -63,12 +64,12 @@ class Receive extends React.Component {
             secondary
             href={verification.url}
             onClick={redirectToInsuranceReceived}
-          >Receive your Insurance Coverage</ThemedExtLink>
+          >{t("Receive your Insurance Coverage")}</ThemedExtLink>
         : <ThemedButton
             themeId={SERVICES.INSURANCE.id}
             className="long" secondary onClick={this.showAttestationModal}
           >
-            Receive your Insurance Coverage
+            {t("Receive your Insurance Coverage")}
           </ThemedButton>}
     </Card.CTA>);
     return (<Wrapper>
@@ -76,15 +77,20 @@ class Receive extends React.Component {
         <SidebarLeft service={SERVICES.INSURANCE} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Good News!</h2>
-            <p>Your claims were succesfully shared with People Care Insurance LLC.</p>
+            <h2>{t("Good News!")}</h2>
+            <p>
+              {t("Your claims were succesfully shared with")}
+              {" "}
+              {t(SERVICES.INSURANCE.entity)}
+            </p>
             <SuccessImage src={SuccessIcon} />
             <hr />
-            <h4>What’s next?</h4>
+            <h4>{t("What's next?")}</h4>
             <p>
-              Let’s make sure you have an access to your insurance claims whenever
-              and wherever you need them. People Care Insurance LLC. is going
-              to send your new claims to your uPort app.
+              {t("Let's make sure you have an access to your insurance claims whenever and wherever you need them")}.
+              {" "}
+              {t(SERVICES.INSURANCE.entity)} {" "}
+              {t("is going to send your new claims to your uPort app")}
             </p>
           </Card>
         </Col>
@@ -94,7 +100,8 @@ class Receive extends React.Component {
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
-        infoHeading="You're Interacting with..."
+        infoHeading="You're Interacting with"
+        serviceId={SERVICES.INSURANCE.id}
         issuer={{
           heading: SERVICES.INSURANCE.name,
           subHeading: SERVICES.INSURANCE.entity,
@@ -121,4 +128,4 @@ const SuccessImage = styled.img`
   margin: 40px auto 0;
 `;
 
-export default Receive;
+export default withTranslation()(Receive);

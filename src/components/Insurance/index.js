@@ -14,7 +14,7 @@ import SERVICES from "../../constants/services";
 class Insurance extends React.Component {
   render() {
     return (<ContentLayout>
-      <Header title="People Care Insurance LLC." logo={SERVICES.INSURANCE.icon} />
+      <Header title="People Care Insurance LLC" logo={SERVICES.INSURANCE.icon} />
       <Container>
         <Switch>
           <Route path="/insurance" exact>

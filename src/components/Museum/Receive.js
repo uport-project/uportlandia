@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -50,7 +51,7 @@ class Receive extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { verification, cityIdClaim, isLoggedIn, redirectToMuseumMembershipReceived } = this.props;
+    const { verification, cityIdClaim, isLoggedIn, redirectToMuseumMembershipReceived, t } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     const CTA = () => (<Card.CTA>
@@ -60,12 +61,12 @@ class Receive extends React.Component {
             secondary
             href={verification.url}
             onClick={redirectToMuseumMembershipReceived}
-          >Receive your Annual Membership</ThemedExtLink>
+          >{t("Receive your Annual Membership")}</ThemedExtLink>
         : <ThemedButton
             themeId={SERVICES.MUSEUM.id}
             className="long" secondary onClick={this.showAttestationModal}
           >
-            Receive your Annual Membership
+            {t("Receive your Annual Membership")}
           </ThemedButton>}
     </Card.CTA>);
     return (<Wrapper>
@@ -73,15 +74,21 @@ class Receive extends React.Component {
         <SidebarLeft service={SERVICES.MUSEUM} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Good News!</h2>
-            <p>Your claims were succesfully shared with {SERVICES.MUSEUM.entity}</p>
+            <h2>{t("Good News!")}</h2>
+            <p>
+              {t("Your claims were succesfully shared with")}
+              {" "}
+              {t(SERVICES.MUSEUM.entity)}
+            </p>
             <SuccessImage src={SuccessIcon} />
             <hr />
-            <h4>What’s next?</h4>
+            <h4>{t("What's next?")}</h4>
             <p>
-              Let’s make sure you have an access to your annual membership claims whenever
-              and wherever you need them. {SERVICES.MUSEUM.entity} is going
-              to send your new claims to your uPort app.
+              {t("Let's make sure you have an access to your annual membership claims whenever and wherever you need them")}
+              {" "}
+              {t(SERVICES.MUSEUM.entity)}
+              {" "}
+              {t("is going to send your new claims to your uPort app")}.
             </p>
           </Card>
         </Col>
@@ -91,7 +98,8 @@ class Receive extends React.Component {
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
-        infoHeading="You're Interacting with..."
+        infoHeading="You're Interacting with"
+        serviceId={SERVICES.MUSEUM.id}
         issuer={{
           heading: SERVICES.MUSEUM.name,
           subHeading: SERVICES.MUSEUM.entity,
@@ -118,4 +126,4 @@ const SuccessImage = styled.img`
   margin: 40px auto 0;
 `;
 
-export default Receive;
+export default withTranslation()(Receive);

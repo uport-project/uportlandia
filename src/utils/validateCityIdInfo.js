@@ -6,6 +6,7 @@ export default (data={}) => {
     lastName,
     address,
     city,
+    province,
     zipCode,
     country,
     dob,
@@ -37,6 +38,13 @@ export default (data={}) => {
       valid: false,
       fieldId: "city",
       error: "City is required"
+    };
+  }
+  if(!province) {
+    return {
+      valid: false,
+      fieldId: "province",
+      error: "State/Province is required"
     };
   }
   if(!zipCode) {

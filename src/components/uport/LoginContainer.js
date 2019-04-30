@@ -14,8 +14,8 @@ const mapDispatchToProp = dispatch => ({
   loadProfile() {
     dispatch(actions.loadProfile());
   },
-  requestDisclosure(id, requestedClaims, isMobile) {
-    dispatch(actions.reqDisclosure(id, requestedClaims, isMobile));
+  requestDisclosure(serviceId, id, requestedClaims, isMobile) {
+    dispatch(actions.reqDisclosure(serviceId, id, requestedClaims, isMobile));
   },
   pollChasqui(id) {
     dispatch(actions.pollChasqui(id));
@@ -23,8 +23,8 @@ const mapDispatchToProp = dispatch => ({
   stopPollChasqui(id) {
     dispatch(actions.stopPollChasqui(id));
   },
-  verifyCredentials(token) {
-    dispatch(actions.verifyCredentials(token));
+  verifyCredentials(serviceId, token) {
+    dispatch(actions.verifyCredentials(serviceId, token));
   }
 });
 

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -46,7 +47,7 @@ class Landing extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { verification, cityIdClaim, isLoggedIn, redirectToEmploymentReceived } = this.props;
+    const { verification, cityIdClaim, isLoggedIn, redirectToEmploymentReceived, t } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid)
       return null;
     const CTA = () => (<Card.CTA>
@@ -56,12 +57,12 @@ class Landing extends React.Component {
             secondary
             href={verification.url}
             onClick={redirectToEmploymentReceived}
-          >Receive your Employment Verification</ThemedExtLink>
+          >{t("Receive your Employment Verification")}</ThemedExtLink>
         : <ThemedButton
             themeId={SERVICES.COMPANY.id}
             className="long" secondary onClick={this.showAttestationModal}
           >
-            Receive your Employment Verification
+            {t("Receive your Employment Verification")}
           </ThemedButton>}
     </Card.CTA>);
 
@@ -70,15 +71,20 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.COMPANY} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Good News!</h2>
-            <p>Your claims were succesfully shared with Dream Job LLC.</p>
+            <h2>{t("Good News!")}</h2>
+            <p>
+              {t("Your claims were succesfully shared with")}
+              {" "}
+              {t(SERVICES.COMPANY.entity)}
+            </p>
             <SuccessImage src={SuccessIcon} />
             <hr />
             <h4>What’s next?</h4>
             <p>
-              Let’s make sure you have an access to your employment claims whenever
-              and wherever you need them. Dream Job LLC. is going
-              to send your new claims to your uPort app.
+              {t("Let's make sure you have an access to your employment claims whenever and wherever you need them")}
+              {t(SERVICES.COMPANY.entity)}
+              {" "}
+              {t("is going to send your new claims to your uPort app")}
             </p>
           </Card>
         </Col>
@@ -89,6 +95,7 @@ class Landing extends React.Component {
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
+        serviceId={SERVICES.COMPANY.id}
         issuer={{
           heading: SERVICES.COMPANY.name,
           subHeading: SERVICES.COMPANY.entity,
@@ -119,4 +126,4 @@ const SuccessImage = styled.img`
   margin: 40px auto 0;
 `;
 
-export default Landing;
+export default withTranslation()(Landing);

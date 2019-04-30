@@ -10,8 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  verifyCredentials(token) {
-    dispatch(actions.verifyCredentials(token));
+  verifyCredentials(serviceId, token) {
+    dispatch(actions.verifyCredentials(serviceId, token));
   }
 });
 

@@ -1,58 +1,55 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col, Spacer, medium } from "../shared/grid";
 import { InvLinkButton } from "../shared/elements";
 import getDependentServices from "../../utils/getDependentServices";
-import LikeDemo from "../shared/LikeDemo";
 import Card from "../shared/ServiceCard";
 import Footer from "../shared/Footer";
 import SERVICES from "../../constants/services";
 
-class ClaimExists extends React.Component {
-  render() {
-    const deps = getDependentServices(SERVICES.CITY_ID.id);
-    return (<Wrapper>
-      <TopHalf>
-        <h2>It looks like you already have uPortlandia ID</h2>
-        <Logo src={SERVICES.CITY_ID.icon} />
-        <p>With your City ID you have easy and quick access to numerous
-          services and programs in uPortlandia</p>
-      </TopHalf>
-      <BotHalf>
-        <Grid>
-          <Spacer span={1} />
-          {deps.length
-            ? <Col span={7}>
-             <CardsLabel>Services that honor {SERVICES.CITY_ID.name}</CardsLabel>
-            {deps.map(service => (
-              <Card key={service.id}
-                name={service.name}
-                icon={service.icon}
-                superText={service.entity}
-                description={service.description}
-                shareClaims={service.requiredClaims}
-                shareServices={service.requiredServices}
-                receiveClaims={service.generatedClaims}
-                url={service.url}
-                colors={theme.colors[service.id]} />))}
-            <Center>
-              <InvLinkButton secondary to="/">
-                Back to Dashboard
-              </InvLinkButton>
-            </Center>
-          </Col>
-          : null}
-          <Col span={deps.length ? 3 : 10}>
-            <LikeDemo />
-          </Col>
-        </Grid>
-      </BotHalf>
-      <Footer />
-    </Wrapper>)
-  }
-}
+const ClaimExists = () => {
+  const { t } = useTranslation();
+  const deps = getDependentServices(SERVICES.CITY_ID.id);
+  return (<Wrapper>
+    <TopHalf>
+      <h2>{t("It looks like you already have a uPortlandia City ID")}</h2>
+      <Logo src={SERVICES.CITY_ID.icon} />
+      <p>{t("With your City ID you have easy and quick access to numerous services and programs in uPortlandia")}</p>
+    </TopHalf>
+    <BotHalf>
+      <Grid>
+        <Spacer span={2} />
+        {deps.length
+          ? <Col span={8}>
+           <CardsLabel>{t("Services that honor")} {t(SERVICES.CITY_ID.displayName)}</CardsLabel>
+          {deps.map(service => (
+            <Card key={service.id}
+              displayName={service.displayName}
+              name={service.name}
+              icon={service.icon}
+              superText={service.entity}
+              description={service.description}
+              shareClaims={service.requiredClaims}
+              shareServices={service.requiredServices}
+              receiveClaims={service.generatedClaims}
+              url={service.url}
+              colors={theme.colors[service.id]} />))}
+          <Center>
+            <InvLinkButton secondary to="/">
+              {t("Back to Dashboard")}
+            </InvLinkButton>
+          </Center>
+        </Col>
+        : null}
+        <Spacer span={2} />
+      </Grid>
+    </BotHalf>
+    <Footer />
+  </Wrapper>)
+};
 
 const Wrapper = styled.div`
   background-color: ${theme.footer.bg};

@@ -13,7 +13,6 @@ export default serviceId => {
         return;
       if(!deps.find(d => d.name === s.name)) {
         deps.push(s);
-        console.log(s.id, serviceId)
       }
     });
   });

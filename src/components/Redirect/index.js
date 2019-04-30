@@ -1,24 +1,27 @@
 import React from "react";
 import { default as styled, keyframes } from "styled-components";
 import { connect } from "react-redux";
+import { useTranslation } from "react-i18next";
 
 import { getExternalNavName } from "../../selectors";
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
 import waveImg from "../../images/wave.svg";
 
-const Redirect = ({ name }) => (<Wrapper>
-  <section>
-    <h1>See you later!</h1>
-    <p>
-      You are leaving the uPortlandia dashboard and will be automatically
-      redirected to {" "}
-      <strong>{name}</strong>{" "}
-      website to continue.
-    </p>
-    <img src={waveImg} alt="Bye!" />
-  </section>
-</Wrapper>);
+const Redirect = ({ name }) => {
+  const { t } = useTranslation();
+  return (<Wrapper>
+    <section>
+      <h1>{t("See you later!")}</h1>
+      <p>
+        {t("You are leaving the uPortlandia dashboard")} {" "}
+        <strong>{name}</strong>{" "}
+        {t("website to continue")}
+      </p>
+      <img src={waveImg} alt={t("Bye!")} />
+    </section>
+  </Wrapper>);
+}
 
 const waveAnim = keyframes`
   0% {

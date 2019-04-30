@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
 
 import * as actions from "../../actions";
 import { isLoggedIn } from "../../selectors";
@@ -21,25 +22,26 @@ class Success extends React.Component {
     }
   }
   render() {
-    const { id, isLoggedIn } = this.props;
+    const { id, isLoggedIn, t } = this.props;
     if(!isLoggedIn)
       return null;
     const deps = getDependentServices(SERVICES[id].id);
     return (<Wrapper>
       <TopHalf>
-        <h2>Congratulations!</h2>
-        <h3>You received your {SERVICES[id].name}</h3>
+        <h2>{t("Congratulations!")}</h2>
+        <h3>{t("You received your")} {t(SERVICES[id].displayName)}</h3>
         <SuccessImage src={SuccessIcon} />
-        <p>Your claims are stored in your uPort app.</p>
+        <p>{t("Your claims are stored in your uPort app")}</p>
       </TopHalf>
       <BotHalf>
         <Grid>
           <Spacer span={1} />
           {deps.length
             ? <Col span={7}>
-             <CardsLabel>Services that honor {SERVICES[id].name}</CardsLabel>
+             <CardsLabel>{t("Services that honor")} {t(SERVICES[id].displayName)}</CardsLabel>
             {deps.map(service => (
               <Card key={service.id}
+                displayName={service.displayName}
                 name={service.name}
                 icon={service.icon}
                 superText={service.entity}
@@ -51,7 +53,7 @@ class Success extends React.Component {
                 colors={theme.colors[service.id]} />))}
             <Center>
               <InvLinkButton secondary to="/">
-                Back to Dashboard
+                {t("Back to Dashboard")}
               </InvLinkButton>
             </Center>
           </Col>
@@ -144,4 +146,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Success);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Success));

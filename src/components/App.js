@@ -12,12 +12,15 @@ class App extends React.Component {
     window.removeEventListener("hashchange", this.watchHash);
   }
   watchHash = () => {
+    const { serviceId } = this.props;
+    if(!serviceId)
+      return;
     const hash = window.location.hash.slice(1);
     if(hash) {
       const params = qs.parse(hash);
       if(params["access_token"]) {
         const jwt = params["access_token"];
-        this.props.verifyCredentials(jwt);
+        this.props.verifyCredentials(serviceId, jwt);
         window.history.pushState(
           "",
           document.title, window.location.pathname + window.location.search

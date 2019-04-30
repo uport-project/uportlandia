@@ -1,5 +1,8 @@
+/* eslint react/jsx-no-target-blank: 0 */
+
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
@@ -9,51 +12,45 @@ import uPortLogo from "../../images/uport-logo.svg";
 import cityIdIcon from "../../images/city-id-icon.svg";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
-import history from "../../utils/history";
 
 class Header extends React.Component {
   state = {
     devClickCount: 0
   }
-  incDevClickCount = () => {
-    if(this.state.devClickCount > 6) {
-      this.setState({ devClickCount: 0 });
-      history.push("/detect");
-    } else {
-      this.setState({ devClickCount: this.state.devClickCount + 1 });
-    }
-  }
   render() {
+    const { t } = this.props;
     return (<Hero>
       <Hero.Welcome>
-        <Logo onClick={this.incDevClickCount} src={uPortLogo} />
-        <h2>Welcome to</h2>
+        <a href="https://uport.me/" target="_blank">
+          <Logo src={uPortLogo} />
+        </a>
+        <h2>{t("welcome to")}</h2>
         <h1>uPortlandia</h1>
-        <p>Try the new uPort demo.</p>
-        <p>Play around in the smart city of the future.</p>
-        <CapsuleLinkButton to="/city">Get Started</CapsuleLinkButton>
+        <p>{t("try the new uport demo")}.</p>
+        <p>{t("play around")}.</p>
+        <CapsuleLinkButton to="/city">{t("get started")}</CapsuleLinkButton>
       </Hero.Welcome>
       <Hero.Content>
-        <h3>It's Simple</h3>
+        <h3>{t("its simple")}</h3>
         <Hero.Steps>
           <Hero.Step>
             <Hero.Step.Icon src={cityIdIcon} />
-            <h4>Get uPortlandia City ID</h4>
-            <p>The city "verifies" your information and grants you City ID</p>
+            <h4>{t("get uportlandia city id")}</h4>
+            <p>{t("the city verifies your information and grants you city id")}</p>
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={uPortAppIcon} />
-            <h4>Store it in the uPort app.</h4>
-            <p>Own your information. You decide when and with whom you share it.</p>
+            <h4>{t("store it in the uport app")}</h4>
+            <p>{t("own your information")}</p>
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={servicesIcon} />
-            <h4>Get access to the city services.</h4>
-            <p>As a full-fledged citizen, enjoy all the perks and benefits.</p>
+            <h4>{t("get access to city services")}</h4>
+            <p>{t("enjoy perks and benefits")}</p>
           </Hero.Step>
         </Hero.Steps>
         <hr />
-        <h3>Ready? Let's do this!</h3>
+        <h3>{t("ready lets do this")}</h3>
       </Hero.Content>
     </Hero>);
   }
@@ -158,4 +155,5 @@ const Logo = styled.img`
   width: 32px;
 `;
 
-export default Header;
+export default withTranslation()(Header);
+

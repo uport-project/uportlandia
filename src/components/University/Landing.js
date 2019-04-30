@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -38,7 +39,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login } = this.props;
+    const { login, t } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()
@@ -51,12 +52,10 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.DIPLOMA} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Get a digital verification of your diploma</h2>
+            <h2>{t("Get a digital verification of your diploma")}</h2>
             <Bullets>
-              <li>Share your educational information easily in your job interview
-                or when you apply to a post-graduate program.</li>
-              <li>Get discounts or free access to services and programs all
-                around the world.</li>
+              <li>{t("Share your educational information easily")}</li>
+              <li>{t("Get discounts or free access to services and programs")}</li>
             </Bullets>
             <ServiceRequirements service={SERVICES.DIPLOMA} />
           </Card>
@@ -66,10 +65,11 @@ class Landing extends React.Component {
       <LoginModal
         show={loginModal}
         heading="First things first"
-        description="To login scan the QR code with  the uPort app."
+        description="To login scan the QR code with the uPort app"
         infoHeading="You're logging in to"
+        serviceId={SERVICES.DIPLOMA.id}
         issuer={{
-          heading: SERVICES.DIPLOMA.name,
+          heading: SERVICES.DIPLOMA.displayName,
           subHeading: SERVICES.DIPLOMA.entity,
           name: SERVICES.DIPLOMA.entity,
           logo: SERVICES.DIPLOMA.icon,
@@ -91,4 +91,4 @@ const Bullets = styled.ul`
   }
 `;
 
-export default Landing;
+export default withTranslation()(Landing);

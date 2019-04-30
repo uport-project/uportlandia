@@ -18,7 +18,7 @@ class Home extends React.Component {
       <Cards>
         <Container>
           {Object.keys(SERVICES).map(sid => <Card key={sid}
-            name={SERVICES[sid].name}
+            name={SERVICES[sid].displayName}
             icon={SERVICES[sid].icon}
             superText={SERVICES[sid].entity}
             description={SERVICES[sid].description}

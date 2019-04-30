@@ -14,7 +14,7 @@ import SERVICES from "../../constants/services";
 class City extends React.Component {
   render() {
     return (<ContentLayout>
-      <Header title="Dream Job LLC." logo={SERVICES.COMPANY.icon} />
+      <Header title="Dream Job LLC" logo={SERVICES.COMPANY.icon} />
       <Container>
         <Switch>
           <Route path="/company" exact>

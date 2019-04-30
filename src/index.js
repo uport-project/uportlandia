@@ -8,6 +8,7 @@ import configureStore from "./store"; // eslint-disable-line import/default
 import reducer from "./reducers";
 import sagas from "./sagas";
 import Routes from "./routes";
+import "./i18n";
 
 import "./css/index.css"
 

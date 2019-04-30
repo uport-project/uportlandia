@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -39,7 +40,7 @@ class Landing extends React.Component {
   }
   render() {
     const { attestationModal } = this.state;
-    const { verification, data, redirectToCityIdReceived } = this.props;
+    const { verification, data, redirectToCityIdReceived, t } = this.props;
     if(!this.props.isLoggedIn || !isValid(this.props.data).valid)
       return null;
     const CTA = () => (<Card.CTA>
@@ -49,12 +50,12 @@ class Landing extends React.Component {
             secondary
             href={verification.url}
             onClick={redirectToCityIdReceived}
-          >Receive City ID</ThemedExtLink>
+          >{t("cityIdStep4")}</ThemedExtLink>
         : <ThemedButton
             themeId={SERVICES.CITY_ID.id}
             className="long" secondary onClick={this.showAttestationModal}
           >
-            Receive City ID
+            {t("cityIdStep4")}
           </ThemedButton>}
     </Card.CTA>);
     return (<Wrapper>
@@ -62,16 +63,15 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.CITY_ID} active={3} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Good News!</h2>
-            <p>Your information has been succesfully verified. Your City ID is
-              ready to be issued.</p>
+            <h2>{t("Good News!")}</h2>
+            <p>{t("Your City ID is ready to be issued")}</p>
             <SuccessImage src={SuccessIcon} />
             <hr />
-            <h4>What’s next?</h4>
+            <h4>{t("What's next?")}</h4>
             <p>
-              Let’s make sure you have an access to your uPortlandia City ID
-              whenever and wherever you need them. {SERVICES.CITY_ID.entity} is
-              going to send your new ID claims to your uPort app.
+              {t("Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them")}
+              {t(SERVICES.CITY_ID.entity)}
+              {t("is going to send your new ID claims to your uPort app")}
             </p>
           </Card>
         </Col>
@@ -82,8 +82,9 @@ class Landing extends React.Component {
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
         infoHeading="You're Interacting with..."
+        serviceId={SERVICES.CITY_ID.id}
         issuer={{
-          heading: SERVICES.CITY_ID.name,
+          heading: SERVICES.CITY_ID.displayName,
           subHeading: SERVICES.CITY_ID.entity,
           name: SERVICES.CITY_ID.entity,
           logo: SERVICES.CITY_ID.icon,
@@ -112,4 +113,4 @@ const SuccessImage = styled.img`
   margin: 40px auto 0;
 `;
 
-export default Landing;
+export default withTranslation()(Landing);

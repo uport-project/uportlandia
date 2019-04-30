@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -56,7 +57,8 @@ class Receive extends React.Component {
       cityIdClaim,
       insuranceClaim,
       isLoggedIn,
-      redirectToPrescriptionReceived
+      redirectToPrescriptionReceived,
+      t
     } = this.props;
     if(!isLoggedIn || !isValid(cityIdClaim).valid || !isValidInsurance(insuranceClaim))
       return null;
@@ -67,12 +69,12 @@ class Receive extends React.Component {
             secondary
             href={verification.url}
             onClick={redirectToPrescriptionReceived}
-          >Receive your Prescription Drug</ThemedExtLink>
+          >{t("Receive your Prescription Drug")}</ThemedExtLink>
         : <ThemedButton
             themeId={SERVICES.PHARMACY.id}
             className="long" secondary onClick={this.showAttestationModal}
           >
-            Receive your Prescription Drug
+            {t("Receive your Prescription Drug")}
           </ThemedButton>}
     </Card.CTA>);
 
@@ -81,15 +83,20 @@ class Receive extends React.Component {
         <SidebarLeft service={SERVICES.PHARMACY} active={2} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Good News!</h2>
-            <p>Your claims were succesfully shared with Your Health Medical Center</p>
+            <h2>{t("Good News!")}</h2>
+            <p>
+              {t("Your claims were succesfully shared with")}
+              {" "}
+              {t(SERVICES.PHARMACY.entity)}
+            </p>
             <SuccessImage src={SuccessIcon} />
             <hr />
-            <h4>What’s next?</h4>
+            <h4>{t("What's next?")}</h4>
             <p>
-              Let’s make sure you have an access to your prescription claims whenever
-              and wherever you need them. Your Health Medical Center is going
-              to send your new claims to your uPort app.
+              {t("Let's make sure you have an access to your prescription claims whenever and wherever you need them")}
+              {t(SERVICES.PHARMACY.entity)}
+              {" "}
+              {t("is going to send your new claims to your uPort app")}
             </p>
           </Card>
         </Col>
@@ -99,7 +106,8 @@ class Receive extends React.Component {
       <AttestationModal
         heading="Check your device"
         description="Tap 'Accept' in your uPort app to receive your claims"
-        infoHeading="You're Interacting with..."
+        infoHeading="You're Interacting with"
+        serviceId={SERVICES.PHARMACY.id}
         issuer={{
           heading: SERVICES.PHARMACY.name,
           subHeading: SERVICES.PHARMACY.entity,
@@ -126,4 +134,4 @@ const SuccessImage = styled.img`
   margin: 40px auto 0;
 `;
 
-export default Receive;
+export default withTranslation()(Receive);

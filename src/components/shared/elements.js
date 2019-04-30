@@ -3,6 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { default as styled, css } from "styled-components";
 import shortId from "shortid";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "./theme";
 import { medium, Col } from "./grid";
@@ -18,21 +19,27 @@ Form.displayName = "Form";
 
 export const Label = styled.label`
   display: block;
-  font-size: 0.6875rem;
+  font-size: 1rem;
   text-transform: uppercase;
+  ${medium(`
+    font-size: 0.6875rem;
+  `)}
 `;
 Label.displayName = "Label";
 
 export const textBoxStyle = css`
   border: solid 1px ${theme.formControl.border};
   color: ${theme.formControl.color}
-  font-size: 0.9em;
+  font-size: 1rem;
   line-height: 2em;
   padding: 15px 12px;
   width: 100%;
   &::placeholder {
     color: ${theme.formControl.placeholder};
   }
+  ${medium(`
+    font-size: 0.9em;
+  `)}
 `;
 export const Textbox = styled.input`
   ${textBoxStyle}
@@ -44,11 +51,14 @@ export const Dropdown = styled.select`
   border: solid 1px ${theme.formControl.border};
   border-radius: 0;
   color: ${theme.formControl.color}
-  font-size: 0.9em;
+  font-size: 1rem;
   height: 3.5rem;
   line-height: 2em;
   padding: 15px 12px;
   width: 100%;
+  ${medium(`
+    font-size: 0.9em;
+  `)}
 `;
 Dropdown.displayName = "Dropdown";
 
@@ -136,9 +146,10 @@ const LoginButtonLogo = styled.img`
   margin-right: 10px;
 `;
 export const LoginButton = props => {
+  const { t } = useTranslation();
   return (<_LoginButton className="long" secondary {...props}>
     <LoginButtonLogo src={uPortWhite} />
-    {` ${props.text || "Login with uPort"}`}
+    {` ${props.text || t("Login with uPort")}`}
   </_LoginButton>);
 }
 
@@ -268,9 +279,10 @@ export const ContentLayout = styled.div`
 
 export const BackButton = props => {
   const { url, onClick, label } = props;
+  const { t } = useTranslation();
   return (<BackButtonRow>
     {url
-      ? <Link to={url}>{label || "Back"}</Link>
+      ? <Link to={url}>{label || t("back")}</Link>
       : <TextButton onClick={onClick}>Back</TextButton>}
   </BackButtonRow>);
 };

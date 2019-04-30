@@ -3,6 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import Services from "../shared/Services";
@@ -46,7 +47,7 @@ class UportLogin extends React.Component {
     }
   }
   componentDidUpdate(prevProps, prevState) {
-    const { login, messages, pollChasqui, show, verifyCredentials } = this.props;
+    const { login, messages, pollChasqui, show, verifyCredentials, serviceId } = this.props;
     const { waiting } = this.state;
     if(show && !prevProps.show) {
       this.handleLogin();
@@ -69,7 +70,7 @@ class UportLogin extends React.Component {
       } else if(message && !message.loading && waiting) {
         // verify token
         this.setState({ waiting: false });
-        verifyCredentials(message.content);
+        verifyCredentials(serviceId, message.content);
       }
     } else if(!prevProps.login.profile && login.profile) {
       // logged in!
@@ -82,12 +83,13 @@ class UportLogin extends React.Component {
     this.props.onClose();
   }
   handleLogin = () => {
-    const { requestedServices=[], hiddenRequests=[], login } = this.props;
+    const { requestedServices=[], hiddenRequests=[], login, serviceId } = this.props;
     const requestId = shortId.generate();
     if(login.url && login.callbackId) {
       this.props.stopPollChasqui(login.callbackId);
     }
     this.props.requestDisclosure(
+      serviceId,
       requestId,
       [
         ...requestedServices.map(rs => rs.claim),
@@ -106,7 +108,8 @@ class UportLogin extends React.Component {
       requestedServices,
       infoDetails,
       login={},
-      show
+      show,
+      t
     } = this.props;
     const { qrData, waiting } = this.state;
     const { url } = login;
@@ -124,12 +127,12 @@ class UportLogin extends React.Component {
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
               {this.isMobile
                 ? <React.Fragment>
-                  <h3>{heading}</h3>
-                  <h4>Open the uPort app to login</h4>
+                  <h3>{t(heading)}</h3>
+                  <h4>{t("Open the uPort app to login")}</h4>
                 </React.Fragment>
                 : <React.Fragment>
-                  <h3>{heading}</h3>
-                  <h4>{description}</h4>
+                  <h3>{t(heading)}</h3>
+                  <h4>{t(description)}</h4>
                 </React.Fragment>}
 
             </Content.Header>
@@ -140,7 +143,7 @@ class UportLogin extends React.Component {
                   <QRWrapper>
                     <a href={url} target="_blank">
                       {this.isMobile
-                        ? "Tap to login with the uPort app"
+                        ? t("Tap to login with the uPort app")
                         : <img className="qr" src={qrData} alt="QR" />}
                     </a>
                   </QRWrapper>
@@ -151,16 +154,16 @@ class UportLogin extends React.Component {
             <Content.Footer>
               <Status>
                 {!waiting || <Waiting>
-                  Waiting for login
+                  {t("Waiting for login")}
                   <LoadingIcon src={loadingImg} />
                 </Waiting>}
                 {!qrData || <Refresh onClick={this.handleLogin}>
                   <img src={reloadImg} alt="Reload" />
-                  Refresh
+                  {t("Refresh")}
                 </Refresh>}
               </Status>
               <AppStoreLinks>
-                <p>Don’t have the app? Download it from your store</p>
+                <p>{t("Don’t have the app? Download it from your store")}</p>
                 <a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
                   <img src={itunesImg} alt="itunes" />
                 </a>
@@ -172,19 +175,19 @@ class UportLogin extends React.Component {
           </Wrapper>
           <Info>
             <Info.Scrollable>
-              <h3>{infoHeading}</h3>
+              <h3>{t(infoHeading)}</h3>
               <Card>
                 <Entity>
                   <Entity.Header>
                     <Entity.Logo src={issuer.logo} />
-                    <Entity.Header.Sub style={styles.entityName}>{issuer.subHeading}</Entity.Header.Sub>
-                    <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
+                    <Entity.Header.Sub style={styles.entityName}>{t(issuer.subHeading)}</Entity.Header.Sub>
+                    <Entity.Header.Main>{t(issuer.heading)}</Entity.Header.Main>
                   </Entity.Header>
                   <hr />
                   <Entity.Details>
                     <Entity.Details.Row>
-                      <Entity.Details.Heading>Issuer</Entity.Details.Heading>
-                      <Entity.Details.Name wide>{issuer.name}</Entity.Details.Name>
+                      <Entity.Details.Heading>{t("Issuer")}</Entity.Details.Heading>
+                      <Entity.Details.Name wide>{t(issuer.name)}</Entity.Details.Name>
                     </Entity.Details.Row>
                     {infoDetails && infoDetails.length
                       ? <React.Fragment>
@@ -203,15 +206,15 @@ class UportLogin extends React.Component {
                 </Entity>
               </Card>
               {/*<p>You’ve never interacted with {issuer.name}</p>*/}
-              <h3 className="marginTop">Requested information</h3>
+              <h3 className="marginTop">{t("Requested information")}</h3>
               <ReqServices>
                 {requestedServices && requestedServices.length
                   ? <React.Fragment>
                     <Services data={requestedServices} type={Services.MINIMAL} expanded />
                   </React.Fragment>
-                  : <NoInfoReq>No information requested</NoInfoReq>}
+                  : <NoInfoReq>{t("No information requested")}</NoInfoReq>}
               </ReqServices>
-              <p>This information will be shared with {issuer.name}</p>
+              <p>{t("This information will be shared with")} {t(issuer.name)}</p>
             </Info.Scrollable>
           </Info>
         </Content.Grid>
@@ -234,4 +237,4 @@ const NoInfoReq = styled(Card)`
   color: ${theme.colors.mutedText2};
 `;
 
-export default UportLogin;
+export default withTranslation()(UportLogin);

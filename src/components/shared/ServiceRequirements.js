@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "./theme";
 import Services from "../shared/Services";
 
 const ServiceRequirements = props => {
   const { service } = props;
+  const { t } = useTranslation();
   return (<Wrapper>
-    <Heading>{service.entity} will ask you to share</Heading>
+    <Heading>{t(service.entity)} {t("will ask you to share")}</Heading>
     {service.requiredServices
       ? <Services data={service.requiredServices} type={Services.MINIMAL} />
       : <ClaimList>
         {service.requiredClaims.map(c => (<li key={c.name}>
-          {c.name}
+          {t(c.displayName)}
         </li>))}
       </ClaimList>}
   </Wrapper>);

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
+import { withTranslation } from "react-i18next";
 
 import * as actions from "../../actions";
 import * as theme from "../shared/theme";
@@ -17,14 +18,17 @@ class HomeCard extends React.Component {
   render() {
     const {
       colors,
-      name,
+      displayName,
       icon,
       superText,
       description,
       shareClaims=[],
       shareServices=[],
-      receiveClaims=[]
+      receiveClaims=[],
+      t
     } = this.props;
+
+    const name = t(displayName || this.props.name);
 
     const theme = {
       mainHeading: {}
@@ -35,7 +39,7 @@ class HomeCard extends React.Component {
 
     return (<Card className="service-card">
       <Content>
-        <MainHeading style={theme.mainHeading}>{superText}</MainHeading>
+        <MainHeading style={theme.mainHeading}>{t(superText)}</MainHeading>
         <Grid>
           <Col span={7}>
             <Issuer>
@@ -43,40 +47,39 @@ class HomeCard extends React.Component {
                 <Header.Icon src={icon} alt={name} />
                 <Header.Name>{name}</Header.Name>
                 <Header.Sub>
-                  <span>Includes</span>{" "}
                   <Tooltip
-                    display={`${receiveClaims.length} credential${receiveClaims.length > 1 ? "s" : ""}`}
-                    heading={`Credentials included in ${name}`}
+                    display={`${receiveClaims.length} ${receiveClaims.length > 1 ? t("credentials included") : t("credential included")}`}
+                    heading={`${t("credentials included in")} ${name}`}
                   >
                     <ul>
                       {receiveClaims.map(claim => (<Claim key={claim.name}>
-                        <Claim.Name>{claim.name}</Claim.Name>
+                        <Claim.Name>{t(claim.displayName)}</Claim.Name>
                       </Claim>))}
                     </ul>
                   </Tooltip>
                 </Header.Sub>
               </Header>
-              <Description>{description}</Description>
+              <Description>{t(description)}</Description>
             </Issuer>
           </Col>
           <Col span={5}>
             <Issued>
             {shareServices.length
               ? <ShareClaims>
-                  <Label>You'll be asked to share</Label>
+                  <Label>{t("youll be asked to share")}</Label>
                   <Services data={shareServices} type={Services.MINIMAL} />
                 </ShareClaims>
               : <ShareClaims>
-                <Label>You'll be asked to share</Label>
+                <Label>{t("youll be asked to share")}</Label>
                 <ClaimList>
                   {shareClaims.map(claim => (<li key={claim.name}>
-                    {claim.name}
+                    {t(claim.name)}
                   </li>))}
                 </ClaimList>
               </ShareClaims>}
               <Button onClick={this.promptAndRedirect}>
-                Get {name}
                 <img src={popupIcon} alt="" />
+                {t("getClaimLabel")} {" "} {name}
               </Button>
             </Issued>
           </Col>
@@ -126,6 +129,7 @@ const Content = styled.div`
       margin: 0 0 -2px 10px;
       ${medium(`
         display: inline-block;
+        float: right;
       `)}
     }
   }
@@ -230,4 +234,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(undefined, mapDispatchToProps)(HomeCard);
+export default connect(undefined, mapDispatchToProps)(withTranslation()(HomeCard));

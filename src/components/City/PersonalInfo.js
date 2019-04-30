@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import dayjs from "dayjs";
+import { withTranslation, Trans } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -29,6 +30,7 @@ class PersonalInfo extends React.Component {
         lastName: "",
         address: "",
         city: "",
+        province: "",
         zipCode: "",
         country: "",
         dob: "",
@@ -94,22 +96,18 @@ class PersonalInfo extends React.Component {
           message: validation.error
         }
       });
-      // if(this.errorHandle)
-      //   clearTimeout(this.errorHandle);
-      // this.errorHandle = setTimeout(() => {
-      //   this.setState({ validationError: null });
-      // }, 4000);
     }
     return false;
   }
   render() {
-    const { isLoggedIn } = this.props;
+    const { isLoggedIn, t } = this.props;
     const { details, validationError } = this.state;
     const {
       firstName,
       lastName,
       address,
       city,
+      province,
       zipCode,
       country,
       dob,
@@ -123,89 +121,106 @@ class PersonalInfo extends React.Component {
         className="long"
         secondary
         onClick={this.handleSubmit}
-      >Submit</ThemedButton>
+      >{t("Submit")}</ThemedButton>
     </Card.CTA>);
     return (<Wrapper>
       <Grid>
         <SidebarLeft service={SERVICES.CITY_ID} active={1} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Personal Information</h2>
-            <p>Submit your information to {SERVICES.CITY_ID.entity} to confirm your
-              identity.</p>
-            <ReqdMessage>* indicates required field</ReqdMessage>
+            <h2>{t("Personal Information")}</h2>
+            <p>
+              {t("Submit your information to")}
+              {" "}
+              {SERVICES.CITY_ID.entity}
+              {t("to confirm your identity")}
+            .</p>
+            <ReqdMessage>{t("* indicates required field")}</ReqdMessage>
             <Form onSubmit={this.handleSubmit}>
               <Grid>
                 <Col span={6}>
                   <FormGroup>
-                    <Label>First Name *</Label>
+                    <Label>{t("First Name")} *</Label>
                     <Textbox
                       value={firstName}
                       onChange={this.handleChange("firstName")} />
                     <ErrorMsg show={validationError && validationError.fieldId==="firstName"}>
-                      This field is required
+                      {t("This field is required")}
                     </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={6}>
                   <FormGroup>
-                    <Label>Last Name *</Label>
+                    <Label>{t("Last Name")} *</Label>
                     <Textbox
                       value={lastName}
                       onChange={this.handleChange("lastName")} />
                     <ErrorMsg show={validationError && validationError.fieldId==="lastName"}>
-                      This field is required
+                      {t("This field is required")}
                     </ErrorMsg>
                   </FormGroup>
                 </Col>
-                <Col span={12}>
+                <Col span={8}>
                   <FormGroup>
-                    <Label>Address *</Label>
+                    <Label>{t("Address")} *</Label>
                     <Textbox
-                      placeholder="Number, Street Name, Apt #"
+                      placeholder={t("Number, Street Name, Apt #")}
                       value={address}
                       onChange={this.handleChange("address")} />
                     <ErrorMsg show={validationError && validationError.fieldId==="address"}>
-                      This field is required
+                      {t("This field is required")}
+                    </ErrorMsg>
+                  </FormGroup>
+                </Col>
+                <Col span={4}>
+                  <FormGroup>
+                    <Label>{t("City")} *</Label>
+                    <Textbox
+                      placeholder={t("City")}
+                      value={city}
+                      onChange={this.handleChange("city")} />
+                    <ErrorMsg show={validationError && validationError.fieldId==="city"}>
+                      {t("This field is required")}
+                    </ErrorMsg>
+                  </FormGroup>
+                </Col>
+                <Col span={4}>
+                  <FormGroup>
+                    <Textbox
+                      placeholder={t("State or Provice")}
+                      value={province}
+                      onChange={this.handleChange("province")} />
+                    <ErrorMsg show={validationError && validationError.fieldId==="province"}>
+                      {t("This field is required")}
                     </ErrorMsg>
                   </FormGroup>
                 </Col>
                 <Col span={4}>
                   <Textbox
-                    placeholder="City"
-                    value={city}
-                    onChange={this.handleChange("city")} />
-                  <ErrorMsg show={validationError && validationError.fieldId==="city"}>
-                    This field is required
-                  </ErrorMsg>
-                </Col>
-                <Col span={4}>
-                  <Textbox
-                    type="number"
-                    placeholder="Zip Code"
+                    placeholder={t("Zip Code")}
                     value={zipCode}
                     onChange={this.handleChange("zipCode")} />
                   <ErrorMsg show={validationError && validationError.fieldId==="zipCode"}>
-                    This field is required
+                    {t("This field is required")}
                   </ErrorMsg>
                 </Col>
                 <Col span={4}>
                   <Dropdown
-                    placeholder="Country"
+                    placeholder={t("Country")}
                     value={country}
                     onChange={this.handleChange("country")}>
-                    <option> Country </option>
+                    <option> {t("Country")} </option>
                     {COUNTRIES.map(c => (<option key={c.code} value={c.code}>
                       {c.name}
                     </option>))}
                   </Dropdown>
                   <ErrorMsg show={validationError && validationError.fieldId==="country"}>
-                    This field is required
+                    {t("This field is required")}
                   </ErrorMsg>
                 </Col>
                 <Col span={5}>
                   <FormGroup>
-                    <Label>Date of Birth *</Label>
+                    <Label>{t("Date of Birth")} *</Label>
                     <input type="date"
                       className="datepicker"
                       min="1900-01-01"
@@ -225,26 +240,26 @@ class PersonalInfo extends React.Component {
                       type="checkbox"
                       checked={toc}
                       onChange={this.handleChange("toc")} />
-                    <span>I agree to the uPort </span>
-                    <a
-                      href="https://www.uport.me/terms-conditions"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Terms and Conditions
-                    </a>
+                    <Trans i18nKey="agreeTnC">
+                      <span>I agree to the uPort </span>
+                      <a
+                        href="https://www.uport.me/terms-conditions"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Terms and Conditions
+                      </a>
+                    </Trans>
                   </label>
                   <ErrorMsg show={validationError && validationError.fieldId==="toc"}>
-                    You must accept the terms and Conditions
+                    {t("You must accept the terms and Conditions")}
                   </ErrorMsg>
                 </Col>
               </Grid>
               <hr />
-              <h4>What’s next?</h4>
+              <h4>{t("What’s next?")}</h4>
               <p>
-                Your information will be verified by one of our identity
-                verification partners. Think about is as a background check but
-                faster and more secure.
+                {t("Your information will be verified")}
               </p>
             </Form>
           </Card>
@@ -274,4 +289,4 @@ const ErrorMsg = styled.div`
   transition: opacity 0.2s;
 `;
 
-export default PersonalInfo;
+export default withTranslation()(PersonalInfo);
