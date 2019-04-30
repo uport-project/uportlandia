@@ -39,7 +39,7 @@ class Header extends React.Component {
             <p>{t("the city verifies your information and grants you city id")}</p>
           </Hero.Step>
           <Hero.Step>
-            <Hero.Step.Icon src={uPortAppIcon} />
+            <Hero.Step.Icon src={uPortAppIcon} style={{ position: "relative", left: "-15px" }} />
             <h4>{t("store it in the uport app")}</h4>
             <p>{t("own your information")}</p>
           </Hero.Step>
@@ -107,7 +107,7 @@ Hero.Step = styled.li`
   `)}
   h4 {
     font-weight: 600;
-    margin: 10px 0;
+    margin: 30px 0 10px;
   }
 `;
 Hero.Step.Icon = styled.img`

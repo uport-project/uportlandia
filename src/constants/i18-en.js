@@ -92,6 +92,7 @@ export default {
   "Address": "Address",
   "Date of Birth": "Date of Birth",
 
+  "City ID": "City ID",
   "Diploma": "Diploma",
   "Monthly Bus Ticket": "Monthly Bus Ticket",
   "Prescription Drug": "Prescription Drug",
@@ -106,6 +107,7 @@ export default {
 
   "Join thousands of fellow uPortlandia citizens!": "Join thousands of fellow uPortlandia citizens!",
   "Get things done without leaving your home": "Get things done without leaving your home. No more standing in lines.",
+  "Access services and programs offered by the City": "Access services and programs offered by the City",
   "Get a free one-year membership": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
 
   // Login

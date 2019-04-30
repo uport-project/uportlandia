@@ -1,4 +1,5 @@
 import { takeEvery, put, call } from "redux-saga/effects";
+import { captureException } from "@sentry/browser";
 
 import { POLL_CHASQUI, STOP_POLL_CHASQUI } from "../constants/actions";
 import createChasquiUrl from "../utils/createChasquiUrl";
@@ -35,6 +36,7 @@ const poll = async (url, callbackId) => {
           return contentJSON.access_token;
       } catch(ex) {
         console.log(ex);
+        captureException(ex);
         return null;
       }
     }
@@ -58,6 +60,7 @@ function* pollChasqui(action) {
     yield put(pollChasquiSuccess(callbackId, response));
   } catch(ex) {
     console.log(ex);
+    captureException(ex);
   }
 };
 

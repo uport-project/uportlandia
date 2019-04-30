@@ -1,3 +1,4 @@
+import { init as sentryInit } from "@sentry/browser";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
@@ -8,9 +9,12 @@ import configureStore from "./store"; // eslint-disable-line import/default
 import reducer from "./reducers";
 import sagas from "./sagas";
 import Routes from "./routes";
+import SENTRY_DSN from "./constants/sentryDSN";
 import "./i18n";
 
 import "./css/index.css"
+
+sentryInit({ dsn: SENTRY_DSN });
 
 const sagaMiddleware = createMiddleware();
 const store = configureStore(reducer, sagaMiddleware);

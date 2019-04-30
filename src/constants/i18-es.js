@@ -92,6 +92,7 @@ export default {
   "Address": "Dirección",
   "Date of Birth": "Fecha de Nacimiento",
 
+  "City ID": "City ID",
   "Diploma": "Diploma",
   "Monthly Bus Ticket": "Boleto de Bus Mensual",
   "Prescription Drug": "Medicamento Recetado",
