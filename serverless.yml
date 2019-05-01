@@ -1,0 +1,68 @@
+service: uportlandia
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: us-east-1
+  environment:
+    CITY_ID_SIGNING_KEY: ${ssm:uportlandia_city_id_${opt:stage}_privatekey~true}
+    DIPLOMA_SIGNING_KEY: ${ssm:uportlandia_diploma_${opt:stage}_privatekey~true}
+    COMPANY_SIGNING_KEY: ${ssm:uportlandia_company_${opt:stage}_privatekey~true}
+    INSURANCE_SIGNING_KEY: ${ssm:uportlandia_insurance_${opt:stage}_privatekey~true}
+    PHARMACY_SIGNING_KEY: ${ssm:uportlandia_pharmacy_${opt:stage}_privatekey~true}
+    TRANSPORT_SIGNING_KEY: ${ssm:uportlandia_transport_${opt:stage}_privatekey~true}
+    MUSEUM_SIGNING_KEY: ${ssm:uportlandia_museum_${opt:stage}_privatekey~true}
+
+custom:
+  kms:
+    keyId:
+      Ref: UportlandiaKey
+  scriptHooks:
+     aws:deploy:finalize:cleanup: npm run deploy-secrets #once secrets are set this can be commented out.
+
+plugins:
+  - serverless-express
+  - serverless-scriptable-plugin
+  - serverless-plugin-include-dependencies
+  - serverless-offline
+
+functions:
+  server:
+    handler: src/server.handler
+    timeout: 12
+    events:
+      - http:
+          method: ANY
+          path: /{proxy+}
+          cors:
+            origins:
+              - https://uportlandia.uport.me
+              - https://uportlandia.uport.space
+            allowCredentials: false
+            headers:
+              - Content-Type
+
+package:
+  exclude:
+    - ./**
+  include:
+    - src/server.js
+
+resources:
+  Resources:
+     UportlandiaKey:
+      Type: AWS::KMS::Key
+      Properties:
+        Description: "Uportlandia KMS key"
+        KeyPolicy:
+          Version: "2012-10-17"
+          Id: "key-default-1"
+          Statement:
+            -
+              Sid: "Allow administration of the key"
+              Effect: "Allow"
+              Principal:
+                AWS: { "Fn::Join" : ["" , ["arn:aws:iam::", {"Ref" : "AWS::AccountId"} ,":root" ]] }
+              Action:
+                - "kms:*"
+              Resource: "*"

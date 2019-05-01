@@ -21,11 +21,8 @@ const mapDispatchToProp = dispatch => ({
   loadProfile() {
     dispatch(actions.loadProfile());
   },
-  sendVerification(id, profile, claim, isMobile) {
-    dispatch(actions.sendVerification(id, profile, claim, isMobile));
-  },
-  verifyCredentials(token) {
-    dispatch(actions.verifyCredentials(token));
+  sendVerification(serviceId, id, profile, claim, isMobile) {
+    dispatch(actions.sendVerification(serviceId, id, profile, claim, isMobile));
   }
 });
 

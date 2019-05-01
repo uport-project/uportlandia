@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -40,7 +41,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login } = this.props;
+    const { login, t } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()
@@ -52,9 +53,10 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.TRANSPORT} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Get digital verification of your bus ticket.</h2>
-            <p>{SERVICES.CITY_ID.entity} provides free services for its
-              citizens. Get your monthly bus ticket for free.</p>
+            <h2>{t("Get digital verification of your bus ticket")}.</h2>
+            <p>
+              {t(SERVICES.CITY_ID.entity)} {" "}
+              {t("Get your monthly bus ticket")}.</p>
             <ServiceRequirements service={SERVICES.TRANSPORT} />
           </Card>
         </Col>
@@ -63,8 +65,9 @@ class Landing extends React.Component {
       <LoginModal
         show={loginModal}
         heading="First things first"
-        description="To login scan the QR code with  the uPort app."
+        description="To login scan the QR code with the uPort app"
         infoHeading="You're logging in to"
+        serviceId={SERVICES.TRANSPORT.id}
         issuer={{
           heading: SERVICES.TRANSPORT.name,
           subHeading: SERVICES.TRANSPORT.entity,
@@ -81,4 +84,4 @@ class Landing extends React.Component {
 
 const Wrapper = styled.div``;
 
-export default Landing;
+export default withTranslation()(Landing);

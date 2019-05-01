@@ -5,6 +5,7 @@ import React from "react";
 import styled from "styled-components";
 import shortId from "shortid";
 import qrImage from "qr-image";
+import { withTranslation } from "react-i18next";
 
 import isMobile from "../../utils/isMobile";
 import { largeHeight, medium } from "../shared/grid";
@@ -39,7 +40,6 @@ class Attestation extends React.Component {
     };
   }
   componentDidMount() {
-    // this.props.initCredentials();
     this.isMobile = isMobile();
     if(this.isMobile) {
       this.sendVerification();
@@ -68,10 +68,10 @@ class Attestation extends React.Component {
     this.setState({ showQR: true });
   }
   sendVerification = () => {
-    const { claim } = this.props;
+    const { serviceId, claim } = this.props;
     const requestId = shortId.generate();
     this.setState({ qrData: null, requestId });
-    this.props.sendVerification(requestId, this.props.profile, claim);
+    this.props.sendVerification(serviceId, requestId, this.props.profile, claim);
   }
   render() {
     const { showQR, qrData } = this.state;
@@ -81,9 +81,10 @@ class Attestation extends React.Component {
       issuer,
       infoDetails,
       claimDetails,
-      profile,
       login={},
-      show
+      profile,
+      show,
+      t
     } = this.props;
     const { url } = login;
     if(!profile)
@@ -101,8 +102,8 @@ class Attestation extends React.Component {
             <Content.Header>
               <ButtonClose onClick={this.handleClose}>&times;</ButtonClose>
               {this.state.showQR
-                ? <CustomHeading>Scan this QR Code using the uPort App</CustomHeading>
-                : <CustomHeading>{heading}</CustomHeading>}
+                ? <CustomHeading>{t("Scan this QR Code using the uPort App")}</CustomHeading>
+                : <CustomHeading>{t(heading)}</CustomHeading>}
             </Content.Header>
             <Content.Body>
               {showQR
@@ -112,44 +113,46 @@ class Attestation extends React.Component {
                       <QRWrapper>
                         <a href={url} target='_blank'>
                           {this.isMobile
-                            ? <p>Tap to open in a mobile browser</p>
+                            ? <p>{t("Tap to open in a mobile browser")}</p>
                             : <img className='qr' src={qrData} alt="QR" />}
                         </a>
                       </QRWrapper>
                     </div>
                     <CenteredRefresh onClick={this.sendVerification}>
                       <img src={reloadImg} alt="Reload" />
-                      Refresh
+                      {t("Refresh")}
                     </CenteredRefresh>
                   </React.Fragment>
                   : <LoadingIcon src={loadingImg} />
                 : <Image src={AcceptAttestationImg} />}
             </Content.Body>
             <Content.Footer>
-              <DoneButton withQR={this.state.showQR} onClick={this.handleClose}>Done</DoneButton>
+              <DoneButton withQR={this.state.showQR} onClick={this.handleClose}>
+                {t("Done")}
+              </DoneButton>
               {this.state.showQR || <a className="text-link"
                 href="javascript:;"
-                onClick={this.showQR}>Not receiving the request?</a>}
+                onClick={this.showQR}>{t("Not receiving the request?")}</a>}
             </Content.Footer>
           </Wrapper>
           <Info>
             <Info.Scrollable>
-              <h3>{infoHeading}</h3>
+              <h3>{t(infoHeading.replace(/\./g, ""))}</h3>
               <Card>
                 <Entity>
                   <Entity.Header>
                     <Entity.Logo src={issuer.logo} />
-                    <Entity.Header.Sub style={styles.entityName}>{issuer.subHeading}</Entity.Header.Sub>
-                    <Entity.Header.Main>{issuer.heading}</Entity.Header.Main>
+                    <Entity.Header.Sub style={styles.entityName}>{t(issuer.subHeading)}</Entity.Header.Sub>
+                    <Entity.Header.Main>{t(issuer.heading)}</Entity.Header.Main>
                   </Entity.Header>
                   <hr />
                   <Entity.Details>
                     <Entity.Details.Row>
-                      <Entity.Details.Heading>Issuer</Entity.Details.Heading>
-                      <Entity.Details.Name wide>{issuer.name}</Entity.Details.Name>
+                      <Entity.Details.Heading>{t("Issuer")}</Entity.Details.Heading>
+                      <Entity.Details.Name wide>{t(issuer.name)}</Entity.Details.Name>
                     </Entity.Details.Row>
                     <Entity.Details.Row>
-                      <Entity.Details.Heading>Subject</Entity.Details.Heading>
+                      <Entity.Details.Heading>{t("Subject")}</Entity.Details.Heading>
                       <Entity.Details.Name>{profile.name}</Entity.Details.Name>
                       <Entity.Details.Value>{profile.address}</Entity.Details.Value>
                     </Entity.Details.Row>
@@ -170,20 +173,20 @@ class Attestation extends React.Component {
                 </Entity>
               </Card>
 
-              <h3 className="marginTop">Verified information you'll receive</h3>
+              <h3 className="marginTop">{t("Verified information you'll receive")}</h3>
               <Card>
                 <Claims>
                   {claimDetails && claimDetails.length
                   ? <React.Fragment>
                     {claimDetails.map(claim => (<Claim key={claim.name}>
-                      <Claim.Name>{claim.name}</Claim.Name>
+                      <Claim.Name>{t(claim.name)}</Claim.Name>
                       <Claim.Value>{claim.value}</Claim.Value>
                     </Claim>))}
                   </React.Fragment>
-                  : <p>No verified information to receive</p>}
+                  : <p>{t("No verified information to receive")}</p>}
                 </Claims>
               </Card>
-              <p>This information will be stored in your app</p>
+              <p>{t("This information will be stored in your app")}</p>
             </Info.Scrollable>
           </Info>
         </Content.Grid>
@@ -223,4 +226,4 @@ const CustomHeading = styled.label`
   `)}
 `;
 
-export default Attestation;
+export default withTranslation()(Attestation);

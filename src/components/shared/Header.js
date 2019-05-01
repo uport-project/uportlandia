@@ -1,23 +1,23 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Container } from "../shared/grid";
 
-class Header extends React.Component {
-  render() {
-    const { logo, title } = this.props;
-    return (<Wrapper>
-      <Container>
-        <Center>
-          <Logo src={logo} alt={title} />
-          <h1>{title}</h1>
-        </Center>
-        <Separator />
-      </Container>
-    </Wrapper>)
-  }
-}
+const Header = props => {
+  const { logo, title } = props;
+  const { t } = useTranslation();
+  return (<Wrapper>
+    <Container>
+      <Center>
+        <Logo src={logo} alt={title} />
+        <h1>{t(title)}</h1>
+      </Center>
+      <Separator />
+    </Container>
+  </Wrapper>)
+};
 
 const Wrapper = styled.header`
   background-color: ${theme.header.bg};

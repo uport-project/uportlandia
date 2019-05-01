@@ -4,7 +4,7 @@ import App from "../components/AppContainer";
 import Pharmacy from "../components/Pharmacy";
 
 const PharmacyPage = props => {
-  return (<App>
+  return (<App serviceId="PHARMACY">
     <Pharmacy />
   </App>);
 };

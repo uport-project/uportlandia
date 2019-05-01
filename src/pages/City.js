@@ -4,7 +4,7 @@ import App from "../components/AppContainer";
 import City from "../components/City";
 
 const CityPage = props => {
-  return (<App>
+  return (<App serviceId="CITY_ID">
     <City />
   </App>);
 };

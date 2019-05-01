@@ -30,8 +30,9 @@ export const initCredentialsSuccess = () => ({
   type: ACTIONS.CRED_INIT_OK
 });
 
-export const reqDisclosure = (callbackId, requestedClaims, isMobile=false) => ({
+export const reqDisclosure = (serviceId, callbackId, requestedClaims, isMobile=false) => ({
   type: ACTIONS.REQ_DISCLOSURE,
+  serviceId,
   callbackId,
   requestedClaims,
   isMobile
@@ -43,8 +44,9 @@ export const reqDisclosureSuccess = (callbackId, url) => ({
   url
 });
 
-export const verifyCredentials = token => ({
+export const verifyCredentials = (serviceId, token) => ({
   type: ACTIONS.CRED_VERIFY,
+  serviceId,
   token
 });
 
@@ -53,8 +55,9 @@ export const verifyCredentialsSuccess = value => ({
   value
 });
 
-export const sendVerification = (callbackId, profile, claim, isMobile=false) => ({
+export const sendVerification = (serviceId, callbackId, profile, claim, isMobile=false) => ({
   type: ACTIONS.SEND_VERIF,
+  serviceId,
   callbackId,
   profile,
   claim,

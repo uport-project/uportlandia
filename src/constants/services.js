@@ -9,112 +9,120 @@ import MuseumIcon from "../images/museum-logo.png";
 const CITY_ID = {
   id: "CITY_ID",
   name: "City ID",
+  displayName: "cityIdDisplayName",
   icon: CityIDIcon,
-  entity: "The City of uPortlandia",
-  description: "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
+  entity: "the city of uportlandia",
+  description: "cityIdDescription",
   url: "/city",
   claim: "Uportlandia City ID",
   steps: [
-    "Login with uPort",
-    "Enter your information",
-    "Get verified",
-    "Receive City ID"
+    "cityIdStep1",
+    "cityIdStep2",
+    "cityIdStep3",
+    "cityIdStep4"
   ]
 };
 
 const DIPLOMA = {
   id: "DIPLOMA",
   name: "Diploma",
+  displayName: "diplomaDisplayName",
   icon: DiplomaIcon,
-  entity: "The University of uPortlandia",
-  description: "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
+  entity: "the university of uportlandia",
+  description: "diplomaDescription",
   url: "/university",
   claim: "Diploma",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Diploma"
+    "diplomaStep1",
+    "diplomaStep2",
+    "diplomaStep3"
   ]
 };
 
 const COMPANY = {
   id: "COMPANY",
   name: "Employment Verification",
+  displayName: "employmentDisplayName",
   icon: EmploymentIcon,
-  entity: "Dream Job LLC.",
-  description: "Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease.",
+  entity: "Dream Job LLC",
+  description: "employmentDescription",
   url: "/company",
   claim: "Employment",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Employment Verification"
+    "employmentStep1",
+    "employmentStep2",
+    "employmentStep3"
   ]
 };
 
 const INSURANCE = {
   id: "INSURANCE",
   name: "Insurance Coverage",
+  displayName: "insuranceDisplayName",
   icon: InsuranceIcon,
-  entity: "People Care Insurance LLC.",
-  description: "Share your insurance information easily at your doctor’s office, pharmacy or at any emergency.",
+  entity: "People Care Insurance LLC",
+  description: "insuranceDescription",
   url: "/insurance",
   claim: "Insurance",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Insurance Coverage"
+    "insuranceStep1",
+    "insuranceStep2",
+    "insuranceStep3"
   ]
 };
 
 const PHARMACY = {
   id: "PHARMACY",
   name: "Prescription Drug",
+  displayName: "pharmacyDisplayName",
   icon: PharmacyIcon,
   entity: "Your Health Medical Center",
-  description: "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
+  description: "pharmacyDescription",
   url: "/pharmacy",
   claim: "Prescription Drug",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Prescription Drug"
+    "pharmacyStep1",
+    "pharmacyStep2",
+    "pharmacyStep3"
   ]
 };
 
 const TRANSPORT = {
   id: "TRANSPORT",
   name: "Monthly Bus Ticket",
+  displayName: "transportDisplayName",
   icon: TransportIcon,
   entity: "uPortlandia City Transit",
-  description: "Are you a uPortlandia citizen? Alumni of The uPortlandia University? Get your montly bus ticket for free and enjoy the city trasportation!",
+  description: "transportDescription",
   url: "/transport",
   claim: "Bus Ticket",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Bus Ticket"
+    "transportStep1",
+    "transportStep2",
+    "transportStep3"
   ]
 };
 
 const MUSEUM = {
   id: "MUSEUM",
   name: "Annual Membership",
+  displayName: "museumDisplayName",
   icon: MuseumIcon,
   entity: "uPortlandia Museum of Modern Art",
-  description: "Get a free membership with your City ID.",
+  description: "museumDescription",
   url: "/museum",
   claim: "Museum Membership",
   steps: [
-    "Login with uPort",
-    "Get verified",
-    "Receive Membership"
+    "museumStep1",
+    "museumStep2",
+    "museumStep3"
   ]
 };
 
 const YOURSELF = {
   id: "YOURSELF",
   name: "Yourself, Any Issuer",
+  displayName: "Yourself, Any Issuer",
   icon: CityIDIcon,
   entity: "Yourself, Any Issuer",
   description: "Yourself, Any Issuer",
@@ -125,6 +133,7 @@ const YOURSELF = {
 const FIRST_NAME = {
   id: "firstName",
   name: "First Name",
+  displayName: "First Name",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
@@ -132,6 +141,7 @@ const FIRST_NAME = {
 const LAST_NAME = {
   id: "lastName",
   name: "Last Name",
+  displayName: "Last Name",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
@@ -139,6 +149,7 @@ const LAST_NAME = {
 const DATE_OF_BIRTH = {
   id: "dob",
   name: "Date of Birth",
+  displayName: "Date of Birth",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
@@ -146,18 +157,21 @@ const DATE_OF_BIRTH = {
 const ADDRESS = {
   id: "address",
   name: "Address",
+  displayName: "Address",
   issuedBy: [CITY_ID],
   honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const SCHOOL_NAME = {
   name: "School Name",
+  displayName: "School Name",
   issuedBy: [DIPLOMA],
   honoredBy: [COMPANY]
 };
 
 const PROGRAM_NAME = {
   name: "Program Name",
+  displayName: "Program Name",
   type: "required",
   issuedBy: [DIPLOMA],
   honoredBy: [COMPANY]
@@ -165,67 +179,78 @@ const PROGRAM_NAME = {
 
 const FINAL_GRADES = {
   name: "Final Grades",
+  displayName: "Final Grades",
   issuedBy: [DIPLOMA],
   honoredBy: [COMPANY]
 };
 
 const GRADUATION_YEAR = {
   name: "Graduation Year",
+  displayName: "Graduation Year",
   issuedBy: [DIPLOMA],
   honoredBy: [INSURANCE, COMPANY]
 };
 
 const COMPANY_NAME = {
   name: "Company Name",
+  displayName: "Company Name",
   issuedBy: [COMPANY],
   honoredBy: [INSURANCE]
 };
 
 const SALARY = {
   name: "Salary",
+  displayName: "Salary",
   issuedBy: [COMPANY]
 };
 
 const DATE_OF_EMPLOYMENT = {
   name: "Date of Employment",
+  displayName: "Date of Employment",
   issuedBy: [COMPANY],
   honoredBy: [INSURANCE]
 };
 
 const POLICY_NUMBER = {
   name: "Policy Number",
+  displayName: "Policy Number",
   issuedBy: [INSURANCE],
   honoredBy: [PHARMACY]
 };
 
 const GROUP_NUMBER = {
   name: "Group Number",
+  displayName: "Group Number",
   issuedBy: [INSURANCE],
   honoredBy: [PHARMACY]
 };
 
 const DEPENDENCIES = {
   name: "Dependencies",
+  displayName: "Dependencies",
   issuedBy: [INSURANCE],
   honoredBy: [PHARMACY]
 };
 
 const PRESCRIPTION_DRUG = {
   name: "Prescription Drug",
+  displayName: "pharmacyDisplayName",
   issuedBy: [PHARMACY],
   honoredBy: [PHARMACY]
 };
 
 const BUS_TICKET = {
   name: "Monthly Bus Ticket",
+  displayName: "transportDisplayName",
   issuedBy: [TRANSPORT],
   honoredBy: [TRANSPORT]
 };
 
 const MUSEUM_MEMBERSHIP = {
   name: "Annual Membership",
+  displayName: "museumDisplayName",
   issuedBy: [MUSEUM],
-  honoredBy: [TRANSPORT]
+  honoredBy: [MUSEUM]
 };
 
 // Attach claims to services

@@ -4,7 +4,7 @@ import App from "../components/AppContainer";
 import Museum from "../components/Museum";
 
 const MuseumPage = props => {
-  return (<App>
+  return (<App serviceId="MUSEUM">
     <Museum />
   </App>);
 };

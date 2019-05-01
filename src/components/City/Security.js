@@ -1,31 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { large } from "../shared/grid";
 import SecureIcon from "../../images/secure-icon.svg";
 
-class Security extends React.Component {
-  render() {
-    return (<Wrapper>
-      <section>
-        <Header>
-          <Icon src={SecureIcon} />
-          <h4>Psst, even though it's just a demo...</h4>
-        </Header>
-        <p>
-          Any data that you enter is securely protected and encrypted.
-          It will be added as an attestation to your uPort Identity
-          (you can always delete it at any time).
-        </p>
-        <p>
-          We do not store any of this information and do not reveal it to
-          any party.
-        </p>
-      </section>
-    </Wrapper>)
-  }
-}
+const Security = () => {
+  const { t } = useTranslation();
+  return (<Wrapper>
+    <section>
+      <Header>
+        <Icon src={SecureIcon} />
+        <h4>{t("Psst, even though it's just a demo")}</h4>
+      </Header>
+      <p>
+        {t("Any data that you enter is securely protected and encrypted")}
+      </p>
+      <p>
+        {t("We do not store any of this information and do not reveal it to any party")}
+      </p>
+    </section>
+  </Wrapper>);
+};
 
 const Wrapper = styled.aside`
   height: 100%;

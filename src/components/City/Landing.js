@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -32,11 +33,11 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login, profile, redirectToCityIdForm } = this.props;
+    const { login, profile, redirectToCityIdForm, t } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {profile && profile.did
-        ? <LoginButton text="Continue" onClick={redirectToCityIdForm} />
+        ? <LoginButton text={t("Continue")} onClick={redirectToCityIdForm} />
         : isMobile()
           ? <LoginLink href={login.url} />
           : <LoginButton onClick={this.showLoginModal} />}
@@ -46,14 +47,11 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.CITY_ID} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Join thousands of fellow uPortlandia citizens!</h2>
+            <h2>{t("Join thousands of fellow uPortlandia citizens!")}</h2>
             <ul>
-              <li>Get things done without leaving your home. No more standing in
-                lines!</li>
-              <li>Access services and programs offered by the City as well as by
-                businesses</li>
-              <li>Get  a free one-year membership at many of the City's leading
-                museums, zoos, concert halls, and botanical gardens</li>
+              <li>{t("Get things done without leaving your home")}</li>
+              <li>{t("Access services and programs offered by the City")}</li>
+              <li>{t("Get a free one-year membership")}</li>
             </ul>
             <ServiceRequirements service={SERVICES.CITY_ID} />
           </Card>
@@ -63,8 +61,9 @@ class Landing extends React.Component {
       <LoginModal
         show={loginModal}
         heading="First things first"
-        description="To login scan the QR code with  the uPort app."
+        description="To login scan the QR code with the uPort app"
         infoHeading="You're logging in to"
+        serviceId={SERVICES.CITY_ID.id}
         issuer={{
           heading: SERVICES.CITY_ID.name,
           subHeading: SERVICES.CITY_ID.entity,
@@ -89,4 +88,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Landing;
+export default withTranslation()(Landing);

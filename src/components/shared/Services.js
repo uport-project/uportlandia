@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { xsmall } from "../shared/grid";
@@ -8,37 +9,37 @@ const MINIMAL = "MINIMAL";
 const COMPACT = "COMPACT";
 const DETAILED = "DETAILED";
 
-class Services extends React.Component {
-  render() {
-    const {
-      data,
-      expanded=false,
-      heading,
-      type=DETAILED
-    } = this.props;
-    return (<React.Fragment>
-      {heading ? <Heading>{heading}</Heading> : null}
-      {data.map(service => (<Service className="services__service" key={service.name} type={type}>
-        <Header type={type} className="services__service__header">
-          <Logo src={service.icon} type={type} />
-          {type !== MINIMAL ? <HeaderSub>{service.entity}</HeaderSub> : null}
-          <HeaderMain type={type}>{service.name}</HeaderMain>
-          {/*compact || <ServiceLink to={service.url}>get started</ServiceLink>*/}
-        </Header>
-        {!expanded || <React.Fragment>
-          <Divider />
-          <Claims className="services__service__claims">
-            {service.generatedClaims.map(claim => (<li key={claim.name}
-              className="services__service__claims__claim"
-            >
-              {claim.name}
-            </li>))}
-          </Claims>
-        </React.Fragment>}
-      </Service>))}
-    </React.Fragment>)
-  }
-}
+const Services = props => {
+  const {
+    data,
+    expanded=false,
+    heading,
+    type=DETAILED,
+  } = props;
+  const { t } = useTranslation();
+  return (<React.Fragment>
+    {heading ? <Heading>{heading}</Heading> : null}
+    {data.map(service => (<Service className="services__service" key={service.name} type={type}>
+      <Header type={type} className="services__service__header">
+        <Logo src={service.icon} type={type} />
+        {type !== MINIMAL ? <HeaderSub>{service.entity}</HeaderSub> : null}
+        <HeaderMain type={type}>{t(service.displayName)}</HeaderMain>
+        {/*compact || <ServiceLink to={service.url}>get started</ServiceLink>*/}
+      </Header>
+      {!expanded || <React.Fragment>
+        <Divider />
+        <Claims className="services__service__claims">
+          {service.generatedClaims.map(claim => (<li key={claim.name}
+            className="services__service__claims__claim"
+          >
+            {t(claim.name)}
+          </li>))}
+        </Claims>
+      </React.Fragment>}
+    </Service>))}
+  </React.Fragment>)
+};
+
 Services.MINIMAL = MINIMAL;
 Services.COMPACT = COMPACT;
 Services.DETAILED = DETAILED;

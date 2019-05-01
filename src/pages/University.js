@@ -4,7 +4,7 @@ import App from "../components/AppContainer";
 import University from "../components/University";
 
 const UniversityPage = props => {
-  return (<App>
+  return (<App serviceId="DIPLOMA">
     <University />
   </App>);
 };

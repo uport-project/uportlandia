@@ -1,16 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import loadingImg from "../../images/loading.svg";
 import spin from "../../utils/spinanim";
 
 const LoadingOverlay = ({ loading, message }) => {
+  const { t } = useTranslation();
   return (<OverlayBG show={loading}>
     {loading
       ? <Box>
         <LoadingIcon src={loadingImg} />
-        <Message>{message || "Loading ..."}</Message>
+        <Message>{message || t("Loading") + "..."}</Message>
       </Box>
       : null}
   </OverlayBG>);

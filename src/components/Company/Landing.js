@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { withTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Grid, Col } from "../shared/grid";
@@ -40,7 +41,7 @@ class Landing extends React.Component {
     }
   }
   render() {
-    const { login } = this.props;
+    const { login, t } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {isMobile()
@@ -53,10 +54,10 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES.COMPANY} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>Get a digital verification of your employment</h2>
+            <h2>{t("Get a digital verification of your employment")}</h2>
             <Bullets>
-              <li>Share your employment information easily while you’re applying for a mortgage or signing a new lease.</li>
-              <li>Provide a verified employment history during your job interview.</li>
+              <li>{t("Share your employment information easily while you're applying for a mortgage or signing a new lease")}</li>
+              <li>{t("Provide a verified employment history during your job interview")}</li>
             </Bullets>
             <ServiceRequirements service={SERVICES.COMPANY} />
           </Card>
@@ -65,8 +66,9 @@ class Landing extends React.Component {
       <LoginModal
         show={loginModal}
         heading="First things first"
-        description="To login scan the QR code with  the uPort app."
+        description="To login scan the QR code with the uPort app"
         infoHeading="You're logging in to"
+        serviceId={SERVICES.COMPANY.id}
         issuer={{
           heading: SERVICES.COMPANY.name,
           subHeading: SERVICES.COMPANY.entity,
@@ -90,4 +92,4 @@ const Bullets = styled.ul`
   }
 `;
 
-export default Landing;
+export default withTranslation()(Landing);

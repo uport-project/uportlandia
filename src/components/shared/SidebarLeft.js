@@ -1,31 +1,31 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { Col, medium } from "../shared/grid";
 import angleIcon from "../../images/angle-icon.svg";
 
-class SidebarLeft extends React.Component {
-  render() {
-    const { service, active } = this.props;
-    const styles = {
-      heading: {
-        color: theme.colors[service.id].mutedText
-      }
-    };
-    return (<Wrapper span={3}>
-      <h3 style={styles.heading}>Get your {service.name}</h3>
-      <ol>
-        {service.steps.map((step, idx) => <li key={step}>
-          {step}
-          {idx===active
-            ? <Arrow src={angleIcon} />
-            : null}
-        </li>)}
-      </ol>
-    </Wrapper>)
-  }
-}
+const SidebarLeft = props => {
+  const { service, active } = props;
+  const { t } = useTranslation();
+  const styles = {
+    heading: {
+      color: theme.colors[service.id].mutedText
+    }
+  };
+  return (<Wrapper span={3}>
+    <h3 style={styles.heading}>{t("get your")} {" "} {t(service.displayName)}</h3>
+    <ol>
+      {service.steps.map((step, idx) => <li key={step}>
+        {t(step)}
+        {idx===active
+          ? <Arrow src={angleIcon} />
+          : null}
+      </li>)}
+    </ol>
+  </Wrapper>)
+};
 
 const Wrapper = styled(Col)`
   display: none;

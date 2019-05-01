@@ -11,7 +11,7 @@ import PharmacyPage from "../pages/Pharmacy";
 import TransportPage from "../pages/Transport";
 import MuseumPage from "../pages/Museum";
 import RedirectPage from "../pages/Redirect";
-import isMobile from "../utils/isMobile";
+import Debug from "../pages/Debug";
 
 export default () => (<Router history={history}>
   <Switch>
@@ -24,12 +24,6 @@ export default () => (<Router history={history}>
     <Route path="/transport" component={TransportPage} />
     <Route path="/museum" component={MuseumPage} />
     <Route path="/redirect" component={RedirectPage} />
-    <Route path="/detect" exact>
-        {() => <main>
-            <p>User Agent: {navigator.userAgent}</p>
-            <br />
-            <h1>Is Mobile: {isMobile() ? "yes" : "no"} </h1>
-        </main>}
-    </Route>
+    <Route path="/_debug" exact component={Debug} />
   </Switch>
 </Router>);

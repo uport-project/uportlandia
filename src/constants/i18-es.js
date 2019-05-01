@@ -1,0 +1,231 @@
+export default {
+  // Header
+  "welcome to": "Bienvenido a",
+  "try the new uport demo": "Prueba la nueva demo de uPort",
+  "play around": "Participa en la ciudad inteligente del futuro",
+  "get started": "Empezar",
+  "its simple": "Es sencillo",
+  "get uportlandia city id": "Obtener el CityID de uPortlandia",
+  "the city verifies your information and grants you city id": "La ciudad \"verifica\" tu información y te otorga un CityID de la ciudad",
+  "store it in the uport app": "Guárdalo en la aplicación uPort",
+  "own your information": "Sé dueño de tu información. Tú decides cuándo y con quién lo compartes.",
+  "get access to city services": "Accede a los servicios de la ciudad.",
+  "enjoy perks and benefits": "Se un ciudadano soberano y disfruta de todas las ventajas y beneficios.",
+  "ready lets do this": "Listo? ¡Hagámoslo!",
+
+  // AppDownload
+  "make sure you have your phone handy": "Psst... Asegúrate de tener su teléfono a mano con la aplicación uPort descargada.",
+  "make sure you have the uport app downloaded": "Psst ... Asegúrate de tener la aplicación uPort descargada",
+
+  // ServiceCard
+  "youll be asked to share": "Se te pedirá que compartas",
+  "credential included": "credencial incluida",
+  "credentials included": "credenciales incluidas",
+  "credentials included in": "Credenciales incluidas en",
+  "getClaimLabel": "Obtener",
+
+  // Footer
+  "Powered by": "Con el poder de",
+
+  "the city of uportlandia": "La ciudad de uPortlandia",
+  "cityIdDisplayName": "CityID",
+  "cityIdDescription": "Identifícate con un clic. Obtener una identificación de la ciudad digital. Disfrute de un acceso rápido, continuo y, a menudo, gratuito a muchos servicios de la ciudad.",
+  "cityIdStep1": "Iniciar Sesión con uPort",
+  "cityIdStep2": "Ingresa tu informacion",
+  "cityIdStep3": "Verifícate",
+  "cityIdStep4": "Recibir ID de la ciudad",
+
+  "the university of uportlandia": "La Universidad de uPortlandia",
+  "diplomaDisplayName": "Diploma",
+  "diplomaDescription": "Obtenga una copia digital verificada de su diploma. Compártalo fácilmente en su próxima entrevista de trabajo o cuando solicite un programa de posgrado.",
+  "diplomaStep1": "Iniciar sesión con uPort",
+  "diplomaStep2": "Verifícate",
+  "diplomaStep3": "Recibir Diploma",
+
+  "Dream Job LLC": "Dream Job LLC.",
+  "employmentDisplayName": "Verificación de Empleo",
+  "employmentDescription": "Comparte la confirmación de tu empleo fácilmente. No más recolectar pilas de documentos para solicitar una hipoteca o firmar un contrato de arrendamiento.",
+  "employmentStep1": "Iniciar sesión con uPort",
+  "employmentStep2": "Verifícate",
+  "employmentStep3": "Recibir Verificación de Empleo",
+
+  "People Care Insurance LLC": "People Care Insurance LLC.",
+  "insuranceDisplayName": "Cobertura del Seguro",
+  "insuranceDescription": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia.",
+  "insuranceStep1": "Iniciar sesión con uPort",
+  "insuranceStep2": "Verifícate",
+  "insuranceStep3": "Recibir Cobertura del Seguro",
+
+  "Your Health Medical Center": "Your Health Medical Center",
+  "pharmacyDisplayName": "Medicamento Recetado",
+  "pharmacyDescription": "No más esperar a que el médico llame a tu farmacia. Comparte tu receta de medicamentos en cualquier farmacia, en cualquier momento.",
+  "pharmacyStep1": "Iniciar sesión con uPort",
+  "pharmacyStep2": "Verifícate",
+  "pharmacyStep3": "Recibir Medicamento Recetado",
+
+  "uPortlandia City Transit": "Transporte Público de uPortlandia",
+  "transportDisplayName": "Boleto de Bus Mensual",
+  "transportDescription": "¿Es usted un ciudadano de uPortlandia? ¿Alumno de la Universidad uPortlandia? ¡Obtenga su boleto de autobús mensual gratis y disfrute del transporte de la ciudad!",
+  "transportStep1": "Iniciar sesión con uPort",
+  "transportStep2": "Verifícate",
+  "transportStep3": "Recibir Boleto de Bus Mensual",
+
+  "uPortlandia Museum of Modern Art": "Museo de Arte Moderno de uPortlandia",
+  "museumDisplayName": "Membresía Anual",
+  "museumDescription": "Obtenga una membresía gratis con su City ID.",
+  "museumStep1": "Iniciar sesión con uPort",
+  "museumStep2": "Verifícate",
+  "museumStep3": "Recibir Membresía Anual",
+
+  "Policy Number": "Número de Póliza",
+  "Group Number": "Número de Grupo",
+  "Dependencies": "Dependencias",
+  "School Name": "Nombre de la Escuela",
+  "Program Name": "Nombre del Programa",
+  "Graduation Year": "Año de graduación",
+  "Final Grades": "Notas finales",
+  "Salary": "Salario",
+  "Date of Employment": "Fecha de Empleo",
+  "Company Name": "Nombre de Empresa",
+  "First Name": "Nombre",
+  "Last Name": "Apellido",
+  "Address": "Dirección",
+  "Date of Birth": "Fecha de Nacimiento",
+
+  "City ID": "City ID",
+  "Diploma": "Diploma",
+  "Monthly Bus Ticket": "Boleto de Bus Mensual",
+  "Prescription Drug": "Medicamento Recetado",
+  "Annual Membership": "Membresía Anual",
+  "Insurance Coverage": "Cobertura del Seguro",
+  "Employment Verification": "Verificación de Empleo",
+
+  "get your": "Conseguir su",
+  "back": "Atrás",
+  "Login with uPort": "Iniciar Sesión con uPort",
+  "will ask you to share": "te pedirá que compartas",
+
+  "Join thousands of fellow uPortlandia citizens!": "¡Únete a miles de ciudadanos de uPortlandia!",
+  "Get things done without leaving your home": "Haz las cosas sin salir de tu casa. ¡Olvídate de las largas filas de espera!",
+  "Access services and programs offered by the City": "Acceda a los servicios y programas ofrecidos por la ciudad, así como por las empresas.",
+  "Get a free one-year membership": "Obtenga una membresía gratuita de un año en muchos de los principales museos, zoológicos, salas de conciertos y jardines botánicos de la ciudad",
+
+  // Login
+  "Open the uPort app to login": "Abra la aplicación uPort para iniciar sesión",
+  "Continue": "Continuar",
+  "First things first": "Lo primero es lo primero",
+  "To login scan the QR code with the uPort app": "Para iniciar sesión escanee el código QR con la aplicación uPort",
+  "You're logging in to": "Estás iniciando sesión en",
+  "Tap to login with the uPort app": "Toca para iniciar sesión con la aplicación uPort",
+  "Don’t have the app? Download it from your store": "¿No tienes la aplicación? Descárgalo de tu tienda",
+  "Issuer": "Emisor",
+  "No information requested": "No se solicita información",
+  "This information will be shared with": "Esta información será compartida con",
+  "Waiting for login": "Esperando inicio de sesión",
+  "Refresh": "Recargar",
+  "Loading": "Cargando",
+  "Requested information": "Información solicitada",
+
+  "Personal Information": "Informacion Personal",
+  "Submit your information to": "Envía tu información a",
+  "to confirm your identity": "para confirmar tu identidad",
+  "* indicates required field": "* indica campo requerido",
+  "This field is required": "Este campo es requerido",
+  "agreeTnC": "Estoy de acuerdo con los <1>Términos y Condiciones</1> de uPort",
+  "You must accept the terms and Conditions": "Debe aceptar los Términos y Condiciones",
+  "What's next?": "¿Que sigue?",
+  "Your information will be verified": "Su información será verificada por uno de nuestros socios de verificación de identidad. Imagínalo como una verificación de antecedentes, pero más rápido y más seguro.",
+  "Country": "País",
+  "State or Province": "Estado/Provincia",
+  "Zip Code": "Código Postal",
+  "City": "Ciudad",
+  "Number, Street Name, Apt #": "Número, Nombre de la Calle, Apartamento #",
+  "Submit": "Enviar",
+
+  "Psst, even though it's just a demo": "Psst, aunque solo sea una demo...",
+  "Any data that you enter is securely protected and encrypted": "Cualquier información que ingreses está protegida y encriptada de manera segura. Se agregará como certificado a tu identidad de uPort (siempre puede eliminarla en cualquier momento).",
+  "We do not store any of this information and do not reveal it to any party": "No almacenamos nada de esta información y no la revelamos a nadie.",
+
+  "Good News!": "¡Buenas Noticias!",
+  "Your City ID is ready to be issued": "Tu información ha sido verificada con éxito. Tu City ID está listo para ser emitido.",
+  "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them": "Asegurémonos de tener acceso a tu City ID de la ciudad de uPortlandia cuando y donde los necesite.",
+  "is going to send your new ID claims to your uPort app": "enviará tus nuevas credenciales a tu aplicación uPort",
+
+  // Attestation
+  "Scan this QR Code using the uPort App": "Escanee este Código QR usando la aplicación uPort",
+  "Check your device": "Revisa tu dispositivo",
+  "Not receiving the request?": "¿No estás recibiendo la solicitud?",
+  "No verified information to receive": "No hay información verificada para recibir",
+  "This information will be stored in your app": "Esta información será almacenada en tu aplicación.",
+  "Subject": "ASunto",
+  "Tap to open in a mobile browser": "Toque para abrir en un navegador móvil",
+  "You're Interacting with": "Estás interactuando con",
+  "Verified information you'll receive": "Información verificada que recibirás",
+  "Done": "Listo",
+  "Back to Home": "Volver a la página de inicio",
+  "Tap 'Accept' in your uPort app to receive your claims": "Toque 'Accept' en su aplicación uPort para recibir sus credenciales",
+
+  // Success
+  "Congratulations!": "¡Felicidades!",
+  "You received your": "Haz recibido tu",
+  "Your claims are stored in your uPort app": "Tus credenciales están almacenadas en tu aplicación uPort.",
+  "Services that honor": "Servicios que la reconocen",
+  "Back to Dashboard": "Volver a la página de inicio",
+
+  // LikeDemo
+  "Like the demo?": "¿Te gusta la demo?",
+  "Build user-centric trusted data apps with uPort": "Cree aplicaciones de confianza de datos centradas en el usuario con uPort",
+  "Issue, request and verify information about your users": "Emite, solicita y verifica información de tus usuarios. Ofrece a tus usuarios la libertad de administrar los detalles sobre su identidad digital.",
+  "View Documentation": "Ver Documentación",
+  "Issue verified information to citizens in your city": "Emite información verificada a los ciudadanos de tu ciudad",
+  "Build trusted data ecosystem in your city": "Construye ecosistemas de datos confiables en tu ciudad. Deja que las empresas y organizaciones prosperen manteniendo la privacidad de los ciudadanos.",
+  "Contact Us": "Contáctanos",
+
+  // City/ClaimExists
+  "It looks like you already have a uPortlandia City ID": "Parece que ya tienes un City ID de uPortlandia",
+  "With your City ID you have easy and quick access to numerous services and programs in uPortlandia": "Con tu  City ID tienes acceso fácil y rápido a numerosos servicios y programas en uPortlandia",
+
+  // Redirect
+  "See you later!": "¡Nos vemos más tarde!",
+  "You are leaving the uPortlandia dashboard":  "Estás abandonando el panel de control de uPortlandia y serás redirigido automáticamente a",
+  "website to continue": "sitio web para continuar.",
+  "Bye!": "¡Adiós!",
+
+  // University
+  "Get a digital verification of your diploma": "Obtén una verificación digital de tu diploma.",
+  "Share your educational information easily": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
+  "Get discounts or free access to services and programs": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
+  "Your claims were succesfully shared with": "Tus credenciales fueron compartidas exitosamente con",
+  "is going to send your new claims to your uPort app": "va a enviar tus nuevas credenciales a tu aplicación uPort.",
+  "Let's make sure you have an access to your Diploma claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tu Diploma cuando y donde las necesites",
+
+  // Transport
+  "Get digital verification of your bus ticket": "Obtén la verificación digital de tu boleto de autobús",
+  "Get your monthly bus ticket": "presta servicios gratuitos para sus ciudadanos. Obtén tu boleto mensual de autobús gratis",
+  "Receive your Bus Ticket": "Recibe tu Boleto de Autobús",
+  "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tus boletos de autobús cuando y donde las necesites",
+
+  // Pharmacy
+  "Get digital verification of your prescription": "Obtén una verificación digital de tu receta",
+  "Get your medicines at any drug store you wish": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
+  "Receive your Prescription Drug": "Recibe tu medicamento recetado",
+  "Let's make sure you have an access to your prescription claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de recetas cuando y donde las necesites.",
+
+  // Museum
+  "Get digital verification of your annual membership": "Obtén una verificación digital de tu membresía anual",
+  "Get your annual museum membership": "presta servicios gratuitos para sus ciudadanos. Obtén tu membresía anual del museo de forma gratuita.",
+  "Receive your Annual Membership": "Recibe tu Membresía Anual",
+  "Let's make sure you have an access to your annual membership claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales anuales de membresía cuando y donde las necesites",
+
+  // Insurance
+  "Share your insurance information easily at your doctor's office, pharmacy or at any emergency": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
+  "Receive your Insurance Coverage": "Recibe tu cobertura de seguro",
+  "Let's make sure you have an access to your insurance claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de seguros cuando y donde las necesites",
+
+  // Company
+  "Get a digital verification of your employment": "Obtén una verificación digital de tu empleo.",
+  "Share your employment information easily while you're applying for a mortgage or signing a new lease": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
+  "Provide a verified employment history during your job interview": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
+  "Receive your Employment Verification": "Recibe tu Verificación de Empleo",
+  "Let's make sure you have an access to your employment claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de empleo cuando y donde las necesites"
+};

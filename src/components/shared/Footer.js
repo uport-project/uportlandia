@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTranslation } from "react-i18next";
 
 import { Container } from "../shared/grid";
 import * as theme from "../shared/theme";
@@ -8,20 +9,18 @@ import UportLogo from "../../images/uport-logo.svg";
 // eslint-disable-next-line
 const link = <a href="https://uport.me" target="_blank">uPort</a>;
 
-class Footer extends React.Component {
-  render() {
-    return (<Wrapper>
-      <Container>
-        <Bar />
-        <Center>
-          <Logo src={UportLogo} />
-
-          <p>Powered by {link}</p>
-        </Center>
-      </Container>
-    </Wrapper>)
-  }
-}
+const Footer = () => {
+  const { t } = useTranslation();
+  return (<Wrapper>
+    <Container>
+      <Bar />
+      <Center>
+        <Logo src={UportLogo} />
+        <p>{t("Powered by")} {link}</p>
+      </Center>
+    </Container>
+  </Wrapper>)
+};
 
 const Wrapper = styled.footer`
   background-color: ${theme.footer.bg};
