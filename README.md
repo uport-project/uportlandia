@@ -1,12 +1,25 @@
 # uPortlandia
 
+uPortlandia is our vision of the future of data and identity management.  We hope that the examples contained within this repository will serve as a guide for your adoption of sovereign identity solution(s).
 
-## Development
+![uportlandia](https://j.gifs.com/wVrrvr.gif)
+
+What's inside:
+
+- [x] Serverless artifacts created:
+  - [x] KMS key for SSM
+  - [x] S3 Bucket for static site deployment
+  - [x] API gateway lambda function to securely sign claims
+- [x] Setup task:
+  - [x] Creates Issuer (application) Identities
+  - [x] Stores the generated Identity key/pairs in SSM 
 
 ### Requirements
 
 - NodeJS 10+
 - [Yarn](https://yarnpkg.com) ( `curl -o- -L https://yarnpkg.com/install.sh | bash` )
+- Serverless Framework (`npm install serverless -g`)
+- AWS (managed by serverless)
 
 ### Initial Setup
 
