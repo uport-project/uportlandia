@@ -36,7 +36,13 @@ const DIPLOMA = {
     "diplomaStep1",
     "diplomaStep2",
     "diplomaStep3"
-  ]
+  ],
+  claimData: {
+    "School Name": "The University of uPortlandia",
+    "Program Name": "French linguistics",
+    "Graduation Year": "2019",
+    "Final Grades": "B+"
+  }
 };
 
 const COMPANY = {
@@ -52,7 +58,12 @@ const COMPANY = {
     "employmentStep1",
     "employmentStep2",
     "employmentStep3"
-  ]
+  ],
+  claimData: {
+    "Company Name": "Dream Job LLC.",
+    "Salary": "$100,000",
+    "Date of Employment": "01/06/2019"
+  }
 };
 
 const INSURANCE = {
@@ -68,7 +79,12 @@ const INSURANCE = {
     "insuranceStep1",
     "insuranceStep2",
     "insuranceStep3"
-  ]
+  ],
+  claimData: {
+    "Policy Number": "0000",
+    "Group Number": "G-01",
+    "Dependencies": "2"
+  }
 };
 
 const PHARMACY = {
@@ -84,7 +100,10 @@ const PHARMACY = {
     "pharmacyStep1",
     "pharmacyStep2",
     "pharmacyStep3"
-  ]
+  ],
+  claimData: {
+    "Prescription Drug": "Yes"
+  }
 };
 
 const TRANSPORT = {
@@ -100,7 +119,10 @@ const TRANSPORT = {
     "transportStep1",
     "transportStep2",
     "transportStep3"
-  ]
+  ],
+  claimData: {
+    "Monthly Bus Ticket": "June 2019",
+  }
 };
 
 const MUSEUM = {
@@ -116,7 +138,10 @@ const MUSEUM = {
     "museumStep1",
     "museumStep2",
     "museumStep3"
-  ]
+  ],
+  claimData: {
+    "Annual Membership": "2019"
+  }
 };
 
 const YOURSELF = {
@@ -125,8 +150,7 @@ const YOURSELF = {
   displayName: "Yourself, Any Issuer",
   icon: CityIDIcon,
   entity: "Yourself, Any Issuer",
-  description: "Yourself, Any Issuer",
-  url: "/"
+  description: "Yourself, Any Issuer"
 };
 
 // Claims

@@ -104,6 +104,26 @@ export const redirectToHome = () => ({
   type: ACTIONS.REDIR_HOME
 });
 
+export const redirectToFailure = serviceId => ({
+  type: ACTIONS.REDIR_FAIL,
+  serviceId
+});
+
+export const redirectToReceiveClaim = serviceId => ({
+  type: ACTIONS.REDIR_RCV_CLAIM,
+  serviceId
+});
+
+export const redirectToClaimReceived = serviceId => ({
+  type: ACTIONS.REDIR_RCD_CLAIM,
+  serviceId
+});
+
+export const redirectToServiceHome = serviceId => ({
+  type: ACTIONS.REDIR_SERV_HOME,
+  serviceId
+});
+
 export const redirectToCityHome = () => ({
   type: ACTIONS.REDIR_CITY_HOME
 });
@@ -122,103 +142,6 @@ export const redirectToCityIdReceived = () => ({
 
 export const redirectToCityIdExists = () => ({
   type: ACTIONS.REDIR_CITY_ID_EXISTS
-});
-
-export const redirectToDiplomaHome = () => ({
-  type: ACTIONS.REDIR_DIPLOMA_HOME
-});
-
-export const redirectToReceiveDiploma = () => ({
-  type: ACTIONS.REDIR_RCV_DIPLOMA
-});
-
-export const redirectToDiplomaRequirement = () => ({
-  type: ACTIONS.REDIR_DIPLOMA_PREREQ
-});
-
-export const redirectToDiplomaReceived = () => ({
-  type: ACTIONS.REDIR_DIPLOMA_RCD
-});
-
-export const redirectToEmploymentHome = () => ({
-  type: ACTIONS.REDIR_EMPL_HOME
-});
-
-export const redirectToReceiveEmployment = () => ({
-  type: ACTIONS.REDIR_RCV_EMPL
-});
-
-export const redirectToEmploymentRequirement = () => ({
-  type: ACTIONS.REDIR_EMPL_PREREQ
-});
-
-export const redirectToEmploymentReceived = () => ({
-  type: ACTIONS.REDIR_EMPL_RCD
-});
-
-export const redirectToInsuranceHome = () => ({
-  type: ACTIONS.REDIR_INSR_HOME
-});
-
-export const redirectToReceiveInsurance = () => ({
-  type: ACTIONS.REDIR_RCV_INSR
-});
-
-export const redirectToInsuranceRequirement = () => ({
-  type: ACTIONS.REDIR_INSR_PREREQ
-});
-
-export const redirectToInsuranceReceived = () => ({
-  type: ACTIONS.REDIR_INSR_RCD
-});
-
-
-export const redirectToPrescriptionHome = () => ({
-  type: ACTIONS.REDIR_PRSC_HOME
-});
-
-export const redirectToReceivePrescription = () => ({
-  type: ACTIONS.REDIR_RCV_PRSC
-});
-
-export const redirectToPrescriptionRequirement = () => ({
-  type: ACTIONS.REDIR_PRSC_PREREQ
-});
-
-export const redirectToPrescriptionReceived = () => ({
-  type: ACTIONS.REDIR_PRSC_RCD
-});
-
-export const redirectToBusTicketHome = () => ({
-  type: ACTIONS.REDIR_BUS_TKT_HOME
-});
-
-export const redirectToReceiveBusTicket = () => ({
-  type: ACTIONS.REDIR_RCV_BUS_TKT
-});
-
-export const redirectToBusTicketRequirement = () => ({
-  type: ACTIONS.REDIR_BUS_TKT_PREREQ
-});
-
-export const redirectToBusTicketReceived = () => ({
-  type: ACTIONS.REDIR_BUS_TKT_RCD
-});
-
-export const redirectToMuseumMembershipHome = () => ({
-  type: ACTIONS.REDIR_MUS_TKT_HOME
-});
-
-export const redirectToReceiveMuseumMembership = () => ({
-  type: ACTIONS.REDIR_RCV_MUS_TKT
-});
-
-export const redirectToMuseumMembershipRequirement = () => ({
-  type: ACTIONS.REDIR_MUS_TKT_PREREQ
-});
-
-export const redirectToMuseumMembershipReceived = () => ({
-  type: ACTIONS.REDIR_MUS_TKT_RCD
 });
 
 export const changeCityIdInfo = value => ({

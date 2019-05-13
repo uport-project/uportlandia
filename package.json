@@ -17,6 +17,7 @@
   "dependencies": {
     "@sentry/browser": "5.1.1",
     "body-parser": "^1.18.3",
+    "connected-react-router": "^6.4.0",
     "dayjs": "^1.8.0",
     "i18next": "^15.0.9",
     "i18next-browser-languagedetector": "^3.0.1",
@@ -27,11 +28,11 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-i18next": "^10.7.0",
-    "react-redux": "5.0.7",
+    "react-redux": "^7.0.3",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-tooltip": "^3.9.2",
-    "redux": "4.0.0",
+    "redux": "^4.0.1",
     "redux-saga": "0.16.0",
     "reselect": "3.0.1",
     "serverless": "^1.41.0",
@@ -53,9 +54,8 @@
     "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
     "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
-    "dev:sls": "TARGET_ENV=development node server.dev.js",
-    "deploy:sls:prod": "sls deploy -v -s prod",
-    "offline": "sls offline -s prod"
+    "deploy:sls": "sls deploy -v -s prod",
+    "local:api": "sls offline -s prod"
   },
   "browserslist": [
     ">0.2%",

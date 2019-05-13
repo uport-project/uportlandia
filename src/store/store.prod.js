@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware } from "redux";
 
-export default function configureStore(reducer, sagaMiddleware) {
-  return createStore(reducer, applyMiddleware(sagaMiddleware));
+export default function configureStore(reducer, sagaMiddleware, routerMiddleware) {
+  return createStore(reducer, applyMiddleware(routerMiddleware, sagaMiddleware));
 }
