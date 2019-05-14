@@ -124,28 +124,28 @@ export const redirectToServiceHome = serviceId => ({
   serviceId
 });
 
-export const redirectToCityHome = () => ({
-  type: ACTIONS.REDIR_CITY_HOME
+export const redirectToRegnHome = () => ({
+  type: ACTIONS.REDIR_REGN_HOME
 });
 
-export const redirectToCityIdForm = () => ({
-  type: ACTIONS.REDIR_CITY_ID_FORM
+export const redirectToRegnForm = () => ({
+  type: ACTIONS.REDIR_REGN_FORM
 });
 
-export const redirectToCityIdFormSubmit = () => ({
-  type: ACTIONS.REDIR_CITY_ID_FORM_SUB
+export const redirectToRegnFormSubmit = () => ({
+  type: ACTIONS.REDIR_REGN_FORM_SUB
 });
 
-export const redirectToCityIdReceived = () => ({
-  type: ACTIONS.REDIR_CITY_ID_RCD
+export const redirectToRegnReceived = () => ({
+  type: ACTIONS.REDIR_REGN_RCD
 });
 
-export const redirectToCityIdExists = () => ({
-  type: ACTIONS.REDIR_CITY_ID_EXISTS
+export const redirectToRegnExists = () => ({
+  type: ACTIONS.REDIR_REGN_EXISTS
 });
 
-export const changeCityIdInfo = value => ({
-  type: ACTIONS.CHANGE_CITY_ID_INFO,
+export const changeRegnInfo = value => ({
+  type: ACTIONS.CHANGE_REGN_INFO,
   value
 });
 

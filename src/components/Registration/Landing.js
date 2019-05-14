@@ -9,8 +9,11 @@ import { LoginButton, LoginLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import LoginModal from "../uport/LoginContainer";
-import SERVICES from "../../constants/services";
 import isMobile from "../../utils/isMobile";
+import { registration } from "../../constants/config";
+import SERVICES from "../../constants/services";
+
+const { serviceId } = registration;
 
 class Landing extends React.Component {
   constructor(props) {
@@ -44,16 +47,16 @@ class Landing extends React.Component {
       </Card.CTA>);
     return (<Wrapper>
       <Grid>
-        <SidebarLeft service={SERVICES.CITY_ID} active={0} />
+        <SidebarLeft service={SERVICES[serviceId]} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>{t("Join thousands of fellow uPortlandia citizens!")}</h2>
+            <h2>{t(registration.text.landingHeading)}</h2>
             <ul>
-              <li>{t("Get things done without leaving your home")}</li>
-              <li>{t("Access services and programs offered by the City")}</li>
-              <li>{t("Get a free one-year membership")}</li>
+              {registration.text.landingSteps.map(step => <li key={step}>
+                {t(step)}
+              </li>)}
             </ul>
-            <ServiceRequirements service={SERVICES.CITY_ID} />
+            <ServiceRequirements service={SERVICES[serviceId]} />
           </Card>
         </Col>
 
@@ -63,15 +66,15 @@ class Landing extends React.Component {
         heading="First things first"
         description="To login scan the QR code with the uPort app"
         infoHeading="You're logging in to"
-        serviceId={SERVICES.CITY_ID.id}
+        serviceId={serviceId}
         issuer={{
-          heading: SERVICES.CITY_ID.name,
-          subHeading: SERVICES.CITY_ID.entity,
-          name: SERVICES.CITY_ID.entity,
-          logo: SERVICES.CITY_ID.icon,
-          colors: theme.colors[SERVICES.CITY_ID.id]
+          heading: SERVICES[serviceId].name,
+          subHeading: SERVICES[serviceId].entity,
+          name: SERVICES[serviceId].entity,
+          logo: SERVICES[serviceId].icon,
+          colors: theme.colors[SERVICES[serviceId].id]
         }}
-        hiddenRequests={[SERVICES.CITY_ID]}
+        hiddenRequests={[SERVICES[serviceId]]}
         onClose={this.hideLoginModal}
         onLoginSuccess={this.handleLoginSuccess} />
     </Wrapper>)

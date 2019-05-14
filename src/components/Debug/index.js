@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import i18next from "i18next";
 
-import isMobile from "../utils/isMobile";
+import isMobile from "../../utils/isMobile";
 
-class CompanyPage extends React.Component {
+class Debug extends React.Component {
   state = {
     language: i18next.language || ""
   }
@@ -57,4 +57,4 @@ const Main = styled.main`
   }
 `;
 
-export default CompanyPage;
+export default Debug;

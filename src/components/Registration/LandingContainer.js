@@ -12,8 +12,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  redirectToCityIdForm() {
-    dispatch(actions.redirectToCityIdForm());
+  redirectToRegnForm() {
+    dispatch(actions.redirectToRegnForm());
   },
   saveProfile(profile) {
     dispatch(actions.saveProfile(profile));

@@ -2,11 +2,11 @@ import { call, put, spawn, takeEvery } from "redux-saga/effects"
 import { push, replace } from "connected-react-router"
 
 import {
-  REDIR_CITY_HOME,
-  REDIR_CITY_ID_FORM,
-  REDIR_CITY_ID_FORM_SUB,
-  REDIR_CITY_ID_RCD,
-  REDIR_CITY_ID_EXISTS,
+  REDIR_REGN_HOME,
+  REDIR_REGN_FORM,
+  REDIR_REGN_FORM_SUB,
+  REDIR_REGN_RCD,
+  REDIR_REGN_EXISTS,
   REDIR_FAIL,
   REDIR_SERV_HOME,
   REDIR_RCV_CLAIM,
@@ -71,11 +71,11 @@ function* navigateExternal(action) {
 }
 
 export default function* handleRedirects() {
-  yield spawn(takeEvery, REDIR_CITY_HOME, redirectToCityHome);
-  yield spawn(takeEvery, REDIR_CITY_ID_FORM, redirectToCityIdForm);
-  yield spawn(takeEvery, REDIR_CITY_ID_FORM_SUB, redirectToCityIdFormSubmit);
-  yield spawn(takeEvery, REDIR_CITY_ID_RCD, redirectToCityIdReceived);
-  yield spawn(takeEvery, REDIR_CITY_ID_EXISTS, redirectToCityIdExists);
+  yield spawn(takeEvery, REDIR_REGN_HOME, redirectToCityHome);
+  yield spawn(takeEvery, REDIR_REGN_FORM, redirectToCityIdForm);
+  yield spawn(takeEvery, REDIR_REGN_FORM_SUB, redirectToCityIdFormSubmit);
+  yield spawn(takeEvery, REDIR_REGN_RCD, redirectToCityIdReceived);
+  yield spawn(takeEvery, REDIR_REGN_EXISTS, redirectToCityIdExists);
   yield spawn(takeEvery, REDIR_SERV_HOME, redirectToServiceHome);
   yield spawn(takeEvery, REDIR_RCV_CLAIM, redirectToReceiveClaim);
   yield spawn(takeEvery, REDIR_RCD_CLAIM, redirectToClaimReceived);
