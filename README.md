@@ -3,9 +3,14 @@
 
 ## Development
 
+Serve pages using:
 ```
-yarn install
 yarn start
+```
+
+Start the Serverless Offline APIs:
+```
+yarn local:api
 ```
 
 Deploy using
