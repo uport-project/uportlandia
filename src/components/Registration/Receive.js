@@ -12,8 +12,7 @@ import isValid from "../../utils/validateRegnClaim";
 import isMobile from "../../utils/isMobile";
 import SuccessIcon from "../../images/smiley-face-city.svg";
 import AttestationModal from "../uport/AttestationContainer";
-import SERVICES from "../../constants/services";
-import { registration } from "../../constants/config";
+import { SERVICES, registration } from "../../constants/config";
 
 const { serviceId } = registration;
 

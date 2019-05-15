@@ -11,8 +11,7 @@ import ClaimExists from "./ClaimExists";
 import Footer from "../shared/Footer";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container } from "../shared/grid";
-import { registration } from "../../constants/config";
-import SERVICES from "../../constants/services";
+import { SERVICES, registration } from "../../constants/config";
 
 const { serviceId } = registration;
 

@@ -15,8 +15,7 @@ import {
   REDIR_HOME
 } from "../constants/actions";
 import { navigateExternalReset } from "../actions";
-import SERVICES from "../constants/services";
-import { registration } from "../constants/config";
+import { SERVICES, registration } from "../constants/config";
 
 const regnBaseUrl = SERVICES[registration.serviceId].url;
 

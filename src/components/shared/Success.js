@@ -14,7 +14,7 @@ import SuccessIcon from "../../images/congratulations-city.svg";
 import LikeDemo from "./LikeDemo";
 import Card from "./ServiceCard";
 import Footer from "./Footer";
-import SERVICES from "../../constants/services";
+import { SERVICES } from "../../constants/config";
 
 class Success extends React.Component {
   componentDidMount() {

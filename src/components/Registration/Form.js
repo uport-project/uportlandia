@@ -19,8 +19,7 @@ import {
   ThemedButton
 } from "../shared/elements";
 import validate from "../../utils/validateRegnClaim";
-import SERVICES from "../../constants/services";
-import { registration } from "../../constants/config";
+import { SERVICES, registration } from "../../constants/config";
 
 const { serviceId } = registration;
 

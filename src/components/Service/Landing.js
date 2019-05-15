@@ -11,7 +11,7 @@ import SidebarLeft from "../shared/SidebarLeft";
 import LoginModal from "../uport/LoginContainer";
 import isValid from "../../utils/validateReq";
 import isMobile from "../../utils/isMobile";
-import SERVICES from "../../constants/services";
+import { SERVICES } from "../../constants/config";
 
 class Landing extends React.Component {
   constructor(props) {

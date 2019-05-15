@@ -9,7 +9,7 @@ import Success from "../shared/Success";
 import Footer from "../shared/Footer";
 import { ContentLayout, BackButton } from "../shared/elements";
 import { Container } from "../shared/grid";
-import SERVICES from "../../constants/services";
+import { SERVICES } from "../../constants/config";
 
 class ServicePage extends React.Component {
   render() {

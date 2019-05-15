@@ -8,8 +8,7 @@ import { InvLinkButton } from "../shared/elements";
 import getDependentServices from "../../utils/getDependentServices";
 import Card from "../shared/ServiceCard";
 import Footer from "../shared/Footer";
-import SERVICES from "../../constants/services";
-import { registration } from "../../constants/config";
+import { SERVICES, registration } from "../../constants/config";
 
 const { serviceId } = registration;
 

@@ -10,7 +10,7 @@ import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateReq";
 import isMobile from "../../utils/isMobile";
-import SERVICES from "../../constants/services";
+import { SERVICES } from "../../constants/config";
 import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
 

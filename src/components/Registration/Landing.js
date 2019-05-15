@@ -10,8 +10,7 @@ import SidebarLeft from "../shared/SidebarLeft";
 import ServiceRequirements from "../shared/ServiceRequirements";
 import LoginModal from "../uport/LoginContainer";
 import isMobile from "../../utils/isMobile";
-import { registration } from "../../constants/config";
-import SERVICES from "../../constants/services";
+import { SERVICES, registration } from "../../constants/config";
 
 const { serviceId } = registration;
 

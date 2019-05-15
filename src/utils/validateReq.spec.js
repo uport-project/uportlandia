@@ -1,5 +1,5 @@
 import isValid from "./validateReq";
-import SERVICES from "../constants/services";
+import { SERVICES } from "../constants/config";
 
 describe("utils::validateReq", () => {
   it("passes if claim requirements are fulfilled", () => {
