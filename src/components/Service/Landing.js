@@ -57,10 +57,13 @@ class Landing extends React.Component {
               {" "}
               {t(SERVICES[serviceId].name)}
             </h2>
-            <Bullets>
-              <li>{t("Share your educational information easily")}</li>
-              <li>{t("Get discounts or free access to services and programs")}</li>
-            </Bullets>
+            {SERVICES[serviceId].details.length > 1
+              ? <Bullets>
+                {SERVICES[serviceId].details.map(detail => <li key={detail}>
+                  {t(detail)}
+                </li>)}
+              </Bullets>
+              : <p>{t(SERVICES[serviceId].details[0])}</p>}
             <ServiceRequirements service={SERVICES[serviceId]} />
           </Card>
         </Col>

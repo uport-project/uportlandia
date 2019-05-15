@@ -154,6 +154,8 @@ export default {
   "regnSuccessText2": "Asegurémonos de tener acceso a tu City ID de la ciudad de uPortlandia cuando y donde los necesite.",
   "regnSuccessText3": "enviará tus nuevas credenciales a tu aplicación uPort",
   "regnReceiveCTA": "Recibir ID de la ciudad",
+  "Invalid date of birth": "Fecha de nacimiento invalida",
+  "You must agree to the terms and conditions": "Debes aceptar los términos y condiciones",
 
   // Attestation
   "Scan this QR Code using the uPort App": "Escanee este Código QR usando la aplicación uPort",
@@ -199,40 +201,22 @@ export default {
   "Let's make sure you have access to your claims whenever and wherever you need them": "Asegurémonos de tener acceso a sus reclamos cuando y donde los necesite",
 
   // University
-  "Get a digital verification of your diploma": "Obtén una verificación digital de tu diploma.",
-  "Share your educational information easily": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
-  "Get discounts or free access to services and programs": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
-  "Your claims were succesfully shared with": "Tus credenciales fueron compartidas exitosamente con",
-  "is going to send your new claims to your uPort app": "va a enviar tus nuevas credenciales a tu aplicación uPort.",
-  "Let's make sure you have an access to your Diploma claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tu Diploma cuando y donde las necesites",
+  "diplomaDetail1": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
+  "diplomaDetail2": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
 
   // Transport
-  "Get digital verification of your bus ticket": "Obtén la verificación digital de tu boleto de autobús",
-  "Get your monthly bus ticket": "presta servicios gratuitos para sus ciudadanos. Obtén tu boleto mensual de autobús gratis",
-  "Receive your Bus Ticket": "Recibe tu Boleto de Autobús",
-  "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tus boletos de autobús cuando y donde las necesites",
+  "transportDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su boleto mensual de autobús gratis.",
 
   // Pharmacy
-  "Get digital verification of your prescription": "Obtén una verificación digital de tu receta",
-  "Get your medicines at any drug store you wish": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
-  "Receive your Prescription Drug": "Recibe tu medicamento recetado",
-  "Let's make sure you have an access to your prescription claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de recetas cuando y donde las necesites.",
+  "pharmacyDetail1": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
 
   // Museum
-  "Get digital verification of your annual membership": "Obtén una verificación digital de tu membresía anual",
-  "Get your annual museum membership": "presta servicios gratuitos para sus ciudadanos. Obtén tu membresía anual del museo de forma gratuita.",
-  "Receive your Annual Membership": "Recibe tu Membresía Anual",
-  "Let's make sure you have an access to your annual membership claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales anuales de membresía cuando y donde las necesites",
+  "museumDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su membresía anual del museo de forma gratuita.",
 
   // Insurance
-  "Share your insurance information easily at your doctor's office, pharmacy or at any emergency": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
-  "Receive your Insurance Coverage": "Recibe tu cobertura de seguro",
-  "Let's make sure you have an access to your insurance claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de seguros cuando y donde las necesites",
+  "insuranceDetail1": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
 
   // Company
-  "Get a digital verification of your employment": "Obtén una verificación digital de tu empleo.",
-  "Share your employment information easily while you're applying for a mortgage or signing a new lease": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
-  "Provide a verified employment history during your job interview": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
-  "Receive your Employment Verification": "Recibe tu Verificación de Empleo",
-  "Let's make sure you have an access to your employment claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de empleo cuando y donde las necesites"
+  "companyDetail1": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
+  "companyDetail2": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
 };

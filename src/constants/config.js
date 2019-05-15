@@ -143,6 +143,10 @@ const DIPLOMA = {
     "diplomaStep2",
     "diplomaStep3"
   ],
+  details: [
+    "diplomaDetail1",
+    "diplomaDetail2"
+  ],
   claimData: {
     "School Name": "The University of uPortlandia",
     "Program Name": "French linguistics",
@@ -165,6 +169,10 @@ const COMPANY = {
     "employmentStep2",
     "employmentStep3"
   ],
+  details: [
+    "companyDetail1",
+    "companyDetail2"
+  ],
   claimData: {
     "Company Name": "Dream Job LLC.",
     "Salary": "$100,000",
@@ -185,6 +193,9 @@ const INSURANCE = {
     "insuranceStep1",
     "insuranceStep2",
     "insuranceStep3"
+  ],
+  details: [
+    "insuranceDetail1"
   ],
   claimData: {
     "Policy Number": "0000",
@@ -207,6 +218,9 @@ const PHARMACY = {
     "pharmacyStep2",
     "pharmacyStep3"
   ],
+  details: [
+    "pharmacyDetail1"
+  ],
   claimData: {
     "Prescription Drug": "Yes"
   }
@@ -226,6 +240,9 @@ const TRANSPORT = {
     "transportStep2",
     "transportStep3"
   ],
+  details: [
+    "transportDetail1"
+  ],
   claimData: {
     "Monthly Bus Ticket": "June 2019",
   }
@@ -244,6 +261,9 @@ const MUSEUM = {
     "museumStep1",
     "museumStep2",
     "museumStep3"
+  ],
+  details: [
+    "museumDetail1"
   ],
   claimData: {
     "Annual Membership": "2019"

@@ -155,6 +155,8 @@ export default {
   "regnSuccessText2": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
   "regnSuccessText3": "is going to send your new ID claims to your uPort app.",
   "regnReceiveCTA": "Receive City ID",
+  "Invalid date of birth": "Invalid date of birth",
+  "You must agree to the terms and conditions": "You must agree to the terms and conditions",
 
   // Attestation
   "Scan this QR Code using the uPort App": "Scan this QR Code using the uPort App",
@@ -200,40 +202,22 @@ export default {
   "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them.",
 
   // University
-  "Get a digital verification of your diploma": "Get a digital verification of your diploma",
-  "Share your educational information easily": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
-  "Get discounts or free access to services and programs": "Get discounts or free access to services and programs all around the world.",
-  "Your claims were succesfully shared with": "Your claims were succesfully shared with",
-  "is going to send your new claims to your uPort app": "is going to send your new claims to your uPort app.",
-  "Let's make sure you have an access to your Diploma claims whenever and wherever you need them": "Let's make sure you have an access to your Diploma claims whenever and wherever you need them.",
+  "diplomaDetail1": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
+  "diplomaDetail2": "Get discounts or free access to services and programs all around the world.",
 
   // Transport
-  "Get digital verification of your bus ticket": "Get digital verification of your bus ticket",
-  "Get your monthly bus ticket": "provides free services for its citizens. Get your monthly bus ticket for free",
-  "Receive your Bus Ticket": "Receive your Bus Ticket",
-  "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them": "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them",
+  "transportDetail1": "The City of uPortlandia provides free services for its citizens. Get your monthly bus ticket for free.",
 
   // Pharmacy
-  "Get digital verification of your prescription": "Get digital verification of your prescription",
-  "Get your medicines at any drug store you wish": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
-  "Receive your Prescription Drug": "Receive your Prescription Drug",
-  "Let's make sure you have an access to your prescription claims whenever and wherever you need them": "Let's make sure you have an access to your prescription claims whenever and wherever you need them",
+  "pharmacyDetail1": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
 
   // Museum
-  "Get digital verification of your annual membership": "Get digital verification of your annual membership",
-  "Get your annual museum membership": "provides free services for its citizens. Get your annual museum membership for free.",
-  "Receive your Annual Membership": "Receive your Annual Membership",
-  "Let's make sure you have an access to your annual membership claims whenever and wherever you need them": "Let's make sure you have an access to your annual membership claims whenever and wherever you need them",
+  "museumDetail1": "The City of uPortlandia provides free services for its citizens. Get your annual museum membership for free.",
 
   // Insurance
-  "Share your insurance information easily at your doctor's office, pharmacy or at any emergency": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",
-  "Receive your Insurance Coverage": "Receive your Insurance Coverage",
-  "Let's make sure you have an access to your insurance claims whenever and wherever you need them": "Let's make sure you have an access to your insurance claims whenever and wherever you need them",
+  "insuranceDetail1": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",
 
   // Company
-  "Get a digital verification of your employment": "Get a digital verification of your employment",
-  "Share your employment information easily while you're applying for a mortgage or signing a new lease": "Share your employment information easily while you're applying for a mortgage or signing a new lease",
-  "Provide a verified employment history during your job interview": "Provide a verified employment history during your job interview",
-  "Receive your Employment Verification": "Receive your Employment Verification",
-  "Let's make sure you have an access to your employment claims whenever and wherever you need them": "Let's make sure you have an access to your employment claims whenever and wherever you need them"
+  "companyDetail1": "Share your employment information easily while you're applying for a mortgage or signing a new lease",
+  "companyDetail2": "Provide a verified employment history during your job interview",
 };

@@ -186,7 +186,9 @@ const createFormField = (id, config, value, onChange, validationError, t) => {
             value={value ? dayjs(value).format("YYYY-MM-DD") : ""}
           />
           <ErrorMsg show={validationError && validationError.fieldId==="dob"}>
-            {validationError && validationError.message}
+            {validationError && validationError.message
+              ? t(validationError.message)
+              : null}
           </ErrorMsg>
         </FormGroup>
       </Col>);

@@ -66,9 +66,9 @@ class Landing extends React.Component {
             secondary
             href={verification.url}
             onClick={() => redirectToClaimReceived(serviceId)}
-          >Receive your {SERVICES[serviceId].name}</ThemedExtLink>
+          >{t("Receive your")}{" "} {t(SERVICES[serviceId].displayName)}</ThemedExtLink>
         : <ThemedButton themeId={SERVICES[serviceId].id} className="long" secondary onClick={this.showAttestationModal}>
-            Receive your {SERVICES[serviceId].name}
+            {t("Receive your")}{" "} {t(SERVICES[serviceId].displayName)}
           </ThemedButton>}
     </Card.CTA>);
 
