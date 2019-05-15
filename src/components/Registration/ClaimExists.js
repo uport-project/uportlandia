@@ -9,22 +9,25 @@ import getDependentServices from "../../utils/getDependentServices";
 import Card from "../shared/ServiceCard";
 import Footer from "../shared/Footer";
 import SERVICES from "../../constants/services";
+import { registration } from "../../constants/config";
+
+const { serviceId } = registration;
 
 const ClaimExists = () => {
   const { t } = useTranslation();
-  const deps = getDependentServices(SERVICES.CITY_ID.id);
+  const deps = getDependentServices(SERVICES[serviceId].id);
   return (<Wrapper>
     <TopHalf>
-      <h2>{t("It looks like you already have a uPortlandia City ID")}</h2>
-      <Logo src={SERVICES.CITY_ID.icon} />
-      <p>{t("With your City ID you have easy and quick access to numerous services and programs in uPortlandia")}</p>
+      <h2>{t("regnClaimExists")}</h2>
+      <Logo src={SERVICES[serviceId].icon} />
+      <p>{t("regnBenefits")}</p>
     </TopHalf>
     <BotHalf>
       <Grid>
         <Spacer span={2} />
         {deps.length
           ? <Col span={8}>
-           <CardsLabel>{t("Services that honor")} {t(SERVICES.CITY_ID.displayName)}</CardsLabel>
+           <CardsLabel>{t("Services that honor")} {t(SERVICES[serviceId].displayName)}</CardsLabel>
           {deps.map(service => (
             <Card key={service.id}
               displayName={service.displayName}

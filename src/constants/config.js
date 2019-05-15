@@ -2,21 +2,24 @@ import dayjs from "dayjs";
 
 import SERVICES from "./services";
 import COUNTRIES from "./countries";
+import logo from "../images/uport-logo.svg";
+
+export const home = {
+  logo: logo,
+  logoLink: "https://uport.me/",
+  name: "uPortlandia"
+};
 
 export const registration = {
   path: "/city",
   name: "City ID",
   serviceId: "CITY_ID",
   text: {
-    landingHeading: "Join thousands of fellow uPortlandia citizens!",
     landingSteps: [
-      "Get things done without leaving your home",
-      "Access services and programs offered by the City",
-      "Get a free one-year membership"
-    ],
-    formHeading: "Personal Information",
-    formLabel1: "Submit your information to",
-    formLabel2: "to confirm your identity"
+      "regnLandingStep1",
+      "regnLandingStep2",
+      "regnLandingStep3"
+    ]
   },
   form: {
     firstName: {
@@ -44,7 +47,7 @@ export const registration = {
       required: true
     },
     province: {
-      label: "Province",
+      label: "State or Province",
       defaultValue: "",
       type: "text",
       required: true

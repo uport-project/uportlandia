@@ -83,7 +83,7 @@ class Landing extends React.Component {
             <hr />
             <h4>{t("What's next?")}</h4>
             <p>
-              {t("Let's make sure you have an access to your claims whenever and wherever you need them")}
+              {t("Let's make sure you have access to your claims whenever and wherever you need them")}
               {t(SERVICES[serviceId].entity)}
               {t("is going to send your new claims to your uPort app")}
             </p>

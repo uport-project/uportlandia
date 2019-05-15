@@ -18,6 +18,7 @@ import {
   Textbox,
   ThemedButton
 } from "../shared/elements";
+import validate from "../../utils/validateRegnClaim";
 import SERVICES from "../../constants/services";
 import { registration } from "../../constants/config";
 
@@ -39,14 +40,17 @@ class RegistrationForm extends React.Component {
       data,
       profile,
       isLoggedIn,
-      redirectToCityHome,
-      redirectToCityIdExists
+      redirectToRegnHome,
+      redirectToRegnExists
     } = this.props;
-    // if(!isLoggedIn)
-    //   redirectToCityHome();
-    // if(profile && profile[SERVICES[serviceId].claim] && isValid(profile[SERVICES[serviceId].claim])) {
-    //   redirectToCityIdExists();
-    // }
+    if(!isLoggedIn)
+      redirectToRegnHome();
+    if(profile &&
+      profile[SERVICES[serviceId].claim] &&
+      validate(profile[SERVICES[serviceId].claim]).valid
+    ) {
+      redirectToRegnExists();
+    }
     this.setState({ details: data });
   }
   handleChange = fieldId => ev => {
@@ -69,7 +73,7 @@ class RegistrationForm extends React.Component {
   }
   handleSubmit = ev => {
     ev.preventDefault();
-    const validation = this.validate();
+    const validation = validate(this.state.details);
     if(validation.valid) {
       this.setState({ validationError: null });
       this.props.onSubmit(this.state.details);
@@ -83,39 +87,11 @@ class RegistrationForm extends React.Component {
     }
     return false;
   }
-  validate = () => {
-    const { details } = this.state;
-    let result = {
-      valid: true
-    };
-    Object.keys(registration.form).forEach(fieldId => {
-      if(!result.valid)
-        return;
-      if(typeof(registration.form[fieldId].isValid) === "function")
-        result = registration.form[fieldId].isValid.call(null, details[fieldId])
-      else if(registration.form[fieldId].required) {
-        console.log(fieldId, Boolean(details[fieldId]))
-        result = Boolean(details[fieldId])
-          ? { valid: true }
-          : {
-            fieldId,
-            valid: false,
-            error: registration.form[fieldId].validationError ||
-              `${registration.form[fieldId].label} is required`
-          }
-      }
-    });
-    return result;
-  }
   render() {
     const { isLoggedIn, t } = this.props;
     const { details, validationError } = this.state;
-    const {
-      firstName,
-      toc
-    } = details;
-    // if(!isLoggedIn)
-    //   return <Redirect to={SERVICES[serviceId].url} />;
+    if(!isLoggedIn)
+      return <Redirect to={SERVICES[serviceId].url} />;
     const CTA = () => (<Card.CTA>
       <ThemedButton
         themeId={SERVICES[serviceId].id}
@@ -129,12 +105,13 @@ class RegistrationForm extends React.Component {
         <SidebarLeft service={SERVICES[serviceId]} active={1} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>{t(registration.text.formHeading)}</h2>
+            <h2>{t("regnFormHeading")}</h2>
             <p>
-              {t(registration.text.formLabel1a)}
+              {t("regnFormLabel1")}
               {" "}
               {t(SERVICES[serviceId].entity)}
-              {t(registration.text.formLabel1b)}
+              {" "}
+              {t("regnFormLabel2")}
             .</p>
             <ReqdMessage>{t("* indicates required field")}</ReqdMessage>
 
@@ -150,7 +127,7 @@ class RegistrationForm extends React.Component {
                 ))}
               </Grid>
               <hr />
-              <h4>{t("What’s next?")}</h4>
+              <h4>{t("What's next?")}</h4>
               <p>
                 {t("Your information will be verified")}
               </p>
@@ -207,7 +184,7 @@ const createFormField = (id, config, value, onChange, validationError, t) => {
               }
             })}
             placeholder={config.placeholder}
-            value={dayjs(value).format("YYYY-MM-DD")}
+            value={value ? dayjs(value).format("YYYY-MM-DD") : ""}
           />
           <ErrorMsg show={validationError && validationError.fieldId==="dob"}>
             {validationError && validationError.message}

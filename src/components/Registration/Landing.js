@@ -32,15 +32,15 @@ class Landing extends React.Component {
     const { loginModal } = this.state;
     if(loginModal || isMobile()) {
       this.setState({ loginModal: false })
-      this.props.redirectToCityIdForm();
+      this.props.redirectToRegnForm();
     }
   }
   render() {
-    const { login, profile, redirectToCityIdForm, t } = this.props;
+    const { login, profile, redirectToRegnForm, t } = this.props;
     const { loginModal } = this.state;
     const CTA = () => (<Card.CTA>
       {profile && profile.did
-        ? <LoginButton text={t("Continue")} onClick={redirectToCityIdForm} />
+        ? <LoginButton text={t("Continue")} onClick={redirectToRegnForm} />
         : isMobile()
           ? <LoginLink href={login.url} />
           : <LoginButton onClick={this.showLoginModal} />}
@@ -50,7 +50,7 @@ class Landing extends React.Component {
         <SidebarLeft service={SERVICES[serviceId]} active={0} />
         <Col span={6}>
           <Card CTA={CTA}>
-            <h2>{t(registration.text.landingHeading)}</h2>
+            <h2>{t("regnLandingHeading")}</h2>
             <ul>
               {registration.text.landingSteps.map(step => <li key={step}>
                 {t(step)}

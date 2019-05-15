@@ -16,29 +16,32 @@ import {
 } from "../constants/actions";
 import { navigateExternalReset } from "../actions";
 import SERVICES from "../constants/services";
+import { registration } from "../constants/config";
+
+const regnBaseUrl = SERVICES[registration.serviceId].url;
 
 function* redirectToHome() {
   yield put(push("/"));
 }
 
-function* redirectToCityHome() {
+function* redirectToRegnHome() {
   yield put(push("/city"));
 }
 
-function* redirectToCityIdForm() {
-  yield put(push("/city/personalinfo"));
+function* redirectToRegnForm() {
+  yield put(push(`${regnBaseUrl}/form`));
 }
 
-function* redirectToCityIdFormSubmit() {
-  yield put(push("/city/submitted"));
+function* redirectToRegnFormSubmit() {
+  yield put(push(`${regnBaseUrl}/submitted`));
 }
 
-function* redirectToCityIdReceived() {
-  yield put(push("/city/complete"));
+function* redirectToRegnReceived() {
+  yield put(push(`${regnBaseUrl}/complete`));
 }
 
-function* redirectToCityIdExists() {
-  yield put(push("/city/exists"));
+function* redirectToRegnExists() {
+  yield put(push(`${regnBaseUrl}/exists`));
 }
 
 function* redirectToServiceHome(action) {
@@ -58,7 +61,7 @@ function* redirectToReceiveClaim(action) {
 
 function* redirectToClaimReceived(action) {
   const { serviceId } = action;
-  yield put(push(`${SERVICES[serviceId].url}/prerequisites`));
+  yield put(push(`${SERVICES[serviceId].url}/complete`));
 }
 
 function* navigateExternal(action) {
@@ -71,11 +74,11 @@ function* navigateExternal(action) {
 }
 
 export default function* handleRedirects() {
-  yield spawn(takeEvery, REDIR_REGN_HOME, redirectToCityHome);
-  yield spawn(takeEvery, REDIR_REGN_FORM, redirectToCityIdForm);
-  yield spawn(takeEvery, REDIR_REGN_FORM_SUB, redirectToCityIdFormSubmit);
-  yield spawn(takeEvery, REDIR_REGN_RCD, redirectToCityIdReceived);
-  yield spawn(takeEvery, REDIR_REGN_EXISTS, redirectToCityIdExists);
+  yield spawn(takeEvery, REDIR_REGN_HOME, redirectToRegnHome);
+  yield spawn(takeEvery, REDIR_REGN_FORM, redirectToRegnForm);
+  yield spawn(takeEvery, REDIR_REGN_FORM_SUB, redirectToRegnFormSubmit);
+  yield spawn(takeEvery, REDIR_REGN_RCD, redirectToRegnReceived);
+  yield spawn(takeEvery, REDIR_REGN_EXISTS, redirectToRegnExists);
   yield spawn(takeEvery, REDIR_SERV_HOME, redirectToServiceHome);
   yield spawn(takeEvery, REDIR_RCV_CLAIM, redirectToReceiveClaim);
   yield spawn(takeEvery, REDIR_RCD_CLAIM, redirectToClaimReceived);

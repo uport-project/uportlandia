@@ -1,17 +1,17 @@
 export default {
   // Header
-  "welcome to": "Welcome to",
-  "try the new uport demo": "Try the new uPort demo",
-  "play around": "Play around in the smart city of the future",
-  "get started": "Get Started",
-  "its simple": "It's Simple",
-  "get uportlandia city id": "Get uPortlandia City ID",
-  "the city verifies your information and grants you city id": "The city \"verifies\" your information and grants you City ID",
-  "store it in the uport app": "Store it in the uPort app",
-  "own your information": "Own your information. You decide when and with whom you share it.",
-  "get access to city services": "Get access to the city services.",
-  "enjoy perks and benefits": "As a full-fledged citizen, enjoy all the perks and benefits.",
-  "ready lets do this": "Ready? Let's do this!",
+  "Welcome to": "Welcome to",
+  "tryDemo": "Try the new uPort demo",
+  "Play around": "Play around in the smart city of the future",
+  "Get Started": "Get Started",
+  "Its Simple": "It's Simple",
+  "getRegistration": "Get uPortlandia City ID",
+  "getRegistrationDescription": "The city \"verifies\" your information and grants you City ID",
+  "Store it in the uport app": "Store it in the uPort app",
+  "Own your information": "Own your information. You decide when and with whom you share it.",
+  "Get access to city services": "Get access to the city services.",
+  "Enjoy perks and benefits": "As a full-fledged citizen, enjoy all the perks and benefits.",
+  "Ready? Lets do this": "Ready? Let's do this!",
 
   // AppDownload
   "make sure you have your phone handy": "Psst... Make sure you have your phone handy with the uPort app downloaded.",
@@ -92,6 +92,7 @@ export default {
   "Address": "Address",
   "Date of Birth": "Date of Birth",
 
+  "CityID": "City ID",
   "City ID": "City ID",
   "Diploma": "Diploma",
   "Monthly Bus Ticket": "Monthly Bus Ticket",
@@ -105,10 +106,10 @@ export default {
   "Login with uPort": "Login with uPort",
   "will ask you to share": "will ask you to share",
 
-  "Join thousands of fellow uPortlandia citizens!": "Join thousands of fellow uPortlandia citizens!",
-  "Get things done without leaving your home": "Get things done without leaving your home. No more standing in lines.",
-  "Access services and programs offered by the City": "Access services and programs offered by the City",
-  "Get a free one-year membership": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
+  "regnLandingHeading": "Join thousands of fellow uPortlandia citizens!",
+  "regnLandingStep1": "Get things done without leaving your home. No more standing in lines.",
+  "regnLandingStep2": "Access services and programs offered by the City",
+  "regnLandingStep3": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
 
   // Login
   "Open the uPort app to login": "Open the uPort app to login",
@@ -127,9 +128,9 @@ export default {
   "Requested information": "Requested information",
 
   // Claims
-  "Personal Information": "Personal Information",
-  "Submit your information to": "Submit your information to",
-  "to confirm your identity": "to confirm your identity",
+  "regnFormHeading": "Personal Information",
+  "regnFormLabel1": "Submit your information to",
+  "regnFormLabel2": "to confirm your identity",
   "* indicates required field": "* indicates required field",
   "This field is required": "This field is required",
   "agreeTnC": "I agree to the uPort <1>Terms and Conditions</1>",
@@ -148,9 +149,12 @@ export default {
   "We do not store any of this information and do not reveal it to any party": "We do not store any of this information and do not reveal it to any party.",
 
   "Good News!": "Good News!",
-  "Your City ID is ready to be issued": "Your information has been succesfully verified. Your City ID is ready to be issued.",
-  "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
-  "is going to send your new ID claims to your uPort app": "is going to send your new ID claims to your uPort app.",
+  "regnSuccessHeading1": "Good News!",
+  "regnSuccessHeading2": "What's next?",
+  "regnSuccessText1": "Your information has been succesfully verified. Your City ID is ready to be issued.",
+  "regnSuccessText2": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
+  "regnSuccessText3": "is going to send your new ID claims to your uPort app.",
+  "regnReceiveCTA": "Receive City ID",
 
   // Attestation
   "Scan this QR Code using the uPort App": "Scan this QR Code using the uPort App",
@@ -183,8 +187,8 @@ export default {
   "Contact Us": "Contact Us",
 
   // City/ClaimExists
-  "It looks like you already have a uPortlandia City ID": "It looks like you already have a uPortlandia City ID",
-  "With your City ID you have easy and quick access to numerous services and programs in uPortlandia": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
+  "regnClaimExists": "It looks like you already have a uPortlandia City ID",
+  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
 
   // Redirect
   "See you later!": "See you later!",
@@ -192,8 +196,11 @@ export default {
   "website to continue": "website to continue.",
   "Bye!": "Bye!",
 
+  "Get a digital verification of your": "Get a digital verification of your",
+  "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them.",
+
   // University
-  "Get a digital verification of your diploma": "",
+  "Get a digital verification of your diploma": "Get a digital verification of your diploma",
   "Share your educational information easily": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
   "Get discounts or free access to services and programs": "Get discounts or free access to services and programs all around the world.",
   "Your claims were succesfully shared with": "Your claims were succesfully shared with",

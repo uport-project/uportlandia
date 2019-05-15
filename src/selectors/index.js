@@ -1,7 +1,5 @@
 import { createSelector } from "reselect";
 
-import SERVICES from "../constants/services";
-
 export const isLoading = state => Boolean(state.loading.length);
 export const getUPortMessages = state => state.uportMessages;
 export const getUPortLogin = state => state.uportLogin;
