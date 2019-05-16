@@ -5,13 +5,7 @@ provider:
   runtime: nodejs8.10
   region: us-east-1
   environment:
-    CITY_ID_SIGNING_KEY: ${ssm:uportlandia_city_id_${opt:stage}_privatekey~true}
-    DIPLOMA_SIGNING_KEY: ${ssm:uportlandia_diploma_${opt:stage}_privatekey~true}
-    COMPANY_SIGNING_KEY: ${ssm:uportlandia_company_${opt:stage}_privatekey~true}
-    INSURANCE_SIGNING_KEY: ${ssm:uportlandia_insurance_${opt:stage}_privatekey~true}
-    PHARMACY_SIGNING_KEY: ${ssm:uportlandia_pharmacy_${opt:stage}_privatekey~true}
-    TRANSPORT_SIGNING_KEY: ${ssm:uportlandia_transport_${opt:stage}_privatekey~true}
-    MUSEUM_SIGNING_KEY: ${ssm:uportlandia_museum_${opt:stage}_privatekey~true}
+    ISSUERS: ${ssm:/uportlandia/${opt:stage}/issuers~true}
 
 custom:
   serverless-offline:

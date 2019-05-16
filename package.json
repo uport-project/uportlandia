@@ -57,7 +57,7 @@
     "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
     "deploy:sls": "sls deploy -v -s prod",
-    "local:api": "sls offline -s prod"
+    "local:api": "sls offline -s stage"
   },
   "browserslist": [
     ">0.2%",

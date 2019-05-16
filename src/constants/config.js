@@ -19,7 +19,7 @@ export const home = {
   name: "uPortlandia"
 };
 
-// Registration Flows
+// Registration Flow
 export const registration = {
   path: "/city",
   name: "City ID",
