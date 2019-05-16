@@ -437,3 +437,19 @@ export const routes = Object.keys(SERVICES).map(serviceId => ({
   path: SERVICES[serviceId].url,
   serviceId
 }));
+
+// Ext Service URLs
+
+const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
+  ? "https://api.uport.me/chasqui/"
+  : "https://api.uport.space/chasqui/";
+
+const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
+  ? "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/"
+  : process.env.REACT_APP_TARGET_ENV === "stage"
+    ? "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/"
+    : "http://localhost:3001/"
+
+export const CHASQUI_URL = getChasquiUrl();
+export const SIGNER_URL = getSignerUrl();
+export const SENTRY_DSN = "https://7a87f2dc2e774d5891ec2ea565b40c05@sentry.io/1449781";

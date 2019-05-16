@@ -18,7 +18,7 @@ import createChasquiUrl from "../utils/createChasquiUrl";
 import createCallbackUrl from "../utils/createCallbackUrl";
 import request from "../utils/request";
 import createJwtUrl from "../utils/createJwtUrl";
-import SIGNER_URL from "../constants/signerUrl";
+import { SIGNER_URL } from "../constants/config";
 
 function* verifyCredentials (action) {
   const { serviceId, token } = action;

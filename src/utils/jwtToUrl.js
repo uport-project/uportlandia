@@ -1,9 +1,9 @@
 import request from "./request";
-import CHASQUI_HOST from "../constants/chasquiUrl";
+import { CHASQUI_URL } from "../constants/config";
 import createChasquiUrl from "../utils/createChasquiUrl";
 
 async function jwtToUrl(jwt) {
-  const response = await request(`${CHASQUI_HOST}topic/`, {
+  const response = await request(`${CHASQUI_URL}topic/`, {
     method: "post",
     dataType: "json",
     data: jwt

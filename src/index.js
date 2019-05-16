@@ -10,7 +10,7 @@ import history from "./utils/history";
 import createRootReducer from "./reducers";
 import sagas from "./sagas";
 import Routes from "./routes";
-import SENTRY_DSN from "./constants/sentryDSN";
+import { SENTRY_DSN } from "./constants/config";
 import "./i18n";
 
 import "./css/index.css"
