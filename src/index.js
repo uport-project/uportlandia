@@ -15,7 +15,8 @@ import "./i18n";
 
 import "./css/index.css"
 
-sentryInit({ dsn: SENTRY_DSN });
+if(SENTRY_DSN)
+  sentryInit({ dsn: SENTRY_DSN });
 
 const sagaMiddleware = createMiddleware();
 const rootReducer = createRootReducer(history);

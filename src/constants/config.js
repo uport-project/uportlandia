@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 // Images/Logos
-import logo from "../images/uport-logo.svg";
+import logo from "../images/alastria-logo.png";
 import CityIDIcon from "../images/city-logo.png";
 import DiplomaIcon from "../images/university-logo.png";
 import EmploymentIcon from "../images/company-logo.png";
@@ -15,8 +15,8 @@ import COUNTRIES from "./countries";
 // Home Page
 export const home = {
   logo: logo,
-  logoLink: "https://uport.me/",
-  name: "uPortlandia"
+  logoLink: "https://alastria.io/",
+  name: "Alastrialandia"
 };
 
 // Registration Flow
@@ -111,15 +111,15 @@ export const registration = {
   }
 };
 
-const CITY_ID = { // This should match the Registration Config
+const CITY_ID = {
   id: "CITY_ID",
   name: "City ID",
   displayName: "cityIdDisplayName",
   icon: CityIDIcon,
-  entity: "The City of uPortlandia",
+  entity: "The City of Alastrialandia",
   description: "cityIdDescription",
   url: "/city",
-  claim: "Uportlandia City ID",
+  claim: "Alastrialandia City ID",
   steps: [
     "cityIdStep1",
     "cityIdStep2",
@@ -134,7 +134,7 @@ const DIPLOMA = {
   name: "Diploma",
   displayName: "diplomaDisplayName",
   icon: DiplomaIcon,
-  entity: "The University of uPortlandia",
+  entity: "The University of Alastrialandia",
   description: "diplomaDescription",
   url: "/university",
   claim: "Diploma",
@@ -148,7 +148,7 @@ const DIPLOMA = {
     "diplomaDetail2"
   ],
   claimData: {
-    "School Name": "The University of uPortlandia",
+    "School Name": "The University of Alastrialandia",
     "Program Name": "French linguistics",
     "Graduation Year": "2019",
     "Final Grades": "B+"
@@ -231,7 +231,7 @@ const TRANSPORT = {
   name: "Monthly Bus Ticket",
   displayName: "transportDisplayName",
   icon: TransportIcon,
-  entity: "uPortlandia City Transit",
+  entity: "Alastrialandia City Transit",
   description: "transportDescription",
   url: "/transport",
   claim: "Bus Ticket",
@@ -253,7 +253,7 @@ const MUSEUM = {
   name: "Annual Membership",
   displayName: "museumDisplayName",
   icon: MuseumIcon,
-  entity: "uPortlandia Museum of Modern Art",
+  entity: "Alastrialandia Museum of Modern Art",
   description: "museumDescription",
   url: "/museum",
   claim: "Museum Membership",
@@ -445,11 +445,11 @@ const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
   : "https://api.uport.space/chasqui/";
 
 const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
-  ? "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/"
+  ? "https://3r5ejmui5i.execute-api.us-east-1.amazonaws.com/prod/"
   : process.env.REACT_APP_TARGET_ENV === "stage"
-    ? "https://7hilw36156.execute-api.us-east-1.amazonaws.com/stage"
-    : "http://localhost:3001/";
+    ? "https://3r5ejmui5i.execute-api.us-east-1.amazonaws.com/prod/"
+    : "http://localhost:3001/"
 
 export const CHASQUI_URL = getChasquiUrl();
 export const SIGNER_URL = getSignerUrl();
-export const SENTRY_DSN = "https://7a87f2dc2e774d5891ec2ea565b40c05@sentry.io/1449781";
+export const SENTRY_DSN = "";

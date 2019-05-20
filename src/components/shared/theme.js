@@ -1,5 +1,4 @@
 export const homeHeader = {
-  bg: "#5C50CA",
   textColor: "#1E1E1E",
 };
 
@@ -21,7 +20,7 @@ export const appDownloadSticky = {
 };
 
 export const colors = {
-  primary: "#5C50CA",
+  primary: "#00b2a9",
   mutedText: "#9E9E9E",
   mutedText2: "#9299B3",
   mutedText3: "#d0d0d0",
@@ -40,7 +39,7 @@ export const colors = {
   border3: "#dcdcdc",
   error: "#d24e4e",
   errorBg: "#ffebee",
-  homeButtonBg: "#4654D1",
+  homeButtonBg: "#00aaa2",
 
   CITY_ID: {
     primary: "#1B998B",
@@ -100,10 +99,11 @@ export const formControl = {
   placeholder: "#ccc"
 };
 
-export const gradient1 = "linear-gradient(to right, #5C50CA, #7958D8)";
-
-export const gradient2 = "linear-gradient(241.48deg, #4654D1 1.81%, #5C51CB 97.48%)";
-export const gradient3 = "linear-gradient(255.4deg, #2E3ECC 0%, #5B4DE8 99.58%)"; // hover
+// Home Page: Card background
+export const gradient1 = "#00b2a9";
+// Primary button
+export const gradient2 = "#00aaa2";
+export const gradient3 = "#1efcec"; // hover
 
 export const gradient4 = "linear-gradient(94.94deg, #1B998B 0%, #0A6EB6 99.15%)";
 export const gradient4_inactive = "linear-gradient(274.31deg, #B4DAD6 0.08%, #AFCDE2 76.27%)";
