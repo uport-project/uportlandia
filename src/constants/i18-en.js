@@ -1,11 +1,11 @@
 export default {
   // Header
   "Welcome to": "Welcome to",
-  "tryDemo": "Try the new uPort demo",
+  "tryDemo": "Try the new Alastria demo",
   "Play around": "Play around in the smart city of the future",
   "Get Started": "Get Started",
   "Its Simple": "It's Simple",
-  "getRegistration": "Get uPortlandia City ID",
+  "getRegistration": "Get Alastrialandia City ID",
   "getRegistrationDescription": "The city \"verifies\" your information and grants you City ID",
   "Store it in the uport app": "Store it in the uPort app",
   "Own your information": "Own your information. You decide when and with whom you share it.",
@@ -27,7 +27,7 @@ export default {
   // Footer
   "Powered by": "Powered by",
 
-  "the city of uportlandia": "The City of uPortlandia",
+  "The City of Alastrialandia": "The City of Alastrialandia",
   "cityIdDisplayName": "City ID",
   "cityIdDescription": "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
   "cityIdStep1": "Login with uPort",
@@ -35,7 +35,7 @@ export default {
   "cityIdStep3": "Get verified",
   "cityIdStep4": "Receive City ID",
 
-  "the university of uportlandia": "The University of uPortlandia",
+  "The University of Alastrialandia": "The University of Alastrialandia",
   "diplomaDisplayName": "Diploma",
   "diplomaDescription": "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
   "diplomaStep1": "Login with uPort",
@@ -63,14 +63,14 @@ export default {
   "pharmacyStep2": "Get verified",
   "pharmacyStep3": "Receive Prescription Drug",
 
-  "uPortlandia City Transit": "uPortlandia City Transit",
+  "Alastrialandia City Transit": "Alastrialandia City Transit",
   "transportDisplayName": "Monthly Bus Ticket",
-  "transportDescription": "Are you a uPortlandia citizen? Alumni of The uPortlandia University? Get your monthly bus ticket for free and enjoy the city transportation!",
+  "transportDescription": "Are you a Alastrialandia citizen? Alumni of The Alastrialandia University? Get your monthly bus ticket for free and enjoy the city transportation!",
   "transportStep1": "Login with uPort",
   "transportStep2": "Get verified",
   "transportStep3": "Receive Monthly Bus Ticket",
 
-  "uPortlandia Museum of Modern Art": "uPortlandia Museum of Modern Art",
+  "Alastrialandia Museum of Modern Art": "Alastrialandia Museum of Modern Art",
   "museumDisplayName": "Annual Membership",
   "museumDescription": "Get a free membership with your City ID.",
   "museumStep1": "Login with uPort",
@@ -106,7 +106,7 @@ export default {
   "Login with uPort": "Login with uPort",
   "will ask you to share": "will ask you to share",
 
-  "regnLandingHeading": "Join thousands of fellow uPortlandia citizens!",
+  "regnLandingHeading": "Join thousands of fellow Alastrialandia citizens!",
   "regnLandingStep1": "Get things done without leaving your home. No more standing in lines.",
   "regnLandingStep2": "Access services and programs offered by the City",
   "regnLandingStep3": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
@@ -152,7 +152,7 @@ export default {
   "regnSuccessHeading1": "Good News!",
   "regnSuccessHeading2": "What's next?",
   "regnSuccessText1": "Your information has been succesfully verified. Your City ID is ready to be issued.",
-  "regnSuccessText2": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
+  "regnSuccessText2": "Let's make sure you have an access to your Alastrialandia City ID whenever and wherever you need them.",
   "regnSuccessText3": "is going to send your new ID claims to your uPort app.",
   "regnReceiveCTA": "Receive City ID",
   "Invalid date of birth": "Invalid date of birth",
@@ -189,12 +189,12 @@ export default {
   "Contact Us": "Contact Us",
 
   // City/ClaimExists
-  "regnClaimExists": "It looks like you already have a uPortlandia City ID",
-  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
+  "regnClaimExists": "It looks like you already have a Alastrialandia City ID",
+  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in Alastrialandia",
 
   // Redirect
   "See you later!": "See you later!",
-  "You are leaving the uPortlandia dashboard":  "You are leaving the uPortlandia dashboard and will be automatically redirected to",
+  "You are leaving the Alastrialandia dashboard":  "You are leaving the Alastrialandia dashboard and will be automatically redirected to",
   "website to continue": "website to continue.",
   "Bye!": "Bye!",
 
@@ -206,13 +206,13 @@ export default {
   "diplomaDetail2": "Get discounts or free access to services and programs all around the world.",
 
   // Transport
-  "transportDetail1": "The City of uPortlandia provides free services for its citizens. Get your monthly bus ticket for free.",
+  "transportDetail1": "The City of Alastrialandia provides free services for its citizens. Get your monthly bus ticket for free.",
 
   // Pharmacy
   "pharmacyDetail1": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
 
   // Museum
-  "museumDetail1": "The City of uPortlandia provides free services for its citizens. Get your annual museum membership for free.",
+  "museumDetail1": "The City of Alastrialandia provides free services for its citizens. Get your annual museum membership for free.",
 
   // Insurance
   "insuranceDetail1": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",

@@ -1,18 +1,18 @@
-service: uportlandia
+service: alastrialandia
 
 provider:
   name: aws
   runtime: nodejs8.10
   region: us-east-1
   environment:
-    ISSUERS: ${ssm:/uportlandia/${opt:stage}/issuers~true}
+    ISSUERS: ${ssm:/alastrialandia/${opt:stage}/issuers~true}
 
 custom:
   serverless-offline:
     port: 3001
   kms:
     keyId:
-      Ref: UportlandiaKey
+      Ref: AlastrialandiaKey
   scriptHooks:
      aws:deploy:finalize:cleanup: npm run deploy-secrets #once secrets are set this can be commented out.
 
@@ -32,8 +32,8 @@ functions:
           path: /{proxy+}
           cors:
             origins:
-              - https://uportlandia.uport.me
-              - https://uportlandia.uport.space
+              - https://alastrialandia.uport.me
+              - https://alastrialandia.uport.space
             allowCredentials: false
             headers:
               - Content-Type
@@ -46,10 +46,10 @@ package:
 
 resources:
   Resources:
-     UportlandiaKey:
+     AlastrialandiaKey:
       Type: AWS::KMS::Key
       Properties:
-        Description: "Uportlandia KMS key"
+        Description: "Alastrialandia KMS key"
         KeyPolicy:
           Version: "2012-10-17"
           Id: "key-default-1"

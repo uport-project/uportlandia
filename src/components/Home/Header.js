@@ -153,7 +153,7 @@ Hero.Welcome = styled.div`
 const Logo = styled.img`
   display: block;
   margin: 10px auto 70px;
-  width: 32px;
+  width: 128px;
 `;
 
 export default withTranslation()(Header);

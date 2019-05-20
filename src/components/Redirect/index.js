@@ -14,7 +14,7 @@ const Redirect = ({ name }) => {
     <section>
       <h1>{t("See you later!")}</h1>
       <p>
-        {t("You are leaving the uPortlandia dashboard")} {" "}
+        {t("You are leaving the Alastrialandia dashboard")} {" "}
         <strong>{name}</strong>{" "}
         {t("website to continue")}
       </p>
