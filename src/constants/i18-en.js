@@ -1,17 +1,17 @@
 export default {
   // Header
-  "welcome to": "Welcome to",
-  "try the new uport demo": "Try the new uPort demo",
-  "play around": "Play around in the smart city of the future",
-  "get started": "Get Started",
-  "its simple": "It's Simple",
-  "get uportlandia city id": "Get uPortlandia City ID",
-  "the city verifies your information and grants you city id": "The city \"verifies\" your information and grants you City ID",
-  "store it in the uport app": "Store it in the uPort app",
-  "own your information": "Own your information. You decide when and with whom you share it.",
-  "get access to city services": "Get access to the city services.",
-  "enjoy perks and benefits": "As a full-fledged citizen, enjoy all the perks and benefits.",
-  "ready lets do this": "Ready? Let's do this!",
+  "Welcome to": "Welcome to",
+  "tryDemo": "Try the new uPort demo",
+  "Play around": "Play around in the smart city of the future",
+  "Get Started": "Get Started",
+  "Its Simple": "It's Simple",
+  "getRegistration": "Get uPortlandia City ID",
+  "getRegistrationDescription": "The city \"verifies\" your information and grants you City ID",
+  "Store it in the uport app": "Store it in the uPort app",
+  "Own your information": "Own your information. You decide when and with whom you share it.",
+  "Get access to city services": "Get access to the city services.",
+  "Enjoy perks and benefits": "As a full-fledged citizen, enjoy all the perks and benefits.",
+  "Ready? Lets do this": "Ready? Let's do this!",
 
   // AppDownload
   "make sure you have your phone handy": "Psst... Make sure you have your phone handy with the uPort app downloaded.",
@@ -27,7 +27,7 @@ export default {
   // Footer
   "Powered by": "Powered by",
 
-  "the city of uportlandia": "The City of uPortlandia",
+  "The City of uPortlandia": "The City of uPortlandia",
   "cityIdDisplayName": "City ID",
   "cityIdDescription": "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
   "cityIdStep1": "Login with uPort",
@@ -35,7 +35,7 @@ export default {
   "cityIdStep3": "Get verified",
   "cityIdStep4": "Receive City ID",
 
-  "the university of uportlandia": "The University of uPortlandia",
+  "The University of uPortlandia": "The University of uPortlandia",
   "diplomaDisplayName": "Diploma",
   "diplomaDescription": "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
   "diplomaStep1": "Login with uPort",
@@ -92,6 +92,7 @@ export default {
   "Address": "Address",
   "Date of Birth": "Date of Birth",
 
+  "CityID": "City ID",
   "City ID": "City ID",
   "Diploma": "Diploma",
   "Monthly Bus Ticket": "Monthly Bus Ticket",
@@ -105,10 +106,10 @@ export default {
   "Login with uPort": "Login with uPort",
   "will ask you to share": "will ask you to share",
 
-  "Join thousands of fellow uPortlandia citizens!": "Join thousands of fellow uPortlandia citizens!",
-  "Get things done without leaving your home": "Get things done without leaving your home. No more standing in lines.",
-  "Access services and programs offered by the City": "Access services and programs offered by the City",
-  "Get a free one-year membership": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
+  "regnLandingHeading": "Join thousands of fellow uPortlandia citizens!",
+  "regnLandingStep1": "Get things done without leaving your home. No more standing in lines.",
+  "regnLandingStep2": "Access services and programs offered by the City",
+  "regnLandingStep3": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
 
   // Login
   "Open the uPort app to login": "Open the uPort app to login",
@@ -127,9 +128,9 @@ export default {
   "Requested information": "Requested information",
 
   // Claims
-  "Personal Information": "Personal Information",
-  "Submit your information to": "Submit your information to",
-  "to confirm your identity": "to confirm your identity",
+  "regnFormHeading": "Personal Information",
+  "regnFormLabel1": "Submit your information to",
+  "regnFormLabel2": "to confirm your identity",
   "* indicates required field": "* indicates required field",
   "This field is required": "This field is required",
   "agreeTnC": "I agree to the uPort <1>Terms and Conditions</1>",
@@ -148,9 +149,14 @@ export default {
   "We do not store any of this information and do not reveal it to any party": "We do not store any of this information and do not reveal it to any party.",
 
   "Good News!": "Good News!",
-  "Your City ID is ready to be issued": "Your information has been succesfully verified. Your City ID is ready to be issued.",
-  "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
-  "is going to send your new ID claims to your uPort app": "is going to send your new ID claims to your uPort app.",
+  "regnSuccessHeading1": "Good News!",
+  "regnSuccessHeading2": "What's next?",
+  "regnSuccessText1": "Your information has been succesfully verified. Your City ID is ready to be issued.",
+  "regnSuccessText2": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
+  "regnSuccessText3": "is going to send your new ID claims to your uPort app.",
+  "regnReceiveCTA": "Receive City ID",
+  "Invalid date of birth": "Invalid date of birth",
+  "You must agree to the terms and conditions": "You must agree to the terms and conditions",
 
   // Attestation
   "Scan this QR Code using the uPort App": "Scan this QR Code using the uPort App",
@@ -183,8 +189,8 @@ export default {
   "Contact Us": "Contact Us",
 
   // City/ClaimExists
-  "It looks like you already have a uPortlandia City ID": "It looks like you already have a uPortlandia City ID",
-  "With your City ID you have easy and quick access to numerous services and programs in uPortlandia": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
+  "regnClaimExists": "It looks like you already have a uPortlandia City ID",
+  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
 
   // Redirect
   "See you later!": "See you later!",
@@ -192,41 +198,26 @@ export default {
   "website to continue": "website to continue.",
   "Bye!": "Bye!",
 
+  "Get a digital verification of your": "Get a digital verification of your",
+  "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them.",
+
   // University
-  "Get a digital verification of your diploma": "",
-  "Share your educational information easily": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
-  "Get discounts or free access to services and programs": "Get discounts or free access to services and programs all around the world.",
-  "Your claims were succesfully shared with": "Your claims were succesfully shared with",
-  "is going to send your new claims to your uPort app": "is going to send your new claims to your uPort app.",
-  "Let's make sure you have an access to your Diploma claims whenever and wherever you need them": "Let's make sure you have an access to your Diploma claims whenever and wherever you need them.",
+  "diplomaDetail1": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
+  "diplomaDetail2": "Get discounts or free access to services and programs all around the world.",
 
   // Transport
-  "Get digital verification of your bus ticket": "Get digital verification of your bus ticket",
-  "Get your monthly bus ticket": "provides free services for its citizens. Get your monthly bus ticket for free",
-  "Receive your Bus Ticket": "Receive your Bus Ticket",
-  "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them": "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them",
+  "transportDetail1": "The City of uPortlandia provides free services for its citizens. Get your monthly bus ticket for free.",
 
   // Pharmacy
-  "Get digital verification of your prescription": "Get digital verification of your prescription",
-  "Get your medicines at any drug store you wish": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
-  "Receive your Prescription Drug": "Receive your Prescription Drug",
-  "Let's make sure you have an access to your prescription claims whenever and wherever you need them": "Let's make sure you have an access to your prescription claims whenever and wherever you need them",
+  "pharmacyDetail1": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
 
   // Museum
-  "Get digital verification of your annual membership": "Get digital verification of your annual membership",
-  "Get your annual museum membership": "provides free services for its citizens. Get your annual museum membership for free.",
-  "Receive your Annual Membership": "Receive your Annual Membership",
-  "Let's make sure you have an access to your annual membership claims whenever and wherever you need them": "Let's make sure you have an access to your annual membership claims whenever and wherever you need them",
+  "museumDetail1": "The City of uPortlandia provides free services for its citizens. Get your annual museum membership for free.",
 
   // Insurance
-  "Share your insurance information easily at your doctor's office, pharmacy or at any emergency": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",
-  "Receive your Insurance Coverage": "Receive your Insurance Coverage",
-  "Let's make sure you have an access to your insurance claims whenever and wherever you need them": "Let's make sure you have an access to your insurance claims whenever and wherever you need them",
+  "insuranceDetail1": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",
 
   // Company
-  "Get a digital verification of your employment": "Get a digital verification of your employment",
-  "Share your employment information easily while you're applying for a mortgage or signing a new lease": "Share your employment information easily while you're applying for a mortgage or signing a new lease",
-  "Provide a verified employment history during your job interview": "Provide a verified employment history during your job interview",
-  "Receive your Employment Verification": "Receive your Employment Verification",
-  "Let's make sure you have an access to your employment claims whenever and wherever you need them": "Let's make sure you have an access to your employment claims whenever and wherever you need them"
+  "companyDetail1": "Share your employment information easily while you're applying for a mortgage or signing a new lease",
+  "companyDetail2": "Provide a verified employment history during your job interview",
 };

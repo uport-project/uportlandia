@@ -8,10 +8,11 @@ import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
 import { CapsuleLinkButton } from "../shared/elements";
 import headerImage from "../../images/home-header.svg";
-import uPortLogo from "../../images/uport-logo.svg";
 import cityIdIcon from "../../images/city-id-icon.svg";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
+
+import { home } from "../../constants/config";
 
 class Header extends React.Component {
   state = {
@@ -21,36 +22,36 @@ class Header extends React.Component {
     const { t } = this.props;
     return (<Hero>
       <Hero.Welcome>
-        <a href="https://uport.me/" target="_blank">
-          <Logo src={uPortLogo} />
+        <a href={home.logoLink} target="_blank">
+          <Logo src={home.logo} />
         </a>
-        <h2>{t("welcome to")}</h2>
-        <h1>uPortlandia</h1>
-        <p>{t("try the new uport demo")}.</p>
-        <p>{t("play around")}.</p>
-        <CapsuleLinkButton to="/city">{t("get started")}</CapsuleLinkButton>
+        <h2>{t("Welcome to")}</h2>
+        <h1>{home.name}</h1>
+        <p>{t("tryDemo")}.</p>
+        <p>{t("Play around")}.</p>
+        <CapsuleLinkButton to="/city">{t("Get Started")}</CapsuleLinkButton>
       </Hero.Welcome>
       <Hero.Content>
-        <h3>{t("its simple")}</h3>
+        <h3>{t("Its Simple")}</h3>
         <Hero.Steps>
           <Hero.Step>
             <Hero.Step.Icon src={cityIdIcon} />
-            <h4>{t("get uportlandia city id")}</h4>
-            <p>{t("the city verifies your information and grants you city id")}</p>
+            <h4>{t("getRegistration")}</h4>
+            <p>{t("getRegistrationDescription")}</p>
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={uPortAppIcon} style={{ position: "relative", left: "-15px" }} />
-            <h4>{t("store it in the uport app")}</h4>
-            <p>{t("own your information")}</p>
+            <h4>{t("Store it in the uport app")}</h4>
+            <p>{t("Own your information")}</p>
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={servicesIcon} />
-            <h4>{t("get access to city services")}</h4>
-            <p>{t("enjoy perks and benefits")}</p>
+            <h4>{t("Get access to city services")}</h4>
+            <p>{t("Enjoy perks and benefits")}</p>
           </Hero.Step>
         </Hero.Steps>
         <hr />
-        <h3>{t("ready lets do this")}</h3>
+        <h3>{t("Ready? Lets do this")}</h3>
       </Hero.Content>
     </Hero>);
   }
