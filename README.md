@@ -13,13 +13,22 @@ Start the Serverless Offline APIs:
 yarn local:api
 ```
 
-Deploy using
+Deploy APIs
+
+```
+yarn deploy:sls:stage
+```
+
+```
+yarn deploy:sls:prod
+```
+
+Deploy static pages
 
 ```
 yarn deploy:stage
 ```
 
-and
 
 ```
 yarn deploy:production

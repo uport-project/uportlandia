@@ -56,7 +56,8 @@
     "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
     "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
-    "deploy:sls": "sls deploy -v -s prod",
+    "deploy:sls:prod": "sls deploy -v -s prod",
+    "deploy:sls:stage": "sls deploy -v -s stage",
     "local:api": "sls offline -s stage"
   },
   "browserslist": [
