@@ -40,6 +40,7 @@ export const colors = {
   border3: "#dcdcdc",
   error: "#d24e4e",
   errorBg: "#ffebee",
+  homeButtonBg: "#4654D1",
 
   CITY_ID: {
     primary: "#1B998B",
