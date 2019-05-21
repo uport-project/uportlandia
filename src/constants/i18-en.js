@@ -27,7 +27,7 @@ export default {
   // Footer
   "Powered by": "Powered by",
 
-  "the city of uportlandia": "The City of uPortlandia",
+  "The City of uPortlandia": "The City of uPortlandia",
   "cityIdDisplayName": "City ID",
   "cityIdDescription": "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
   "cityIdStep1": "Login with uPort",
@@ -35,7 +35,7 @@ export default {
   "cityIdStep3": "Get verified",
   "cityIdStep4": "Receive City ID",
 
-  "the university of uportlandia": "The University of uPortlandia",
+  "The University of uPortlandia": "The University of uPortlandia",
   "diplomaDisplayName": "Diploma",
   "diplomaDescription": "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
   "diplomaStep1": "Login with uPort",
