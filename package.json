@@ -51,6 +51,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "create-did": "node node_scripts/create_did.js",
+    "save-signer-url": "node node_scripts/saveSignerUrl",
     "deploy-secrets": "./deploy-hooks/deploy-secrets.sh",
     "deploy:step1": "npx serverless deploy --step 1",
     "deploy:step2": "npx serverless deploy --step 2",

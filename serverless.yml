@@ -6,7 +6,7 @@ provider:
   region: ${self:custom.region}
   stage: ${self:custom.stage}
   environment:
-    REACT_APP_LAMBDA_URL: { "Fn::Join" : ["", [ "https://", { "Ref" : "ApiGatewayRestApi" }, ".execute-api.${self:provider.region}.amazonaws.com/${self:custom.stage}" ] ]  }
+    LAMBDA_URL: { "Fn::Join" : ["", [ "https://", { "Ref" : "ApiGatewayRestApi" }, ".execute-api.${self:provider.region}.amazonaws.com/${self:custom.stage}" ] ]  }
     ISSUERS: ${ssm:/whitelabel/${self:provider.stage}/issuers~true}
 
 custom:
@@ -26,7 +26,7 @@ custom:
       Ref: WhitelabelKey
   scriptHooks:
     before:aws:common:validate:validate:
-      - STEP=${self:custom.step} #add the create-issuers / API url script here, have it only execute on steps greater than 1, and ignore 0.
+      - STEP=${self:custom.step} npm run save-signer-url -- ${self:provider.stage}
       - REACT_APP_TARGET_ENV=${self:provider.stage} npm run build; npm run create-did ${self:provider.stage}
     aws:deploy:finalize:cleanup: STAGE=${self:provider.stage} STEP=${self:custom.step} npm run deploy-secrets #only runs on step 1, ignores 0
 
