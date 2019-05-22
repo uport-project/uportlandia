@@ -441,7 +441,7 @@ export const routes = Object.keys(SERVICES).map(serviceId => ({
 
 // Ext Service URLs
 
-const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
+const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
   ? "https://api.uport.me/chasqui/"
   : "https://api.uport.space/chasqui/";
 

@@ -17,6 +17,7 @@
 .env.production.local
 
 .serverless
+.issuers.json
 
 npm-debug.log*
 yarn-debug.log*

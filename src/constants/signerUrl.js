@@ -1,7 +1,7 @@
 import SIGNER_STAGE from "./signer.stage";
 import SIGNER_PROD from "./signer.prod";
 
-const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
+const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
   ? SIGNER_PROD
   : process.env.REACT_APP_TARGET_ENV === "stage"
     ? SIGNER_STAGE
