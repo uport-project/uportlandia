@@ -9,8 +9,9 @@ import InsuranceIcon from "../images/insurance-logo.png";
 import PharmacyIcon from "../images/pharmacy-logo.png";
 import TransportIcon from "../images/transport-logo.png";
 import MuseumIcon from "../images/museum-logo.png";
-
 import COUNTRIES from "./countries";
+
+import getSignerUrl from "./signerUrl";
 
 // Home Page
 export const home = {
@@ -443,12 +444,6 @@ export const routes = Object.keys(SERVICES).map(serviceId => ({
 const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
   ? "https://api.uport.me/chasqui/"
   : "https://api.uport.space/chasqui/";
-
-const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
-  ? process.env.REACT_APP_LAMBDA_URL
-  : process.env.REACT_APP_TARGET_ENV === "stage"
-    ? process.env.REACT_APP_LAMBDA_URL
-      : "http://localhost:3001/"
 
 export const CHASQUI_URL = getChasquiUrl();
 export const SIGNER_URL = getSignerUrl();
