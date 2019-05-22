@@ -2,7 +2,6 @@
   "name": "uportlandia",
   "version": "1.1.0",
   "private": true,
-  "homepage": "https://uportlandia.uport.me",
   "repository": "https://github.com/uport-project/cleverland",
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.6.2",
@@ -12,7 +11,8 @@
     "react-scripts": "^2.1.8",
     "s3-deploy": "^1.2.1",
     "serverless-offline": "^4.9.4",
-    "serverless-plugin-include-dependencies": "^3.2.1"
+    "serverless-plugin-include-dependencies": "^3.2.1",
+    "serverless-s3-sync": "^1.8.0"
   },
   "dependencies": {
     "@sentry/browser": "5.1.1",
@@ -51,10 +51,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "create-did": "node node_scripts/create_did.js",
-    "s3-upload": "node_modules/.bin/s3-deploy './build/**' './build/.well-known/**' --cwd './build/' --region us-west-2 --bucket",
     "deploy-secrets": "./deploy-hooks/deploy-secrets.sh",
-    "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
-    "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
+    "deploy:step1": "npx serverless deploy --step 1",
+    "deploy:step2": "npx serverless deploy --step 2",
+    "deploy:dev": "npx serverless deploy --stage dev",
+    "deploy:stage": "npx serverless deploy --stage stage; yarn invalidate alastrialandia.uport.space",
+    "deploy:production": "npx serverless deploy --stage prod; yarn invalidate alastrialandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
     "deploy:sls:prod": "sls deploy -v -s prod",
     "deploy:sls:stage": "sls deploy -v -s stage",
