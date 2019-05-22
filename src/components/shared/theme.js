@@ -3,7 +3,7 @@ export const homeHeader = {
 };
 
 export const header = {
-  bg: "linear-gradient(109.54deg, #A8A7E6 0.86%, #CAC7EF 100%)",
+  bg: "linear-gradient(109.54deg, #8FD5D1 0.86%, #CCF0EE 100%)",
   textColor: "#1E1E1E",
   separatorColor: "#dbdbdb"
 };
