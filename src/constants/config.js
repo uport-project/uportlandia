@@ -445,9 +445,9 @@ const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
   : "https://api.uport.space/chasqui/";
 
 const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
-  ? "https://3r5ejmui5i.execute-api.us-east-1.amazonaws.com/prod/"
+  ? process.env.LAMBDA_URL
   : process.env.REACT_APP_TARGET_ENV === "stage"
-    ? "https://3r5ejmui5i.execute-api.us-east-1.amazonaws.com/prod/"
+    ? process.env.LAMBDA_URL
     : "http://localhost:3001/"
 
 export const CHASQUI_URL = getChasquiUrl();

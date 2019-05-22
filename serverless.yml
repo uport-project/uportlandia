@@ -3,25 +3,37 @@ service: alastrialandia
 provider:
   name: aws
   runtime: nodejs8.10
-  region: us-east-1
+  region: ${self:custom.region}
+  stage: ${self:custom.stage}
   environment:
-    ISSUERS: ${ssm:/alastrialandia/${opt:stage}/issuers~true}
+    LAMBDA_URL: { "Fn::Join" : ["", [ "https://", { "Ref" : "ApiGatewayRestApi" }, ".execute-api.${self:provider.region}.amazonaws.com/${self:custom.stage}" ] ]  }
+    ISSUERS: ${ssm:/alastrialandia/${self:provider.stage}/issuers~true}
 
 custom:
   serverless-offline:
     port: 3001
+  defaultRegion: 'us-east-1'
+  defaultEnvironmentGroup: 'dev'
+  region: ${opt:region, self:custom.defaultRegion}
+  stage: ${opt:stage, self:custom.defaultEnvironmentGroup}
+  step: ${opt:step, '0'}
+  bucketName: 'alastrialandia-${self:provider.stage}'
+  s3Sync:
+    - bucketName: ${self:custom.bucketName}
+      localDir: build
   kms:
     keyId:
       Ref: AlastrialandiaKey
   scriptHooks:
-     aws:deploy:finalize:cleanup: npm run deploy-secrets #once secrets are set this can be commented out.
+    before:aws:common:validate:validate: REACT_APP_TARGET_ENV=${self:provider.stage} npm run build; npm run create-did ${self:provider.stage}
+    aws:deploy:finalize:cleanup: STEP=${self:custom.step} npm run deploy-secrets #once secrets are set this can be commented out.
 
 plugins:
   - serverless-express
   - serverless-scriptable-plugin
   - serverless-plugin-include-dependencies
   - serverless-offline
-
+  - serverless-s3-sync
 functions:
   server:
     handler: src/server.handler
@@ -46,7 +58,36 @@ package:
 
 resources:
   Resources:
-     AlastrialandiaKey:
+    SiteBucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        AccessControl: PublicRead
+        BucketName: ${self:custom.bucketName}
+        WebsiteConfiguration:
+          IndexDocument: index.html
+    StaticSiteS3BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket:
+          Ref: SiteBucket
+        PolicyDocument:
+          Statement:
+            - Sid: PublicReadGetObject
+              Effect: Allow
+              Principal: "*"
+              Action:
+              - s3:GetObject
+              Resource:
+                Fn::Join: [
+                  "", [
+                    "arn:aws:s3:::",
+                    {
+                      "Ref": "SiteBucket"
+                    },
+                    "/*"
+                  ]
+                ]
+    AlastralandiaKey:
       Type: AWS::KMS::Key
       Properties:
         Description: "Alastrialandia KMS key"
