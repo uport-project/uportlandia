@@ -4,7 +4,7 @@ export const homeHeader = {
 };
 
 export const header = {
-  bg: "#F0F0F0",
+  bg: "linear-gradient(109.54deg, #A8A7E6 0.86%, #CAC7EF 100%)",
   textColor: "#1E1E1E",
   separatorColor: "#dbdbdb"
 };

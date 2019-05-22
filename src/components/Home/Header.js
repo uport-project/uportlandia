@@ -7,7 +7,6 @@ import { withTranslation } from "react-i18next";
 import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
 import { CapsuleLinkButton } from "../shared/elements";
-import headerImage from "../../images/home-header.svg";
 import cityIdIcon from "../../images/city-id-icon.svg";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
 import servicesIcon from "../../images/services-icon.svg";
@@ -115,7 +114,7 @@ Hero.Step.Icon = styled.img`
 
 `;
 Hero.Welcome = styled.div`
-  background: #B5A9E8 url(${headerImage}) center no-repeat;
+  background: ${theme.header.bg};
   background-size: cover;
   color: ${theme.homeHeader.textColor};
   padding: 2vh 20px 10vh;
