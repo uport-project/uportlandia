@@ -15,6 +15,7 @@
     "serverless-s3-sync": "^1.8.0"
   },
   "dependencies": {
+    "@anttiviljami/serverless-stack-output": "^0.3.1",
     "@sentry/browser": "5.1.1",
     "body-parser": "^1.18.3",
     "connected-react-router": "^6.4.0",

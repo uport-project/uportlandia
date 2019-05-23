@@ -18,6 +18,8 @@ custom:
   stage: ${opt:stage, self:custom.defaultEnvironmentGroup}
   step: ${opt:step, '0'}
   bucketName: 'whitelabel-${self:provider.stage}'
+  output:
+    file: stack.json
   s3Sync:
     - bucketName: ${self:custom.bucketName}
       localDir: build
@@ -26,16 +28,20 @@ custom:
       Ref: WhitelabelKey
   scriptHooks:
     before:aws:common:validate:validate:
-      - STEP=${self:custom.step} npm run save-signer-url -- ${self:provider.stage}
+      - STEP=${self:custom.step} npm run create-issuers
       - REACT_APP_TARGET_ENV=${self:provider.stage} npm run build; npm run create-did ${self:provider.stage}
-    aws:deploy:finalize:cleanup: STAGE=${self:provider.stage} STEP=${self:custom.step} npm run deploy-secrets #only runs on step 1, ignores 0
+    aws:deploy:finalize:cleanup:
+      - STEP=${self:custom.step} npm run save-signer-url -- ${self:provider.stage}
+      - STAGE=${self:provider.stage} STEP=${self:custom.step} npm run deploy-secrets #only runs on step 1, ignores 0
 
 plugins:
+  - '@anttiviljami/serverless-stack-output'
   - serverless-express
   - serverless-scriptable-plugin
   - serverless-plugin-include-dependencies
   - serverless-offline
   - serverless-s3-sync
+  
 functions:
   server:
     handler: src/server.handler

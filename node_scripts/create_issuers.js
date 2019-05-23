@@ -109,4 +109,6 @@ async function createIssuers() {
   });
 }
 
-createIssuers();
+if(process.env.STEP && process.env.STEP == 1) {
+  createIssuers();
+}
