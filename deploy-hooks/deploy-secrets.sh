@@ -14,17 +14,9 @@ if [ $stp -eq 1 ]; then # 0 is the default (none) and we do nothing
 
     read -p "Ctrl-c now and re-run the script if this is not the correct id, or press [Enter] to proceed"
 
-    echo "Set param 1"
-    read param1
-
-    echo "Set param 2"
-    read param2
-
-    aws ssm put-parameter --name "/whitelabel/$STAGE/<rename me>" --value $param1 --type "SecureString" --key-id $key --region us-east-1
-    aws ssm put-parameter --name "/whitelabel/$STAGE/<rename me too>" --value $param2 --type "SecureString" --key-id $key --region us-east-1
-
-    # somehow loop through issuers and set them in SSM
-    # aws ssm put-parameter --name "whitelabel/$STAGE/issuers/<key>" --value $issuer --type "SecureString" --key-id $key --region us-east-1
+    ISSUERS="$(cat ../.issuers.json)"
+    echo "$ISSUERS"
+    aws ssm put-parameter --name "/whitelabel/$STAGE/issuers" --value "$ISSUERS" --type "SecureString" --key-id $key --region us-east-1 --overwrite
 
     echo "Done"
 else
