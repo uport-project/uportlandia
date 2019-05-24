@@ -1,4 +1,4 @@
-import { SERVICES } from "../constants/config";
+import SERVICES from "../constants/services";
 
 export default serviceId => {
   const service = SERVICES[serviceId];

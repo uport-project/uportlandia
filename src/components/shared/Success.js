@@ -1,5 +1,4 @@
 import React from "react";
-import { Redirect } from "react-router";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { withTranslation } from "react-i18next";
@@ -14,18 +13,18 @@ import SuccessIcon from "../../images/congratulations-city.svg";
 import LikeDemo from "./LikeDemo";
 import Card from "./ServiceCard";
 import Footer from "./Footer";
-import { SERVICES } from "../../constants/config";
+import SERVICES from "../../constants/services";
 
 class Success extends React.Component {
   componentDidMount() {
     if(!this.props.isLoggedIn) {
-      this.props.redirectToServiceHome(this.props.id);
+      this.props.redirectToHome();
     }
   }
   render() {
     const { id, isLoggedIn, t } = this.props;
     if(!isLoggedIn)
-      return <Redirect to={SERVICES[id].url} />
+      return null;
     const deps = getDependentServices(SERVICES[id].id);
     return (<Wrapper>
       <TopHalf>
@@ -141,8 +140,8 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return {
-    redirectToServiceHome(serviceId) {
-      dispatch(actions.redirectToServiceHome(serviceId));
+    redirectToHome() {
+      dispatch(actions.redirectToHome());
     }
   };
 }

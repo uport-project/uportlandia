@@ -111,7 +111,7 @@ const Content = styled.div`
   border-radius: 8px;
   position: relative;
   ${Button} {
-    background: ${theme.colors.homeButtonBg};
+    background: #4654D1;
     border-radius: 50px;
     display: block;
     height: 2.5rem;

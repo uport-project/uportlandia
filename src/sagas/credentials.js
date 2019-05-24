@@ -17,8 +17,7 @@ import {
 import createChasquiUrl from "../utils/createChasquiUrl";
 import createCallbackUrl from "../utils/createCallbackUrl";
 import request from "../utils/request";
-import createJwtUrl from "../utils/createJwtUrl";
-import { SIGNER_URL } from "../constants/config";
+import SIGNER_URL from "../constants/signerUrl";
 
 function* verifyCredentials (action) {
   const { serviceId, token } = action;
@@ -65,8 +64,14 @@ function* requestDisclosure(action) {
       }
     });
     const { jwt } = response.json;
-    const jwtUrl = yield call(createJwtUrl, jwt, callbackUrl, isMobile);
-    yield put(reqDisclosureSuccess(callbackId, jwtUrl));
+    if(isMobile) {
+      yield put(reqDisclosureSuccess(
+        callbackId,
+        `me.uport:req/${jwt}?callback_type=redirect&redirect_url=${callbackUrl}`
+      ));
+    } else {
+      yield put(reqDisclosureSuccess(callbackId, `me.uport:req/${jwt}`));
+    }
   } catch(ex) {
     console.log(ex);
     captureException(ex);
@@ -98,15 +103,17 @@ function* sendVerification(action) {
       }
     });
     const { jwt } = response.json;
-    const jwtUrl = yield call(createJwtUrl, jwt, callbackUrl, isMobile);
     if(isMobile) {
-      yield put(sendVerificationSuccess(callbackId, jwtUrl));
+      yield put(sendVerificationSuccess(
+        callbackId,
+        `me.uport:req/${jwt}?callback_type=redirect&redirect_url=${callbackUrl}`
+      ));
     } else {
       if(pushToken && publicEncKey) {
         transport.push.send(pushToken, publicEncKey)(jwt);
-        yield put(sendVerificationSuccess(callbackId, jwtUrl, true));
+        yield put(sendVerificationSuccess(callbackId, `me.uport:req/${jwt}`, true));
       } else {
-        yield put(sendVerificationSuccess(callbackId, jwtUrl));
+        yield put(sendVerificationSuccess(callbackId, `me.uport:req/${jwt}`));
       }
     }
   } catch(ex) {

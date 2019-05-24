@@ -1,6 +1,6 @@
 {
   "name": "uportlandia",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "private": true,
   "homepage": "https://uportlandia.uport.me",
   "repository": "https://github.com/uport-project/cleverland",
@@ -17,9 +17,7 @@
   "dependencies": {
     "@sentry/browser": "5.1.1",
     "body-parser": "^1.18.3",
-    "connected-react-router": "^6.4.0",
     "dayjs": "^1.8.0",
-    "did-jwt": "^0.1.3",
     "i18next": "^15.0.9",
     "i18next-browser-languagedetector": "^3.0.1",
     "localforage": "^1.7.3",
@@ -29,11 +27,11 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-i18next": "^10.7.0",
-    "react-redux": "^7.0.3",
+    "react-redux": "5.0.7",
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-tooltip": "^3.9.2",
-    "redux": "^4.0.1",
+    "redux": "4.0.0",
     "redux-saga": "0.16.0",
     "reselect": "3.0.1",
     "serverless": "^1.41.0",
@@ -41,7 +39,6 @@
     "serverless-scriptable-plugin": "^1.0.0",
     "shortid": "2.2.12",
     "styled-components": "4.1.2",
-    "uport-credentials": "^1.2.1",
     "uport-transports": "^0.2.5"
   },
   "scripts": {
@@ -56,9 +53,9 @@
     "deploy:stage": "REACT_APP_TARGET_ENV=stage npm run build; npm run create-did stage; npm run s3-upload cleverland-stage && yarn invalidate uportlandia.uport.space",
     "deploy:production": "REACT_APP_TARGET_ENV=production npm run build; npm run create-did production; npm run s3-upload cleverland-prod && yarn invalidate uportlandia.uport.me",
     "invalidate": "node_modules/.bin/cloudfront-invalidate-cache --cname",
+    "dev:sls": "TARGET_ENV=development node server.dev.js",
     "deploy:sls:prod": "sls deploy -v -s prod",
-    "deploy:sls:stage": "sls deploy -v -s stage",
-    "local:api": "sls offline -s stage"
+    "offline": "sls offline -s prod"
   },
   "browserslist": [
     ">0.2%",

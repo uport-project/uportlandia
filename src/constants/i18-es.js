@@ -1,17 +1,17 @@
 export default {
   // Header
-  "Welcome to": "Bienvenido a",
-  "tryDemo": "Prueba la nueva demo de uPort",
-  "Play around": "Participa en la ciudad inteligente del futuro",
-  "Get Started": "Empezar",
-  "Its Simple": "Es sencillo",
-  "getRegistration": "Obtener el City ID de uPortlandia",
-  "getRegistrationDescription": "La ciudad \"verifica\" tu información y te otorga un City ID de la ciudad",
-  "Store it in the uport app": "Guárdalo en la aplicación uPort",
-  "Own your information": "Sé dueño de tu información. Tú decides cuándo y con quién lo compartes.",
-  "Get access to city services": "Accede a los servicios de la ciudad.",
-  "Enjoy perks and benefits": "Se un ciudadano soberano y disfruta de todas las ventajas y beneficios.",
-  "Ready? Lets do this": "Listo? ¡Hagámoslo!",
+  "welcome to": "Bienvenido a",
+  "try the new uport demo": "Prueba la nueva demo de uPort",
+  "play around": "Participa en la ciudad inteligente del futuro",
+  "get started": "Empezar",
+  "its simple": "Es sencillo",
+  "get uportlandia city id": "Obtener el CityID de uPortlandia",
+  "the city verifies your information and grants you city id": "La ciudad \"verifica\" tu información y te otorga un CityID de la ciudad",
+  "store it in the uport app": "Guárdalo en la aplicación uPort",
+  "own your information": "Sé dueño de tu información. Tú decides cuándo y con quién lo compartes.",
+  "get access to city services": "Accede a los servicios de la ciudad.",
+  "enjoy perks and benefits": "Se un ciudadano soberano y disfruta de todas las ventajas y beneficios.",
+  "ready lets do this": "Listo? ¡Hagámoslo!",
 
   // AppDownload
   "make sure you have your phone handy": "Psst... Asegúrate de tener su teléfono a mano con la aplicación uPort descargada.",
@@ -27,15 +27,15 @@ export default {
   // Footer
   "Powered by": "Con el poder de",
 
-  "The City of uPortlandia": "La ciudad de uPortlandia",
-  "cityIdDisplayName": "City ID",
+  "the city of uportlandia": "La ciudad de uPortlandia",
+  "cityIdDisplayName": "CityID",
   "cityIdDescription": "Identifícate con un clic. Obtener una identificación de la ciudad digital. Disfrute de un acceso rápido, continuo y, a menudo, gratuito a muchos servicios de la ciudad.",
   "cityIdStep1": "Iniciar Sesión con uPort",
   "cityIdStep2": "Ingresa tu informacion",
   "cityIdStep3": "Verifícate",
   "cityIdStep4": "Recibir ID de la ciudad",
 
-  "The University of uPortlandia": "La Universidad de uPortlandia",
+  "the university of uportlandia": "La Universidad de uPortlandia",
   "diplomaDisplayName": "Diploma",
   "diplomaDescription": "Obtenga una copia digital verificada de su diploma. Compártalo fácilmente en su próxima entrevista de trabajo o cuando solicite un programa de posgrado.",
   "diplomaStep1": "Iniciar sesión con uPort",
@@ -92,7 +92,6 @@ export default {
   "Address": "Dirección",
   "Date of Birth": "Fecha de Nacimiento",
 
-  "CityID": "City ID",
   "City ID": "City ID",
   "Diploma": "Diploma",
   "Monthly Bus Ticket": "Boleto de Bus Mensual",
@@ -106,10 +105,10 @@ export default {
   "Login with uPort": "Iniciar Sesión con uPort",
   "will ask you to share": "te pedirá que compartas",
 
-  "regnLandingHeading": "¡Únete a miles de ciudadanos de uPortlandia!",
-  "regnLandingStep1": "Haz las cosas sin salir de tu casa. ¡Olvídate de las largas filas de espera!",
-  "regnLandingStep2": "Acceda a los servicios y programas ofrecidos por la ciudad, así como por las empresas.",
-  "regnLandingStep3": "Obtenga una membresía gratuita de un año en muchos de los principales museos, zoológicos, salas de conciertos y jardines botánicos de la ciudad",
+  "Join thousands of fellow uPortlandia citizens!": "¡Únete a miles de ciudadanos de uPortlandia!",
+  "Get things done without leaving your home": "Haz las cosas sin salir de tu casa. ¡Olvídate de las largas filas de espera!",
+  "Access services and programs offered by the City": "Acceda a los servicios y programas ofrecidos por la ciudad, así como por las empresas.",
+  "Get a free one-year membership": "Obtenga una membresía gratuita de un año en muchos de los principales museos, zoológicos, salas de conciertos y jardines botánicos de la ciudad",
 
   // Login
   "Open the uPort app to login": "Abra la aplicación uPort para iniciar sesión",
@@ -127,9 +126,9 @@ export default {
   "Loading": "Cargando",
   "Requested information": "Información solicitada",
 
-  "regnFormHeading": "Informacion Personal",
-  "regnFormLabel1": "Envía tu información a",
-  "regnFormLabel2": "para confirmar tu identidad",
+  "Personal Information": "Informacion Personal",
+  "Submit your information to": "Envía tu información a",
+  "to confirm your identity": "para confirmar tu identidad",
   "* indicates required field": "* indica campo requerido",
   "This field is required": "Este campo es requerido",
   "agreeTnC": "Estoy de acuerdo con los <1>Términos y Condiciones</1> de uPort",
@@ -148,14 +147,9 @@ export default {
   "We do not store any of this information and do not reveal it to any party": "No almacenamos nada de esta información y no la revelamos a nadie.",
 
   "Good News!": "¡Buenas Noticias!",
-  "regnSuccessHeading1": "¡Buenas Noticias!",
-  "regnSuccessHeading2": "¿Que sigue?",
-  "regnSuccessText1": "Tu información ha sido verificada con éxito. Tu City ID está listo para ser emitido.",
-  "regnSuccessText2": "Asegurémonos de tener acceso a tu City ID de la ciudad de uPortlandia cuando y donde los necesite.",
-  "regnSuccessText3": "enviará tus nuevas credenciales a tu aplicación uPort",
-  "regnReceiveCTA": "Recibir ID de la ciudad",
-  "Invalid date of birth": "Fecha de nacimiento invalida",
-  "You must agree to the terms and conditions": "Debes aceptar los términos y condiciones",
+  "Your City ID is ready to be issued": "Tu información ha sido verificada con éxito. Tu City ID está listo para ser emitido.",
+  "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them": "Asegurémonos de tener acceso a tu City ID de la ciudad de uPortlandia cuando y donde los necesite.",
+  "is going to send your new ID claims to your uPort app": "enviará tus nuevas credenciales a tu aplicación uPort",
 
   // Attestation
   "Scan this QR Code using the uPort App": "Escanee este Código QR usando la aplicación uPort",
@@ -188,8 +182,8 @@ export default {
   "Contact Us": "Contáctanos",
 
   // City/ClaimExists
-  "regnClaimExists": "Parece que ya tienes un City ID de uPortlandia",
-  "regnBenefits": "Con tu  City ID tienes acceso fácil y rápido a numerosos servicios y programas en uPortlandia",
+  "It looks like you already have a uPortlandia City ID": "Parece que ya tienes un City ID de uPortlandia",
+  "With your City ID you have easy and quick access to numerous services and programs in uPortlandia": "Con tu  City ID tienes acceso fácil y rápido a numerosos servicios y programas en uPortlandia",
 
   // Redirect
   "See you later!": "¡Nos vemos más tarde!",
@@ -197,26 +191,41 @@ export default {
   "website to continue": "sitio web para continuar.",
   "Bye!": "¡Adiós!",
 
-  "Get a digital verification of your": "Consigue una verificación digital de tu",
-  "Let's make sure you have access to your claims whenever and wherever you need them": "Asegurémonos de tener acceso a sus reclamos cuando y donde los necesite",
-
   // University
-  "diplomaDetail1": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
-  "diplomaDetail2": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
+  "Get a digital verification of your diploma": "Obtén una verificación digital de tu diploma.",
+  "Share your educational information easily": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
+  "Get discounts or free access to services and programs": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
+  "Your claims were succesfully shared with": "Tus credenciales fueron compartidas exitosamente con",
+  "is going to send your new claims to your uPort app": "va a enviar tus nuevas credenciales a tu aplicación uPort.",
+  "Let's make sure you have an access to your Diploma claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tu Diploma cuando y donde las necesites",
 
   // Transport
-  "transportDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su boleto mensual de autobús gratis.",
+  "Get digital verification of your bus ticket": "Obtén la verificación digital de tu boleto de autobús",
+  "Get your monthly bus ticket": "presta servicios gratuitos para sus ciudadanos. Obtén tu boleto mensual de autobús gratis",
+  "Receive your Bus Ticket": "Recibe tu Boleto de Autobús",
+  "Let's make sure you have an access to your bus ticket claims whenever and wherever you need them": "Asegurémonos de tener acceso a las credenciales de tus boletos de autobús cuando y donde las necesites",
 
   // Pharmacy
-  "pharmacyDetail1": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
+  "Get digital verification of your prescription": "Obtén una verificación digital de tu receta",
+  "Get your medicines at any drug store you wish": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
+  "Receive your Prescription Drug": "Recibe tu medicamento recetado",
+  "Let's make sure you have an access to your prescription claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de recetas cuando y donde las necesites.",
 
   // Museum
-  "museumDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su membresía anual del museo de forma gratuita.",
+  "Get digital verification of your annual membership": "Obtén una verificación digital de tu membresía anual",
+  "Get your annual museum membership": "presta servicios gratuitos para sus ciudadanos. Obtén tu membresía anual del museo de forma gratuita.",
+  "Receive your Annual Membership": "Recibe tu Membresía Anual",
+  "Let's make sure you have an access to your annual membership claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales anuales de membresía cuando y donde las necesites",
 
   // Insurance
-  "insuranceDetail1": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
+  "Share your insurance information easily at your doctor's office, pharmacy or at any emergency": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
+  "Receive your Insurance Coverage": "Recibe tu cobertura de seguro",
+  "Let's make sure you have an access to your insurance claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de seguros cuando y donde las necesites",
 
   // Company
-  "companyDetail1": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
-  "companyDetail2": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
+  "Get a digital verification of your employment": "Obtén una verificación digital de tu empleo.",
+  "Share your employment information easily while you're applying for a mortgage or signing a new lease": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
+  "Provide a verified employment history during your job interview": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
+  "Receive your Employment Verification": "Recibe tu Verificación de Empleo",
+  "Let's make sure you have an access to your employment claims whenever and wherever you need them": "Asegurémonos de tener acceso a tus credenciales de empleo cuando y donde las necesites"
 };

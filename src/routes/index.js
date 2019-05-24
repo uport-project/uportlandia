@@ -1,37 +1,29 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import { ConnectedRouter } from "connected-react-router";
+import { Router, Route, Switch } from "react-router-dom";
 
 import history from "../utils/history";
-import { registration, routes } from "../constants/config";
-import App from "../components/AppContainer";
-import Redirect from "../components/Redirect";
-import Debug from "../components/Debug";
-import Home from "../components/Home";
-import Registration from "../components/Registration";
-import Service from "../components/Service";
+import HomePage from "../pages/Home";
+import CityPage from "../pages/City";
+import UniversityPage from "../pages/University";
+import CompanyPage from "../pages/Company";
+import InsurancePage from "../pages/Insurance";
+import PharmacyPage from "../pages/Pharmacy";
+import TransportPage from "../pages/Transport";
+import MuseumPage from "../pages/Museum";
+import RedirectPage from "../pages/Redirect";
+import Debug from "../pages/Debug";
 
-export default () => (<ConnectedRouter history={history}>
+export default () => (<Router history={history}>
   <Switch>
-    <Route path="/" exact render={() =>
-      <App>
-        <Home />
-      </App>} />
-    <Route path="/redirect" render={() =>
-      <App>
-        <Redirect />
-      </App>}  />
-    <Route path="/_debug" exact render={() =>
-      <App>
-        <Debug />
-      </App>} />
-    <Route path={registration.path} render={() =>
-      <App>
-        <Registration />
-      </App>} />
-    {routes.map(route => <Route path={route.path} key={route.serviceId} render={() =>
-      <App serviceId={route.serviceId}>
-        <Service serviceId={route.serviceId} basePath={route.path} />
-      </App>} />)}
+    <Route path="/" exact component={HomePage} />
+    <Route path="/city" component={CityPage} />
+    <Route path="/university" component={UniversityPage} />
+    <Route path="/company" component={CompanyPage} />
+    <Route path="/insurance" component={InsurancePage} />
+    <Route path="/pharmacy" component={PharmacyPage} />
+    <Route path="/transport" component={TransportPage} />
+    <Route path="/museum" component={MuseumPage} />
+    <Route path="/redirect" component={RedirectPage} />
+    <Route path="/_debug" exact component={Debug} />
   </Switch>
-</ConnectedRouter>);
+</Router>);
