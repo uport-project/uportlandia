@@ -6,7 +6,7 @@ import resourceBundle from "./constants/i18-resource";
 
 const options = {
   fallbackLng: "en",
-  debug: process.env.TARGET_ENV !== "production",
+  debug: process.env.REACT_APP_TARGET_ENV !== "prod",
   interpolation: {
     escapeValue: false,
   },

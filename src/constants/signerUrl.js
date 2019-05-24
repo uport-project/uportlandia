@@ -1,5 +1,10 @@
-const getUrl = () => process.env.REACT_APP_TARGET_ENV === "production"
-  ? "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/"
-  : "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/"
+import SIGNER_STAGE from "./signer.stage";
+import SIGNER_PROD from "./signer.prod";
 
-export default getUrl();
+const getSignerUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
+  ? SIGNER_PROD
+  : process.env.REACT_APP_TARGET_ENV === "stage"
+    ? SIGNER_STAGE
+    : "http://localhost:3001/";
+
+export default getSignerUrl;
