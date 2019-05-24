@@ -1,16 +1,16 @@
 module.exports.config = {
   region: "us-east-1",
-  serviceName: "whitelabel-uportlandia",
+  serviceName: "uportlandia",
   ssmParam:{
-    issuers: "/whitelabel-uportlandia/${opt:stage}/issuers"
+    issuers: "/uportlandia/${opt:stage}/issuers"
   },
   s3Bucket: {
-    stage: "whitelabel-uportlandia-stage",
-    prod: "whitelabel-uportlandia-prod"
+    stage: "cleverland-stage",
+    prod: "cleverland-prod"
   },
   domain: {
-    stage: "",
-    prod: ""
+    stage: "uportlandia.uport.space",
+    prod: "uportlandia.uport.me"
   },
   cors: true
 };

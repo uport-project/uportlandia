@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 
 const ISSUERS = JSON.parse(process.env.ISSUERS);
 
-const getCredentials = (serviceId="default") => {
+const getCredentials = (serviceId) => {
   if(!ISSUERS[serviceId])
     throw new Error("Invalid serviceId");
   return new Credentials({
