@@ -6,7 +6,7 @@ const { config } = require("../setup_config");
 const createIssuers = require("./create_issuers");
 
 async function prerequisites() {
-  console.log("Before you proceed:");
+  console.log("Before you proceed:\n");
   console.log("    - save valid AWS credentials in ~/.aws/credentials.",
     "The [default] profile will be used for the setup."
   );
@@ -52,7 +52,6 @@ async function getKeyId() {
         Resource: "*"
       }]
     };
-    console.log(KeyPolicy)
     const params = {
       Description: "uPortlandia KMS key",
       KeyUsage: "ENCRYPT_DECRYPT",
@@ -196,6 +195,12 @@ async function saveSignerUrl(env) {
 
 async function createS3Bucket(name) {
   const s3 = new AWS.S3({ region: config.region });
+  // Check if bucket exists
+  try {
+    await s3.headBucket({ Bucket: name }).promise();
+    console.log(`Skipping bucket creation. Bucket ${name} already exists`)
+    return;
+  } catch (ex) {}
   const bucketParams = {
     Bucket : name,
     ACL : "public-read"
@@ -208,7 +213,7 @@ async function createS3Bucket(name) {
       },
       IndexDocument: {
         Suffix: "index.html"
-      },
+      }
     }
   };
   return new Promise((resolve, reject) => {
