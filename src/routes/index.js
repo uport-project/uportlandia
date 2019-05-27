@@ -26,7 +26,7 @@ export default () => (<ConnectedRouter history={history}>
         <Debug />
       </App>} />
     <Route path={registration.path} render={() =>
-      <App>
+      <App serviceId={registration.serviceId}>
         <Registration />
       </App>} />
     {routes.map(route => <Route path={route.path} key={route.serviceId} render={() =>

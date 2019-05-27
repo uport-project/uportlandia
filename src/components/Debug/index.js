@@ -7,12 +7,16 @@ import isMobile from "../../utils/isMobile";
 class Debug extends React.Component {
   state = {
     language: i18next.language || "",
-    liteqr: false
+    liteqr: false,
+    universalLinks: false
   }
   componentDidMount() {
     const liteqr = sessionStorage.getItem("uPortlandia_liteqr");
-    if(liteqr)
-      this.setState({ liteqr });
+    const universalLinks = sessionStorage.getItem("uPortlandia_universal_links");
+    this.setState({
+      liteqr: Boolean(liteqr),
+      universalLinks: Boolean(universalLinks)
+    });
   }
   isEnglish = () => this.state.language.indexOf("en") === 0
   isSpanish = () => this.state.language.indexOf("es") === 0
@@ -34,8 +38,17 @@ class Debug extends React.Component {
       this.setState({ liteqr: false });
     }
   }
+  toggleUniversalLinks = ev => {
+    if(ev.target.checked) {
+      sessionStorage.setItem("uPortlandia_universal_links", true);
+      this.setState({ universalLinks: true });
+    } else {
+      sessionStorage.removeItem("uPortlandia_universal_links");
+      this.setState({ universalLinks: false });
+    }
+  }
   render() {
-    const { liteqr } = this.state;
+    const { liteqr, universalLinks } = this.state;
     return (<Main>
         <h1>User Agent</h1>
         <p>{navigator.userAgent}</p>
@@ -61,6 +74,11 @@ class Debug extends React.Component {
         <label>
           <input type="checkbox" checked={liteqr} onChange={this.toggleLiteQR} />
           Use lightweight QR codes
+        </label>
+        <hr />
+        <label>
+          <input type="checkbox" checked={universalLinks} onChange={this.toggleUniversalLinks} />
+          Use Universal Links
         </label>
     </Main>);
   }

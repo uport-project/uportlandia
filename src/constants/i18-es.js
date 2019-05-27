@@ -102,9 +102,12 @@ export default {
   "Employment Verification": "Verificación de Empleo",
 
   "get your": "Conseguir su",
+  "Receive your": "Recibe tu",
   "back": "Atrás",
   "Login with uPort": "Iniciar Sesión con uPort",
   "will ask you to share": "te pedirá que compartas",
+  "Your claims were succesfully shared with": "Tus reclamaciones fueron compartidas exitosamente con",
+  "is going to send your new claims to your uPort app": "va a enviar sus nuevos reclamos a su aplicación uPort",
 
   "regnLandingHeading": "¡Únete a miles de ciudadanos de uPortlandia!",
   "regnLandingStep1": "Haz las cosas sin salir de tu casa. ¡Olvídate de las largas filas de espera!",
