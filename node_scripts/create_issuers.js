@@ -12,7 +12,7 @@ const { ISSUER_PROFILES } = require("../setup_config");
 async function ipfsAdd (data) {
   const formData = new FormData();
   formData.append("file", data);
-  const resp = await fetch("https://ipfs.infura.io:5001/api/v0/add", {
+  const resp = await fetch("https://ipfs.infura.io:5001/api/v0/add?pin=true", {
     method: "post",
     body: formData
   });
@@ -29,13 +29,13 @@ async function uploadAppImage (filePath) {
   return `/ipfs/${result}`;
 }
 
-async function createIssuer (app) {
+async function createIssuer (app, env) {
   console.log("Registering", app.name, "...")
   const { did, privateKey } = uport.Credentials.createIdentity();
   const profileImage = await uploadAppImage(app.profileImage);
   const profile = {
     name: app.name,
-    url: app.url,
+    url: app.url[env],
     profileImage: {
       "/": profileImage
     }
@@ -61,11 +61,11 @@ async function createIssuer (app) {
   };
 }
 
-async function createIssuers() {
+async function createIssuers(env) {
   const secrets = {};
   const pArr = [];
   for(let i = 0; i < ISSUER_PROFILES.length; i++) {
-    pArr.push(createIssuer(ISSUER_PROFILES[i]));
+    pArr.push(createIssuer(ISSUER_PROFILES[i], env));
   }
   const dataArr = await Promise.all(pArr);
   return dataArr.reduce((val, acc) => ({

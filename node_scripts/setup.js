@@ -160,7 +160,7 @@ async function saveIssuerSecrets(env) {
     return;
   }
   // Create issuer apps
-  const issuerData = await createIssuers();
+  const issuerData = await createIssuers(env);
   console.log("Issuers created: ");
   console.table(issuerData);
   await getInput("[Ctrl-C] to cancel. To save this to SSM, press [Enter]");
