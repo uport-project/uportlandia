@@ -15,7 +15,7 @@ const Redirect = ({ name }) => {
       <h1>{t("See you later!")}</h1>
       <p>
         {t("You are leaving the uPortlandia dashboard")} {" "}
-        <strong>{name}</strong>{" "}
+        <strong>{t(name)}</strong>{" "}
         {t("website to continue")}
       </p>
       <img src={waveImg} alt={t("Bye!")} />
