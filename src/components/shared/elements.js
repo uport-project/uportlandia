@@ -336,3 +336,21 @@ export class DummyImage extends React.PureComponent {
     return <_DummyImage src={this.dummyImages[`Dummy${variant}`]} />;
   }
 }
+
+ export const CapsuleHeading = styled.h3`
+  border-radius: 100px;
+  font-size: ${14/16}rem;
+  font-weight: 600;
+  left: 50%;
+  padding: 1rem 1.5rem;
+  position: absolute;
+  text-transform: uppercase;
+  ${props => props.bottom
+    ? `
+      bottom: 0;
+      transform: translate(-50%, -50%);
+    ` : `
+      top: 0;
+      transform: translate(-50%, -50%);
+    `}
+`;

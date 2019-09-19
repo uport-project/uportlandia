@@ -1,16 +1,12 @@
 export default {
   // Header
   "Welcome to": "Welcome to",
-  "tryDemo": "Try the new uPort demo",
-  "Play around": "Play around in the smart city of the future",
+  "tryDemo": "It’s the new uPort Serto demo where enterprises, businesses, and services create a trusted ecosystem to provide a seamless experience to their customers.",
   "Get Started": "Get Started",
-  "Its Simple": "It's Simple",
-  "getRegistration": "Get uPortlandia City ID",
-  "getRegistrationDescription": "The city \"verifies\" your information and grants you City ID",
   "Store it in the uport app": "Store it in the uPort app",
   "Own your information": "Own your information. You decide when and with whom you share it.",
-  "Get access to city services": "Get access to the city services.",
-  "Enjoy perks and benefits": "As a full-fledged citizen, enjoy all the perks and benefits.",
+  "Get access to other services": "Get access to the other services.",
+  "Enjoy perks and benefits": "Get things done while enjoying all the perks and benefits.",
   "Ready? Lets do this": "Ready? Let's do this!",
 
   // AppDownload
@@ -27,66 +23,56 @@ export default {
   // Footer
   "Powered by": "Powered by",
 
-  "The City of uPortlandia": "The City of uPortlandia",
-  "cityIdDisplayName": "City ID",
-  "cityIdDescription": "Identify yourself with one click. Get a digital City ID. Enjoy quick, seamless, and often free access to many city services.",
-  "cityIdStep1": "Login with uPort",
-  "cityIdStep2": "Enter your information",
-  "cityIdStep3": "Get verified",
-  "cityIdStep4": "Receive City ID",
+  "Vericheck Identity Verifier": "Vericheck Identity Verifier",
+  "driversLicenseDisplayName": "Driver's License",
+  "driversLicenseDescription": "Identify yourself with one click. Get your digital driver license via Vericheck. Start enjoying all the services the ecosystem has to offer.",
+  "driversLicenseStep1": "Login with uPort",
+  "driversLicenseStep2": "Enter your information",
+  "driversLicenseStep3": "Get verified",
+  "driversLicenseStep4": "Receive Driver'sLicense",
 
-  "The University of uPortlandia": "The University of uPortlandia",
-  "diplomaDisplayName": "Diploma",
-  "diplomaDescription": "Get a verified digital copy of your diploma. Share it easily at you next job interview or while applying to post graduate program.",
-  "diplomaStep1": "Login with uPort",
-  "diplomaStep2": "Get verified",
-  "diplomaStep3": "Receive Diploma",
+  "Mappe Maps & Navigation": "Mappe Maps & Navigation",
+  "safeDriverDisplayName": "Safe Driver Badge",
+  "safeDriverDescription": "Have you been driving with Mappe for a while and never had an accident? Get your Safe Driver Badge and use it with other services and platforms.",
+  "safeDriverStep1": "Login with uPort",
+  "safeDriverStep2": "Get verified",
+  "safeDriverStep3": "Receive Safe Driver Badge",
 
-  "Dream Job LLC": "Dream Job LLC.",
-  "employmentDisplayName": "Employment Verification",
-  "employmentDescription": "Share confirmation of your employment easily. No more collecting stacks of documents to apply for a mortgage or sign a lease.",
-  "employmentStep1": "Login with uPort",
-  "employmentStep2": "Get verified",
-  "employmentStep3": "Receive Employment Verification",
+  "Simple Fund Bank": "Simple Fund Bank",
+  "carLoanDisplayName": "Car Loan Qualification",
+  "carLoanDescription": "Apply for a Car Loan with your Identity Verification and get pre-qualified istantly. Share your Safe Driver Badge to get a better interest rate.",
+  "carLoanStep1": "Login with uPort",
+  "carLoanStep2": "Get verified",
+  "carLoanStep3": "Receive Car Loan Qualification",
 
-  "People Care Insurance LLC": "People Care Insurance LLC.",
-  "insuranceDisplayName": "Insurance Coverage",
-  "insuranceDescription": "Share your insurance information easily at your doctor’s office, pharmacy or at any emergency.",
+  "McQuinn Car Dealership": "McQuinn Car Dealership",
+  "carDealerDisplayName": "Car Title",
+  "carDealerDescription": "Walk in and drive away! Forget about tedious paperwork and formalities. Get your Car Loan approved away... and drive away in your new car.",
+  "carDealerStep1": "Login with uPort",
+  "carDealerStep2": "Get verified",
+  "carDealerStep3": "Receive Car Title",
+
+  "Better Safe Insurance Company": "Better Safe Insurance Company",
+  "insuranceDisplayName": "Car Insurance",
+  "insuranceDescription": "Yes, you need Car Insurance. Get it with just one click. Prove that you’re a resposible driver and get a discount on your monthly rate.",
   "insuranceStep1": "Login with uPort",
   "insuranceStep2": "Get verified",
-  "insuranceStep3": "Receive Insurance Coverage",
+  "insuranceStep3": "Receive Car Insurance",
 
-  "Your Health Medical Center": "Your Health Medical Center",
-  "pharmacyDisplayName": "Prescription Drug",
-  "pharmacyDescription": "No more waiting for the doctor to call your pharmacy. Share your drug prescription at any drug store, any time.",
-  "pharmacyStep1": "Login with uPort",
-  "pharmacyStep2": "Get verified",
-  "pharmacyStep3": "Receive Prescription Drug",
+  "Ride Away Ride-Sharing App": "Ride Away Ride-Sharing App",
+  "rideSharingDisplayName": "Ride Away Driver",
+  "rideSharingDescription": "Become a Ride Away Driver and make money on your own time. But, don’t build your score from scratch! Boost your driver score with reputation credentials from other services and platforms.",
+  "rideSharingStep1": "Login with uPort",
+  "rideSharingStep2": "Get verified",
+  "rideSharingStep3": "Receive credential",
 
-  "uPortlandia City Transit": "uPortlandia City Transit",
-  "transportDisplayName": "Monthly Bus Ticket",
-  "transportDescription": "Are you a uPortlandia citizen? Alumni of The uPortlandia University? Get your monthly bus ticket for free and enjoy the city transportation!",
-  "transportStep1": "Login with uPort",
-  "transportStep2": "Get verified",
-  "transportStep3": "Receive Monthly Bus Ticket",
+  "Ride Away Stock Purchase Plan": "Ride Away Stock Purchase Plan",
+  "investmentsDisplayName": "Ride Away Employee Stock Purchase Plan",
+  "investmentsDescription": "Invest in Ride Away and grow with the businesses you believe in. Ride Away doubles investments made by both riders and drivers!",
+  "investmentsStep1": "Login with uPort",
+  "investmentsStep2": "Get verified",
+  "investmentsStep3": "Receive credential",
 
-  "uPortlandia Museum of Modern Art": "uPortlandia Museum of Modern Art",
-  "museumDisplayName": "Annual Membership",
-  "museumDescription": "Get a free membership with your City ID.",
-  "museumStep1": "Login with uPort",
-  "museumStep2": "Get Verified",
-  "museumStep3": "Receive Annual Membership",
-
-  "Policy Number": "Policy Number",
-  "Group Number": "Group Number",
-  "Dependencies": "Dependencies",
-  "School Name": "School Name",
-  "Program Name": "Program Name",
-  "Graduation Year": "Graduation Year",
-  "Final Grades": "Final Grades",
-  "Salary": "Salary",
-  "Date of Employment": "Date of Employment",
-  "Company Name": "Company Name",
   "First Name": "First Name",
   "Last Name": "Last Name",
   "Address": "Address",
@@ -113,6 +99,21 @@ export default {
   "regnLandingStep1": "Get things done without leaving your home. No more standing in lines.",
   "regnLandingStep2": "Access services and programs offered by the City",
   "regnLandingStep3": "Get a free one-year membership at many of the City's leading museums, zoos, concert halls, and botanical gardens",
+
+  // Home
+  "Step 1": "Step 1",
+  "Step 2": "Step 2",
+  "Step 3": "Step 3",
+  "Step 4": "Step 4",
+  "Prove your identity": "Prove your identity.",
+  "To kick off the process get a proof of your driver's license": "To kick off the process get a proof of your driver's license",
+  "Buy a new car": "Buy a new car.",
+  "You can get it right away or get a loan for it": "You can get it right away or... get a loan for it! With a proof from your navigation system that you drive safely you’ll get a better interest rate!",
+  "Become a driver": "Become a driver.",
+  "To drive other passengers you need car insurance": "To drive other passengers you need car insurance. Luckily you've already got all required for it documents stored in your uPort app. All you need to do it to apply.",
+  "Become a shareholder": "Become a shareholder.",
+  "Even though you're your own boss": "Even though you're your own boss you're still a part of a bigger company. Take advantage of it!",
+  "Become a Driver": "Become a Driver",
 
   // Login
   "Open the uPort app to login": "Open the uPort app to login",
@@ -202,25 +203,6 @@ export default {
   "Bye!": "Bye!",
 
   "Get a digital verification of your": "Get a digital verification of your",
-  "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them.",
+  "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them."
 
-  // University
-  "diplomaDetail1": "Share your educational information easily in your job interview or when you apply to a post-graduate program.",
-  "diplomaDetail2": "Get discounts or free access to services and programs all around the world.",
-
-  // Transport
-  "transportDetail1": "The City of uPortlandia provides free services for its citizens. Get your monthly bus ticket for free.",
-
-  // Pharmacy
-  "pharmacyDetail1": "Get your medicines at any drug store you wish. No need to wait for the doctor to call your pharmacy",
-
-  // Museum
-  "museumDetail1": "The City of uPortlandia provides free services for its citizens. Get your annual museum membership for free.",
-
-  // Insurance
-  "insuranceDetail1": "Share your insurance information easily at your doctor's office, pharmacy or at any emergency",
-
-  // Company
-  "companyDetail1": "Share your employment information easily while you're applying for a mortgage or signing a new lease",
-  "companyDetail2": "Provide a verified employment history during your job interview",
 };
