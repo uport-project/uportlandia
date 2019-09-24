@@ -1,7 +1,6 @@
 import jwtToUrl from "../utils/jwtToUrl";
 
 async function createJwtUrl(jwt, redirectUrl, isMobile) {
-  const liteqr = Boolean(sessionStorage.getItem("uPortlandia_liteqr"));
   const universalLinks = Boolean(sessionStorage.getItem("uPortlandia_universal_links"));
   let baseUrl = "me.uport:req/";
   if(universalLinks) {
@@ -10,10 +9,7 @@ async function createJwtUrl(jwt, redirectUrl, isMobile) {
   if(isMobile) {
     return `${baseUrl}${jwt}?callback_type=redirect&redirect_url=${redirectUrl}`;
   }
-  if(liteqr) {
-    return await jwtToUrl(jwt);
-  }
-  return `${baseUrl}${jwt}`;
+  return await jwtToUrl(jwt);
 }
 
 export default createJwtUrl;

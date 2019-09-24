@@ -7,7 +7,6 @@ import isMobile from "../../utils/isMobile";
 class Debug extends React.Component {
   state = {
     language: i18next.language || "",
-    liteqr: false,
     universalLinks: false
   }
   componentDidMount() {
@@ -28,15 +27,6 @@ class Debug extends React.Component {
   }
   resetLang = () => {
     sessionStorage.removeItem("uPortlandia_lng");
-  }
-  toggleLiteQR = ev => {
-    if(ev.target.checked) {
-      sessionStorage.setItem("uPortlandia_liteqr", true);
-      this.setState({ liteqr: true });
-    } else {
-      sessionStorage.removeItem("uPortlandia_liteqr");
-      this.setState({ liteqr: false });
-    }
   }
   toggleUniversalLinks = ev => {
     if(ev.target.checked) {
@@ -70,11 +60,6 @@ class Debug extends React.Component {
         <div>
           <button onClick={this.resetLang}>Reset Language</button>
         </div>
-        <hr />
-        <label>
-          <input type="checkbox" checked={liteqr} onChange={this.toggleLiteQR} />
-          Use lightweight QR codes
-        </label>
         <hr />
         <label>
           <input type="checkbox" checked={universalLinks} onChange={this.toggleUniversalLinks} />

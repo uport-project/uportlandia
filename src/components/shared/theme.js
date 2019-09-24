@@ -54,43 +54,43 @@ export const colors = {
 
   DRIVERS_LICENSE: {
     primary: "#FF7058",
-    mutedText: "#8DCCC5",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #1B998B 0%, #59C1BE 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #167C71 0%, #4BA5A3 99.15%)"
   },
   SAFE_DRIVER: {
     primary: "#F2994A",
-    mutedText: "#EEC8DD",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #403290 0%, #E0367C 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #2D2366 0.17%, #C02D6A 99.15%)"
   },
   CAR_LOAN: {
     primary: "#2C9984",
-    mutedText: "#85AAD7",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #1B998B 0%, #1B4E8B 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #098476 0%, #153E70 99.15%)"
   },
   CAR_DEALER: {
     primary: "#5C51CB",
-    mutedText: "#C99CBC",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #96006A 0%, #B4812E 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #750955 0%, #805C1F 99.15%)"
   },
   INSURANCE: {
     primary: "#81b895",
-    mutedText: "#82ACD9",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #377AC2 0%, #2893B5 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #295E98 0%, #1A6982 99.15%)"
   },
   RIDE_SHARING: {
     primary: "#1538A0",
-    mutedText: "#D9CC8F",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #B29A2E 0%, #553477 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #887623 0%, #36214C 99.15%)"
   },
-  INVESTMENT: {
+  INVESTMENTS: {
     primary: "#1B998B",
-    mutedText: "#7F95D4",
+    mutedText: "#F86263",
     buttonBg: "linear-gradient(94.94deg, #1538A0 0%, #553477 99.15%)",
     buttonHoverBg: "linear-gradient(94.94deg, #0F2B7C 0%, #3B2352 99.15%)"
   }

@@ -139,6 +139,7 @@ const SAFE_DRIVER = {
   description: "safeDriverDescription",
   url: "/safe_driver",
   claim: "Safe Driver Badge",
+  heading: "safeDriverHeading",
   steps: [
     "safeDriverStep1",
     "safeDriverStep2",
@@ -159,6 +160,7 @@ const CAR_LOAN = {
   displayName: "carLoanDisplayName",
   icon: CarLoanIcon,
   entity: "Simple Fund Bank",
+  heading: "carLoanHeading",
   description: "carLoanDescription",
   getCTA: "Get Qualified",
   url: "/car_loan",
@@ -183,6 +185,7 @@ const CAR_DEALER = {
   displayName: "carDealerDisplayName",
   icon: CarDealerIcon,
   entity: "McQuinn Car Dealership",
+  heading: "carDealerHeading",
   description: "carDealerDescription",
   getCTA: "Get Brand New Car",
   url: "/car_dealer",
@@ -208,6 +211,7 @@ const INSURANCE = {
   displayName: "insuranceDisplayName",
   icon: InsuranceIcon,
   entity: "Better Safe Insurance Company",
+  heading: "insuranceHeading",
   description: "insuranceDescription",
   url: "/insurance",
   claim: "Car Insurance",
@@ -227,14 +231,15 @@ const INSURANCE = {
 
 const RIDE_SHARING = {
   id: "RIDE_SHARING",
-  name: "Ride Away Driver",
+  name: "Driver Verification",
   displayName: "rideSharingDisplayName",
   icon: RideSharingIcon,
   entity: "Ride Away Ride-Sharing App",
+  heading: "rideSharingHeading",
   description: "rideSharingDescription",
   getCTA: "Become a Driver",
   url: "/ride_sharing",
-  claim: "Car Insurance",
+  claim: "Driver Verification",
   steps: [
     "rideSharingStep1",
     "rideSharingStep2",
@@ -255,6 +260,7 @@ const INVESTMENTS = {
   displayName: "investmentsDisplayName",
   icon: InvestmentsIcon,
   entity: "Global Capital Investments",
+  heading: "investmentsHeading",
   description: "investmentsDescription",
   getCTA: "Become a Shareholder",
   url: "/investments",
@@ -350,9 +356,9 @@ const INSURANCE_CLAIM = {
   honoredBy: [RIDE_SHARING]
 };
 
-const RIDE_AWAY_DRIVER = {
-  name: "Ride Away Driver",
-  displayName: "Ride Away Driver",
+const DRIVER_VERIFICATION = {
+  name: "Driver Verification",
+  displayName: "Driver Verification",
   issuedBy: [RIDE_SHARING],
   honoredBy: [INVESTMENTS]
 };
@@ -380,7 +386,7 @@ CAR_DEALER.generatedClaims = [CAR_TITLE_CLAIM1, CAR_TITLE_CLAIM2];
 INSURANCE.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, SAFE_DRIVER];
 INSURANCE.generatedClaims = [INSURANCE_CLAIM];
 RIDE_SHARING.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, INSURANCE, SAFE_DRIVER];
-RIDE_SHARING.generatedClaims = [RIDE_AWAY_DRIVER];
+RIDE_SHARING.generatedClaims = [DRIVER_VERIFICATION];
 INVESTMENTS.requiredServices = [DRIVERS_LICENSE, RIDE_SHARING, SAFE_DRIVER];
 INVESTMENTS.generatedClaims = [INVESTMENTS_CLAIM]
 
@@ -403,4 +409,4 @@ const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
 
 export const CHASQUI_URL = getChasquiUrl();
 export const SIGNER_URL = getSignerUrl();
-export const SENTRY_DSN = "https://7a87f2dc2e774d5891ec2ea565b40c05@sentry.io/1449781";
+export const SENTRY_DSN = "";
