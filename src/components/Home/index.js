@@ -50,6 +50,7 @@ const Wrapper = styled.div`
 `;
 const Cards = styled.div`
   background: ${theme.homeCards.bg};
+  padding-bottom: 5rem;
   position: relative;
   z-index: 2;
 

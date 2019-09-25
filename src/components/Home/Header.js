@@ -155,7 +155,7 @@ Hero.Welcome = styled.div`
 `;
 const Logo = styled.img`
   display: block;
-  height: 32px;
+  height: 40px;
   margin: 10px auto 70px;
 `;
 const Audience = styled.div`

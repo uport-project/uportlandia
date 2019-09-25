@@ -1,7 +1,7 @@
 import dayjs from "dayjs";
 
 // Images/Logos
-import logo from "../images/serto-black-horizontal.png";
+import logo from "../images/serto-black-horiz.svg";
 import DriversLicenseIcon from "../images/drivers-license-logo.png";
 import SafeDriverIcon from "../images/safe-driver-logo.png";
 import CarLoanIcon from "../images/car-loan-logo.png";

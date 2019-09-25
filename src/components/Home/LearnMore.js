@@ -6,7 +6,7 @@ import { CapsuleHeading } from "../shared/elements";
 import * as theme from "../shared/theme";
 import { large, medium } from "../shared/grid";
 import learnMoreImage from "../../images/learn-more.png";
-import sertoWhite from "../../images/serto-white-horiz.png";
+import sertoWhite from "../../images/serto-white-horiz.svg";
 import popupIcon from "../../images/popup-arrow.svg";
 
 function LearnMore () {
@@ -47,8 +47,11 @@ function LearnMore () {
 
 const Wrapper = styled.div`
   background-color: #EEEDF4;
-  padding: 3rem 20px 7rem;
-  ${medium(`padding: 3rem 10vw 7rem;`)}
+  padding: 5rem 20px;
+  position: relative;
+  z-index: 2;
+
+  ${medium(`padding: 5rem 10vw;`)}
 
   ${CapsuleHeading} {
     background-color: #EEEDF4;
@@ -134,7 +137,7 @@ const Aside = styled.aside`
   ${medium("margin: 0 0 0 2rem;")}
   ${large(`padding: 40px`)}
   .logo {
-    max-height: 100%;
+    max-height: 35px;
     max-width: 100%;
   }
   h5 {

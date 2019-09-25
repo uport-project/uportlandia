@@ -344,6 +344,7 @@ export class DummyImage extends React.PureComponent {
   left: 50%;
   padding: 1rem 1.5rem;
   position: absolute;
+  text-align: center;
   text-transform: uppercase;
   ${props => props.bottom
     ? `
