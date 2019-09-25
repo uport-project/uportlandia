@@ -9,8 +9,9 @@ import { Container, medium } from "../shared/grid";
 import { CapsuleHeading } from "../shared/elements";
 import Header from "./Header";
 import Step from "./Step";
-import Card from "../shared/ServiceCard";
+import LearnMore from "./LearnMore";
 import AppDownload from "./AppDownloadContainer";
+import Card from "../shared/ServiceCard";
 import { SERVICES } from "../../constants/config";
 
 const Home = props => {
@@ -37,6 +38,7 @@ const Home = props => {
           </React.Fragment>))}
       </Container>
     </Cards>
+    <LearnMore />
     <AppDownload />
   </Wrapper>)
 };

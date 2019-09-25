@@ -31,7 +31,7 @@ export const appDownloadSticky = {
 };
 
 export const colors = {
-  primary: "#5C50CA",
+  primary: "#5952FF",
   mutedText: "#9E9E9E",
   mutedText2: "#9299B3",
   mutedText3: "#d0d0d0",
