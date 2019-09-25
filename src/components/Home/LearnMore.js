@@ -15,7 +15,7 @@ function LearnMore () {
     <CapsuleHeading>{t("Learn More About Serto Ecosystem")}</CapsuleHeading>
     <Container>
       <Article>
-        <img src={learnMoreImage} alt="Sample Image" />
+        <img src={learnMoreImage} alt="Article" />
         <div className="content">
           <h5>The title of the article goes here and it might be long</h5>
           <p>

@@ -1,4 +1,5 @@
- @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&display=swap");
 
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
@@ -31,7 +32,7 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 body {
-  line-height: 1;
+  line-height: 1.25;
 }
 ol, ul {
   list-style: none;
@@ -54,11 +55,11 @@ table {
 }
 body, input, button, textarea, select {
   color: #404041;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Open Sans", sans-serif;
+}
+h1, h2, h3, h4, h5, button {
+  font-family: "Poppins", sans-serif;
 }
 a {
   color: #5C50CA;
-}
-p {
-  line-height: 1.25;
 }

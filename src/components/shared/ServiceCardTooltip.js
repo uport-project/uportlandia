@@ -21,12 +21,12 @@ class CardTooltip extends React.Component {
     this.setState({ popover: true });
   }
   render() {
-    const { display, heading, description, children } = this.props;
+    const { display, heading, description, children, className } = this.props;
     const { popover } = this.state;
     return (<React.Fragment>
       <Trigger data-tip data-for={this.tid}>{display}</Trigger>
       <Trigger mobile onClick={this.showPopover}>{display}</Trigger>
-      <Tooltip id={this.tid}>
+      <Tooltip id={this.tid} className={className}>
         <Container>
           <Tooltip.Heading>{heading}</Tooltip.Heading>
           {description ? <Description>{description}</Description> : null}

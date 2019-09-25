@@ -10,10 +10,8 @@ class Debug extends React.Component {
     universalLinks: false
   }
   componentDidMount() {
-    const liteqr = sessionStorage.getItem("uPortlandia_liteqr");
     const universalLinks = sessionStorage.getItem("uPortlandia_universal_links");
     this.setState({
-      liteqr: Boolean(liteqr),
       universalLinks: Boolean(universalLinks)
     });
   }
@@ -38,7 +36,7 @@ class Debug extends React.Component {
     }
   }
   render() {
-    const { liteqr, universalLinks } = this.state;
+    const { universalLinks } = this.state;
     return (<Main>
         <h1>User Agent</h1>
         <p>{navigator.userAgent}</p>

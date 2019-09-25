@@ -6,8 +6,8 @@ import * as theme from "./theme";
 
 class Tooltip extends React.Component {
   render() {
-    const { id, children } = this.props;
-    return (<StyledTooltip id={id} effect="solid">
+    const { id, children, className } = this.props;
+    return (<StyledTooltip id={id} effect="solid" className={className}>
       {children}
     </StyledTooltip>);
   }
