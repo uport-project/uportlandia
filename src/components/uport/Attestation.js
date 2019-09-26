@@ -11,7 +11,7 @@ import isMobile from "../../utils/isMobile";
 import { largeHeight, medium } from "../shared/grid";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
-import AcceptAttestationImg from "../../images/accept-attestation.svg";
+import AcceptAttestationImg from "../../images/accept-attestation.png";
 
 import {
   Modal,

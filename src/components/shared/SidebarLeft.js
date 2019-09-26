@@ -11,7 +11,7 @@ const SidebarLeft = props => {
   const { t } = useTranslation();
   const styles = {
     heading: {
-      color: theme.colors[service.id].mutedText
+      color: theme.colors[service.id].primary
     }
   };
   return (<Wrapper span={3}>

@@ -20,8 +20,6 @@ const ContentCard = props => {
 const Wrapper = styled.div`
   font-size: 0.875rem;
   line-height: 1.25;
-  // margin: 0 auto;
-  // max-width: 580px;
   padding: 0 0 30px;
   position: relative;
 `;
@@ -36,18 +34,14 @@ const Content = styled.div`
   width: 100%;
   ${medium(`
     padding: 30px 40px;
-    // max-width: 580px;
-    // margin: 0 auto;
   `)}
 
   ${props => props.withCTA
     ? `
       border-radius: 5px 5px 0 0;
-      // height: calc(100vh - 280px);
     `
     : `
       border-radius: 5px;
-      // height: calc(100vh - 220px);
     `}
 
   h2 {
@@ -79,7 +73,6 @@ const Content = styled.div`
   }
 `;
 ContentCard.CTA = styled.div`
-  // padding-bottom: 30px;
   ${Button}.long {
     border-radius: 0 0 5px 5px;
     font-size: 1rem;

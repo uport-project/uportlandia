@@ -206,6 +206,7 @@ const createFormField = (id, config, value, onChange, validationError, t) => {
               href={config.link}
               target="_blank"
               rel="noopener noreferrer"
+              style={{color:theme.colors.textSecondary}}
             >
               {config.linkLabel}
             </a>

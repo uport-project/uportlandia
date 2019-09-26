@@ -10,7 +10,7 @@ import { ThemedButton, ThemedExtLink } from "../shared/elements";
 import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateRegnClaim";
 import isMobile from "../../utils/isMobile";
-import SuccessIcon from "../../images/smiley-face-city.svg";
+import SuccessIcon from "../../images/smiley-face-reg.png";
 import AttestationModal from "../uport/AttestationContainer";
 import { SERVICES, registration } from "../../constants/config";
 
@@ -44,8 +44,8 @@ class Landing extends React.Component {
   render() {
     const { attestationModal } = this.state;
     const { verification, data, redirectToRegnReceived, t } = this.props;
-    if(!this.props.isLoggedIn)
-      return <Redirect to={SERVICES[serviceId].url} />;
+    // if(!this.props.isLoggedIn)
+    //   return <Redirect to={SERVICES[serviceId].url} />;
     const CTA = () => (<Card.CTA>
       {isMobile()
         ? <ThemedExtLink themeId={SERVICES[serviceId].id}

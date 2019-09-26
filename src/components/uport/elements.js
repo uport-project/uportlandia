@@ -89,7 +89,7 @@ Content.Footer = styled.div`
 `;
 export const Wrapper = styled.div`
   align-items: center;
-  background: ${theme.gradient6};
+  background: ${theme.colors.primary};
   color: #fff;
   display: grid;
   grid-template-rows: 100px 1fr 60px;

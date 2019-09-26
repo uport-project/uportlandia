@@ -10,7 +10,6 @@ import * as theme from "./theme";
 import { Grid, Col, Spacer, medium } from "./grid";
 import { InvLinkButton } from "./elements";
 import getDependentServices from "../../utils/getDependentServices";
-import SuccessIcon from "../../images/congratulations-city.svg";
 import LikeDemo from "./LikeDemo";
 import Card from "./ServiceCard";
 import Footer from "./Footer";
@@ -31,7 +30,7 @@ class Success extends React.Component {
       <TopHalf>
         <h2>{t("Congratulations!")}</h2>
         <h3>{t("You received your")} {t(SERVICES[id].displayName)}</h3>
-        <SuccessImage src={SuccessIcon} />
+        <SuccessImage src={SERVICES[id].successIcon} />
         <p>{t("Your claims are stored in your uPort app")}</p>
       </TopHalf>
       <BotHalf>
@@ -101,7 +100,7 @@ const TopHalf = styled.section`
   }
 `;
 const BotHalf = styled.div`
-  background: ${theme.gradient1};
+  background: ${theme.colors.primary};
   padding: 30px 20px;
   position: relative;
   ${medium(`

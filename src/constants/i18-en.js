@@ -29,7 +29,7 @@ export default {
   "driversLicenseStep1": "Login with uPort",
   "driversLicenseStep2": "Enter your information",
   "driversLicenseStep3": "Get verified",
-  "driversLicenseStep4": "Receive Driver'sLicense",
+  "driversLicenseStep4": "Receive Driver's License",
 
   "Mappe Maps & Navigation": "Mappe Maps & Navigation",
   "safeDriverDisplayName": "Safe Driver Badge",
@@ -206,17 +206,17 @@ export default {
   "Back to Dashboard": "Back to Dashboard",
 
   // LikeDemo
-  "Like the demo?": "Like the demo?",
+  "Want to build your own ecosystem?": "Want to build your own ecosystem?",
   "Build user-centric trusted data apps with uPort": "Build user-centric trusted data apps with uPort",
   "Issue, request and verify information about your users": "Issue, request and verify information about your users. Give your users the freedom to manage details about their digital-selves.",
   "View Documentation": "View Documentation",
-  "Issue verified information to citizens in your city": "Issue verified information to citizens in your city",
+  "Find out more about how you can create a trusted network": "Find out more about how you can create a trusted network with your business partners and provide first-class user experience to your customer",
   "Build trusted data ecosystem in your city": "Build trusted data ecosystem in your city. Let businesses and organizations thrive while maintaining privacy of the citizens.",
   "Contact Us": "Contact Us",
 
   // City/ClaimExists
-  "regnClaimExists": "It looks like you already have a uPortlandia City ID",
-  "regnBenefits": "With your City ID you have easy and quick access to numerous services and programs in uPortlandia",
+  "regnClaimExists": "It looks like you already have a Driver's License",
+  "regnBenefits": "With your Driver's License you have easy and quick access to numerous services and programs in the Ecosystem",
 
   // Redirect
   "See you later!": "See you later!",

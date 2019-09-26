@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 
-// Images/Logos
+// Logos
 import logo from "../images/serto-black-horiz.svg";
 import DriversLicenseIcon from "../images/drivers-license-logo.png";
 import SafeDriverIcon from "../images/safe-driver-logo.png";
@@ -9,8 +9,23 @@ import CarDealerIcon from "../images/car-dealer-logo.png";
 import InsuranceIcon from "../images/insurance-logo.png";
 import RideSharingIcon from "../images/ride-sharing-logo.png";
 import InvestmentsIcon from "../images/investments-logo.png";
-import COUNTRIES from "./countries";
+// Good news icon
+import SafeDriverGoodIcon from "../images/smiley-face-safe_driver.png";
+import CarLoanGoodIcon from "../images/smiley-face-car_loan.png";
+import CarDealerGoodIcon from "../images/smiley-face-car_dealer.png";
+import InsuranceGoodIcon from "../images/smiley-face-insurance.png";
+import RideSharingGoodIcon from "../images/smiley-face-ride_sharing.png";
+import InvestmentsGoodIcon from "../images/smiley-face-investments.png";
+// Success image
+import DriversLicenseSuccessIcon from "../images/congratulations-drivers_license.png";
+import SafeDriverSuccessIcon from "../images/congratulations-safe_driver.png";
+import CarLoanSuccessIcon from "../images/congratulations-car_loan.png";
+import CarDealerSuccessIcon from "../images/congratulations-car_dealer.png";
+import InsuranceSuccessIcon from "../images/congratulations-insurance.png";
+import RideSharingSuccessIcon from "../images/congratulations-ride_sharing.png";
+import InvestmentsSuccessIcon from "../images/congratulations-investments.png";
 
+import COUNTRIES from "./countries";
 import getSignerUrl from "./signerUrl";
 
 // Home Page
@@ -23,7 +38,7 @@ export const home = {
 // Registration Flow
 export const registration = {
   path: "/DRIVERS_LICENSE",
-  name: "Driver'sLicense",
+  name: "Driver's License",
   serviceId: "DRIVERS_LICENSE",
   text: {
     landingSteps: [
@@ -117,10 +132,11 @@ const DRIVERS_LICENSE = { // This should match the Registration Config
   name: "Driver's License",
   displayName: "driversLicenseDisplayName",
   icon: DriversLicenseIcon,
+  successIcon: DriversLicenseSuccessIcon,
   entity: "Vericheck Identity Verifier",
   description: "driversLicenseDescription",
   url: "/drivers_license",
-  claim: "Driver'sLicense",
+  claim: "Driver's License",
   steps: [
     "driversLicenseStep1",
     "driversLicenseStep2",
@@ -135,6 +151,8 @@ const SAFE_DRIVER = {
   name: "Safe Driver Badge",
   displayName: "safeDriverDisplayName",
   icon: SafeDriverIcon,
+  goodNewsIcon: SafeDriverGoodIcon,
+  successIcon: SafeDriverSuccessIcon,
   entity: "Mappe Maps & Navigation",
   description: "safeDriverDescription",
   url: "/safe_driver",
@@ -159,6 +177,8 @@ const CAR_LOAN = {
   name: "Simple Fund Bank",
   displayName: "carLoanDisplayName",
   icon: CarLoanIcon,
+  goodNewsIcon: CarLoanGoodIcon,
+  successIcon: CarLoanSuccessIcon,
   entity: "Simple Fund Bank",
   heading: "carLoanHeading",
   description: "carLoanDescription",
@@ -184,6 +204,8 @@ const CAR_DEALER = {
   name: "Car Title",
   displayName: "carDealerDisplayName",
   icon: CarDealerIcon,
+  goodNewsIcon: CarDealerGoodIcon,
+  successIcon: CarDealerSuccessIcon,
   entity: "McQuinn Car Dealership",
   heading: "carDealerHeading",
   description: "carDealerDescription",
@@ -210,6 +232,8 @@ const INSURANCE = {
   name: "Car Insurance",
   displayName: "insuranceDisplayName",
   icon: InsuranceIcon,
+  goodNewsIcon: InsuranceGoodIcon,
+  successIcon: InsuranceSuccessIcon,
   entity: "Better Safe Insurance Company",
   heading: "insuranceHeading",
   description: "insuranceDescription",
@@ -234,6 +258,8 @@ const RIDE_SHARING = {
   name: "Driver Verification",
   displayName: "rideSharingDisplayName",
   icon: RideSharingIcon,
+  goodNewsIcon: RideSharingGoodIcon,
+  successIcon: RideSharingSuccessIcon,
   entity: "Ride Away Ride-Sharing App",
   heading: "rideSharingHeading",
   description: "rideSharingDescription",
@@ -259,6 +285,8 @@ const INVESTMENTS = {
   name: "Ride Away Stock Purchase Plan",
   displayName: "investmentsDisplayName",
   icon: InvestmentsIcon,
+  goodNewsIcon: InvestmentsGoodIcon,
+  successIcon: InvestmentsSuccessIcon,
   entity: "Global Capital Investments",
   heading: "investmentsHeading",
   description: "investmentsDescription",

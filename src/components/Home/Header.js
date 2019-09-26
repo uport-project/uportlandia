@@ -7,9 +7,9 @@ import { withTranslation } from "react-i18next";
 import { large, medium, mediumOnly } from "../shared/grid";
 import * as theme from "../shared/theme";
 import { CapsuleLinkButton, CapsuleHeading } from "../shared/elements";
-import collectCredIcon from "../../images/collect-cred-icon.svg";
+import collectCredIcon from "../../images/collect-cred-icon.png";
 import uPortAppIcon from "../../images/uport-app-icon.svg";
-import servicesIcon from "../../images/services-icon.svg";
+import servicesIcon from "../../images/services-icon.png";
 import audienceImage from "../../images/audience-user.svg";
 
 import { home } from "../../constants/config";
@@ -67,16 +67,18 @@ class Header extends React.Component {
 }
 
 const Hero = styled.div`
+  background: ${theme.homeHeader.bg};
+  color: ${theme.homeHeader.textColor};
   overflow: hidden;
   position: relative;
 `;
 Hero.Content = styled.div`
   background: ${theme.homeHeader.heroContentBg};
   color: ${theme.homeHeader.heroContentText};
-  padding: 60px 20px;
+  padding: 100px 20px;
   position: relative;
   z-index: 2;
-  ${medium("padding: 60px 20vw;")}
+  ${medium("padding: 100px 10vw;")}
 
   ${CapsuleHeading} {
     background: ${theme.homeHeader.heroContentBg};
@@ -119,15 +121,15 @@ Hero.Step.Icon = styled.img`
   height: 120px;
 `;
 Hero.Welcome = styled.div`
-  background: ${theme.homeHeader.bg};
-  background-size: cover;
-  color: ${theme.homeHeader.textColor};
   padding: 2vh 20px 10vh;
   position: relative;
   z-index: 2;
   text-align: center;
-  ${large("padding: 5vh 20vw 20vh;")}
-  ${mediumOnly("padding: 5vh 12vw 20vh;")}
+  ${medium(`
+    margin: 0 auto;
+    padding: 5vh 0 100px;
+    width: 660px;
+  `)}
 
   h2 {
     font-size: 1rem;
@@ -163,6 +165,9 @@ const Audience = styled.div`
   color: ${theme.homeHeader.audienceText};
   position: relative;
   z-index: 2;
+  ${medium(`
+    padding: 5vh 10vw 5vh;
+  `)}
 `;
 Audience.Heading = styled(CapsuleHeading)`
   background: ${theme.homeHeader.audienceBg};
@@ -170,17 +175,36 @@ Audience.Heading = styled(CapsuleHeading)`
   `;
 Audience.Content = styled.div`
   display: flex;
-  padding: 4rem 10vw;
+  flex-direction: column-reverse;
+  padding: 100px 0;
+  text-align: center;
+
+  ${medium(`
+    flex-direction: row;
+    text-align: left;
+  `)}
 `;
 Audience.Text = styled.div`
-  flex: 4;
-  padding-right: 8rem;
   p {
-    margin: 2rem 0;
+    margin: 2rem;
   }
+  ${medium(`
+    flex: 2;
+    padding-right: 8rem;
+    p {
+      margin: 2rem 0;
+    }
+  `)}
 `;
 Audience.Image = styled.img`
-  flex: 1;
+  margin: 0 auto;
+  max-width: 60vw;
+  transform: translateX(10%);
+  ${medium(`
+    flex: 1;
+    max-width: 100%;
+    transform: none;
+  `)}
 `;
 
 export default withTranslation()(Header);

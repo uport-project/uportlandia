@@ -136,6 +136,9 @@ const Content = styled.div`
       `)}
     }
   }
+  ${Button}:hover {
+    background: ${theme.colors.homeButtonHoverBg};
+  }
 `;
 const Issuer = styled.div`
   padding: 30px 30px 0;

@@ -35,7 +35,7 @@ class ServicePage extends React.Component {
           <Route path={`${basePath}/complete`} exact render={() =>
             <React.Fragment>
               <BackButton url="/" label="Back to Home" />
-              <Success id={SERVICES[serviceId].id} />
+              <Success id={serviceId} />
             </React.Fragment>} />
         </Switch>
       </Container>

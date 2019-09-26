@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { getExternalNavName } from "../../selectors";
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
-import waveImg from "../../images/wave.svg";
+import waveImg from "../../images/wave.png";
 
 const Redirect = ({ name }) => {
   const { t } = useTranslation();
@@ -58,6 +58,8 @@ const Wrapper = styled.div`
     animation: ${waveAnim} 1s linear infinite;
     display: block;
     margin: 30px auto 0;
+    max-height: 128px;
+    max-width: 128px;
     transform-origin: bottom right;
   }
 `;

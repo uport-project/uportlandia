@@ -36,8 +36,9 @@ function LearnMore () {
         <img className="logo" src={sertoWhite} alt="uPort Serto Logo" />
         <h5>Want to build your own ecosystem?</h5>
         <p>
-          Tell your manager and collegues about possibilites that uPort
-          brings.  Build uPort Ecosystem with your customer in mind.
+          Find out more about how you can create a trusted network with your
+          business partners and provide first-class user experience to your
+          customer.
         </p>
         <a className="capsule-link inverse" href="#">Contact Us</a>
       </Aside>
@@ -63,7 +64,7 @@ const Wrapper = styled.div`
     color: #fff;
     display: flex;
     font-weight: 600;
-    padding: 16px 38px;
+    padding: 12px 38px;
     font-size: ${12/16}rem;
     justify-content: center;
     text-decoration: none;
@@ -77,6 +78,12 @@ const Wrapper = styled.div`
     .popup-icon {
       margin-left: 8px;
     }
+  }
+  .capsule-link:hover {
+    background: ${theme.colors.homeButtonHoverBg};
+  }
+  .capsule-link.inverse:hover {
+    background: #E7E6FF;
   }
 `;
 const Container = styled.div`

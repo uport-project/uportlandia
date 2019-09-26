@@ -11,7 +11,6 @@ import SidebarLeft from "../shared/SidebarLeft";
 import isValid from "../../utils/validateReq";
 import isMobile from "../../utils/isMobile";
 import { SERVICES } from "../../constants/config";
-import SuccessIcon from "../../images/smiley-face-diploma.svg";
 import AttestationModal from "../uport/AttestationContainer";
 
 class Landing extends React.Component {
@@ -79,9 +78,9 @@ class Landing extends React.Component {
           <Card CTA={CTA}>
             <h2>{t("Good News!")}</h2>
             <p>{t("Your claims were succesfully shared with")} {t(SERVICES[serviceId].entity)}.</p>
-            <SuccessImage src={SuccessIcon} />
+            <SuccessImage src={SERVICES[serviceId].goodNewsIcon} />
             <hr />
-            <h4>{t("What's next?")}</h4>
+            <h4 style={{color: theme.colors[serviceId].primary}}>{t("What's next?")}</h4>
             <p>
               {t("Let's make sure you have access to your claims whenever and wherever you need them")}
               {t(SERVICES[serviceId].entity)}

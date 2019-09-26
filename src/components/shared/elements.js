@@ -8,10 +8,6 @@ import { useTranslation } from "react-i18next";
 import * as theme from "./theme";
 import { medium, Col } from "./grid";
 import ArrowLeft from "../../images/arrow-left.svg";
-import Dummy1 from "../../images/dummy-content-1.svg";
-import Dummy2 from "../../images/dummy-content-2.svg";
-import Dummy3 from "../../images/dummy-content-3.svg";
-import Dummy4 from "../../images/dummy-content-4.svg";
 import uPortWhite from "../../images/uport-icon-white.svg";
 
 export const Form = styled.form``;
@@ -63,7 +59,7 @@ export const Dropdown = styled.select`
 Dropdown.displayName = "Dropdown";
 
 const PrimaryButtonStyle = css`
-  background: ${theme.gradient2};
+  background: ${theme.colors.primary};
   border: none;
   border-radius: 5px;
   color: ${theme.colors.primaryButtonText};
@@ -75,7 +71,7 @@ const PrimaryButtonStyle = css`
   text-transform: uppercase;
   transform: matrix(1, 0, 0, 1.01, 0, 0);
   &:hover {
-    background: ${theme.gradient3};
+    background: ${theme.colors.homeButtonHoverBg};
   }
 `;
 
@@ -138,8 +134,11 @@ const _LoginButton = styled(Button)`
   align-items: center;
   display: flex;
   justify-content: center;
-  &, &:hover {
-    background: linear-gradient(77.21deg, #5C50CA 2.18%, #7958D8 99.78%);
+  & {
+    background: ${theme.colors.primary};
+  }
+  &:hover {
+    background: ${theme.colors.homeButtonHoverBg};
   }
 `;
 const LoginButtonLogo = styled.img`
@@ -316,28 +315,7 @@ export const Sidebar = {
   `
 };
 
-const _DummyImage = styled.img`
-  border-radius: 5px;
-  max-width: 100%;
-
-  & + & {
-    margin-top: 30px;
-  }
-`;
-export class DummyImage extends React.PureComponent {
-  constructor() {
-    super();
-    this.dummyImages = {
-      Dummy1, Dummy2, Dummy3, Dummy4
-    };
-  }
-  render() {
-    const { variant=1 } = this.props;
-    return <_DummyImage src={this.dummyImages[`Dummy${variant}`]} />;
-  }
-}
-
- export const CapsuleHeading = styled.h3`
+export const CapsuleHeading = styled.h3`
   border-radius: 100px;
   font-size: ${14/16}rem;
   font-weight: 600;
@@ -346,6 +324,7 @@ export class DummyImage extends React.PureComponent {
   position: absolute;
   text-align: center;
   text-transform: uppercase;
+  ${medium("padding: 1rem 100px;")}
   ${props => props.bottom
     ? `
       bottom: 0;

@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import { large } from "../shared/grid";
-import SecureIcon from "../../images/secure-icon.svg";
+import SecureIcon from "../../images/secure-icon.png";
 
 const Security = () => {
   const { t } = useTranslation();
