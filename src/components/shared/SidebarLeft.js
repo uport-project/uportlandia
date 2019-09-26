@@ -15,7 +15,7 @@ const SidebarLeft = props => {
     }
   };
   return (<Wrapper span={3}>
-    <h3 style={styles.heading}>{t("get your")} {" "} {t(service.displayName)}</h3>
+    <h3 style={styles.heading}>{t(service.displayName)}</h3>
     <ol>
       {service.steps.map((step, idx) => <li key={step}>
         {t(step)}

@@ -1,9 +1,9 @@
 {
-  "name": "uPortlandia",
-  "version": "1.2.0",
+  "name": "serto-ecosystems",
+  "version": "0.0.1",
   "private": true,
-  "homepage": "https://uportlandia.uport.me",
-  "repository": "https://github.com/uport-project/cleverland",
+  "homepage": "https://serto-ecosystems.uport.me",
+  "repository": "https://github.com/uport-project/serto-ecosystems",
   "devDependencies": {
     "@sentry/webpack-plugin": "^1.6.2",
     "aws-sdk": "^2.462.0",

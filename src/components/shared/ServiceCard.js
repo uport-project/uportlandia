@@ -25,6 +25,7 @@ class HomeCard extends React.Component {
       shareClaims=[],
       shareServices=[],
       receiveClaims=[],
+      getCTA,
       t
     } = this.props;
 
@@ -79,7 +80,9 @@ class HomeCard extends React.Component {
               </ShareClaims>}
               <Button onClick={this.promptAndRedirect}>
                 <img src={popupIcon} alt="" />
-                {t("getClaimLabel")} {" "} {name}
+                {getCTA
+                  ? t(getCTA)
+                  : `${t("getClaimLabel")} ${name}`}
               </Button>
             </Issued>
           </Col>
