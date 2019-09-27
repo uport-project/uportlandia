@@ -9,8 +9,8 @@ module.exports.config = {
     prod: "serto-ecosystems-prod"
   },
   domain: {
-    // stage: "ecosystems.uport.space",
-    // prod: "ecosystems.uport.me"
+    stage: "ecosystems.uport.space",
+    prod: "ecosystems.uport.me"
   },
   cors: true
 };
