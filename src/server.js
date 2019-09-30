@@ -63,6 +63,7 @@ app.post("/api/send_verification", async (req, res) => {
 app.post("/api/verify_credentials", async (req, res) => {
   const { serviceId, token } = req.body;
   const credentials = getCredentials(serviceId);
+  console.log("Service ID: ", serviceId, "; DID: ", credentials.did);
   const response = await verifyJWT(token, { audience: credentials.did });
   const profile = await credentials.processDisclosurePayload(response);
   profile.publicEncKey = profile.boxPub;

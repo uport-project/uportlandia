@@ -71,7 +71,13 @@ class Attestation extends React.Component {
     const { serviceId, claim } = this.props;
     const requestId = shortId.generate();
     this.setState({ qrData: null, requestId });
-    this.props.sendVerification(serviceId, requestId, this.props.profile, claim);
+    this.props.sendVerification(
+      serviceId,
+      requestId,
+      this.props.profile,
+      claim,
+      this.isMobile
+    );
   }
   render() {
     const { showQR, qrData } = this.state;

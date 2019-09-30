@@ -163,7 +163,7 @@ class UportLogin extends React.Component {
                 </Refresh>}
               </Status>
               <AppStoreLinks>
-                <p>{t("Don’t have the app? Download it from your store")}</p>
+                <p>{t("Don't have the app? Download it from your store")}</p>
                 <a href="https://itunes.apple.com/us/app/uport-id/id1123434510?mt=8" target="_blank">
                   <img src={itunesImg} alt="itunes" />
                 </a>

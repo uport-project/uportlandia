@@ -30,6 +30,7 @@ export default {
   // Footer
   "Powered by": "Con el poder de",
 
+  "Driver's License": "Licencia de Conducir",
   "Vericheck Identity Verifier": "Vericheck Identity Verifier",
   "driversLicenseDisplayName": "Licencia de Conducir",
   "driversLicenseDescription": "Identifícate con un clic. Obtenga su licencia de conducir digital a través de Vericheck. Comience a disfrutar de todos los servicios que el ecosistema tiene para ofrecer.",

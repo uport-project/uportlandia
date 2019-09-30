@@ -103,6 +103,7 @@ export default {
   "Address": "Address",
   "Date of Birth": "Date of Birth",
 
+  "Driver's License": "Driver's License",
   "Safe Driver Badge": "Safe Driver Badge",
   "Qualifies for Car Loan": "Qualifies for Car Loan",
   "Get Qualified": "Get Qualified",

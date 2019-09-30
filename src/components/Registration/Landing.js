@@ -58,7 +58,6 @@ class Landing extends React.Component {
             <ServiceRequirements service={SERVICES[serviceId]} />
           </Card>
         </Col>
-
       </Grid>
       <LoginModal
         show={loginModal}

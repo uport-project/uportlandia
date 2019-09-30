@@ -44,8 +44,8 @@ class Landing extends React.Component {
   render() {
     const { attestationModal } = this.state;
     const { verification, data, redirectToRegnReceived, t } = this.props;
-    // if(!this.props.isLoggedIn)
-    //   return <Redirect to={SERVICES[serviceId].url} />;
+    if(!this.props.isLoggedIn)
+      return <Redirect to={SERVICES[serviceId].url} />;
     const CTA = () => (<Card.CTA>
       {isMobile()
         ? <ThemedExtLink themeId={SERVICES[serviceId].id}

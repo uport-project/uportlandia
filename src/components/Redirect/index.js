@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   background: #F0F0F0;
   height: 100vh;
   section {
-    padding: 20vh 0 0 0;
+    padding: 20vh 20px 0;
     text-align: center;
     ${medium(`
       margin: 0 auto;

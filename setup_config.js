@@ -64,7 +64,7 @@ module.exports.ISSUER_PROFILES = [{
   },
   profileImage: "src/images/ride-sharing-logo.png"
 }, {
-  id: "INVESTMENT",
+  id: "INVESTMENTS",
   name: "Globe Capital Investments",
   url: {
     stage: "https://ecosystems.uport.space/investments",

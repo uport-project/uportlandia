@@ -73,7 +73,7 @@ const Content = styled.div`
   }
 `;
 ContentCard.CTA = styled.div`
-  ${Button}.long {
+  .long {
     border-radius: 0 0 5px 5px;
     font-size: 1rem;
     padding: 15px;
