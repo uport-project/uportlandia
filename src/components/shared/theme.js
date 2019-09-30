@@ -51,7 +51,7 @@ export const colors = {
   error: "#d24e4e",
   errorBg: "#ffebee",
   homeButtonBg: "#5952FF",
-  homeButtonHoverBg: "#150DFC",
+  homeButtonHoverBg: "#4641CC",
 
   DRIVERS_LICENSE: {
     primary: "#FF7058",

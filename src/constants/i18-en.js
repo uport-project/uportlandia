@@ -220,7 +220,7 @@ export default {
 
   // Redirect
   "See you later!": "See you later!",
-  "You are leaving the uPortlandia dashboard":  "You are leaving the uPortlandia dashboard and will be automatically redirected to",
+  "You are leaving the dashboard":  "You are leaving the Serto Ecosystem dashboard and will be automatically redirected to",
   "website to continue": "website to continue.",
   "Bye!": "Bye!",
 

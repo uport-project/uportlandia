@@ -70,6 +70,7 @@ const PrimaryButtonStyle = css`
   text-align: center;
   text-transform: uppercase;
   transform: matrix(1, 0, 0, 1.01, 0, 0);
+  transition: background-color 0.2s;
   &:hover {
     background: ${theme.colors.homeButtonHoverBg};
   }
@@ -86,6 +87,7 @@ const SecondaryButtonStyle = css`
   padding: 12px 22px;
   text-align: center;
   text-transform: uppercase;
+  transition: background-color 0.2s;
   &:hover {
     background: ${theme.gradient5};
   }

@@ -77,8 +77,10 @@ ContentCard.CTA = styled.div`
     border-radius: 0 0 5px 5px;
     font-size: 1rem;
     padding: 15px;
+    position: relative;
     text-transform: none;
     width: 100%;
+    z-index: 2;
   }
 `;
 const Spacer = styled.div`
