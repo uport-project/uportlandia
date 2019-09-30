@@ -10,16 +10,27 @@ import ArrowLeft from "../../images/arrow-left.svg";
 const LikeTheDemo = () => {
   const { t } = useTranslation();
   return (<Wrapper>
-    <h3>{t("Want to build your own ecosystem?")}</h3>
+    <h3>{t("Like the demo?")}</h3>
     <section>
       <Header>
         <Icon src={DevIcon} />
         <h4>{t("Build user-centric trusted data apps with uPort")}</h4>
       </Header>
       <p>
-        {t("Find out more about how you can create a trusted network")}
+        {t("Issue, request and verify information about your users")}
       </p>
       <ExtLink target="_blank" href="https://developer.uport.me">{t("View Documentation")}</ExtLink>
+    </section>
+    <hr />
+    <section>
+      <Header>
+        <Icon src={CitizenIcon} />
+        <h4>{t("Issue verified information to citizens in your city")}</h4>
+      </Header>
+      <p>
+        {t("Build trusted data ecosystem in your city")}
+      </p>
+      <ExtLink target="_blank" href="https://uport.zendesk.com/hc/en-us">{t("Contact Us")}</ExtLink>
     </section>
   </Wrapper>)
 };

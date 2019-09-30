@@ -1,2 +1,2 @@
 // Do not edit
-export default "https://k064h2r4nj.execute-api.us-east-1.amazonaws.com/prod/";
+export default "https://gn80ai4ca2.execute-api.us-east-1.amazonaws.com/prod/";

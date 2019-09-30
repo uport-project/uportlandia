@@ -1,74 +1,74 @@
 module.exports.config = {
   region: "us-east-1",
-  serviceName: "serto-ecosystems",
+  serviceName: "uportlandia",
   ssmParam:{
-    issuers: "/serto-ecosystems/${opt:stage}/issuers"
+    issuers: "/uportlandia/${opt:stage}/issuers"
   },
   s3Bucket: {
-    stage: "serto-ecosystems-stage",
-    prod: "serto-ecosystems-prod"
+    stage: "cleverland-stage",
+    prod: "cleverland-prod"
   },
   domain: {
-    stage: "ecosystems.uport.space",
-    prod: "ecosystems.uport.me"
+    stage: "uportlandia.uport.space",
+    prod: "uportlandia.uport.me"
   },
   cors: true
 };
 
 module.exports.ISSUER_PROFILES = [{
-  id: "DRIVERS_LICENSE",
-  name: "Vericheck Identity Verifier",
+  id: "CITY_ID",
+  name: "The City of uPortlandia",
   url: {
-    stage: "https://ecosystems.uport.space/drivers_license",
-    prod: "https://ecosystems.uport.me/drivers_license"
+    stage: "https://uportlandia.uport.space/city",
+    prod: "https://uportlandia.uport.me/city"
   },
-  profileImage: "src/images/drivers-license-logo.png"
+  profileImage: "src/images/city-logo.png"
 }, {
-  id: "SAFE_DRIVER",
-  name: "Mappe Maps & Navigation",
+  id: "DIPLOMA",
+  name: "The University of uPortlandia",
   url: {
-    stage: "https://ecosystems.uport.space/safe_driver",
-    prod: "https://ecosystems.uport.me/safe_driver"
+    stage: "https://uportlandia.uport.space/university",
+    prod: "https://uportlandia.uport.me/university"
   },
-  profileImage: "src/images/safe-driver-logo.png"
+  profileImage: "src/images/university-logo.png"
 }, {
-  id: "CAR_LOAN",
-  name: "Simple Fund Bank",
+  id: "COMPANY",
+  name: "Dream Job LLC.",
   url: {
-    stage: "https://ecosystems.uport.space/car_loan",
-    prod: "https://ecosystems.uport.me/car_loan"
+    stage: "https://uportlandia.uport.space/company",
+    prod: "https://uportlandia.uport.me/company"
   },
-  profileImage: "src/images/car-loan-logo.png"
-}, {
-  id: "CAR_DEALER",
-  name: "McQuinn Car Dealership",
-  url: {
-    stage: "https://ecosystems.uport.space/car_dealer",
-    prod: "https://ecosystems.uport.me/car_dealer"
-  },
-  profileImage: "src/images/car-dealer-logo.png"
+  profileImage: "src/images/company-logo.png"
 }, {
   id: "INSURANCE",
-  name: "Better Safe Insurance Company",
+  name: "People Care LLC.",
   url: {
-    stage: "https://ecosystems.uport.space/insurance",
-    prod: "https://ecosystems.uport.me/insurance"
+    stage: "https://uportlandia.uport.space/insurance",
+    prod: "https://uportlandia.uport.me/insurance"
   },
   profileImage: "src/images/insurance-logo.png"
 }, {
-  id: "RIDE_SHARING",
-  name: "Ride Away Ride-Sharing App",
+  id: "PHARMACY",
+  name: "Your Health Medical Center",
   url: {
-    stage: "https://ecosystems.uport.space/ride_sharing",
-    prod: "https://ecosystems.uport.me/ride_sharing"
+    stage: "https://uportlandia.uport.space/pharmacy",
+    prod: "https://uportlandia.uport.me/pharmacy"
   },
-  profileImage: "src/images/ride-sharing-logo.png"
+  profileImage: "src/images/pharmacy-logo.png"
 }, {
-  id: "INVESTMENTS",
-  name: "Globe Capital Investments",
+  id: "TRANSPORT",
+  name: "uPortlandia City Transit",
   url: {
-    stage: "https://ecosystems.uport.space/investments",
-    prod: "https://ecosystems.uport.me/investments"
+    stage: "https://uportlandia.uport.space/transport",
+    prod: "https://uportlandia.uport.me/transport"
   },
-  profileImage: "src/images/investments-logo.png"
+  profileImage: "src/images/transport-logo.png"
+}, {
+  id: "MUSEUM",
+  name: "uPortlandia Museum of Modern Art",
+  url: {
+    stage: "https://uportlandia.uport.space/museum",
+    prod: "https://uportlandia.uport.me/museum"
+  },
+  profileImage: "src/images/museum-logo.png"
 }];

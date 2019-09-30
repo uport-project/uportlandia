@@ -25,7 +25,6 @@ class HomeCard extends React.Component {
       shareClaims=[],
       shareServices=[],
       receiveClaims=[],
-      getCTA,
       t
     } = this.props;
 
@@ -80,9 +79,7 @@ class HomeCard extends React.Component {
               </ShareClaims>}
               <Button onClick={this.promptAndRedirect}>
                 <img src={popupIcon} alt="" />
-                {getCTA
-                  ? t(getCTA)
-                  : `${t("getClaimLabel")} ${name}`}
+                {t("getClaimLabel")} {" "} {name}
               </Button>
             </Issued>
           </Col>
@@ -136,9 +133,6 @@ const Content = styled.div`
       `)}
     }
   }
-  ${Button}:hover {
-    background: ${theme.colors.homeButtonHoverBg};
-  }
 `;
 const Issuer = styled.div`
   padding: 30px 30px 0;
@@ -162,7 +156,7 @@ const Header = styled.div`;
 `;
 Header.Icon = styled.img`
   border-radius: 15px;
-  // box-shadow: inset 0 0 2px rgba(114, 114, 114, 0.3);
+  box-shadow: inset 0 0 2px rgba(114, 114, 114, 0.3);
   grid-area: 1 / 1 / 3 / 2;
   max-height: 100%;
   max-width: 100%;

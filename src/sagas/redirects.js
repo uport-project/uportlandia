@@ -24,7 +24,7 @@ function* redirectToHome() {
 }
 
 function* redirectToRegnHome() {
-  yield put(push("/drivers_license"));
+  yield put(push("/city"));
 }
 
 function* redirectToRegnForm() {

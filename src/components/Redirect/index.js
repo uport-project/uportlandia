@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 import { getExternalNavName } from "../../selectors";
 import * as theme from "../shared/theme";
 import { medium } from "../shared/grid";
-import waveImg from "../../images/wave.png";
+import waveImg from "../../images/wave.svg";
 
 const Redirect = ({ name }) => {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ const Redirect = ({ name }) => {
     <section>
       <h1>{t("See you later!")}</h1>
       <p>
-        {t("You are leaving the dashboard")} {" "}
+        {t("You are leaving the uPortlandia dashboard")} {" "}
         <strong>{t(name)}</strong>{" "}
         {t("website to continue")}
       </p>
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   background: #F0F0F0;
   height: 100vh;
   section {
-    padding: 20vh 20px 0;
+    padding: 20vh 0 0 0;
     text-align: center;
     ${medium(`
       margin: 0 auto;
@@ -58,8 +58,6 @@ const Wrapper = styled.div`
     animation: ${waveAnim} 1s linear infinite;
     display: block;
     margin: 30px auto 0;
-    max-height: 128px;
-    max-width: 128px;
     transform-origin: bottom right;
   }
 `;

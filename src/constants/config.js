@@ -1,45 +1,30 @@
 import dayjs from "dayjs";
 
-// Logos
-import logo from "../images/serto-black-horiz.svg";
-import DriversLicenseIcon from "../images/drivers-license-logo.png";
-import SafeDriverIcon from "../images/safe-driver-logo.png";
-import CarLoanIcon from "../images/car-loan-logo.png";
-import CarDealerIcon from "../images/car-dealer-logo.png";
+// Images/Logos
+import logo from "../images/uport-logo.svg";
+import CityIDIcon from "../images/city-logo.png";
+import DiplomaIcon from "../images/university-logo.png";
+import EmploymentIcon from "../images/company-logo.png";
 import InsuranceIcon from "../images/insurance-logo.png";
-import RideSharingIcon from "../images/ride-sharing-logo.png";
-import InvestmentsIcon from "../images/investments-logo.png";
-// Good news icon
-import SafeDriverGoodIcon from "../images/smiley-face-safe_driver.png";
-import CarLoanGoodIcon from "../images/smiley-face-car_loan.png";
-import CarDealerGoodIcon from "../images/smiley-face-car_dealer.png";
-import InsuranceGoodIcon from "../images/smiley-face-insurance.png";
-import RideSharingGoodIcon from "../images/smiley-face-ride_sharing.png";
-import InvestmentsGoodIcon from "../images/smiley-face-investments.png";
-// Success image
-import DriversLicenseSuccessIcon from "../images/congratulations-drivers_license.png";
-import SafeDriverSuccessIcon from "../images/congratulations-safe_driver.png";
-import CarLoanSuccessIcon from "../images/congratulations-car_loan.png";
-import CarDealerSuccessIcon from "../images/congratulations-car_dealer.png";
-import InsuranceSuccessIcon from "../images/congratulations-insurance.png";
-import RideSharingSuccessIcon from "../images/congratulations-ride_sharing.png";
-import InvestmentsSuccessIcon from "../images/congratulations-investments.png";
-
+import PharmacyIcon from "../images/pharmacy-logo.png";
+import TransportIcon from "../images/transport-logo.png";
+import MuseumIcon from "../images/museum-logo.png";
 import COUNTRIES from "./countries";
+
 import getSignerUrl from "./signerUrl";
 
 // Home Page
 export const home = {
-  logo,
+  logo: logo,
   logoLink: "https://uport.me/",
-  name: "Serto Ecosystems"
+  name: "uPortlandia"
 };
 
 // Registration Flow
 export const registration = {
-  path: "/DRIVERS_LICENSE",
-  name: "Driver's License",
-  serviceId: "DRIVERS_LICENSE",
+  path: "/city",
+  name: "City ID",
+  serviceId: "CITY_ID",
   text: {
     landingSteps: [
       "regnLandingStep1",
@@ -127,183 +112,162 @@ export const registration = {
   }
 };
 
-const DRIVERS_LICENSE = { // This should match the Registration Config
-  id: "DRIVERS_LICENSE",
-  name: "Driver's License",
-  displayName: "driversLicenseDisplayName",
-  icon: DriversLicenseIcon,
-  successIcon: DriversLicenseSuccessIcon,
-  entity: "Vericheck Identity Verifier",
-  description: "driversLicenseDescription",
-  url: "/drivers_license",
-  claim: "Driver's License",
+const CITY_ID = { // This should match the Registration Config
+  id: "CITY_ID",
+  name: "City ID",
+  displayName: "cityIdDisplayName",
+  icon: CityIDIcon,
+  entity: "The City of uPortlandia",
+  description: "cityIdDescription",
+  url: "/city",
+  claim: "Uportlandia City ID",
   steps: [
-    "driversLicenseStep1",
-    "driversLicenseStep2",
-    "driversLicenseStep3",
-    "driversLicenseStep4"
+    "cityIdStep1",
+    "cityIdStep2",
+    "cityIdStep3",
+    "cityIdStep4"
   ]
 };
 
 // All Services
-const SAFE_DRIVER = {
-  id: "SAFE_DRIVER",
-  name: "Safe Driver Badge",
-  displayName: "safeDriverDisplayName",
-  icon: SafeDriverIcon,
-  goodNewsIcon: SafeDriverGoodIcon,
-  successIcon: SafeDriverSuccessIcon,
-  entity: "Mappe Maps & Navigation",
-  description: "safeDriverDescription",
-  url: "/safe_driver",
-  claim: "Safe Driver Badge",
-  heading: "safeDriverHeading",
+const DIPLOMA = {
+  id: "DIPLOMA",
+  name: "Diploma",
+  displayName: "diplomaDisplayName",
+  icon: DiplomaIcon,
+  entity: "The University of uPortlandia",
+  description: "diplomaDescription",
+  url: "/university",
+  claim: "Diploma",
   steps: [
-    "safeDriverStep1",
-    "safeDriverStep2",
-    "safeDriverStep3"
+    "diplomaStep1",
+    "diplomaStep2",
+    "diplomaStep3"
   ],
   details: [
-    "safeDriverDetail1",
-    "safeDriverDetail2"
+    "diplomaDetail1",
+    "diplomaDetail2"
   ],
   claimData: {
-    "Safe Driver": "Yes"
+    "School Name": "The University of uPortlandia",
+    "Program Name": "French linguistics",
+    "Graduation Year": "2019",
+    "Final Grades": "B+"
   }
 };
 
-const CAR_LOAN = {
-  id: "CAR_LOAN",
-  name: "Simple Fund Bank",
-  displayName: "carLoanDisplayName",
-  icon: CarLoanIcon,
-  goodNewsIcon: CarLoanGoodIcon,
-  successIcon: CarLoanSuccessIcon,
-  entity: "Simple Fund Bank",
-  heading: "carLoanHeading",
-  description: "carLoanDescription",
-  getCTA: "Get Qualified",
-  url: "/car_loan",
-  claim: "Car Loan Qualification",
+const COMPANY = {
+  id: "COMPANY",
+  name: "Employment Verification",
+  displayName: "employmentDisplayName",
+  icon: EmploymentIcon,
+  entity: "Dream Job LLC",
+  description: "employmentDescription",
+  url: "/company",
+  claim: "Employment",
   steps: [
-    "carLoanStep1",
-    "carLoanStep2",
-    "carLoanStep3"
+    "employmentStep1",
+    "employmentStep2",
+    "employmentStep3"
   ],
   details: [
-    "carLoanDetail1",
-    "carLoanDetail2"
+    "companyDetail1",
+    "companyDetail2"
   ],
   claimData: {
-    "Qualifies for Car Loan": "Yes"
-  }
-};
-
-const CAR_DEALER = {
-  id: "CAR_DEALER",
-  name: "Car Title",
-  displayName: "carDealerDisplayName",
-  icon: CarDealerIcon,
-  goodNewsIcon: CarDealerGoodIcon,
-  successIcon: CarDealerSuccessIcon,
-  entity: "McQuinn Car Dealership",
-  heading: "carDealerHeading",
-  description: "carDealerDescription",
-  getCTA: "Get Brand New Car",
-  url: "/car_dealer",
-  claim: "Car Title",
-  steps: [
-    "carDealerStep1",
-    "carDealerStep2",
-    "carDealerStep3"
-  ],
-  details: [
-    "carDealerDetail1",
-    "carDealerDetail2"
-  ],
-  claimData: {
-    "Dummy 1": "Yes",
-    "Dummy 2": "Yes"
+    "Company Name": "Dream Job LLC.",
+    "Salary": "$100,000",
+    "Date of Employment": "01/06/2019"
   }
 };
 
 const INSURANCE = {
   id: "INSURANCE",
-  name: "Car Insurance",
+  name: "Insurance Coverage",
   displayName: "insuranceDisplayName",
   icon: InsuranceIcon,
-  goodNewsIcon: InsuranceGoodIcon,
-  successIcon: InsuranceSuccessIcon,
-  entity: "Better Safe Insurance Company",
-  heading: "insuranceHeading",
+  entity: "People Care Insurance LLC",
   description: "insuranceDescription",
   url: "/insurance",
-  claim: "Car Insurance",
+  claim: "Insurance",
   steps: [
     "insuranceStep1",
     "insuranceStep2",
     "insuranceStep3"
   ],
   details: [
-    "insuranceDetail1",
-    "insuranceDetail2"
+    "insuranceDetail1"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Policy Number": "0000",
+    "Group Number": "G-01",
+    "Dependencies": "2"
   }
 };
 
-const RIDE_SHARING = {
-  id: "RIDE_SHARING",
-  name: "Driver Verification",
-  displayName: "rideSharingDisplayName",
-  icon: RideSharingIcon,
-  goodNewsIcon: RideSharingGoodIcon,
-  successIcon: RideSharingSuccessIcon,
-  entity: "Ride Away Ride-Sharing App",
-  heading: "rideSharingHeading",
-  description: "rideSharingDescription",
-  getCTA: "Become a Driver",
-  url: "/ride_sharing",
-  claim: "Driver Verification",
+const PHARMACY = {
+  id: "PHARMACY",
+  name: "Prescription Drug",
+  displayName: "pharmacyDisplayName",
+  icon: PharmacyIcon,
+  entity: "Your Health Medical Center",
+  description: "pharmacyDescription",
+  url: "/pharmacy",
+  claim: "Prescription Drug",
   steps: [
-    "rideSharingStep1",
-    "rideSharingStep2",
-    "rideSharingStep3"
+    "pharmacyStep1",
+    "pharmacyStep2",
+    "pharmacyStep3"
   ],
   details: [
-    "rideSharingDetail1",
-    "rideSharingDetail2"
+    "pharmacyDetail1"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Prescription Drug": "Yes"
   }
 };
 
-const INVESTMENTS = {
-  id: "INVESTMENTS",
-  name: "Ride Away Stock Purchase Plan",
-  displayName: "investmentsDisplayName",
-  icon: InvestmentsIcon,
-  goodNewsIcon: InvestmentsGoodIcon,
-  successIcon: InvestmentsSuccessIcon,
-  entity: "Global Capital Investments",
-  heading: "investmentsHeading",
-  description: "investmentsDescription",
-  getCTA: "Become a Shareholder",
-  url: "/investments",
-  claim: "Ride Away Stock Purchase Plan",
+const TRANSPORT = {
+  id: "TRANSPORT",
+  name: "Monthly Bus Ticket",
+  displayName: "transportDisplayName",
+  icon: TransportIcon,
+  entity: "uPortlandia City Transit",
+  description: "transportDescription",
+  url: "/transport",
+  claim: "Bus Ticket",
   steps: [
-    "investmentsStep1",
-    "investmentsStep2",
-    "investmentsStep3"
+    "transportStep1",
+    "transportStep2",
+    "transportStep3"
   ],
   details: [
-    "investmentsDetail1",
-    "investmentsDetail2"
+    "transportDetail1"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Monthly Bus Ticket": "June 2019",
+  }
+};
+
+const MUSEUM = {
+  id: "MUSEUM",
+  name: "Annual Membership",
+  displayName: "museumDisplayName",
+  icon: MuseumIcon,
+  entity: "uPortlandia Museum of Modern Art",
+  description: "museumDescription",
+  url: "/museum",
+  claim: "Museum Membership",
+  steps: [
+    "museumStep1",
+    "museumStep2",
+    "museumStep3"
+  ],
+  details: [
+    "museumDetail1"
+  ],
+  claimData: {
+    "Annual Membership": "2019"
   }
 };
 
@@ -311,7 +275,7 @@ const YOURSELF = {
   id: "YOURSELF",
   name: "Yourself, Any Issuer",
   displayName: "Yourself, Any Issuer",
-  icon: DriversLicenseIcon,
+  icon: CityIDIcon,
   entity: "Yourself, Any Issuer",
   description: "Yourself, Any Issuer"
 };
@@ -321,106 +285,152 @@ const FIRST_NAME = {
   id: "firstName",
   name: "First Name",
   displayName: "First Name",
-  issuedBy: [DRIVERS_LICENSE],
-  honoredBy: [SAFE_DRIVER]
+  issuedBy: [CITY_ID],
+  honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const LAST_NAME = {
   id: "lastName",
   name: "Last Name",
   displayName: "Last Name",
-  issuedBy: [DRIVERS_LICENSE],
-  honoredBy: [SAFE_DRIVER]
+  issuedBy: [CITY_ID],
+  honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const DATE_OF_BIRTH = {
   id: "dob",
   name: "Date of Birth",
   displayName: "Date of Birth",
-  issuedBy: [DRIVERS_LICENSE],
-  honoredBy: [SAFE_DRIVER]
+  issuedBy: [CITY_ID],
+  honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
 const ADDRESS = {
   id: "address",
   name: "Address",
   displayName: "Address",
-  issuedBy: [DRIVERS_LICENSE],
-  honoredBy: [SAFE_DRIVER]
+  issuedBy: [CITY_ID],
+  honoredBy: [DIPLOMA, INSURANCE, MUSEUM, TRANSPORT, PHARMACY]
 };
 
-const SAFE_DRIVER_CLAIM = {
-  name: "Safe Driver Badge",
-  displayName: "Safe Driver Badge",
-  issuedBy: [SAFE_DRIVER],
-  honoredBy: [CAR_LOAN]
+const SCHOOL_NAME = {
+  name: "School Name",
+  displayName: "School Name",
+  issuedBy: [DIPLOMA],
+  honoredBy: [COMPANY]
 };
 
-const CAR_LOAN_CLAIM = {
-  name: "Qualifies for Car Loan",
-  displayName: "Qualifies for Car Loan",
-  issuedBy: [CAR_LOAN],
-  honoredBy: [CAR_DEALER]
+const PROGRAM_NAME = {
+  name: "Program Name",
+  displayName: "Program Name",
+  type: "required",
+  issuedBy: [DIPLOMA],
+  honoredBy: [COMPANY]
 };
 
-const CAR_TITLE_CLAIM1 = {
-  name: "Car Title Claim 1",
-  displayName: "Car Title Claim 1",
-  issuedBy: [CAR_DEALER],
+const FINAL_GRADES = {
+  name: "Final Grades",
+  displayName: "Final Grades",
+  issuedBy: [DIPLOMA],
+  honoredBy: [COMPANY]
+};
+
+const GRADUATION_YEAR = {
+  name: "Graduation Year",
+  displayName: "Graduation Year",
+  issuedBy: [DIPLOMA],
+  honoredBy: [INSURANCE, COMPANY]
+};
+
+const COMPANY_NAME = {
+  name: "Company Name",
+  displayName: "Company Name",
+  issuedBy: [COMPANY],
   honoredBy: [INSURANCE]
 };
 
-const CAR_TITLE_CLAIM2 = {
-  name: "Car Title Claim 2",
-  displayName: "Car Title Claim 2",
-  issuedBy: [CAR_DEALER],
+const SALARY = {
+  name: "Salary",
+  displayName: "Salary",
+  issuedBy: [COMPANY]
+};
+
+const DATE_OF_EMPLOYMENT = {
+  name: "Date of Employment",
+  displayName: "Date of Employment",
+  issuedBy: [COMPANY],
   honoredBy: [INSURANCE]
 };
 
-const INSURANCE_CLAIM = {
-  name: "Car Insurance",
-  displayName: "Car Insurance",
+const POLICY_NUMBER = {
+  name: "Policy Number",
+  displayName: "Policy Number",
   issuedBy: [INSURANCE],
-  honoredBy: [RIDE_SHARING]
+  honoredBy: [PHARMACY]
 };
 
-const DRIVER_VERIFICATION = {
-  name: "Driver Verification",
-  displayName: "Driver Verification",
-  issuedBy: [RIDE_SHARING],
-  honoredBy: [INVESTMENTS]
+const GROUP_NUMBER = {
+  name: "Group Number",
+  displayName: "Group Number",
+  issuedBy: [INSURANCE],
+  honoredBy: [PHARMACY]
 };
 
-const INVESTMENTS_CLAIM = {
-  name: "Ride Away Stock Purchase Plan",
-  displayName: "Ride Away Stock Purchase Plan",
-  issuedBy: [INVESTMENTS],
-  honoredBy: []
+const DEPENDENCIES = {
+  name: "Dependencies",
+  displayName: "Dependencies",
+  issuedBy: [INSURANCE],
+  honoredBy: [PHARMACY]
+};
+
+const PRESCRIPTION_DRUG = {
+  name: "Prescription Drug",
+  displayName: "pharmacyDisplayName",
+  issuedBy: [PHARMACY],
+  honoredBy: [PHARMACY]
+};
+
+const BUS_TICKET = {
+  name: "Monthly Bus Ticket",
+  displayName: "transportDisplayName",
+  issuedBy: [TRANSPORT],
+  honoredBy: [TRANSPORT]
+};
+
+const MUSEUM_MEMBERSHIP = {
+  name: "Annual Membership",
+  displayName: "museumDisplayName",
+  issuedBy: [MUSEUM],
+  honoredBy: [MUSEUM]
 };
 
 // Attach claims to services
-DRIVERS_LICENSE.generatedClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH];
-DRIVERS_LICENSE.requiredClaims = DRIVERS_LICENSE.generatedClaims.map(c => ({
+CITY_ID.generatedClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH];
+CITY_ID.requiredClaims = CITY_ID.generatedClaims.map(c => ({
   ...c,
   issuedBy: [YOURSELF]
 }));
-SAFE_DRIVER.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
-SAFE_DRIVER.requiredServices = [DRIVERS_LICENSE];
-SAFE_DRIVER.generatedClaims = [SAFE_DRIVER_CLAIM];
-CAR_LOAN.requiredServices = [DRIVERS_LICENSE, SAFE_DRIVER];
-CAR_LOAN.generatedClaims = [CAR_LOAN_CLAIM];
-CAR_DEALER.requiredServices = [DRIVERS_LICENSE, CAR_LOAN];
-CAR_DEALER.generatedClaims = [CAR_TITLE_CLAIM1, CAR_TITLE_CLAIM2];
-INSURANCE.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, SAFE_DRIVER];
-INSURANCE.generatedClaims = [INSURANCE_CLAIM];
-RIDE_SHARING.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, INSURANCE, SAFE_DRIVER];
-RIDE_SHARING.generatedClaims = [DRIVER_VERIFICATION];
-INVESTMENTS.requiredServices = [DRIVERS_LICENSE, RIDE_SHARING, SAFE_DRIVER];
-INVESTMENTS.generatedClaims = [INVESTMENTS_CLAIM]
+DIPLOMA.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
+DIPLOMA.requiredServices = [CITY_ID];
+DIPLOMA.generatedClaims = [SCHOOL_NAME, PROGRAM_NAME, GRADUATION_YEAR, FINAL_GRADES];
+COMPANY.requiredClaims = [FIRST_NAME, LAST_NAME, SCHOOL_NAME, PROGRAM_NAME, FINAL_GRADES];
+COMPANY.requiredServices = [CITY_ID, DIPLOMA];
+COMPANY.generatedClaims = [COMPANY_NAME, SALARY, DATE_OF_EMPLOYMENT];
+INSURANCE.requiredClaims = [FIRST_NAME, LAST_NAME, COMPANY_NAME, DATE_OF_EMPLOYMENT];
+INSURANCE.requiredServices = [CITY_ID, COMPANY];
+INSURANCE.generatedClaims = [POLICY_NUMBER, GROUP_NUMBER, DEPENDENCIES];
+PHARMACY.requiredClaims = [FIRST_NAME, LAST_NAME, POLICY_NUMBER, GRADUATION_YEAR, DEPENDENCIES];
+PHARMACY.requiredServices = [CITY_ID, INSURANCE, DIPLOMA];
+PHARMACY.generatedClaims = [PRESCRIPTION_DRUG];
+TRANSPORT.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH, GRADUATION_YEAR];
+TRANSPORT.requiredServices = [CITY_ID, DIPLOMA];
+TRANSPORT.generatedClaims = [BUS_TICKET];
+MUSEUM.requiredClaims = [FIRST_NAME, LAST_NAME, ADDRESS, DATE_OF_BIRTH]
+MUSEUM.requiredServices = [CITY_ID];
+MUSEUM.generatedClaims = [MUSEUM_MEMBERSHIP];
 
 export const SERVICES = {
-  DRIVERS_LICENSE, SAFE_DRIVER, CAR_LOAN, CAR_DEALER, INSURANCE, RIDE_SHARING,
-  INVESTMENTS
+  CITY_ID, DIPLOMA, COMPANY, INSURANCE, PHARMACY, TRANSPORT, MUSEUM
 };
 
 // Create route config for services
@@ -437,4 +447,4 @@ const getChasquiUrl = () => process.env.REACT_APP_TARGET_ENV === "prod"
 
 export const CHASQUI_URL = getChasquiUrl();
 export const SIGNER_URL = getSignerUrl();
-export const SENTRY_DSN = "";
+export const SENTRY_DSN = "https://7a87f2dc2e774d5891ec2ea565b40c05@sentry.io/1449781";

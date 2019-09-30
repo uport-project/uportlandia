@@ -53,7 +53,9 @@ class Landing extends React.Component {
         <Col span={6}>
           <Card CTA={CTA}>
             <h2>
-              {t(SERVICES[serviceId].heading)}
+              {t("Get a digital verification of your")}
+              {" "}
+              {t(SERVICES[serviceId].name)}
             </h2>
             {SERVICES[serviceId].details.length > 1
               ? <Bullets>

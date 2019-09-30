@@ -11,7 +11,7 @@ import isMobile from "../../utils/isMobile";
 import { largeHeight, medium } from "../shared/grid";
 import loadingImg from "../../images/loading.svg";
 import reloadImg from "../../images/reload.svg";
-import AcceptAttestationImg from "../../images/accept-attestation.png";
+import AcceptAttestationImg from "../../images/accept-attestation.svg";
 
 import {
   Modal,
@@ -71,13 +71,7 @@ class Attestation extends React.Component {
     const { serviceId, claim } = this.props;
     const requestId = shortId.generate();
     this.setState({ qrData: null, requestId });
-    this.props.sendVerification(
-      serviceId,
-      requestId,
-      this.props.profile,
-      claim,
-      this.isMobile
-    );
+    this.props.sendVerification(serviceId, requestId, this.props.profile, claim);
   }
   render() {
     const { showQR, qrData } = this.state;

@@ -1,8 +1,8 @@
-# Serto Ecosystems
+# uPortlandia
 
-Serto Ecosystems is our vision of the future of data and identity management.  We hope that the examples contained within this repository will serve as a guide for your adoption of sovereign identity solution(s).
+uPortlandia is our vision of the future of data and identity management.  We hope that the examples contained within this repository will serve as a guide for your adoption of sovereign identity solution(s).
 
-![Serto Ecosystems](https://j.gifs.com/wVrrvr.gif)
+![uportlandia](https://j.gifs.com/wVrrvr.gif)
 
 What's inside:
 
@@ -12,7 +12,7 @@ What's inside:
   - [x] API gateway lambda function to securely sign claims
 - [x] Setup task:
   - [x] Creates Issuer (application) Identities
-  - [x] Stores the generated Identity key/pairs in SSM
+  - [x] Stores the generated Identity key/pairs in SSM 
 
 ### Requirements
 

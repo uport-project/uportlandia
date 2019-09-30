@@ -29,7 +29,7 @@ const Registration = () => {
         />
         <Route path={`${SERVICES[serviceId].url}/form`} exact render={() =>
           <React.Fragment>
-            <BackButton url="/drivers_license" />
+            <BackButton url="/city" />
             <Form />
           </React.Fragment>}
         />
