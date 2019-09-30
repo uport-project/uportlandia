@@ -1,19 +1,26 @@
 export default {
   // Header
   "Welcome to": "Welcome to",
-  "tryDemo": "It’s the new uPort Serto demo where enterprises, businesses, and services create a trusted ecosystem to provide a seamless experience to their customers.",
+  "tryDemo": "It's the new uPort Serto demo where enterprises, businesses, and services create a trusted ecosystem to provide a seamless experience to their customers.",
   "Get Started": "Get Started",
   "Store it in the uport app": "Store it in the uPort app",
   "Own your information": "Own your information. You decide when and with whom you share it.",
   "Get access to other services": "Get access to the other services.",
   "Enjoy perks and benefits": "Get things done while enjoying all the perks and benefits.",
   "Ready? Lets do this": "Ready? Let's do this!",
+  "Who it's for": "Who it's for",
+  "Customers like Monica": "Customers, like Monica.",
+  "Monica loves driving": "Monica loves driving. She wants to buy a car and become a driver for a ride sharing service. She’s also hoping to get into the employee stock options purchase plan for drivers. This way she can have a stake in the growing ride-share company.",
+  "Be like Monica": "Be like Monica. Try out uPort for yourself",
+  "How it works": "How it works",
+  "Collect your credentials": "Collect your credentials",
+  "Receive your identity verification with one click": "Receive your identity verification and personal information with one click",
 
   // AppDownload
   "make sure you have your phone handy": "Psst... Make sure you have your phone handy with the uPort app downloaded.",
   "make sure you have the uport app downloaded": "Psst... Make sure you have the uPort app downloaded",
 
-  //ServiceCard"
+  // ServiceCard"
   "youll be asked to share": "You'll be asked to share",
   "credential included": "credential included",
   "credentials included": "credentials included",
@@ -43,7 +50,7 @@ export default {
 
   "Simple Fund Bank": "Simple Fund Bank",
   "carLoanDisplayName": "Car Loan Qualification",
-  "carLoanDescription": "Apply for a Car Loan with your Identity Verification and get pre-qualified istantly. Share your Safe Driver Badge to get a better interest rate.",
+  "carLoanDescription": "Apply for a Car Loan with your Identity Verification and get pre-qualified instantly. Share your Safe Driver Badge to get a better interest rate.",
   "carLoanStep1": "Login with uPort",
   "carLoanStep2": "Get verified",
   "carLoanStep3": "Get Qualified",
@@ -57,13 +64,13 @@ export default {
   "carDealerStep1": "Login with uPort",
   "carDealerStep2": "Get verified",
   "carDealerStep3": "Get Title",
-  "carDealerHeading": "It’s time for an upgrade.",
+  "carDealerHeading": "It's time for an upgrade.",
   "carDealerDetail1": "Upgrade the experience for both yourself and your riders.",
-  "carDealerDetail2": "Find the car of your dreams and walk of the lot in mintues.",
+  "carDealerDetail2": "Find the car of your dreams and walk off the lot in minutes.",
 
   "Better Safe Insurance Company": "Better Safe Insurance Company",
   "insuranceDisplayName": "Car Insurance",
-  "insuranceDescription": "Yes, you need Car Insurance. Get it with just one click. Prove that you’re a resposible driver and get a discount on your monthly rate.",
+  "insuranceDescription": "Yes, you need Car Insurance. Get it with just one click. Prove that you're a responsible driver and get a discount on your monthly rate.",
   "insuranceStep1": "Login with uPort",
   "insuranceStep2": "Get verified",
   "insuranceStep3": "Get Proof of Insurance",
@@ -73,7 +80,7 @@ export default {
 
   "Ride Away Ride-Sharing App": "Ride Away Ride-Sharing App",
   "rideSharingDisplayName": "Driver Verification",
-  "rideSharingDescription": "Become a Ride Away Driver and make money on your own time. But, don’t build your score from scratch! Boost your driver score with reputation credentials from other services and platforms.",
+  "rideSharingDescription": "Become a Ride Away Driver and make money on your own time. But, don't build your score from scratch! Boost your driver score with reputation credentials from other services and platforms.",
   "rideSharingStep1": "Login with uPort",
   "rideSharingStep2": "Get verified",
   "rideSharingStep3": "Get Driver Verification",
@@ -87,9 +94,9 @@ export default {
   "investmentsStep1": "Login with uPort",
   "investmentsStep2": "Get verified",
   "investmentsStep3": "Get Purchase Plan Credential",
-  "investmentsHeading": "Get a stake in Ride Away’s success!",
-  "investmentsDetail1": "Don't just drive for Ride Away, get a stake in the company’s future.",
-  "investmentsDetail2": "Prove your Driver history with Ride Aways and get access to the employee stock purchase plan!",
+  "investmentsHeading": "Get a stake in Ride Away's success!",
+  "investmentsDetail1": "Don't just drive for Ride Away, get a stake in the company's future.",
+  "investmentsDetail2": "Prove your Driver history with Ride Away and get access to the employee stock purchase plan!",
 
   "First Name": "First Name",
   "Last Name": "Last Name",
@@ -105,8 +112,7 @@ export default {
   "Car Insurance": "Car Insurance",
   "Driver Verification": "Driver Verification",
   "Global Capital Investments": "Global Capital Investments",
-  "Become a Shareholder": "Become a Shareholder",
-  "Learn More About Serto Ecosystem": "Learn More About Serto Ecosystem",
+  "Learn More About Serto Ecosystem": "Learn More About Serto Ecosystems",
 
   "get your": "Get your",
   "Receive your": "Receive your",
@@ -118,7 +124,7 @@ export default {
 
   "regnLandingHeading": "Get ready to hit the road!",
   "regnLandingStep1": "Get things done without leaving your home. No more standing in lines.",
-  "regnLandingStep2": "Access services and programs offered by the City as well as by businesses.",
+  "regnLandingStep2": "Access services and programs offered by the ecosystem.",
   "regnLandingStep3": "Start driving today!",
 
   // Home
@@ -129,12 +135,19 @@ export default {
   "Prove your identity": "Prove your identity.",
   "To kick off the process get a proof of your driver's license": "To kick off the process get a proof of your driver's license",
   "Buy a new car": "Buy a new car.",
-  "You can get it right away or get a loan for it": "You can get it right away or... get a loan for it! With a proof from your navigation system that you drive safely you’ll get a better interest rate!",
-  "Become a driver": "Become a driver.",
-  "To drive other passengers you need car insurance": "To drive other passengers you need car insurance. Luckily you've already got all required for it documents stored in your uPort app. All you need to do it to apply.",
-  "Become a shareholder": "Become a shareholder.",
-  "Even though you're your own boss": "Even though you're your own boss you're still a part of a bigger company. Take advantage of it!",
+  "You can get it right away or get a loan for it": "You can get it right away or... get a loan for it! With a proof from your navigation system that you drive safely you'll get a better interest rate!",
+  "Become a driver": "Become a driver",
   "Become a Driver": "Become a Driver",
+  "To drive other passengers you need car insurance": "To drive other passengers you need car insurance. Luckily you've already got all required for it documents stored in your uPort app. All you need to do it to apply.",
+  "Become a shareholder": "Become a shareholder",
+  "Become a Shareholder": "Become a Shareholder",
+  "Even though you're your own boss": "Even though you're your own boss you're still a part of a bigger company. Take advantage of it!",
+
+  "The title of the article": "The title of the article goes here and it might be long",
+  "Caption goes here": "Caption goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+  "Read More": "Read More",
+  "Want to build your own ecosystem?": "Want to build your own ecosystem?",
+  "Find out how": "Find out more about how you can create a trusted network with your business partners and provide first-class user experience to your customers.",
 
   // Login
   "Open the uPort app to login": "Open the uPort app to login",
@@ -143,7 +156,7 @@ export default {
   "To login scan the QR code with the uPort app": "To login scan the QR code with the uPort app",
   "You're logging in to": "You're logging in to",
   "Tap to login with the uPort app": "Tap to login with the uPort app",
-  "Don’t have the app? Download it from your store": "Don’t have the app? Download it from your store",
+  "Don't have the app? Download it from your store": "Don't have the app? Download it from your store",
   "Issuer": "Issuer",
   "No information requested": "No information requested",
   "This information will be shared with": "This information will be shared with",
@@ -163,12 +176,11 @@ export default {
   "What's next?": "What's next?",
   "Your information will be verified": "Your information will be verified by one of our identity verification partners. Think about is as a background check but faster and more secure.",
   "Country": "Country",
-  "Zip Code": "Zip Code",
   "State or Province": "State/Province",
+  "Zip Code": "Zip Code",
   "City": "City",
   "Number, Street Name, Apt #": "Number, Street Name, Apt #",
   "Submit": "Submit",
-
 
   "Psst, even though it's just a demo": "Psst, even though it's just a demo...",
   "Any data that you enter is securely protected and encrypted": "Any data that you enter is securely protected and encrypted. It will be added as an attestation to your uPort Identity (you can always delete it at any time).",
@@ -177,10 +189,10 @@ export default {
   "Good News!": "Good News!",
   "regnSuccessHeading1": "Good News!",
   "regnSuccessHeading2": "What's next?",
-  "regnSuccessText1": "Your information has been succesfully verified. Your City ID is ready to be issued.",
-  "regnSuccessText2": "Let's make sure you have an access to your uPortlandia City ID whenever and wherever you need them.",
-  "regnSuccessText3": "is going to send your new ID claims to your uPort app.",
-  "regnReceiveCTA": "Receive City ID",
+  "regnSuccessText1": "Your information has been successfully verified. Your Driver's License is ready to be issued.",
+  "regnSuccessText2": "Let's make sure you have an access to your Driver's License whenever and wherever you need it.",
+  "regnSuccessText3": "is going to send your new claims to your uPort app.",
+  "regnReceiveCTA": "Receive Driver's License",
   "Invalid date of birth": "Invalid date of birth",
   "You must agree to the terms and conditions": "You must agree to the terms and conditions",
 
@@ -226,5 +238,4 @@ export default {
 
   "Get a digital verification of your": "Get a digital verification of your",
   "Let's make sure you have access to your claims whenever and wherever you need them": "Let's make sure you have access to your claims whenever and wherever you need them."
-
 };

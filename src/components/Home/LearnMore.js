@@ -17,30 +17,21 @@ function LearnMore () {
       <Article>
         <img src={learnMoreImage} alt="Article" />
         <div className="content">
-          <h5>The title of the article goes here and it might be long</h5>
-          <p>
-            Caption goes here. Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation.
-          </p>
+          <h5>{t("The title of the article")} goes here and it might be long</h5>
+          <p>{t("Caption goes here")}</p>
         </div>
         <div>
           <a className="capsule-link" href="#">
-            Read More
+            {t("Read More")}
             <img className="popup-icon" src={popupIcon} alt="" />
           </a>
         </div>
       </Article>
       <Aside>
         <img className="logo" src={sertoWhite} alt="uPort Serto Logo" />
-        <h5>Want to build your own ecosystem?</h5>
-        <p>
-          Find out more about how you can create a trusted network with your
-          business partners and provide first-class user experience to your
-          customer.
-        </p>
-        <a className="capsule-link inverse" href="#">Contact Us</a>
+        <h5>{t("Want to build your own ecosystem?")}</h5>
+        <p>{t("Find out how")}</p>
+        <a className="capsule-link inverse" href="#">{t("Contact Us")}</a>
       </Aside>
     </Container>
   </Wrapper>);

@@ -3,12 +3,18 @@ export default {
   "Welcome to": "Bienvenido a",
   "tryDemo": "Es la nueva demostración de uPort Serto donde las empresas, negocios y servicios crean un ecosistema confiable para proporcionar una experiencia fluida a sus clientes.",
   "Get Started": "Empezar",
-  "Its Simple": "Es sencillo",
   "Store it in the uport app": "Guárdalo en la aplicación uPort",
   "Own your information": "Sé dueño de tu información. Tú decides cuándo y con quién lo compartes.",
   "Get access to other services": "Obtenga acceso a otros servicios.",
   "Enjoy perks and benefits": "Haga las cosas mientras disfruta de todas las ventajas y beneficios.",
   "Ready? Lets do this": "Listo? ¡Hagámoslo!",
+  "Who it's for": "¿Para quién es?",
+  "Customers like Monica": "Clientes, como Mónica.",
+  "Monica loves driving": "A Mónica le encanta conducir. Ella quiere comprar un automóvil y convertirse en conductora de un servicio de transporte compartido. También espera ingresar al plan de compra de opciones de acciones para empleados para los conductores. De esta manera, ella puede tener una participación en la creciente compañía de viajes compartidos.",
+  "Be like Monica": "Se como Mónica. Prueba uPort por ti mismo",
+  "How it works": "Cómo funciona",
+  "Collect your credentials": "Recoge tus credenciales",
+  "Receive your identity verification with one click": "Reciba su verificación de identidad e información personal con un clic",
 
   // AppDownload
   "make sure you have your phone handy": "Psst... Asegúrate de tener su teléfono a mano con la aplicación uPort descargada.",
@@ -24,21 +30,89 @@ export default {
   // Footer
   "Powered by": "Con el poder de",
 
+  "Vericheck Identity Verifier": "Vericheck Identity Verifier",
+  "driversLicenseDisplayName": "Licencia de Conducir",
+  "driversLicenseDescription": "Identifícate con un clic. Obtenga su licencia de conducir digital a través de Vericheck. Comience a disfrutar de todos los servicios que el ecosistema tiene para ofrecer.",
+  "driversLicenseStep1": "Inicie sesión con uPort",
+  "driversLicenseStep2": "Ingrese su informacion",
+  "driversLicenseStep3": "Verifícate",
+  "driversLicenseStep4": "Recibir Licencia de Conducir",
 
+  "Mappe Maps & Navigation": "Mappe Maps & Navigation",
+  "safeDriverDisplayName": "Insignia de Conductor Seguro",
+  "safeDriverDescription": "¿Has estado manejando con Mappe por un tiempo y nunca has tenido un accidente? Obtenga su Insignia de Controlador Seguro y úsela con otros servicios y plataformas.",
+  "safeDriverStep1": "Inicie sesión con uPort",
+  "safeDriverStep2": "Verifícate",
+  "safeDriverStep3": "Obtener Insignia de Conductor Seguro",
+  "safeDriverHeading": "¡Obtenga crédito por conducir bien!",
+  "safeDriverDetail1": "Recibir prueba de ser un conductor responsable.",
+  "safeDriverDetail2": "Use su Insignia de controlador seguro para obtener acceso a otros servicios y beneficios que recompensan a los conductores seguros.",
+
+  "Simple Fund Bank": "Simple Fund Bank",
+  "carLoanDisplayName": "Calificación de préstamos para automóviles",
+  "carLoanDescription": "Solicite un préstamo para automóvil con su verificación de identidad y obtenga una precalificación instantánea. Comparta su insignia de Safe Driver para obtener una mejor tasa de interés.",
+  "carLoanStep1": "Inicie sesión con uPort",
+  "carLoanStep2": "Verifícate",
+  "carLoanStep3": "Obtener calificado",
+  "carLoanHeading": "¡La precalificación está a solo unos segundos!",
+  "carLoanDetail1": "Acelere el proceso de su préstamo al obtener la precalificación para un préstamo de automóvil",
+  "carLoanDetail2": "Use su reputación de conducción para acelerar el proceso de compra de automóviles.",
+
+  "McQuinn Car Dealership": "McQuinn Car Dealership",
+  "carDealerDisplayName": "Título del Auto",
+  "carDealerDescription": "¡Entra y conduce! Olvídate de tediosos trámites y trámites. Obtenga su préstamo para automóvil aprobado ... y maneje en su automóvil nuevo.",
+  "carDealerStep1": "Inicie sesión con uPort",
+  "carDealerStep2": "Verifícate",
+  "carDealerStep3": "Obtener el Título del Auto",
+  "carDealerHeading": "Es hora de una actualización.",
+  "carDealerDetail1": "Mejora la experiencia tanto para ti como para tus ciclistas.",
+  "carDealerDetail2": "Encuentra el auto de tus sueños y sal del estacionamiento en minutos.",
+
+  "Better Safe Insurance Company": "Better Safe Insurance Company",
+  "insuranceDisplayName": "Seguro de Auto",
+  "insuranceDescription": "Sí, necesitas un seguro de auto. Consíguelo con solo un clic. Demuestre que es un conductor responsable y obtenga un descuento en su tarifa mensual.",
+  "insuranceStep1": "Inicie sesión con uPort",
+  "insuranceStep2": "Verifícate",
+  "insuranceStep3": "Obtener comprobante de seguro",
+  "insuranceHeading": "¡Más vale prevenir que curar!",
+  "insuranceDetail1": "¡Asegúrese de estar cubierto en caso de accidente!",
+  "insuranceDetail2": "Obtenga las mejores tarifas compartiendo su reputación de conducción.",
+
+  "Ride Away Ride-Sharing App": "Ride Away Ride-Sharing App",
+  "rideSharingDisplayName": "Verificación del Conductor",
+  "rideSharingDescription": "Conviértase en un Conductor Ride Away y gane dinero en su propio tiempo. ¡Pero no construyas tu puntaje desde cero! Aumente su puntaje de conductor con credenciales de reputación de otros servicios y plataformas.",
+  "rideSharingStep1": "Inicie sesión con uPort",
+  "rideSharingStep2": "Verifícate",
+  "rideSharingStep3": "Obtenga la Verificación del Conductor",
+  "rideSharingHeading": "¡Gane dinero con su tiempo!",
+  "rideSharingDetail1": "Comience a ganar dinero y trabaje las horas que desee convirtiéndose en un Conductor Ride Away.",
+  "rideSharingDetail2": "Obtenga mejores y mejores tarifas y ventajas a medida que mejore su reputación de conductor.",
+
+  "Ride Away Stock Purchase Plan": "Ride Away Stock Purchase Plan",
+  "investmentsDisplayName": "Plan de compra de acciones para empleados de Ride Away",
+  "investmentsDescription": "Invierta en Ride Away y crezca con los negocios en los que cree. ¡Ride Away duplica las inversiones realizadas tanto por conductores como por conductores!",
+  "investmentsStep1": "Inicie sesión con uPort",
+  "investmentsStep2": "Verifícate",
+  "investmentsStep3": "Obtenga la credencial del plan de compra",
+  "investmentsHeading": "¡Apuesta por el éxito de Ride Away!",
+  "investmentsDetail1": "No conduzca solo para Ride Away, obtenga una participación en el futuro de la compañía.",
+  "investmentsDetail2": "¡Demuestre su historial de conductor con Ride Away y obtenga acceso al plan de compra de acciones para empleados!",
 
   "First Name": "Nombre",
   "Last Name": "Apellido",
   "Address": "Dirección",
   "Date of Birth": "Fecha de Nacimiento",
 
-  "CityID": "City ID",
-  "City ID": "City ID",
-  "Diploma": "Diploma",
-  "Monthly Bus Ticket": "Boleto de Bus Mensual",
-  "Prescription Drug": "Medicamento Recetado",
-  "Annual Membership": "Membresía Anual",
-  "Insurance Coverage": "Cobertura del Seguro",
-  "Employment Verification": "Verificación de Empleo",
+  "Safe Driver Badge": "Safe Driver Badge",
+  "Qualifies for Car Loan": "Qualifies for Car Loan",
+  "Get Qualified": "Obtener Calificado",
+  "Car Title Claim 1": "Car Title Claim 1",
+  "Car Title Claim 2": "Car Title Claim 2",
+  "Get Brand New Car": "Consigue un auto nuevo",
+  "Car Insurance": "Seguro de Auto",
+  "Driver Verification": "Driver Verification",
+  "Global Capital Investments": "Global Capital Investments",
+  "Learn More About Serto Ecosystem": "Aprenda más sobre los Ecosistemas de Serto",
 
   "get your": "Conseguir su",
   "Receive your": "Recibe tu",
@@ -48,10 +122,32 @@ export default {
   "Your claims were succesfully shared with": "Tus reclamaciones fueron compartidas exitosamente con",
   "is going to send your new claims to your uPort app": "va a enviar sus nuevos reclamos a su aplicación uPort",
 
-  "regnLandingHeading": "¡Únete a miles de ciudadanos de uPortlandia!",
-  "regnLandingStep1": "Haz las cosas sin salir de tu casa. ¡Olvídate de las largas filas de espera!",
-  "regnLandingStep2": "Acceda a los servicios y programas ofrecidos por la ciudad, así como por las empresas.",
-  "regnLandingStep3": "Obtenga una membresía gratuita de un año en muchos de los principales museos, zoológicos, salas de conciertos y jardines botánicos de la ciudad",
+  "regnLandingHeading": "¡Prepárate para salir a la carretera!",
+  "regnLandingStep1": "Haz las cosas sin salir de tu casa. No más hacer cola.",
+  "regnLandingStep2": "Acceda a los servicios y programas que ofrece el ecosistema.",
+  "regnLandingStep3": "Comience a conducir hoy!",
+
+  // Home
+  "Step 1": "Paso 1",
+  "Step 2": "Paso 2",
+  "Step 3": "Paso 3",
+  "Step 4": "Paso 4",
+  "Prove your identity": "Demuestra tu identidad.",
+  "To kick off the process get a proof of your driver's license": "Para comenzar el proceso, obtenga una prueba de su licencia de conducir.",
+  "Buy a new car": "Compra un auto nuevo.",
+  "You can get it right away or get a loan for it": "Puede obtenerlo de inmediato o ... ¡obtener un préstamo! ¡Con una prueba de su sistema de navegación de que conduce con seguridad, obtendrá una mejor tasa de interés!",
+  "Become a driver": "Conviértete en un conductor",
+  "Become a Driver": "Conviértete en un Conductor",
+  "To drive other passengers you need car insurance": "Para conducir a otros pasajeros, necesita un seguro de automóvil. Afortunadamente, ya tiene todos los documentos necesarios para él almacenados en su aplicación uPort. Todo lo que necesitas hacer para aplicar.",
+  "Become a shareholder": "Conviértete en accionista",
+  "Become a Shareholder": "Conviértete en Accionista",
+  "Even though you're your own boss": "Aunque eres tu propio jefe, sigues siendo parte de una empresa más grande. ¡Toma ventaja de eso!",
+
+  "The title of the article": "El título del artículo va aquí y puede ser largo.",
+  "Caption goes here": "El subtítulo va aquí. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
+  "Read More": "Lee Mas",
+  "Want to build your own ecosystem?": "¿Quieres construir tu propio ecosistema?",
+  "Find out how": "Obtenga más información sobre cómo puede crear una red confiable con sus socios comerciales y proporcionar una experiencia de usuario de primera clase a sus clientes.",
 
   // Login
   "Open the uPort app to login": "Abra la aplicación uPort para iniciar sesión",
@@ -60,7 +156,7 @@ export default {
   "To login scan the QR code with the uPort app": "Para iniciar sesión escanee el código QR con la aplicación uPort",
   "You're logging in to": "Estás iniciando sesión en",
   "Tap to login with the uPort app": "Toca para iniciar sesión con la aplicación uPort",
-  "Don’t have the app? Download it from your store": "¿No tienes la aplicación? Descárgalo de tu tienda",
+  "Don't have the app? Download it from your store": "¿No tienes la aplicación? Descárgalo de tu tienda",
   "Issuer": "Emisor",
   "No information requested": "No se solicita información",
   "This information will be shared with": "Esta información será compartida con",
@@ -69,6 +165,7 @@ export default {
   "Loading": "Cargando",
   "Requested information": "Información solicitada",
 
+  // Claims
   "regnFormHeading": "Informacion Personal",
   "regnFormLabel1": "Envía tu información a",
   "regnFormLabel2": "para confirmar tu identidad",
@@ -92,10 +189,10 @@ export default {
   "Good News!": "¡Buenas Noticias!",
   "regnSuccessHeading1": "¡Buenas Noticias!",
   "regnSuccessHeading2": "¿Que sigue?",
-  "regnSuccessText1": "Tu información ha sido verificada con éxito. Tu City ID está listo para ser emitido.",
-  "regnSuccessText2": "Asegurémonos de tener acceso a tu City ID de la ciudad de uPortlandia cuando y donde los necesite.",
+  "regnSuccessText1": "Su información ha sido verificada con éxito. Su licencia de conducir está lista para ser emitida.",
+  "regnSuccessText2": "Asegurémonos de tener acceso a su licencia de conducir cuando y donde lo necesite.",
   "regnSuccessText3": "enviará tus nuevas credenciales a tu aplicación uPort",
-  "regnReceiveCTA": "Recibir ID de la ciudad",
+  "regnReceiveCTA": "Recibir licencia de conducir",
   "Invalid date of birth": "Fecha de nacimiento invalida",
   "You must agree to the terms and conditions": "Debes aceptar los términos y condiciones",
 
@@ -105,7 +202,7 @@ export default {
   "Not receiving the request?": "¿No estás recibiendo la solicitud?",
   "No verified information to receive": "No hay información verificada para recibir",
   "This information will be stored in your app": "Esta información será almacenada en tu aplicación.",
-  "Subject": "ASunto",
+  "Subject": "Asunto",
   "Tap to open in a mobile browser": "Toque para abrir en un navegador móvil",
   "You're Interacting with": "Estás interactuando con",
   "Verified information you'll receive": "Información verificada que recibirás",
@@ -121,44 +218,24 @@ export default {
   "Back to Dashboard": "Volver a la página de inicio",
 
   // LikeDemo
-  "Like the demo?": "¿Te gusta la demo?",
+  "Want to build your own ecosystem?": "¿Quieres construir tu propio ecosistema?",
   "Build user-centric trusted data apps with uPort": "Cree aplicaciones de confianza de datos centradas en el usuario con uPort",
   "Issue, request and verify information about your users": "Emite, solicita y verifica información de tus usuarios. Ofrece a tus usuarios la libertad de administrar los detalles sobre su identidad digital.",
   "View Documentation": "Ver Documentación",
-  "Issue verified information to citizens in your city": "Emite información verificada a los ciudadanos de tu ciudad",
-  "Build trusted data ecosystem in your city": "Construye ecosistemas de datos confiables en tu ciudad. Deja que las empresas y organizaciones prosperen manteniendo la privacidad de los ciudadanos.",
+  "Find out more about how you can create a trusted network": "Obtenga más información sobre cómo puede crear una red confiable con sus socios comerciales y proporcionar una experiencia de usuario de primera clase a su cliente.",
+  "Build trusted data ecosystem in your city": "Cree un ecosistema de datos confiable en su ciudad. Permita que las empresas y organizaciones prosperen mientras se mantiene la privacidad de los ciudadanos.",
   "Contact Us": "Contáctanos",
 
   // City/ClaimExists
-  "regnClaimExists": "Parece que ya tienes un City ID de uPortlandia",
-  "regnBenefits": "Con tu  City ID tienes acceso fácil y rápido a numerosos servicios y programas en uPortlandia",
+  "regnClaimExists": "Parece que ya tienes una licencia de conducir",
+  "regnBenefits": "Con su licencia de conducir tiene acceso fácil y rápido a numerosos servicios y programas en el ecosistema",
 
   // Redirect
   "See you later!": "¡Nos vemos más tarde!",
-  "You are leaving the uPortlandia dashboard":  "Estás abandonando el panel de control de uPortlandia y serás redirigido automáticamente a",
+  "You are leaving the dashboard":  "Estás abandonando el panel de control de Ecosystema Serto y serás redirigido automáticamente a",
   "website to continue": "sitio web para continuar.",
   "Bye!": "¡Adiós!",
 
   "Get a digital verification of your": "Consigue una verificación digital de tu",
-  "Let's make sure you have access to your claims whenever and wherever you need them": "Asegurémonos de tener acceso a sus reclamos cuando y donde los necesite",
-
-  // University
-  "diplomaDetail1": "Comparte tu información educativa fácilmente en una entrevista de trabajo o cuando solicites un programa de postgrado.",
-  "diplomaDetail2": "Obtén descuentos o acceso gratuito a servicios y programas en todo el mundo.",
-
-  // Transport
-  "transportDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su boleto mensual de autobús gratis.",
-
-  // Pharmacy
-  "pharmacyDetail1": "Obtén tus medicamentos en cualquier farmacia que desee. No es necesario esperar a que el médico llame a tu farmacia.",
-
-  // Museum
-  "museumDetail1": "La ciudad de uPortlandia ofrece servicios gratuitos para sus ciudadanos. Obtenga su membresía anual del museo de forma gratuita.",
-
-  // Insurance
-  "insuranceDetail1": "Comparte tu informacion del seguro fácilmente con tu doctor, farmacia o servicio de emergencia",
-
-  // Company
-  "companyDetail1": "Comparte tu información de empleo fácilmente mientras solicitas una hipoteca o firma de un nuevo contrato de arrendamiento",
-  "companyDetail2": "Proporciona un historial de empleo verificado durante tu entrevista de trabajo",
+  "Let's make sure you have access to your claims whenever and wherever you need them": "Asegurémonos de tener acceso a sus reclamos cuando y donde los necesite"
 };

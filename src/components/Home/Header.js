@@ -29,26 +29,23 @@ class Header extends React.Component {
         <p>{t("tryDemo")}.</p>
       </Hero.Welcome>
       <Audience>
-        <Audience.Heading>Who it's for</Audience.Heading>
+        <Audience.Heading>{t("Who it's for")}</Audience.Heading>
         <Audience.Content>
           <Audience.Text>
-            <p>Customers, like Monica.</p>
-            <p>Monica loves driving. She wants to buy a car and become a driver
-            for a ride sharing service. She’s also hoping to get into the
-            employee stock options purchase plan for drivers. This way she
-            can have a stake in the growing ride-share company.</p>
-            <p>Be like Monica. Try out uPort for yourself.</p>
+            <p>{t("Customers like Monica")}</p>
+            <p>{t("Monica loves driving")}</p>
+            <p>{t("Be like Monica")}</p>
           </Audience.Text>
           <Audience.Image src={audienceImage} />
         </Audience.Content>
       </Audience>
       <Hero.Content>
-        <CapsuleHeading>How it works</CapsuleHeading>
+        <CapsuleHeading>{t("How it works")}</CapsuleHeading>
         <Hero.Steps>
           <Hero.Step>
             <Hero.Step.Icon src={collectCredIcon} />
-            <h4>Collect your credentials</h4>
-            <p>Receive your identity verification and personal information with one click</p>
+            <h4>{t("Collect your credentials")}</h4>
+            <p>{t("Receive your identity verification with one click")}</p>
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={uPortAppIcon} />
