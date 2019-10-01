@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { withTranslation } from "react-i18next";
 
-import { large, medium, mediumOnly } from "../shared/grid";
+import { medium } from "../shared/grid";
 import * as theme from "../shared/theme";
 import { CapsuleLinkButton, CapsuleHeading } from "../shared/elements";
 import collectCredIcon from "../../images/collect-cred-icon.png";
@@ -26,7 +26,7 @@ class Header extends React.Component {
           <Logo src={home.logo} />
         </a>
         <h1>{home.name}</h1>
-        <p>{t("tryDemo")}.</p>
+        <p>{t("tryDemo")}</p>
       </Hero.Welcome>
       <Audience>
         <Audience.Heading>{t("Who it's for")}</Audience.Heading>

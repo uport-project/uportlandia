@@ -39,6 +39,8 @@ export default {
   "driversLicenseStep4": "Receive Driver's License",
 
   "Mappe Maps & Navigation": "Mappe Maps & Navigation",
+  "Number of Accidents": "Number of Accidents",
+  "Number of Speeding Violations": "Number of Speeding Violations",
   "safeDriverDisplayName": "Safe Driver Badge",
   "safeDriverDescription": "Have you been driving with Mappe for a while and never had an accident? Get your Safe Driver Badge and use it with other services and platforms.",
   "safeDriverStep1": "Login with uPort",
@@ -49,6 +51,9 @@ export default {
   "safeDriverDetail2": "Use your Safe Driver Badge to get access to other services and perks that reward safe drivers.",
 
   "Simple Fund Bank": "Simple Fund Bank",
+  "Finance up to": "Finance up to",
+  "Annual Percentage Rate": "Annual Percentage Rate",
+  "Valid Through": "Valid Through",
   "carLoanDisplayName": "Car Loan Qualification",
   "carLoanDescription": "Apply for a Car Loan with your Identity Verification and get pre-qualified instantly. Share your Safe Driver Badge to get a better interest rate.",
   "carLoanStep1": "Login with uPort",
@@ -59,6 +64,12 @@ export default {
   "carLoanDetail2": "Use your driving reputation to breeze through the car buying process.",
 
   "McQuinn Car Dealership": "McQuinn Car Dealership",
+  "Vehicle ID Number": "Vehicle ID Number",
+  "Vehicle Make": "Vehicle Make",
+  "Vehicle Model": "Vehicle Model",
+  "Year": "Year",
+  "Plate Number": "Plate Number",
+  "Owner": "Owner",
   "carDealerDisplayName": "Car Title",
   "carDealerDescription": "Walk in and drive away! Forget about tedious paperwork and formalities. Get your Car Loan approved away... and drive away in your new car.",
   "carDealerStep1": "Login with uPort",
@@ -69,6 +80,8 @@ export default {
   "carDealerDetail2": "Find the car of your dreams and walk off the lot in minutes.",
 
   "Better Safe Insurance Company": "Better Safe Insurance Company",
+  "Policy Number": "Policy Number",
+  "Status": "Status",
   "insuranceDisplayName": "Car Insurance",
   "insuranceDescription": "Yes, you need Car Insurance. Get it with just one click. Prove that you're a responsible driver and get a discount on your monthly rate.",
   "insuranceStep1": "Login with uPort",
@@ -79,6 +92,8 @@ export default {
   "insuranceDetail2": "Get the best rates by sharing your driving reputation.",
 
   "Ride Away Ride-Sharing App": "Ride Away Ride-Sharing App",
+  "Account Name": "Account Name",
+  "Date Joined": "Date Joined",
   "rideSharingDisplayName": "Driver Verification",
   "rideSharingDescription": "Become a Ride Away Driver and make money on your own time. But, don't build your score from scratch! Boost your driver score with reputation credentials from other services and platforms.",
   "rideSharingStep1": "Login with uPort",
@@ -89,6 +104,9 @@ export default {
   "rideSharingDetail2": "Earn better and better rates and perks as your improve your driver reputation.",
 
   "Ride Away Stock Purchase Plan": "Ride Away Stock Purchase Plan",
+  "Stock Price": "Stock Price",
+  "Purchase Price": "Purchase Price",
+  "Contribution Level Guaranteed": "Contribution Level Guaranteed",
   "investmentsDisplayName": "Ride Away Employee Stock Purchase Plan",
   "investmentsDescription": "Invest in Ride Away and grow with the businesses you believe in. Ride Away doubles investments made by both riders and drivers!",
   "investmentsStep1": "Login with uPort",
@@ -147,7 +165,6 @@ export default {
   "The title of the article": "The title of the article goes here and it might be long",
   "Caption goes here": "Caption goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
   "Read More": "Read More",
-  "Want to build your own ecosystem?": "Want to build your own ecosystem?",
   "Find out how": "Find out more about how you can create a trusted network with your business partners and provide first-class user experience to your customers.",
 
   // Login

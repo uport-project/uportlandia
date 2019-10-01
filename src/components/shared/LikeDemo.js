@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 
 import * as theme from "../shared/theme";
 import DevIcon from "../../images/dev-icon.svg";
-import CitizenIcon from "../../images/citizen-icon.svg";
 import ArrowLeft from "../../images/arrow-left.svg";
 
 const LikeTheDemo = () => {

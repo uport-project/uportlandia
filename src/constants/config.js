@@ -168,7 +168,8 @@ const SAFE_DRIVER = {
     "safeDriverDetail2"
   ],
   claimData: {
-    "Safe Driver": "Yes"
+    "Number of Accidents": 0,
+    "Number of Speeding Violations": 0
   }
 };
 
@@ -195,7 +196,9 @@ const CAR_LOAN = {
     "carLoanDetail2"
   ],
   claimData: {
-    "Qualifies for Car Loan": "Yes"
+    "Finance up to": "$50000",
+    "Annual Percentage Rate": "8.45% - 23.28%",
+    "Valid Through": dayjs().add(1, "year").format("MM/DD/YYYY")
   }
 };
 
@@ -222,8 +225,12 @@ const CAR_DEALER = {
     "carDealerDetail2"
   ],
   claimData: {
-    "Dummy 1": "Yes",
-    "Dummy 2": "Yes"
+    "Vehicle ID number": "ABCD123",
+    "Year": 2019,
+    "Make": "Toyota",
+    "Model": "Prius",
+    "Plate Number": "NYC1212",
+    "Owner": "Monica Smith"
   }
 };
 
@@ -249,7 +256,8 @@ const INSURANCE = {
     "insuranceDetail2"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Policy Number": "123-1234-1234-123",
+    "Status": "Effective"
   }
 };
 
@@ -276,7 +284,8 @@ const RIDE_SHARING = {
     "rideSharingDetail2"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Account Name": "monica123",
+    "Date Joined": dayjs().format("MM/DD/YYYY")
   }
 };
 
@@ -303,7 +312,9 @@ const INVESTMENTS = {
     "investmentsDetail2"
   ],
   claimData: {
-    "Dummy 1": "Yes"
+    "Stock Price": "$10",
+    "Purchase Price": "$8.50",
+    "Contribution Level Guaranteed": "$8500.00"
   }
 };
 
@@ -316,7 +327,9 @@ const YOURSELF = {
   description: "Yourself, Any Issuer"
 };
 
+// --------------------------------
 // Claims
+// --------------------------------
 const FIRST_NAME = {
   id: "firstName",
   name: "First Name",
@@ -349,51 +362,128 @@ const ADDRESS = {
   honoredBy: [SAFE_DRIVER]
 };
 
-const SAFE_DRIVER_CLAIM = {
-  name: "Safe Driver Badge",
-  displayName: "Safe Driver Badge",
+const NUM_ACC = {
+  name: "Number of Accidents",
+  displayName: "Number of Accidents",
   issuedBy: [SAFE_DRIVER],
   honoredBy: [CAR_LOAN]
 };
 
-const CAR_LOAN_CLAIM = {
-  name: "Qualifies for Car Loan",
-  displayName: "Qualifies for Car Loan",
+const NUM_SPEED = {
+  name: "Number of Speeding Violations",
+  displayName: "Number of Speeding Violations",
+  issuedBy: [SAFE_DRIVER],
+  honoredBy: [CAR_LOAN]
+};
+
+const FINANCE_UP_TO = {
+  name: "Finance up to",
+  displayName: "Finance up to",
   issuedBy: [CAR_LOAN],
   honoredBy: [CAR_DEALER]
 };
 
-const CAR_TITLE_CLAIM1 = {
-  name: "Car Title Claim 1",
-  displayName: "Car Title Claim 1",
+const ANNUAL_RATE = {
+  name: "Annual Percentage Rate",
+  displayName: "Annual Percentage Rate",
+  issuedBy: [CAR_LOAN],
+  honoredBy: [CAR_DEALER]
+};
+
+const VALID_THRU = {
+  name: "Valid Through",
+  displayName: "Valid Through",
+  issuedBy: [CAR_LOAN],
+  honoredBy: [CAR_DEALER]
+};
+
+const VEH_ID = {
+  name: "Vehicle ID Number",
+  displayName: "Vehicle ID Number",
   issuedBy: [CAR_DEALER],
   honoredBy: [INSURANCE]
 };
 
-const CAR_TITLE_CLAIM2 = {
-  name: "Car Title Claim 2",
-  displayName: "Car Title Claim 2",
+const VEH_YEAR = {
+  name: "Year",
+  displayName: "Year",
   issuedBy: [CAR_DEALER],
   honoredBy: [INSURANCE]
 };
 
-const INSURANCE_CLAIM = {
-  name: "Car Insurance",
-  displayName: "Car Insurance",
+const VEH_MAKE = {
+  name: "Vehicle Make",
+  displayName: "Vehicle Make",
+  issuedBy: [CAR_DEALER],
+  honoredBy: [INSURANCE]
+};
+
+const VEH_MODEL = {
+  name: "Vehicle Model",
+  displayName: "Vehicle Model",
+  issuedBy: [CAR_DEALER],
+  honoredBy: [INSURANCE]
+};
+
+const VEH_PLATE = {
+  name: "Plate Number",
+  displayName: "Plate Number",
+  issuedBy: [CAR_DEALER],
+  honoredBy: [INSURANCE]
+};
+
+const VEH_OWNER = {
+  name: "Owner",
+  displayName: "Owner",
+  issuedBy: [CAR_DEALER],
+  honoredBy: [INSURANCE]
+};
+
+const POLICY_NUM = {
+  name: "Policy Number",
+  displayName: "Policy Number",
   issuedBy: [INSURANCE],
   honoredBy: [RIDE_SHARING]
 };
 
-const DRIVER_VERIFICATION = {
-  name: "Driver Verification",
-  displayName: "Driver Verification",
+const INSURANCE_STATUS = {
+  name: "Status",
+  displayName: "Status",
+  issuedBy: [INSURANCE],
+  honoredBy: [RIDE_SHARING]
+};
+
+const DRIVER_ACC = {
+  name: "Account Name",
+  displayName: "Account Name",
   issuedBy: [RIDE_SHARING],
   honoredBy: [INVESTMENTS]
 };
 
-const INVESTMENTS_CLAIM = {
-  name: "Ride Away Stock Purchase Plan",
-  displayName: "Ride Away Stock Purchase Plan",
+const DRIVER_DOJ = {
+  name: "Date Joined",
+  displayName: "Date Joined",
+  issuedBy: [RIDE_SHARING],
+  honoredBy: [INVESTMENTS]
+};
+
+const STOCK_PRICE = {
+  name: "Stock Price",
+  displayName: "Stock Price",
+  issuedBy: [INVESTMENTS],
+  honoredBy: []
+};
+
+const PURCHASE_PRICE = {
+  name: "Purchase Price",
+  displayName: "Purchase Price",
+  issuedBy: [INVESTMENTS],
+  honoredBy: []
+};
+
+const CONTRIB_LEVEL = {
+  name: "Contribution Level Guaranteed",
+  displayName: "Contribution Level Guaranteed",
   issuedBy: [INVESTMENTS],
   honoredBy: []
 };
@@ -406,17 +496,17 @@ DRIVERS_LICENSE.requiredClaims = DRIVERS_LICENSE.generatedClaims.map(c => ({
 }));
 SAFE_DRIVER.requiredClaims = [FIRST_NAME, LAST_NAME, DATE_OF_BIRTH];
 SAFE_DRIVER.requiredServices = [DRIVERS_LICENSE];
-SAFE_DRIVER.generatedClaims = [SAFE_DRIVER_CLAIM];
+SAFE_DRIVER.generatedClaims = [NUM_ACC, NUM_SPEED];
 CAR_LOAN.requiredServices = [DRIVERS_LICENSE, SAFE_DRIVER];
-CAR_LOAN.generatedClaims = [CAR_LOAN_CLAIM];
+CAR_LOAN.generatedClaims = [FINANCE_UP_TO, ANNUAL_RATE, VALID_THRU];
 CAR_DEALER.requiredServices = [DRIVERS_LICENSE, CAR_LOAN];
-CAR_DEALER.generatedClaims = [CAR_TITLE_CLAIM1, CAR_TITLE_CLAIM2];
+CAR_DEALER.generatedClaims = [VEH_ID, VEH_YEAR, VEH_MAKE, VEH_MODEL, VEH_PLATE, VEH_OWNER];
 INSURANCE.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, SAFE_DRIVER];
-INSURANCE.generatedClaims = [INSURANCE_CLAIM];
+INSURANCE.generatedClaims = [POLICY_NUM, INSURANCE_STATUS];
 RIDE_SHARING.requiredServices = [DRIVERS_LICENSE, CAR_DEALER, INSURANCE, SAFE_DRIVER];
-RIDE_SHARING.generatedClaims = [DRIVER_VERIFICATION];
+RIDE_SHARING.generatedClaims = [DRIVER_ACC, DRIVER_DOJ];
 INVESTMENTS.requiredServices = [DRIVERS_LICENSE, RIDE_SHARING, SAFE_DRIVER];
-INVESTMENTS.generatedClaims = [INVESTMENTS_CLAIM]
+INVESTMENTS.generatedClaims = [STOCK_PRICE, PURCHASE_PRICE, CONTRIB_LEVEL]
 
 export const SERVICES = {
   DRIVERS_LICENSE, SAFE_DRIVER, CAR_LOAN, CAR_DEALER, INSURANCE, RIDE_SHARING,

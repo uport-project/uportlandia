@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import * as theme from "./theme";
 import { medium } from "./grid";
-import { Button, Form } from "./elements";
+import { Form } from "./elements";
 
 const ContentCard = props => {
   const { children, CTA } = props;

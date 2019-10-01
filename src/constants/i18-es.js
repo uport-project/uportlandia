@@ -40,6 +40,8 @@ export default {
   "driversLicenseStep4": "Recibir Licencia de Conducir",
 
   "Mappe Maps & Navigation": "Mappe Maps & Navigation",
+  "Number of Accidents": "Numero de Accidentes",
+  "Number of Speeding Violations": "Número de infracciones por exceso de velocidad",
   "safeDriverDisplayName": "Insignia de Conductor Seguro",
   "safeDriverDescription": "¿Has estado manejando con Mappe por un tiempo y nunca has tenido un accidente? Obtenga su Insignia de Controlador Seguro y úsela con otros servicios y plataformas.",
   "safeDriverStep1": "Inicie sesión con uPort",
@@ -50,6 +52,9 @@ export default {
   "safeDriverDetail2": "Use su Insignia de controlador seguro para obtener acceso a otros servicios y beneficios que recompensan a los conductores seguros.",
 
   "Simple Fund Bank": "Simple Fund Bank",
+  "Finance up to": "Financiar hasta",
+  "Annual Percentage Rate": "Tasa de Porcentaje Anual",
+  "Valid Through": "Válido hasta el",
   "carLoanDisplayName": "Calificación de préstamos para automóviles",
   "carLoanDescription": "Solicite un préstamo para automóvil con su verificación de identidad y obtenga una precalificación instantánea. Comparta su insignia de Safe Driver para obtener una mejor tasa de interés.",
   "carLoanStep1": "Inicie sesión con uPort",
@@ -60,6 +65,12 @@ export default {
   "carLoanDetail2": "Use su reputación de conducción para acelerar el proceso de compra de automóviles.",
 
   "McQuinn Car Dealership": "McQuinn Car Dealership",
+  "Vehicle ID Number": "Número de Identificación del Vehículo",
+  "Vehicle Make": "Marca del Vehículo",
+  "Vehicle Model": "Modelo de Vehículo",
+  "Year": "Año",
+  "Plate Number": "Número de placar",
+  "Owner": "Propietario del Vehículo",
   "carDealerDisplayName": "Título del Auto",
   "carDealerDescription": "¡Entra y conduce! Olvídate de tediosos trámites y trámites. Obtenga su préstamo para automóvil aprobado ... y maneje en su automóvil nuevo.",
   "carDealerStep1": "Inicie sesión con uPort",
@@ -70,6 +81,8 @@ export default {
   "carDealerDetail2": "Encuentra el auto de tus sueños y sal del estacionamiento en minutos.",
 
   "Better Safe Insurance Company": "Better Safe Insurance Company",
+  "Policy Number": "Número de póliza",
+  "Status": "Estado",
   "insuranceDisplayName": "Seguro de Auto",
   "insuranceDescription": "Sí, necesitas un seguro de auto. Consíguelo con solo un clic. Demuestre que es un conductor responsable y obtenga un descuento en su tarifa mensual.",
   "insuranceStep1": "Inicie sesión con uPort",
@@ -80,6 +93,8 @@ export default {
   "insuranceDetail2": "Obtenga las mejores tarifas compartiendo su reputación de conducción.",
 
   "Ride Away Ride-Sharing App": "Ride Away Ride-Sharing App",
+  "Account Name": "Nombre de la Cuenta",
+  "Date Joined": "Fecha de Registro",
   "rideSharingDisplayName": "Verificación del Conductor",
   "rideSharingDescription": "Conviértase en un Conductor Ride Away y gane dinero en su propio tiempo. ¡Pero no construyas tu puntaje desde cero! Aumente su puntaje de conductor con credenciales de reputación de otros servicios y plataformas.",
   "rideSharingStep1": "Inicie sesión con uPort",
@@ -90,6 +105,9 @@ export default {
   "rideSharingDetail2": "Obtenga mejores y mejores tarifas y ventajas a medida que mejore su reputación de conductor.",
 
   "Ride Away Stock Purchase Plan": "Ride Away Stock Purchase Plan",
+  "Stock Price": "Precio de Mercado",
+  "Purchase Price": "Precio de Compra",
+  "Contribution Level Guaranteed": "Nivel de Contribución Garantizado",
   "investmentsDisplayName": "Plan de compra de acciones para empleados de Ride Away",
   "investmentsDescription": "Invierta en Ride Away y crezca con los negocios en los que cree. ¡Ride Away duplica las inversiones realizadas tanto por conductores como por conductores!",
   "investmentsStep1": "Inicie sesión con uPort",
@@ -147,7 +165,6 @@ export default {
   "The title of the article": "El título del artículo va aquí y puede ser largo.",
   "Caption goes here": "El subtítulo va aquí. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
   "Read More": "Lee Mas",
-  "Want to build your own ecosystem?": "¿Quieres construir tu propio ecosistema?",
   "Find out how": "Obtenga más información sobre cómo puede crear una red confiable con sus socios comerciales y proporcionar una experiencia de usuario de primera clase a sus clientes.",
 
   // Login
