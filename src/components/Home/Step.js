@@ -13,7 +13,7 @@ function Step (props) {
     case SERVICES.DRIVERS_LICENSE.id:
       heading = t("Step 1");
       content = (<p>
-        <strong>{t("Prove your identity")}</strong>
+        <strong>{t("Prove your identity")}.</strong>
         {" "}
         <span>{t("To kick off the process get a proof of your driver's license")}</span>
       </p>);
@@ -22,7 +22,7 @@ function Step (props) {
     case SERVICES.SAFE_DRIVER.id:
       heading = t("Step 2");
       content = (<p>
-        <strong>{t("Buy a new car")}</strong>
+        <strong>{t("Buy a new car")}.</strong>
         {" "}
         <span>{t("You can get it right away or get a loan for it")}</span>
       </p>);
@@ -31,7 +31,7 @@ function Step (props) {
     case SERVICES.INSURANCE.id:
       heading = t("Step 3");
       content = (<p>
-        <strong>{t("Become a driver")}</strong>
+        <strong>{t("Become a driver")}.</strong>
         {" "}
         <span>{t("To drive other passengers you need car insurance")}</span>
       </p>);
@@ -40,7 +40,7 @@ function Step (props) {
     case SERVICES.INVESTMENTS.id:
       heading = t("Step 4");
       content = (<p>
-        <strong>{t("Become a shareholder")}</strong>
+        <strong>{t("Become a shareholder")}.</strong>
         {" "}
         <span>{t("Even though you're your own boss")}</span>
       </p>);

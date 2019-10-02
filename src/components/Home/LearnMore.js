@@ -17,7 +17,7 @@ function LearnMore () {
       <Article>
         <img src={learnMoreImage} alt="Article" />
         <div className="content">
-          <h5>{t("The title of the article")} goes here and it might be long</h5>
+          <h5>{t("The title of the article")}</h5>
           <p>{t("Caption goes here")}</p>
         </div>
         <div>

@@ -54,7 +54,7 @@ class Header extends React.Component {
           </Hero.Step>
           <Hero.Step>
             <Hero.Step.Icon src={servicesIcon} />
-            <h4>{t("Get access to other services")}</h4>
+            <h4>{t("Get access to many services")}</h4>
             <p>{t("Enjoy perks and benefits")}</p>
           </Hero.Step>
         </Hero.Steps>
