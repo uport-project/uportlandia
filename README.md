@@ -86,3 +86,6 @@ yarn deploy:static  --env stage
 1. Change the [Whitelabel Config](src/constants/config.js)
 1. Customize the Static Text: [English](src/constants/i18-en.js) and [Spanish](src/constants/i18-es.js)
 1. Change the [Color Palette](src/components/shared/theme.js)
+
+
+[FAQ and helpdesk support](http://bit.ly/uPort_helpdesk)
