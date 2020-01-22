@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const Credentials = require("uport-credentials").Credentials;
 const verifyJWT = require("did-jwt").verifyJWT;
 
+const RPC_URL = "https://mainnet.infura.io/v3/5ffc47f65c4042ce847ef66a3fa70d4c";
+
 const app = express();
 app.use(bodyParser.json());
 
@@ -14,7 +16,10 @@ const getCredentials = (serviceId) => {
     throw new Error("Invalid serviceId");
   return new Credentials({
     did: ISSUERS[serviceId].did,
-    privateKey: ISSUERS[serviceId].key
+    privateKey: ISSUERS[serviceId].key,
+    ethrConfig: {
+      rpcUrl: RPC_URL
+    }
   });
 }
 
